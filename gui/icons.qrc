@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>img/delete (1).png</file>
+    <file>img/delete.png</file>
+    <file>img/save_data.png</file>
+    <file>img/data_bases.png</file>
+    <file>img/data-processing.png</file>
+    <file>img/search-data.png</file>
+    <file>img/logo_smartMigrate.png</file>
+    <file>img/folder.png</file>
+  </qresource>
+</RCC>
