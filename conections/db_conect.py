@@ -16,6 +16,14 @@ except:
 
 error = Erros()
 
+# Variáveis globais para armazenar conexões
+global conn1, conn2, conn3, conn4
+conn1 = conn2 = conn3 = conn4 = None
+
+def set_ui_instance(instance):
+    global ui_instance
+    ui_instance = instance
+
 class Conections_SQLServer():
     def __init__(self):
 
@@ -23,9 +31,6 @@ class Conections_SQLServer():
         self.conn = None  # Inicializa a conexão como None
             #LOGS ----------------------------------------------------------------------------------------------------------
             # Obtém o nome do arquivo atual
-
-       
-
 
     def conect_sqlserver(self, server, database, username, password):
         self.server = server
@@ -129,6 +134,29 @@ class Conections_PostgreSQL():
             print(f"Erro de conexão: {str(e)}")
             return "ERRO"
         
+
+# Função para fechar todas as conexões
+def close_connections():
+    global conn1, conn2, conn3, conn4
+
+    def close_conn(conn):
+        if conn is not None:
+            try:
+                conn.cursor.close()
+            except:
+                pass
+            try:
+                conn.close()
+            except:
+                pass
+
+    close_conn(conn1)
+    close_conn(conn2)
+    close_conn(conn3)
+    close_conn(conn4)
+
+    conn1 = conn2 = conn3 = conn4 = None
+
 # FAZ A CONEXÃO COM O BANCO DE DADOS SQL SERVER
 def conectar_ao_sql_server():
         ui = app_instance.get_ui_instance()
@@ -152,6 +180,7 @@ def conectar_ao_sql_server():
                 tables_SqlServer(conn1)
                 ui.label_4.setVisible(True)
                 ui.bt_mostra_dados_tabelas.setVisible(True)
+                return conn1
             elif resp == 'ERRO':
                 ui.txt_output_logs.setPlainText(f"Erro: {msg2}")
                 error.msg_popup(resp,msg1,msg2)
@@ -186,6 +215,7 @@ def conectar_ao_MySQL():
                     tables_MySQL(conn2)
                     ui.label_4.setVisible(True)
                     ui.bt_mostra_dados_tabelas.setVisible(True)
+                    return conn2
                 elif resp == 'ERRO':
                     ui.txt_output_logs.setPlainText(f"Erro: {msg2}")   
                 error.msg_popup(resp,msg1,msg2)
@@ -216,6 +246,7 @@ def conectar_ao_PostgreSQL():
                 tables_PostgreSQL(conn4)
                 ui.label_4.setVisible(True)
                 ui.bt_mostra_dados_tabelas.setVisible(True)
+                return conn4
             elif resp == 'ERRO':
                 ui.txt_output_logs.setPlainText(f"Erro: {msg2}")
 
@@ -309,3 +340,7 @@ def tables_SQLite3(conn):
     except Exception as e:
         print(e)
         return []
+
+
+
+        

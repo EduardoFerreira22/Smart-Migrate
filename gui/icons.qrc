@@ -1,6 +1,15 @@
 <RCC>
   <qresource prefix="icons">
+    <file>img/play.png</file>
+    <file>img/setas1.png</file>
     <file>img/delete (1).png</file>
+    <file>img/conexoes2.png</file>
+    <file>img/desfazer.png</file>
+    <file>img/duplicado1.png</file>
+    <file>img/duplicado2.png</file>
+    <file>img/querys.png</file>
+    <file>img/retornar.png</file>
+    <file>img/systems.png</file>
     <file>img/delete.png</file>
     <file>img/save_data.png</file>
     <file>img/data_bases.png</file>
