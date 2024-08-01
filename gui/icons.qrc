@@ -1,6 +1,8 @@
 <RCC>
   <qresource prefix="icons">
+    <file>img/more.png</file>
     <file>img/play.png</file>
+    <file>img/minus.png</file>
     <file>img/setas1.png</file>
     <file>img/delete (1).png</file>
     <file>img/conexoes2.png</file>

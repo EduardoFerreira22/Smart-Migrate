@@ -3,6 +3,7 @@ try:
     import mysql.connector
     import sqlite3
     import psycopg2
+    import fdb
     import gui.app_instance as app_instance # Importe o módulo que você criou
     from PySide6.QtCore import QCoreApplication
     from PySide6.QtGui import QIcon,QFont,QColor,QStandardItem, QStandardItemModel
@@ -11,14 +12,15 @@ try:
     import os
     import uuid
     from configs.erros import Erros
+    from dbfread import DBF
 except:
     pass
 
 error = Erros()
 
 # Variáveis globais para armazenar conexões
-global conn1, conn2, conn3, conn4
-conn1 = conn2 = conn3 = conn4 = None
+global conn1, conn2, conn3, conn4, conn5
+conn1 = conn2 = conn3 = conn4 = conn5  = None
 
 def set_ui_instance(instance):
     global ui_instance
@@ -134,10 +136,39 @@ class Conections_PostgreSQL():
             print(f"Erro de conexão: {str(e)}")
             return "ERRO"
         
+class Conections_Firebird():
+    def __init__(self):
+        self.cursor = None
+        self.conn = None
+
+    def Firebird_conect(self, host, database, user, password, port=None):
+        encoders = ['UTF8', 'WIN1252', 'ISO8859_1', 'ASCII']
+        for encoder in encoders:
+            try:
+                if port == '' or port is None:
+                    port = 3050
+                
+                port = int(port)
+                self.conn = fdb.connect(
+                    host=host,
+                    port=port,
+                    database=database,
+                    user=user,
+                    password=password,
+                    charset=encoder
+                )
+                self.cursor = self.conn.cursor()
+                if self.cursor:
+                    return 'OK'
+            except fdb.DatabaseError as e:
+                print(f"Erro de conexão com charset {encoder}: {str(e)}")
+                continue  # Tenta o próximo encoder
+
+        return "ERRO"
 
 # Função para fechar todas as conexões
 def close_connections():
-    global conn1, conn2, conn3, conn4
+    global conn1, conn2, conn3, conn4, conn5
 
     def close_conn(conn):
         if conn is not None:
@@ -154,8 +185,12 @@ def close_connections():
     close_conn(conn2)
     close_conn(conn3)
     close_conn(conn4)
+    close_conn(conn5)
 
-    conn1 = conn2 = conn3 = conn4 = None
+
+
+
+    conn1 = conn2 = conn3 = conn4 = conn5  = None
 
 # FAZ A CONEXÃO COM O BANCO DE DADOS SQL SERVER
 def conectar_ao_sql_server():
@@ -180,13 +215,13 @@ def conectar_ao_sql_server():
                 tables_SqlServer(conn1)
                 ui.label_4.setVisible(True)
                 ui.bt_mostra_dados_tabelas.setVisible(True)
+                ui.bt_terminal_sql.setVisible(True)
+                ui.bt_systems.setVisible(True)
                 return conn1
             elif resp == 'ERRO':
                 ui.txt_output_logs.setPlainText(f"Erro: {msg2}")
                 error.msg_popup(resp,msg1,msg2)
             
-
-
 #Conectando #############################################################################    
 def conectar_ao_MySQL():
             ui = app_instance.get_ui_instance()
@@ -215,10 +250,38 @@ def conectar_ao_MySQL():
                     tables_MySQL(conn2)
                     ui.label_4.setVisible(True)
                     ui.bt_mostra_dados_tabelas.setVisible(True)
+                    ui.bt_terminal_sql.setVisible(True)
+                    ui.bt_systems.setVisible(True)
                     return conn2
                 elif resp == 'ERRO':
                     ui.txt_output_logs.setPlainText(f"Erro: {msg2}")   
                 error.msg_popup(resp,msg1,msg2)
+
+def conectar_Sqlite3():
+        ui = app_instance.get_ui_instance()
+        server = ui.txt_servidor_data_base.text()
+        conn3 = Conections_SQLite3()
+        if server == '':
+            ui.txt_output_logs.setPlainText(f"Erro! dados incompletos.")
+            error.show_error_popup("Erro!","Não foi possível identificar o caminho para o banco de dados\nConexão não realizada.")
+        else:
+            print(f"Caminho do Banco de Dados: {server}")  # Adicione esta linha para depurar
+            resp = conn3.conectar_sqlite3_db(server)
+            msg1 = "Conectado com Sucesso!"
+            msg2 = f"Não foi possível se conectar ao banco de dados"
+
+            if resp == 'OK':
+                ui.txt_output_logs.setPlainText(f"{msg1}")
+                tables_SQLite3(conn3)
+                ui.label_4.setVisible(True)
+                ui.bt_mostra_dados_tabelas.setVisible(True)
+                ui.bt_terminal_sql.setVisible(True)
+                ui.bt_systems.setVisible(True)
+                return conn3
+            elif resp == 'ERRO':
+                ui.txt_output_logs.setPlainText(f"Erro: {msg2}")   
+                    
+            error.msg_popup(resp,msg1,msg2)  # Retorna o objeto de conexão em vez da string 'OK'
 
 def conectar_ao_PostgreSQL():
         ui = app_instance.get_ui_instance()
@@ -246,38 +309,110 @@ def conectar_ao_PostgreSQL():
                 tables_PostgreSQL(conn4)
                 ui.label_4.setVisible(True)
                 ui.bt_mostra_dados_tabelas.setVisible(True)
+                ui.bt_terminal_sql.setVisible(True)
+                ui.bt_systems.setVisible(True)
                 return conn4
             elif resp == 'ERRO':
                 ui.txt_output_logs.setPlainText(f"Erro: {msg2}")
 
             error.msg_popup(resp,msg1,msg2)
 
-def get_columns_for_table(conn, table_name):
-    if conn:
-        try:
-            query = f"""
-                SELECT COLUMN_NAME
-                FROM INFORMATION_SCHEMA.COLUMNS
-                WHERE TABLE_NAME = '{table_name}'
-            """
-            conn.cursor.execute(query)
-            columns = conn.cursor.fetchall()
-            return [column[0] for column in columns]
-        except Exception as e:
-            print(f"Erro ao buscar colunas: {e}")
-            return []
-    return []
+def conectar_ao_Firebird():
+    ui = app_instance.get_ui_instance()
+    host = ui.txt_servidor_data_base.text()
+    database = ui.txt_data_base_name.text()
+    user = ui.txt_user_data_base.text()
+    password = ui.txt_password_data_base.text()
+    port = ui.txt_port_data_base.text() or None
 
+    if not host or not database or not user or not password:
+        error.show_error_popup("Erro!", "É necessário que todos os campos estejam preenchidos.")
+        ui.txt_output_logs.setPlainText("Erro! Dados incompletos.")
+        return None
+
+    else:
+        msg1 = "Conectado com Sucesso!"
+        msg2 = f"Não foi possível se conectar ao banco de dados {database}"
+        conn5 = Conections_Firebird()
+        resp = conn5.Firebird_conect(host, database, user, password, port)
+
+        if resp == 'OK':
+            ui.txt_output_logs.setPlainText("Conectado com sucesso!")
+            tables_Firebird(conn5)
+            ui.label_4.setVisible(True)
+            ui.bt_mostra_dados_tabelas.setVisible(True)
+            ui.bt_terminal_sql.setVisible(True)
+            ui.bt_systems.setVisible(True)
+            return conn5
+                
+        elif resp == 'ERRO':
+            ui.txt_output_logs.setPlainText(f"Erro: {msg2}")
+
+        error.msg_popup(resp,msg1,msg2)
+
+def get_columns_for_table(conn, table_name):
+    ui = app_instance.get_ui_instance()
+    selected_data = ui.combo_data_base_list.currentText()
+    
+    if selected_data == 'Firebird':
+        if conn:
+            try:
+                query = f"""
+                    SELECT RDB$FIELD_NAME
+                    FROM RDB$FIELDS
+                    WHERE RDB$FIELD_NAME IN (
+                        SELECT RDB$FIELD_SOURCE
+                        FROM RDB$RELATION_FIELDS
+                        WHERE RDB$RELATION_NAME = '{table_name.upper()}'
+                    )
+                """
+                conn.cursor.execute(query)
+                columns = conn.cursor.fetchall()
+                return [column[0].strip() for column in columns]
+            except Exception as e:
+                print(f"Erro ao buscar colunas no Firebird: {e}")
+                return []
+        return []
+
+    elif selected_data == 'SQLite':
+        if conn:
+            try:
+                query = f"PRAGMA table_info({table_name});"
+                conn.cursor.execute(query)
+                columns = conn.cursor.fetchall()
+                return [column[1] for column in columns]  # O nome da coluna está no índice 1
+            except Exception as e:
+                print(f"Erro ao buscar colunas no SQLite: {e}")
+                return []
+        return []
+
+    else:
+        if conn:
+            try:
+                query = f"""
+                    SELECT COLUMN_NAME
+                    FROM INFORMATION_SCHEMA.COLUMNS
+                    WHERE TABLE_NAME = '{table_name}'
+                """
+                conn.cursor.execute(query)
+                columns = conn.cursor.fetchall()
+                return [column[0] for column in columns]
+            except Exception as e:
+                print(f"Erro ao buscar colunas: {e}")
+                return []
+        return []
 
 def populate_tree_view_with_tables_and_columns(tables, conn):
     ui = app_instance.get_ui_instance()
     model = QStandardItemModel()
-
+    columns = []
     for table in tables:
         table_name = table[0]  # Assumindo que `table` é uma tupla e o nome da tabela está na primeira posição
         table_item = QStandardItem(table_name)
         model.appendRow(table_item)
 
+
+        
         # Adiciona colunas como subitens
         columns = get_columns_for_table(conn, table_name)
         for column in columns:
@@ -286,8 +421,11 @@ def populate_tree_view_with_tables_and_columns(tables, conn):
 
     ui.treeView_lista_tabelas.setModel(model)
 
-
 def tables_SqlServer(conn):
+    if not conn:
+        print("Erro: Conexão não estabelecida.")
+        return []
+
     ui = app_instance.get_ui_instance()
     data = ui.txt_data_base_name.text()
     try:
@@ -302,6 +440,10 @@ def tables_SqlServer(conn):
         return []
 
 def tables_MySQL(conn):
+    if not conn:
+        print("Erro: Conexão não estabelecida.")
+        return []
+
     ui = app_instance.get_ui_instance()
     data = ui.txt_data_base_name.text()
     try:
@@ -316,6 +458,10 @@ def tables_MySQL(conn):
         return []
 
 def tables_PostgreSQL(conn):
+    if not conn:
+        print("Erro: Conexão não estabelecida.")
+        return []
+
     try:
         conn.cursor.execute("""
             SELECT table_name
@@ -330,6 +476,10 @@ def tables_PostgreSQL(conn):
         return []
 
 def tables_SQLite3(conn):
+    if not conn:
+        print("Erro: Conexão não estabelecida.")
+        return []
+
     try:
         conn.cursor.execute("""SELECT name
                                 FROM sqlite_master
@@ -341,6 +491,37 @@ def tables_SQLite3(conn):
         print(e)
         return []
 
+def tables_Firebird(conn):
+    if not conn:
+        print("Erro: Conexão não estabelecida.")
+        return []
 
+    try:
+        query = "SELECT rdb$relation_name FROM rdb$relations WHERE rdb$view_blr IS NULL AND rdb$system_flag = 0;"
+        conn.cursor.execute(query)
+        tables = conn.cursor.fetchall()
+        populate_tree_view_with_tables_and_columns(tables, conn)
+        return tables
+    except Exception as e:
+        print(f"Erro ao buscar tabelas no Firebird: {e}")
+        return []
 
-        
+def View_DBF():
+        ui = app_instance.get_ui_instance()
+        dbf_file_path = ui.txt_servidor_data_base.text()
+
+        # Ler o arquivo DBF com a codificação especificada
+        table = DBF(dbf_file_path, encoding='latin1')
+        ui = app_instance.get_ui_instance()
+        # Obter os nomes das colunas
+        field_names = table.field_names
+
+        # Configurar a tabela
+        ui.table_principal.setColumnCount(len(field_names))
+        ui.table_principal.setHorizontalHeaderLabels(field_names)
+
+        # Adicionar os dados à tabela
+        for row_index, record in enumerate(table):
+            ui.table_principal.insertRow(row_index)
+            for col_index, field_name in enumerate(field_names):
+                ui.table_principal.setItem(row_index, col_index, QTableWidgetItem(str(record[field_name])))

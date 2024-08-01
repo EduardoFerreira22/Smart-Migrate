@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1787</width>
-    <height>1016</height>
+    <width>1783</width>
+    <height>1008</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,396 +21,6 @@
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
-     <number>0</number>
-    </property>
-    <property name="spacing">
-     <number>2</number>
-    </property>
-    <item row="0" column="0">
-     <widget class="QWidget" name="widget_menu" native="true">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>80</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>80</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">#widget_menu{
-	background-color: rgba(217, 217, 217, 0.35);
-	border-right: 1px solid rgba(217, 217, 217, 0.80);
-	border-left: 1px solid rgba(217, 217, 217, 0.80);
-	border-bottom: 1px solid rgba(217, 217, 217, 0.80);
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    padding: 10px;
-}</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_7">
-       <property name="leftMargin">
-        <number>3</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>3</number>
-       </property>
-       <property name="bottomMargin">
-        <number>5</number>
-       </property>
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <item row="0" column="0">
-        <widget class="QFrame" name="frame_5">
-         <property name="styleSheet">
-          <string notr="true">#frame_5{
-	border-right: 1px solid rgba(217, 217, 217, 0.80);
-	border-left: 1px solid rgba(217, 217, 217, 0.80);
-	border-top: 1px solid rgba(217, 217, 217, 0.80);
-	border-bottom: 1px solid rgba(217, 217, 217, 0.80);
-	background-color: rgb(255, 255, 255);
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-   
-}
-
-QPushButton{
-border:none;
-}
-
-QPushButton:hover{
-	background-color: rgb(195, 205, 255);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-
-}</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::Shape::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Shadow::Plain</enum>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_9">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeft">
-           <widget class="QFrame" name="frame_11">
-            <property name="minimumSize">
-             <size>
-              <width>300</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>350</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Shape::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_14">
-             <item row="0" column="2">
-              <widget class="QPushButton" name="pushButton_2">
-               <property name="minimumSize">
-                <size>
-                 <width>250</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>250</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">border:none;</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="icons.qrc">
-                 <normaloff>:/icons/img/logo_smartMigrate.png</normaloff>:/icons/img/logo_smartMigrate.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>200</width>
-                 <height>100</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QFrame" name="frame_butons_menu">
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Shape::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item alignment="Qt::AlignmentFlag::AlignLeft">
-              <widget class="QFrame" name="frame_8">
-               <property name="minimumSize">
-                <size>
-                 <width>600</width>
-                 <height>60</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>600</width>
-                 <height>60</height>
-                </size>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::Shape::NoFrame</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Raised</enum>
-               </property>
-               <widget class="QPushButton" name="bt_buscar_csv">
-                <property name="geometry">
-                 <rect>
-                  <x>0</x>
-                  <y>9</y>
-                  <width>80</width>
-                  <height>50</height>
-                 </rect>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>80</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>80</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Arquivo&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-                <property name="toolTipDuration">
-                 <number>0</number>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="icon">
-                 <iconset resource="icons.qrc">
-                  <normaloff>:/icons/img/folder.png</normaloff>:/icons/img/folder.png</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>40</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </widget>
-               <widget class="QPushButton" name="bt_conexoes_banco_dados">
-                <property name="geometry">
-                 <rect>
-                  <x>100</x>
-                  <y>9</y>
-                  <width>80</width>
-                  <height>50</height>
-                 </rect>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>80</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>50</width>
-                  <height>60</height>
-                 </size>
-                </property>
-                <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Data Bases&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-                <property name="toolTipDuration">
-                 <number>0</number>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="icon">
-                 <iconset resource="icons.qrc">
-                  <normaloff>:/icons/img/data_bases.png</normaloff>:/icons/img/data_bases.png</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>40</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </widget>
-               <widget class="QPushButton" name="bt_pesquisar_dados">
-                <property name="geometry">
-                 <rect>
-                  <x>200</x>
-                  <y>9</y>
-                  <width>80</width>
-                  <height>50</height>
-                 </rect>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>80</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>80</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Filtros de pesquisas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="icon">
-                 <iconset resource="icons.qrc">
-                  <normaloff>:/icons/img/search-data.png</normaloff>:/icons/img/search-data.png</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>40</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </widget>
-               <widget class="QPushButton" name="bt_processamento_dados">
-                <property name="geometry">
-                 <rect>
-                  <x>300</x>
-                  <y>9</y>
-                  <width>80</width>
-                  <height>50</height>
-                 </rect>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>80</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>80</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Alterações&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-                <property name="toolTipDuration">
-                 <number>0</number>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="icon">
-                 <iconset resource="icons.qrc">
-                  <normaloff>:/icons/img/data-processing.png</normaloff>:/icons/img/data-processing.png</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>40</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </widget>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer">
-               <property name="orientation">
-                <enum>Qt::Orientation::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
     <item row="1" column="0">
      <widget class="QWidget" name="widget" native="true">
       <layout class="QGridLayout" name="gridLayout_2">
@@ -429,193 +39,6 @@ QPushButton:hover{
        <property name="spacing">
         <number>6</number>
        </property>
-       <item row="2" column="0">
-        <widget class="QWidget" name="widget_table_principal" native="true">
-         <layout class="QGridLayout" name="gridLayout_3">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <item row="1" column="0">
-           <widget class="QFrame" name="frame_table_principal">
-            <property name="styleSheet">
-             <string notr="true">#frame_table_principal{
-                
-	background-color: rgba(217, 217, 217, 0.35);
-	border-right: 1px solid rgb(109, 109, 109);
-	border-left: 1px solid rgba(217, 217, 217, 0.80);
-	border-top: 1px solid rgba(217, 217, 217, 0.80);
-	border-bottom: 1px solid rgb(109, 109, 109);
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    padding: 10px;
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Shape::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_8">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <item row="1" column="0" colspan="3">
-              <widget class="QTableWidget" name="table_principal">
-               <property name="styleSheet">
-                <string notr="true">QTableWidget{
-	
-	
-	font: 8pt &quot;Segoe UI&quot;;
-	
-	background-color: rgb(255, 255, 255);
-	border-right: 1px solid rgba(217, 217, 217, 0.80);
-	border-left: 1px solid rgba(217, 217, 217, 0.80);
-	border-top: 1px solid rgba(217, 217, 217, 0.80);
-	border-bottom: 1px solid rgba(217, 217, 217, 0.80);
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    padding: 10px;
-
-}
-
-QTableView:hover{
-	background-color: rgba(195, 205, 255, 0.25);
-}
- QHeaderView::section {
-      background-color: #4b3ff1;
-		border: 1px solid rgba(217, 217, 217, 0.80);
-	font: 700 11pt &quot;Times New Roman&quot;;
-       color: white;
-
-
-}</string>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::Shape::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Sunken</enum>
-               </property>
-               <property name="lineWidth">
-                <number>1</number>
-               </property>
-               <property name="editTriggers">
-                <set>QAbstractItemView::EditTrigger::AnyKeyPressed|QAbstractItemView::EditTrigger::CurrentChanged|QAbstractItemView::EditTrigger::DoubleClicked|QAbstractItemView::EditTrigger::SelectedClicked</set>
-               </property>
-               <property name="dragEnabled">
-                <bool>true</bool>
-               </property>
-               <property name="alternatingRowColors">
-                <bool>true</bool>
-               </property>
-               <property name="selectionMode">
-                <enum>QAbstractItemView::SelectionMode::ContiguousSelection</enum>
-               </property>
-               <property name="selectionBehavior">
-                <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
-               </property>
-               <property name="sortingEnabled">
-                <bool>true</bool>
-               </property>
-               <attribute name="verticalHeaderVisible">
-                <bool>false</bool>
-               </attribute>
-              </widget>
-             </item>
-             <item row="4" column="1">
-              <widget class="QPlainTextEdit" name="txt_output_logs">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>30</height>
-                </size>
-               </property>
-               <property name="textInteractionFlags">
-                <set>Qt::TextInteractionFlag::NoTextInteraction</set>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="2">
-              <widget class="QPushButton" name="bt_salvar_dados_tabela_principal">
-               <property name="minimumSize">
-                <size>
-                 <width>120</width>
-                 <height>35</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>35</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-	border-right: 1px solid rgb(109, 109, 109);
-	border-left: 1px solid rgba(217, 217, 217, 0.80);
-	border-top: 1px solid rgba(217, 217, 217, 0.80);
-	border-bottom: 1px solid rgb(109, 109, 109);
-	font: 700 10pt &quot;Segoe UI&quot;;
-}
-
-QPushButton:hover{
-	background-color: rgba(51, 221, 51, 0.25);
-}</string>
-               </property>
-               <property name="text">
-                <string>Salvar</string>
-               </property>
-               <property name="icon">
-                <iconset resource="icons.qrc">
-                 <normaloff>:/icons/img/save_data.png</normaloff>:/icons/img/save_data.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>30</width>
-                 <height>30</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
        <item row="1" column="1" rowspan="2">
         <widget class="QWidget" name="widget_right" native="true">
          <property name="minimumSize">
@@ -843,9 +266,9 @@ QPushButton:hover{
                 <widget class="QComboBox" name="combo_data_base_list">
                  <property name="geometry">
                   <rect>
-                   <x>240</x>
+                   <x>10</x>
                    <y>10</y>
-                   <width>121</width>
+                   <width>161</width>
                    <height>30</height>
                   </rect>
                  </property>
@@ -879,6 +302,26 @@ QPushButton:hover{
                  <item>
                   <property name="text">
                    <string>SQLite</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Firebird</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Firebird arquivos .DBF</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Hiper</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Etrade</string>
                   </property>
                  </item>
                 </widget>
@@ -941,7 +384,7 @@ QPushButton:hover{
                 <widget class="QLabel" name="titulo_conexoes">
                  <property name="geometry">
                   <rect>
-                   <x>10</x>
+                   <x>180</x>
                    <y>10</y>
                    <width>181</width>
                    <height>21</height>
@@ -1001,6 +444,15 @@ QPushButton:hover{
                   <string>Buscar</string>
                  </property>
                 </widget>
+                <zorder>bt_buscar_sqlite</zorder>
+                <zorder>txt_servidor_data_base</zorder>
+                <zorder>txt_data_base_name</zorder>
+                <zorder>txt_port_data_base</zorder>
+                <zorder>combo_data_base_list</zorder>
+                <zorder>txt_user_data_base</zorder>
+                <zorder>txt_password_data_base</zorder>
+                <zorder>titulo_conexoes</zorder>
+                <zorder>bt_conectar_data_base</zorder>
                </widget>
               </item>
               <item>
@@ -1380,52 +832,6 @@ background-color: rgba(195, 205, 255, 0.40)
                     <property name="bottomMargin">
                      <number>2</number>
                     </property>
-                    <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeft">
-                     <widget class="QPushButton" name="bt_exportar_duplicados">
-                      <property name="minimumSize">
-                       <size>
-                        <width>120</width>
-                        <height>35</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>120</width>
-                        <height>35</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton{
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-	border-right: 1px solid rgb(109, 109, 109);
-	border-left: 1px solid rgba(217, 217, 217, 0.80);
-	border-top: 1px solid rgba(217, 217, 217, 0.80);
-	border-bottom: 1px solid rgb(109, 109, 109);
-	font: 700 10pt &quot;Segoe UI&quot;;
-}
-
-QPushButton:hover{
-	background-color: rgba(51, 221, 51, 0.25);
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>Exportar</string>
-                      </property>
-                      <property name="icon">
-                       <iconset resource="icons.qrc">
-                        <normaloff>:/icons/img/save_data.png</normaloff>:/icons/img/save_data.png</iconset>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>30</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                     </widget>
-                    </item>
                     <item row="0" column="1">
                      <widget class="QPushButton" name="bt_deletar_duplicados">
                       <property name="minimumSize">
@@ -1476,17 +882,176 @@ QPushButton:hover{
                       </property>
                      </widget>
                     </item>
+                    <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeft">
+                     <widget class="QPushButton" name="bt_exportar_duplicados">
+                      <property name="minimumSize">
+                       <size>
+                        <width>120</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>120</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+	font: 700 10pt &quot;Segoe UI&quot;;
+}
+
+QPushButton:hover{
+	background-color: rgba(51, 221, 51, 0.25);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Exportar</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="icons.qrc">
+                        <normaloff>:/icons/img/save_data.png</normaloff>:/icons/img/save_data.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>30</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
                    </layout>
                   </widget>
-                 </item>
-                 <item row="3" column="0">
-                  <widget class="QTableWidget" name="table_duplicados"/>
                  </item>
                  <item row="4" column="0">
                   <widget class="QLabel" name="label_3">
                    <property name="text">
                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Para lidar com os dados duplicados selecione uma das opções a cima.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QTableWidget" name="table_duplicados">
+                   <property name="styleSheet">
+                    <string notr="true">QTableWidget{
+	
+	
+	font: 8pt &quot;Segoe UI&quot;;
+	
+	background-color: rgb(255, 255, 255);
+	border-right: 1px solid rgba(217, 217, 217, 0.80);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgba(217, 217, 217, 0.80);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 10px;
+
+}
+
+QTableView:hover{
+	background-color: rgba(195, 205, 255, 0.25);
+}
+ QHeaderView::section {
+      background-color: #4b3ff1;
+		border: 1px solid rgba(217, 217, 217, 0.80);
+	font: 700 11pt &quot;Times New Roman&quot;;
+       color: white;
+
+
+}
+
+
+    QScrollBar:vertical {
+        border: none;
+        background: #F0F0F0; /* Cor de fundo da barra de rolagem */
+        width: 8px;
+        margin: 0px 0px 0px 0px;
+    }
+
+    QScrollBar::handle:vertical {
+        background-color: rgb(195, 205, 255); /* Cor da &quot;pegada&quot; da barra de rolagem */
+        min-height: 20px;
+        border-radius: 4px;
+    }
+
+    QScrollBar::add-line:vertical {
+        border: none;
+        background: #CACACA;
+        height: 14px;
+        subcontrol-position: bottom;
+        subcontrol-origin: margin;
+    }
+
+    QScrollBar::sub-line:vertical {
+        border: none;
+        background: #CACACA;
+        height: 14px;
+        subcontrol-position: top;
+        subcontrol-origin: margin;
+    }
+
+    QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+        background: none;
+    }
+
+    QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+        background: none;
+    }
+
+    QScrollBar:horizontal {
+        border: none;
+        background: #F0F0F0; /* Cor de fundo da barra de rolagem */
+        height: 8px;
+        margin: 0px 0px 0px 0px;
+    }
+
+    QScrollBar::handle:horizontal {
+        background-color: rgb(195, 205, 255); /* Cor da &quot;pegada&quot; da barra de rolagem */
+        min-width: 20px;
+        border-radius: 4px;
+    }
+
+    QScrollBar::add-line:horizontal {
+        border: none;
+        background: #CACACA;
+        width: 14px;
+        subcontrol-position: right;
+        subcontrol-origin: margin;
+    }
+
+    QScrollBar::sub-line:horizontal {
+        border: none;
+        background: #CACACA;
+        width: 14px;
+        subcontrol-position: left;
+        subcontrol-origin: margin;
+    }
+
+    QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+        background: none;
+    }
+
+    QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+        background: none;
+    }</string>
+                   </property>
+                   <property name="editTriggers">
+                    <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                   </property>
+                   <attribute name="verticalHeaderVisible">
+                    <bool>false</bool>
+                   </attribute>
                   </widget>
                  </item>
                 </layout>
@@ -1908,7 +1473,7 @@ QPushButton:hover{
 }</string>
             </property>
             <property name="frameShape">
-             <enum>QFrame::Shape::NoFrame</enum>
+             <enum>QFrame::Shape::StyledPanel</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Shadow::Raised</enum>
@@ -2133,562 +1698,1528 @@ QPushButton:hover{
              <number>0</number>
             </property>
             <widget class="QWidget" name="page_opcoes_busca">
-             <layout class="QHBoxLayout" name="horizontalLayout_3">
-              <item alignment="Qt::AlignmentFlag::AlignLeft">
-               <widget class="QFrame" name="frame_op_busca">
-                <property name="minimumSize">
-                 <size>
-                  <width>450</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>450</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QFrame{
-background-color: rgba(255, 255, 255, 0.80);
-}
-
-QLineEdit{
-	font: 700 8pt &quot;Segoe UI&quot;;
-	color:rgb(120, 120, 120);
-	border: 1px solid rgba(109, 109, 109, 0.60);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-QLineEdit:hover{
-
-background-color: rgba(195, 205, 255, 0.40)
-}
-
-QComboBox{
-	
-	font: 700 8pt &quot;Segoe UI&quot;;
-	color:rgb(120, 120, 120);
-	border: 1px solid rgba(109, 109, 109, 0.60);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-QComboBox:hover{
-background-color: rgba(195, 205, 255, 0.40)
-}
-
-QPushButton{
-	
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-	border-right: 1px solid rgb(109, 109, 109);
-	border-left: 1px solid rgba(217, 217, 217, 0.80);
-	border-top: 1px solid rgba(217, 217, 217, 0.80);
-	border-bottom: 1px solid rgb(109, 109, 109);
-	font: 700 8pt &quot;Segoe UI&quot;;
-	color:rgb(120, 120, 120);
-}
-
-QPushButton:hover{
-	background-color: rgb(195, 205, 255)
-}</string>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::Shape::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
-                </property>
-                <widget class="QComboBox" name="comboBox_opcoes_busca">
-                 <property name="geometry">
-                  <rect>
-                   <x>120</x>
-                   <y>20</y>
-                   <width>181</width>
-                   <height>31</height>
-                  </rect>
-                 </property>
-                 <item>
-                  <property name="text">
-                   <string>Opções de busca</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Analise inteligente</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Buscar por NCM</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>NCM Inválido</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Tudo que contém</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Duplicados</string>
-                  </property>
-                 </item>
-                </widget>
-                <widget class="QLineEdit" name="txt_opcoes_busca">
-                 <property name="geometry">
-                  <rect>
-                   <x>120</x>
-                   <y>80</y>
-                   <width>181</width>
-                   <height>31</height>
-                  </rect>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="bt_buscar_op_busca">
-                 <property name="geometry">
-                  <rect>
-                   <x>320</x>
-                   <y>80</y>
-                   <width>101</width>
-                   <height>31</height>
-                  </rect>
-                 </property>
-                 <property name="text">
-                  <string>Buscar</string>
-                 </property>
-                </widget>
-               </widget>
-              </item>
-              <item>
-               <widget class="QFrame" name="frame_info_opcoes_pesquisao">
-                <property name="frameShape">
-                 <enum>QFrame::Shape::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_25">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QStackedWidget" name="stackedWidget_sobre_func_op_buscas">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="currentIndex">
-                    <number>3</number>
-                   </property>
-                   <widget class="QWidget" name="page_buscar_ncm">
-                    <layout class="QGridLayout" name="gridLayout_17">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="label_sobre_op_busca">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>16777215</width>
-                         <height>16777215</height>
-                        </size>
-                       </property>
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;h4 style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Função: Buscar NCM&lt;/span&gt;&lt;/h4&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Essa função permite ao usuário buscar um NCM específico digitado por ele. A tabela será atualizada para mostrar apenas os resultados que correspondem ao NCM digitado.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Passos:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;1: Digite o NCM desejado no campo de busca.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;2: Clique no botão &amp;quot;Buscar NCM&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;3: A tabela será atualizada para mostrar os resultados que correspondem ao NCM digitado.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                       <property name="margin">
-                        <number>1</number>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                   <widget class="QWidget" name="page_ncm_invalido">
-                    <layout class="QGridLayout" name="gridLayout_18">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="label">
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;h4 style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Função: NCM Inválido&lt;/span&gt;&lt;/h4&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Essa função busca por todos os NCMs que estão vencidos na tabela. Isso é útil para identificar rapidamente itens que precisam de atualização.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Passos:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;1: Clique no botão &amp;quot;NCM Inválido&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;2: A tabela será atualizada para mostrar todos os NCMs que estão vencidos.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                       <property name="textFormat">
-                        <enum>Qt::TextFormat::AutoText</enum>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                   <widget class="QWidget" name="page_tudo_que_contem">
-                    <layout class="QGridLayout" name="gridLayout_19">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="label_5">
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;h4 style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Função: Tudo que Contém&lt;/span&gt;&lt;/h4&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Essa função permite ao usuário fazer uma busca na tabela para encontrar itens que contenham o texto digitado ou itens similares.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Passos:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;1: Digite o texto desejado no campo de busca.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;2: Clique no botão &amp;quot;Tudo que Contém&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;3: A tabela será atualizada para mostrar os resultados que contêm o texto digitado ou itens similares.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                   <widget class="QWidget" name="page">
-                    <layout class="QGridLayout" name="gridLayout_26">
-                     <item row="0" column="0">
-                      <widget class="QPlainTextEdit" name="txt_analise_inteligente_output"/>
-                     </item>
-                    </layout>
-                   </widget>
-                   <widget class="QWidget" name="page_op_busca_dados_duplicados">
-                    <layout class="QGridLayout" name="gridLayout_20">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="label_6">
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;h4 align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Função: Dados Duplicados&lt;/span&gt;&lt;/h4&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Essa função atualiza a tabela para marcar todas as linhas que são iguais, levando em conta colunas como descrição, &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;código interno, código de barras, etc. As linhas duplicadasserão destacadas em vermelho para facilitar a identificação.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Passos:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;1: Clique no botão &amp;quot;Dados Duplicados&amp;quot;. 2: A tabela será atualizada e todas as linhas &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;duplicadas serão destacadas em vermelho.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-            <widget class="QWidget" name="page_opcoes_processamento">
-             <layout class="QHBoxLayout" name="horizontalLayout">
-              <item alignment="Qt::AlignmentFlag::AlignLeft">
-               <widget class="QFrame" name="frame_opcoes_processamento">
-                <property name="minimumSize">
-                 <size>
-                  <width>500</width>
-                  <height>120</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>500</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QFrame{
-background-color: rgba(255, 255, 255, 0.80);
-}
-
-QLineEdit{
-	font: 700 8pt &quot;Segoe UI&quot;;
-	color:rgb(120, 120, 120);
-	border: 1px solid rgba(109, 109, 109, 0.60);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-QLineEdit:hover{
-
-background-color: rgba(195, 205, 255, 0.40)
-}
-
-QComboBox{
-	
-	font: 700 8pt &quot;Segoe UI&quot;;
-	color:rgb(120, 120, 120);
-	border: 1px solid rgba(109, 109, 109, 0.60);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-QComboBox:hover{
-background-color: rgba(195, 205, 255, 0.40)
-}
-
-QPushButton{
-	
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-	border-right: 1px solid rgb(109, 109, 109);
-	border-left: 1px solid rgba(217, 217, 217, 0.80);
-	border-top: 1px solid rgba(217, 217, 217, 0.80);
-	border-bottom: 1px solid rgb(109, 109, 109);
-	font: 700 8pt &quot;Segoe UI&quot;;
-	color:rgb(120, 120, 120);
-}
-
-QPushButton:hover{
-	background-color: rgb(195, 205, 255)
-}</string>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::Shape::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
-                </property>
-                <widget class="QComboBox" name="combo_opcoes_processamento">
-                 <property name="geometry">
-                  <rect>
-                   <x>30</x>
-                   <y>10</y>
-                   <width>441</width>
-                   <height>31</height>
-                  </rect>
-                 </property>
-                 <item>
-                  <property name="text">
-                   <string>Opções de Processamento</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Substituir NCM</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Tudo que contém mude para</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Se Coluna A contém, Coluna B recebe...</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Filtrar por coluna e copiar todas a linhas que contenham</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Extrair dados duplicados da tabela</string>
-                  </property>
-                 </item>
-                </widget>
-                <widget class="QLineEdit" name="txt_opcao1_processamento">
-                 <property name="geometry">
-                  <rect>
-                   <x>30</x>
-                   <y>110</y>
-                   <width>181</width>
-                   <height>31</height>
-                  </rect>
-                 </property>
-                </widget>
-                <widget class="QLineEdit" name="txt_opcao2_processamento">
-                 <property name="geometry">
-                  <rect>
-                   <x>290</x>
-                   <y>110</y>
-                   <width>181</width>
-                   <height>31</height>
-                  </rect>
-                 </property>
-                </widget>
-                <widget class="QComboBox" name="combo1_colunas_processamento">
-                 <property name="geometry">
-                  <rect>
-                   <x>30</x>
-                   <y>60</y>
-                   <width>181</width>
-                   <height>31</height>
-                  </rect>
-                 </property>
-                </widget>
-                <widget class="QComboBox" name="combo2_colunas_processamento">
-                 <property name="geometry">
-                  <rect>
-                   <x>290</x>
-                   <y>60</y>
-                   <width>181</width>
-                   <height>31</height>
-                  </rect>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="bt_processamento_de_para">
-                 <property name="geometry">
-                  <rect>
-                   <x>220</x>
-                   <y>110</y>
-                   <width>60</width>
-                   <height>31</height>
-                  </rect>
+             <widget class="QFrame" name="frame_analise_inteligente">
+              <property name="geometry">
+               <rect>
+                <x>515</x>
+                <y>9</y>
+                <width>800</width>
+                <height>164</height>
+               </rect>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>800</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>800</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Shadow::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_17">
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="topMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <property name="bottomMargin">
+                <number>10</number>
+               </property>
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QPlainTextEdit" name="txt_analise_inteligente_output">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
                  </property>
                  <property name="minimumSize">
                   <size>
-                   <width>60</width>
-                   <height>31</height>
+                   <width>800</width>
+                   <height>0</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>60</width>
-                   <height>31</height>
+                   <width>800</width>
+                   <height>16777215</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">border:none;</string>
+                 <property name="frameShape">
+                  <enum>QFrame::Shape::NoFrame</enum>
                  </property>
-                 <property name="text">
+                 <property name="lineWidth">
+                  <number>0</number>
+                 </property>
+                 <property name="plainText">
                   <string/>
                  </property>
-                 <property name="icon">
-                  <iconset resource="icons.qrc">
-                   <normaloff>:/icons/img/setas1.png</normaloff>:/icons/img/setas1.png</iconset>
+                 <property name="cursorWidth">
+                  <number>1</number>
                  </property>
-                 <property name="iconSize">
-                  <size>
-                   <width>40</width>
-                   <height>28</height>
-                  </size>
+                 <property name="textInteractionFlags">
+                  <set>Qt::TextInteractionFlag::NoTextInteraction</set>
                  </property>
-                </widget>
-                <widget class="QPushButton" name="bt_extrair_duplicados">
-                 <property name="geometry">
-                  <rect>
-                   <x>390</x>
-                   <y>60</y>
-                   <width>81</width>
-                   <height>31</height>
-                  </rect>
-                 </property>
-                 <property name="text">
-                  <string>Extrair</string>
+                 <property name="placeholderText">
+                  <string/>
                  </property>
                 </widget>
-               </widget>
-              </item>
-              <item>
-               <widget class="QFrame" name="frame_info_opcoes_processamento">
+               </item>
+              </layout>
+             </widget>
+             <widget class="QFrame" name="frame_op_busca">
+              <property name="geometry">
+               <rect>
+                <x>9</x>
+                <y>9</y>
+                <width>500</width>
+                <height>164</height>
+               </rect>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>500</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>500</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QFrame{
+background-color: rgba(255, 255, 255, 0.80);
+}
+
+QLineEdit{
+	font: 700 8pt &quot;Segoe UI&quot;;
+	color:rgb(120, 120, 120);
+	border: 1px solid rgba(109, 109, 109, 0.60);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+QLineEdit:hover{
+
+background-color: rgba(195, 205, 255, 0.40)
+}
+
+QComboBox{
+	
+	font: 700 8pt &quot;Segoe UI&quot;;
+	color:rgb(120, 120, 120);
+	border: 1px solid rgba(109, 109, 109, 0.60);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+QComboBox:hover{
+background-color: rgba(195, 205, 255, 0.40)
+}
+
+QPushButton{
+	
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+	font: 700 8pt &quot;Segoe UI&quot;;
+	color:rgb(120, 120, 120);
+}
+
+QPushButton:hover{
+	background-color: rgb(195, 205, 255)
+}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Shadow::Raised</enum>
+              </property>
+              <widget class="QComboBox" name="comboBox_opcoes_busca">
+               <property name="geometry">
+                <rect>
+                 <x>110</x>
+                 <y>30</y>
+                 <width>181</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Opções de busca</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Analise inteligente</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Buscar por NCM</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>NCM Inválido</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Tudo que contém</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Duplicados</string>
+                </property>
+               </item>
+              </widget>
+              <widget class="QLineEdit" name="txt_opcoes_busca">
+               <property name="geometry">
+                <rect>
+                 <x>110</x>
+                 <y>100</y>
+                 <width>181</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LayoutDirection::LeftToRight</enum>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="bt_buscar_op_busca">
+               <property name="geometry">
+                <rect>
+                 <x>320</x>
+                 <y>100</y>
+                 <width>101</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Buscar</string>
+               </property>
+              </widget>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="page_opcoes_processamento">
+             <widget class="QFrame" name="frame_opcoes_processamento">
+              <property name="geometry">
+               <rect>
+                <x>9</x>
+                <y>9</y>
+                <width>1307</width>
+                <height>164</height>
+               </rect>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QFrame{
+background-color: rgba(255, 255, 255, 0.80);
+}
+
+QLineEdit{
+	font: 700 8pt &quot;Segoe UI&quot;;
+	color:rgb(120, 120, 120);
+	border: 1px solid rgba(109, 109, 109, 0.60);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+QLineEdit:hover{
+
+background-color: rgba(195, 205, 255, 0.40)
+}
+
+QComboBox{
+	
+	font: 700 8pt &quot;Segoe UI&quot;;
+	color:rgb(120, 120, 120);
+	border: 1px solid rgba(109, 109, 109, 0.60);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+QComboBox:hover{
+background-color: rgba(195, 205, 255, 0.40)
+}
+
+QPushButton{
+	
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+	font: 700 8pt &quot;Segoe UI&quot;;
+	color:rgb(120, 120, 120);
+}
+
+QPushButton:hover{
+	background-color: rgb(195, 205, 255)
+}
+
+#bt_retirar_opcoes2{
+	font: 700 10pt &quot;Segoe UI&quot;;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+}
+
+#bt_retirar_opcoes2:hover{
+	background-color: rgba(255, 52, 52, 0.25);
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+}
+
+#bt_retirar_opcoes3{
+	font: 700 10pt &quot;Segoe UI&quot;;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+}
+
+#bt_retirar_opcoes3:hover{
+	background-color: rgba(255, 52, 52, 0.25);
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+}
+
+
+#bt_add_opcoes2{
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+	font: 700 10pt &quot;Segoe UI&quot;;
+}
+
+#bt_add_opcoes2:hover{
+	background-color: rgba(51, 221, 51, 0.25);
+}
+
+#bt_add_opcoes3{
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+	font: 700 10pt &quot;Segoe UI&quot;;
+}
+
+#bt_add_opcoes3:hover{
+	background-color: rgba(51, 221, 51, 0.25);
+}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Shadow::Raised</enum>
+              </property>
+              <widget class="QComboBox" name="combo_opcoes_processamento">
+               <property name="geometry">
+                <rect>
+                 <x>30</x>
+                 <y>10</y>
+                 <width>441</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="editable">
+                <bool>false</bool>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Opções de Processamento</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Buscar valores negativos e mudar para zero</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Extrair dados duplicados da tabela</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Filtrar por coluna e copiar todas a linhas que contenham</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Formatar colunas com valores do tipo moeda</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Formatar códigos de barras</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Formatar número de telefone</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Formatar CPF</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Formatar CNPJ</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Substituir NCM</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Se Coluna A contém, Coluna B recebe...</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Tudo que contém mude para</string>
+                </property>
+               </item>
+              </widget>
+              <widget class="QLineEdit" name="txt_opcao1_processamento">
+               <property name="geometry">
+                <rect>
+                 <x>30</x>
+                 <y>110</y>
+                 <width>181</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="txt_opcao2_processamento">
+               <property name="geometry">
+                <rect>
+                 <x>290</x>
+                 <y>110</y>
+                 <width>181</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+              <widget class="QComboBox" name="combo1_colunas_processamento">
+               <property name="geometry">
+                <rect>
+                 <x>30</x>
+                 <y>60</y>
+                 <width>181</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="placeholderText">
+                <string>Selecione uma Coluna</string>
+               </property>
+              </widget>
+              <widget class="QComboBox" name="combo2_colunas_processamento">
+               <property name="geometry">
+                <rect>
+                 <x>290</x>
+                 <y>60</y>
+                 <width>181</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="placeholderText">
+                <string>Selecione uma Coluna</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="bt_setas1">
+               <property name="geometry">
+                <rect>
+                 <x>220</x>
+                 <y>110</y>
+                 <width>60</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>60</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>60</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="icons.qrc">
+                 <normaloff>:/icons/img/setas1.png</normaloff>:/icons/img/setas1.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>28</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="bt_extrair_duplicados">
+               <property name="geometry">
+                <rect>
+                 <x>490</x>
+                 <y>10</y>
+                 <width>81</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Extrair</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="txt_opcao3_processamento">
+               <property name="geometry">
+                <rect>
+                 <x>550</x>
+                 <y>110</y>
+                 <width>181</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+              <widget class="QComboBox" name="combo3_colunas_processamento">
+               <property name="geometry">
+                <rect>
+                 <x>550</x>
+                 <y>60</y>
+                 <width>181</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="placeholderText">
+                <string>Selecione uma Coluna</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="txt_opcao4_processamento">
+               <property name="geometry">
+                <rect>
+                 <x>810</x>
+                 <y>110</y>
+                 <width>181</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+              <widget class="QComboBox" name="combo4_colunas_processamento">
+               <property name="geometry">
+                <rect>
+                 <x>810</x>
+                 <y>60</y>
+                 <width>181</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="placeholderText">
+                <string>Selecione uma Coluna</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="bt_setas2">
+               <property name="geometry">
+                <rect>
+                 <x>480</x>
+                 <y>110</y>
+                 <width>60</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>60</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>60</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="icons.qrc">
+                 <normaloff>:/icons/img/setas1.png</normaloff>:/icons/img/setas1.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>28</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="bt_setas3">
+               <property name="geometry">
+                <rect>
+                 <x>740</x>
+                 <y>110</y>
+                 <width>60</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>60</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>60</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="icons.qrc">
+                 <normaloff>:/icons/img/setas1.png</normaloff>:/icons/img/setas1.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>28</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="bt_processamento_de_para">
+               <property name="geometry">
+                <rect>
+                 <x>490</x>
+                 <y>10</y>
+                 <width>81</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Executar</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="bt_add_opcoes2">
+               <property name="geometry">
+                <rect>
+                 <x>480</x>
+                 <y>110</y>
+                 <width>60</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>60</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>60</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="icons.qrc">
+                 <normaloff>:/icons/img/more.png</normaloff>:/icons/img/more.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="bt_add_opcoes3">
+               <property name="geometry">
+                <rect>
+                 <x>740</x>
+                 <y>110</y>
+                 <width>60</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>60</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>60</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="icons.qrc">
+                 <normaloff>:/icons/img/more.png</normaloff>:/icons/img/more.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="bt_retirar_opcoes3">
+               <property name="geometry">
+                <rect>
+                 <x>740</x>
+                 <y>60</y>
+                 <width>60</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>60</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>60</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="icons.qrc">
+                 <normaloff>:/icons/img/minus.png</normaloff>:/icons/img/minus.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="bt_retirar_opcoes2">
+               <property name="geometry">
+                <rect>
+                 <x>480</x>
+                 <y>60</y>
+                 <width>60</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>60</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>60</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="icons.qrc">
+                 <normaloff>:/icons/img/minus.png</normaloff>:/icons/img/minus.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+              <zorder>combo_opcoes_processamento</zorder>
+              <zorder>txt_opcao1_processamento</zorder>
+              <zorder>txt_opcao2_processamento</zorder>
+              <zorder>combo1_colunas_processamento</zorder>
+              <zorder>combo2_colunas_processamento</zorder>
+              <zorder>bt_setas1</zorder>
+              <zorder>bt_extrair_duplicados</zorder>
+              <zorder>txt_opcao3_processamento</zorder>
+              <zorder>combo3_colunas_processamento</zorder>
+              <zorder>txt_opcao4_processamento</zorder>
+              <zorder>combo4_colunas_processamento</zorder>
+              <zorder>bt_setas2</zorder>
+              <zorder>bt_setas3</zorder>
+              <zorder>bt_processamento_de_para</zorder>
+              <zorder>bt_add_opcoes3</zorder>
+              <zorder>bt_retirar_opcoes3</zorder>
+              <zorder>bt_retirar_opcoes2</zorder>
+              <zorder>bt_add_opcoes2</zorder>
+             </widget>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QWidget" name="widget_table_principal" native="true">
+         <layout class="QGridLayout" name="gridLayout_3">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item row="1" column="0">
+           <widget class="QFrame" name="frame_table_principal">
+            <property name="styleSheet">
+             <string notr="true">#frame_table_principal{
+                
+	background-color: rgba(217, 217, 217, 0.35);
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 10px;
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_8">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item row="5" column="1">
+              <widget class="QPlainTextEdit" name="txt_output_logs">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="textInteractionFlags">
+                <set>Qt::TextInteractionFlag::NoTextInteraction</set>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="2">
+              <widget class="QPushButton" name="bt_salvar_dados_tabela_principal">
+               <property name="minimumSize">
+                <size>
+                 <width>120</width>
+                 <height>35</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>35</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+	font: 700 10pt &quot;Segoe UI&quot;;
+}
+
+QPushButton:hover{
+	background-color: rgba(51, 221, 51, 0.25);
+}</string>
+               </property>
+               <property name="text">
+                <string>Salvar</string>
+               </property>
+               <property name="icon">
+                <iconset resource="icons.qrc">
+                 <normaloff>:/icons/img/save_data.png</normaloff>:/icons/img/save_data.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="3">
+              <widget class="QTableWidget" name="table_principal">
+               <property name="styleSheet">
+                <string notr="true">QTableWidget{
+	
+	
+	font: 8pt &quot;Segoe UI&quot;;
+	
+	background-color: rgb(255, 255, 255);
+	border-right: 1px solid rgba(217, 217, 217, 0.80);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgba(217, 217, 217, 0.80);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 10px;
+
+}
+
+QTableView:hover{
+	background-color: rgba(195, 205, 255, 0.25);
+}
+ QHeaderView::section {
+      background-color: #4b3ff1;
+		border: 1px solid rgba(217, 217, 217, 0.80);
+	font: 700 11pt &quot;Times New Roman&quot;;
+       color: white;
+
+
+}
+
+
+    QScrollBar:vertical {
+        border: none;
+        background: #F0F0F0; /* Cor de fundo da barra de rolagem */
+        width: 8px;
+        margin: 0px 0px 0px 0px;
+    }
+
+    QScrollBar::handle:vertical {
+        background-color: rgb(195, 205, 255); /* Cor da &quot;pegada&quot; da barra de rolagem */
+        min-height: 20px;
+        border-radius: 4px;
+    }
+
+    QScrollBar::add-line:vertical {
+        border: none;
+        background: #CACACA;
+        height: 14px;
+        subcontrol-position: bottom;
+        subcontrol-origin: margin;
+    }
+
+    QScrollBar::sub-line:vertical {
+        border: none;
+        background: #CACACA;
+        height: 14px;
+        subcontrol-position: top;
+        subcontrol-origin: margin;
+    }
+
+    QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+        background: none;
+    }
+
+    QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+        background: none;
+    }
+
+    QScrollBar:horizontal {
+        border: none;
+        background: #F0F0F0; /* Cor de fundo da barra de rolagem */
+        height: 8px;
+        margin: 0px 0px 0px 0px;
+    }
+
+    QScrollBar::handle:horizontal {
+        background-color: rgb(195, 205, 255); /* Cor da &quot;pegada&quot; da barra de rolagem */
+        min-width: 20px;
+        border-radius: 4px;
+    }
+
+    QScrollBar::add-line:horizontal {
+        border: none;
+        background: #CACACA;
+        width: 14px;
+        subcontrol-position: right;
+        subcontrol-origin: margin;
+    }
+
+    QScrollBar::sub-line:horizontal {
+        border: none;
+        background: #CACACA;
+        width: 14px;
+        subcontrol-position: left;
+        subcontrol-origin: margin;
+    }
+
+    QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+        background: none;
+    }
+
+    QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+        background: none;
+    }</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Sunken</enum>
+               </property>
+               <property name="lineWidth">
+                <number>1</number>
+               </property>
+               <property name="editTriggers">
+                <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+               </property>
+               <property name="dragEnabled">
+                <bool>true</bool>
+               </property>
+               <property name="alternatingRowColors">
+                <bool>true</bool>
+               </property>
+               <property name="selectionMode">
+                <enum>QAbstractItemView::SelectionMode::ContiguousSelection</enum>
+               </property>
+               <property name="selectionBehavior">
+                <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+               </property>
+               <property name="sortingEnabled">
+                <bool>false</bool>
+               </property>
+               <attribute name="verticalHeaderVisible">
+                <bool>false</bool>
+               </attribute>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QWidget" name="widget_menu" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>80</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>80</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#widget_menu{
+	background-color: rgba(217, 217, 217, 0.35);
+	border-right: 1px solid rgba(217, 217, 217, 0.80);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgba(217, 217, 217, 0.80);
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 10px;
+}</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <property name="leftMargin">
+        <number>3</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>3</number>
+       </property>
+       <property name="bottomMargin">
+        <number>5</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QFrame" name="frame_5">
+         <property name="styleSheet">
+          <string notr="true">#frame_5{
+	border-right: 1px solid rgba(217, 217, 217, 0.80);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgba(217, 217, 217, 0.80);
+	background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+   
+}
+
+QPushButton{
+border:none;
+}
+
+QPushButton:hover{
+	background-color: rgb(195, 205, 255);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Plain</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_9">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeft">
+           <widget class="QFrame" name="frame_11">
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>350</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_14">
+             <item row="0" column="2">
+              <widget class="QPushButton" name="pushButton_2">
+               <property name="minimumSize">
+                <size>
+                 <width>250</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>250</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border:none;</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="icons.qrc">
+                 <normaloff>:/icons/img/logo_smartMigrate.png</normaloff>:/icons/img/logo_smartMigrate.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>200</width>
+                 <height>100</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QFrame" name="frame_butons_menu">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item alignment="Qt::AlignmentFlag::AlignLeft">
+              <widget class="QFrame" name="frame_8">
+               <property name="minimumSize">
+                <size>
+                 <width>600</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>600</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::NoFrame</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <widget class="QPushButton" name="bt_buscar_csv">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>9</y>
+                  <width>80</width>
+                  <height>50</height>
+                 </rect>
+                </property>
                 <property name="minimumSize">
                  <size>
-                  <width>0</width>
-                  <height>0</height>
+                  <width>80</width>
+                  <height>50</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>16777215</width>
-                  <height>16777215</height>
+                  <width>80</width>
+                  <height>50</height>
                  </size>
                 </property>
-                <property name="frameShape">
-                 <enum>QFrame::Shape::StyledPanel</enum>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Arquivo&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
+                <property name="toolTipDuration">
+                 <number>0</number>
                 </property>
-                <layout class="QGridLayout" name="gridLayout_5">
-                 <property name="leftMargin">
-                  <number>1</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>1</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>1</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>1</number>
-                 </property>
-                 <property name="spacing">
-                  <number>1</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QStackedWidget" name="stackedWidget_op_processamento">
-                   <property name="currentIndex">
-                    <number>1</number>
-                   </property>
-                   <widget class="QWidget" name="page_substituir_ncm">
-                    <layout class="QGridLayout" name="gridLayout_21">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="label_7">
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;h4 style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Função: Substituir NCM&lt;/span&gt;&lt;/h4&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Essa função verifica o NCM digitado no primeiro campo e substitui o NCM encontrado na tabela por outro digitado no segundo campo.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Passos:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;: Digite o NCM a ser substituído no primeiro campo. &lt;/span&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;2:&lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; Digite o novo NCM no segundo campo.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;3:&lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; Clique no botão &amp;quot;Substituir NCM&amp;quot;.&lt;/span&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt; 4:&lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; A tabela será atualizada com as substituições.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                   <widget class="QWidget" name="page_colunaA_colunaB_recebe">
-                    <layout class="QGridLayout" name="gridLayout_22">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="label_8">
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;h4 style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7pt; font-weight:700;&quot;&gt;Função: Se Coluna A contém, Coluna B recebe&lt;/span&gt;&lt;/h4&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Essa função verifica se a coluna selecionada no ComboBox 1 contém o dado digitado e, se sim, substitui os valores na &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;coluna selecionada no ComboBox 2.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;1: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Selecione a coluna a ser verificada no ComboBox 1. &lt;/span&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;2: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Digite o dado a ser verificado no primeiro campo. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;3: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Selecione a coluna a ser alterada no ComboBox 2. &lt;/span&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;4: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Digite o novo valor no segundo campo.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;5: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Clique no botão &amp;quot;Se Coluna A contém, Coluna B recebe&amp;quot;. &lt;/span&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;6: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;A tabela será atualizada com as alterações.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                   <widget class="QWidget" name="page_filtrar_coluna_linhas_contem">
-                    <layout class="QGridLayout" name="gridLayout_23">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="label_9">
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; font-weight:700;&quot;&gt;Função: Filtrar por Coluna e Copiar Todas as Linhas que Contenham&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Essa função filtra os dados da tabela com base na coluna e no texto digitados, &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;e permite ao usuário salvar o resultado em CSV.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;1: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Selecione a coluna a ser filtrada no ComboBox 1. &lt;/span&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;2: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Digite o texto a ser filtrado no primeiro campo.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;3: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Selecione a coluna a ser alterada no ComboBox 2. &lt;/span&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;4: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Digite o novo valor no segundo campo.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;5: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Clique no botão &amp;quot;Filtrar por Coluna e Copiar Todas as Linhas que Contenham&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;6: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;A tabela será atualizada com os dados filtrados, e você pode salvar o resultado em CSV.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                   <widget class="QWidget" name="page_extrair_duplicados">
-                    <layout class="QGridLayout" name="gridLayout_24">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="label_10">
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;h4 style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Função: Extrair Dados Duplicados da Tabela&lt;/span&gt;&lt;/h4&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Essa funcionalidade verifica todas as linhas com dados iguais, levando em consideração colunas como descrição e código, marca esses dados em vermelho e permite ao usuário extrair os dados repetidos para uma nova tabela.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;Passos:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;1: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Clique no botão &amp;quot;Extrair Dados Duplicados&amp;quot;. &lt;/span&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;2 &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;A tabela será atualizada com as linhas duplicadas marcadas em vermelho.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;3: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Clique no botão &amp;quot;Extrair e Salvar&amp;quot;. &lt;/span&gt;&lt;span style=&quot; font-size:6pt; font-weight:700;&quot;&gt;4: &lt;/span&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;Os dados duplicados serão salvos em uma nova tabela, permitindo um &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt;processamento mais fácil.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </widget>
-                 </item>
-                </layout>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="icons.qrc">
+                  <normaloff>:/icons/img/folder.png</normaloff>:/icons/img/folder.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
                </widget>
-              </item>
-             </layout>
-            </widget>
+               <widget class="QPushButton" name="bt_conexoes_banco_dados">
+                <property name="geometry">
+                 <rect>
+                  <x>100</x>
+                  <y>9</y>
+                  <width>80</width>
+                  <height>50</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>50</width>
+                  <height>60</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Data Bases&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="toolTipDuration">
+                 <number>0</number>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="icons.qrc">
+                  <normaloff>:/icons/img/data_bases.png</normaloff>:/icons/img/data_bases.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="bt_pesquisar_dados">
+                <property name="geometry">
+                 <rect>
+                  <x>200</x>
+                  <y>9</y>
+                  <width>80</width>
+                  <height>50</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>80</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Filtros de pesquisas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="icons.qrc">
+                  <normaloff>:/icons/img/search-data.png</normaloff>:/icons/img/search-data.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="bt_processamento_dados">
+                <property name="geometry">
+                 <rect>
+                  <x>300</x>
+                  <y>9</y>
+                  <width>80</width>
+                  <height>50</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>80</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Alterações&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="toolTipDuration">
+                 <number>0</number>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="icons.qrc">
+                  <normaloff>:/icons/img/data-processing.png</normaloff>:/icons/img/data-processing.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
