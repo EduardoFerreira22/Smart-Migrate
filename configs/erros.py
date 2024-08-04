@@ -2,13 +2,14 @@ from PySide6.QtWidgets import (QApplication,QMainWindow,QMessageBox,QTableWidget
 
 
 class Erros():
-    def show_error_popup(self, error_message):
+
+    #MOSTRA UM POPUP DE NOTIFICAÇÃO DE ERRO 
+    def show_error_popup(self, title, message):
         msg = QMessageBox()
-        msg.setIcon(QMessageBox.Critical)
-        msg.setWindowTitle("Erro")
-        msg.setText("Erro ao executar a consulta:")
-        msg.setInformativeText(error_message)
-        msg.exec_()
+        msg.setWindowTitle(title)
+        msg.setText(message)
+        msg.setIcon(QMessageBox.Warning)
+        msg.exec()
     
     def msg_popup(self,resp,msg1,msg2,**kwargs):
             msg1 = msg1

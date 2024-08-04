@@ -6,12 +6,14 @@ from PySide6.QtWidgets import (QApplication,QMainWindow,QMessageBox,QProgressBar
 
 from gui.ui_ui_main import Ui_MainWindow
 import gui.app_instance as app_instance
+from configs.encoders import detectar_encoding
 
 from conections.db_conect import View_DBF, conectar_ao_sql_server, conectar_ao_MySQL, conectar_ao_PostgreSQL, conectar_Sqlite3, conectar_ao_Firebird, populate_tree_view_with_tables_and_columns, tables_SqlServer, tables_MySQL, tables_PostgreSQL, tables_SQLite3, tables_Firebird, close_connections
 import  files_csv.csv_functions as csv_file
 from configs.dictionares import configurar_interface, configurar_busca_interface, configurar_interface_banco_de_dados, adicionar_opcoes, remover_opcoes
 import socket
 import csv
+import pandas as pd
 
 def get_host_name():
     hostname = socket.gethostname()
@@ -24,9 +26,12 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
         app_instance.set_ui_instance(self)  # Configure a instância
         self.setWindowTitle("Smart Migrate")
         self.nome_computador = get_host_name()
+        self.setup_ui()
         self.setup_connections()
         self.setup_execut_opcoes()
         self.setup_execut_processamento()
+        self.showMaximized()
+        
 
 
 
@@ -47,7 +52,7 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
         
         self.combo_data_base_list.currentIndexChanged.connect(self.select_datas)
         self.bt_mostra_dados_tabelas.clicked.connect(self.show_table_data)
-        self.bt_salvar_dados_tabela_principal.clicked.connect(csv_file.save_data_to_csv)
+        self.bt_salvar_dados_tabela_principal.clicked.connect(self.salvar_dados_tabela_principal)
         self.txt_pesquisar_tabela.textChanged.connect(self.filter_and_update_tree_view)
 
 
@@ -80,9 +85,10 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
         self.frame_op_busca.setVisible(False)
         self.page_opcoes_busca.setVisible(False)
         self.frame_analise_inteligente.setVisible(False)
-        self.txt_analise_inteligente_output.setVisible(False)
         self.txt_opcoes_busca.setVisible(False)
         self.bt_buscar_op_busca.setVisible(False)
+        self.combo1_colunas_opcoes_busca.setVisible(False)
+        self.bt_buscar_op_busca.clicked.connect(self.buscar_duplicados)
         
 
         #Opções de Processamento
@@ -106,10 +112,13 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
         self.bt_processamento_de_para.setVisible(False)
         self.bt_extrair_duplicados.setVisible(False)
         self.bt_extrair_duplicados.clicked.connect(self.extrair_duplicados)
+        self.bt_processamento_de_para.clicked.connect(self.coluna_dados_negativos)
 
 
-        
- 
+    def file_dialog_salvar(self):
+        options = QFileDialog.Options()
+        file_path, _ = QFileDialog.getSaveFileName(self, "Salvar Arquivo CSV", "", "CSV Files (*.csv);;All Files (*)", options=options)
+        return file_path
 
     #MOSTRA UM POPUP DE NOTIFICAÇÃO DE ERRO 
     def show_error_popup(self, title, message):
@@ -119,8 +128,8 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
         msg.setIcon(QMessageBox.Warning)
         msg.exec()
 
-
     def buscar_arquivo(self):
+
         selected_data = self.combo_data_base_list.currentText()
         self.txt_output_logs.setPlainText("Buscando novo arquivo.")
 
@@ -142,10 +151,10 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
 
         if file_dialog.exec():
             # Obtém o caminho do arquivo selecionado
-            file = file_dialog.selectedFiles()[0]
+            self.file = file_dialog.selectedFiles()[0]
 
             # Retorna o caminho do arquivo selecionado
-            return file
+            return self.file
 
     def buscar_csv(self):
 
@@ -161,6 +170,7 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
                 buscar = self.buscar_arquivo()
                 self.load_csv_to_table(buscar, self.table_principal)
                 self.txt_output_logs.setPlainText(f"Caminho do arquivo selecionado: {buscar}")
+                self.frame_analise_inteligente.setVisible(False)
             elif reply == QMessageBox.No:
                 self.widget_right.setVisible(False)
                 self.limpar_tabela_principal()  # Limpa a tabela
@@ -168,12 +178,14 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
                 buscar = self.buscar_arquivo()
                 self.load_csv_to_table(buscar, self.table_principal)
                 self.txt_output_logs.setPlainText(f"Caminho do arquivo selecionado: {buscar}")
+                self.frame_analise_inteligente.setVisible(False)
         else:
             self.widget_right.setVisible(False)
             close_connections()
             buscar = self.buscar_arquivo()  # Abre o diálogo de arquivo se a tabela estiver vazia
             self.load_csv_to_table(buscar, self.table_principal)
             self.txt_output_logs.setPlainText(f"Caminho do arquivo selecionado: {buscar}")
+            self.frame_analise_inteligente.setVisible(False)
 
     def buscar_file_sqlite(self):
         buscar = self.buscar_arquivo()
@@ -204,17 +216,16 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
             self.bt_buscar_sqlite.setVisible(False)
             self.bt_conectar_data_base.setVisible(True)
 
-
-
-    
+    #processa o csv após receber o caminho do arquivo da função buscar_csv
     def load_csv_to_table(self, file_path, table):
+        encoding = detectar_encoding(path_csv=file_path)
         try:
-            with open(file_path, newline='', encoding='utf-8') as csvfile:
+            with open(file_path, newline='', encoding=encoding) as csvfile:
                 reader = csv.reader(csvfile, delimiter=';')
                 self.all_data = list(reader)
                 self.txt_output_logs.setPlainText("Planilha processada com encondig: UTF-8")
         except UnicodeDecodeError:
-            with open(file_path, newline='', encoding='latin1', errors='replace') as csvfile:
+            with open(file_path, newline='', encoding=encoding, errors='replace') as csvfile:
                 reader = csv.reader(csvfile, delimiter=';')
                 self.all_data = list(reader)
                 self.txt_output_logs.setPlainText("Planilha processada com encondig: Latin1")
@@ -233,36 +244,135 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
         # Atualizar os combos com os nomes das colunas
         csv_file.combo_Columns(headers)
 
+    #Preenche a tabela com os dados recebidos da função load_csv_to_table
     def load_data_table(self, data, table):
-        all_data = data
-        if all_data:
-            headers = all_data[0]
-            rows = all_data[1:]
+        if data:
+            headers = data[0]
+            rows = data[1:]
             
             table.setColumnCount(len(headers))
             table.setRowCount(len(rows))
             table.setHorizontalHeaderLabels(headers)
             
+            primary_color = QColor(255, 255, 255)
+            secondary_color = QColor(195, 205, 255, 64)
+
             for row_idx, row_data in enumerate(rows):
+                text_color = primary_color if row_idx % 2 == 0 else secondary_color
+
                 for col_idx, col_data in enumerate(row_data):
-                    # Converte col_data para string, se não for uma string já
                     col_data_str = str(col_data) if col_data is not None else ""
-                    table.setItem(row_idx, col_idx, QTableWidgetItem(col_data_str))
+                    item = QTableWidgetItem(col_data_str)
+                    item.setForeground(text_color)
+                    table.setItem(row_idx, col_idx, item)
+
+    def salvar_csv(self, table):
+        file_path = self.file_dialog_salvar()
+        if file_path:  # Verifique se o caminho do arquivo foi fornecido
+            if table is not None:
+                csv_file.save_data_to_csv(file_path=file_path, table=table)
+            else:
+                # Você pode querer informar ao usuário que a tabela está vazia
+                QMessageBox.warning(self, "Aviso", "Nenhuma tabela disponível para salvar.")
+
+
+    def setup_ui(self):
+        # Supondo que você já tenha configurado os botões `bt_salvar_dados_tabela_principal` e `bt_extrair_duplicados`
+        self.bt_salvar_dados_tabela_principal.clicked.connect(self.salvar_dados_tabela_principal)
+        self.bt_exportar_duplicados.clicked.connect(self.salvar_dados_duplicados)
+
+    def salvar_dados_tabela_principal(self):
+        self.salvar_csv(self.table_principal)
+
+    def salvar_dados_duplicados(self):
+        self.salvar_csv(self.table_duplicados)
 
 
     def extrair_duplicados(self):
-            data, headers = csv_file.carregar_dados_da_tabela()
-            csv_file.find_and_load_duplicates(data, headers)
-            # Mostrar a page de duplicados
-            self.widget_right.setVisible(True)
-            self.frame_buttons_rigt.setVisible(True)
-            self.tabs_lateral_right.setCurrentWidget(self.page_duplicados)
-            self.tabs_lateral_right.setVisible(True)  #
-            self.bt_duplicados.setVisible(True)
-            self.bt_conections.setVisible(False)
+            """
+            Extrai dados da planilha, encontra duplicatas, carrega essas duplicatas na tabela table_duplicados,
+            remove os dados duplicados da planilha original e atualiza a tabela principal com os dados restantes.
+            """
+            # Mostrar um diálogo de confirmação ao usuário
+            reply = QMessageBox.question(
+                self, 'Confirmar', 'Você tem certeza de que deseja remover os dados duplicados da planilha original e carregá-los na tabela de duplicados?',
+                QMessageBox.Yes | QMessageBox.No, QMessageBox.No
+            )
+
+            if reply == QMessageBox.Yes:
+                try:
+                    # Buscar duplicatas
+                    duplicates, headers = csv_file.buscar_dados_duplicados(self.file)
+
+                    if duplicates is not None:  # Verificar se a função retornou algo válido
+                        if duplicates:
+                            # Carregar duplicatas na tabela duplicados
+                            csv_file.load_duplicates_to_table(duplicates, headers)
+
+                            # Remover duplicatas dos dados originais
+                            encoding = detectar_encoding(self.file)
+                            df = pd.read_csv(self.file, delimiter=';', encoding=encoding)
+
+                            if not headers:
+                                raise ValueError("Os headers não foram encontrados.")
+                            
+                            if not isinstance(headers, list) or not all(isinstance(h, str) for h in headers):
+                                raise ValueError("Headers devem ser uma lista de strings.")
+
+                            if not isinstance(duplicates, list) or not all(isinstance(d, list) for d in duplicates):
+                                raise ValueError("Duplicatas devem ser uma lista de listas.")
+                            
+                            # Identificar a coluna com base nos headers
+                            coluna_para_remover = headers[0]  # Assume-se que o primeiro header é a coluna para verificar
+                            df_cleaned = df[~df[coluna_para_remover].isin([d[0] for d in duplicates])]
+
+                            # Salvar o DataFrame limpo em um novo arquivo CSV
+                            df_cleaned.to_csv(self.file, index=False, sep=';', encoding=encoding)
+
+                            # Recarregar o DataFrame limpo para a tabela principal
+                            self.load_data_table(data=[headers] + df_cleaned.values.tolist(), table=self.table_principal)
+
+                            # Mostrar a página de duplicados
+                            self.widget_right.setVisible(True)
+                            self.frame_buttons_rigt.setVisible(True)
+                            self.tabs_lateral_right.setCurrentWidget(self.page_duplicados)
+                            self.tabs_lateral_right.setVisible(True)
+                            self.bt_duplicados.setVisible(True)
+                            self.bt_conections.setVisible(False)
+
+                            # Atualizar combos com os nomes das colunas
+                            csv_file.combo_Columns(headers)
+                        else:
+                            self.txt_output_logs.setPlainText("Nenhuma duplicata encontrada para remover.")
+                    else:
+                        self.txt_output_logs.setPlainText("Erro ao buscar duplicatas.")
+                except Exception as e:
+                    self.txt_output_logs.setPlainText(f"Erro ao tentar processar o arquivo. {e}")
+            else:
+                self.txt_output_logs.setPlainText("Ação cancelada pelo usuário.")
+
+    #executa a função que processa os dados negativos e atualiza a tabela
+    def coluna_dados_negativos(self):
+        coluna = self.combo1_colunas_processamento.currentText()
+
+        # Supondo que a função valores_negativos retorne os dados processados
+        csv_file.valores_negativos(path_csv=self.file, coluna=coluna)
+        self.limpar_tabela_principal()
+            # Agora carregamos os dados processados diretamente na tabela
+        self.load_csv_to_table(file_path=self.file, table=self.table_principal)
+
+        self.txt_output_logs.setPlainText("Nenhum dado processado encontrado.")
+
+    def buscar_duplicados(self):
+        opcao = self.combo1_colunas_opcoes_busca.currentText()
+        if opcao == '':
+                self.show_error_popup("Erro!", f"É necessário selecionar umas dacolunas para realizar a busca.")
+        else:
+                csv_file.buscar_dados_duplicados(path_csv=self.file)
+                configurar_busca_interface(True, True,True, False, False,True, "")
 
     #SELECIONA A OPÇÃO DE CONEXÃO DE BANCO DE DADOS NO COMBOBOX DA PÁGINA CONEXÕES
-    def select_datas(self, ):
+    def select_datas(self):
         selected_data = self.combo_data_base_list.currentText()
         close_connections()
         self.limpar_tabela_principal()
@@ -337,8 +447,6 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
         elif self.bt_conectar_data_base and selected_data == 'Firebird':
             conectar_ao_Firebird()
 
-        elif self.bt_conectar_data_base and selected_data == 'Firebird arquivos .DBF':
-            ...
 
         elif self.bt_conectar_data_base and selected_data == 'SQLite':
             conectar_Sqlite3()
@@ -480,7 +588,7 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
                                              QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel,
                                              QMessageBox.Cancel)
                 if reply == QMessageBox.Yes:
-                    csv_file.save_data_to_csv()
+                    self.salvar_dados_tabela_principal()
                     self.limpar_tabela_principal()  # Limpa a tabela após salvar
                     self.mostrar_conexoes()
                 elif reply == QMessageBox.No:
@@ -491,6 +599,9 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
 
     def mostrar_conexoes(self):
             # Mostrar a page de duplicados
+            self.bt_pesquisar_dados.setVisible(False)
+            self.bt_processamento_dados.setVisible(False)
+            self.frame_analise_inteligente.setVisible(False)
             self.widget_right.setVisible(True)
             self.frame_buttons_rigt.setVisible(True)
             self.tabs_lateral_right.setVisible(True)
@@ -508,82 +619,82 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
 
     def executa_fucoes_Opcoes(self):
         opcao = self.comboBox_opcoes_busca.currentText()
-        
         # OPÇÕES DE BUSCA
-        if opcao == "Analise inteligente":
-            configurar_busca_interface(True, True, False, False)
+        if opcao == "Opções de busca":
+            configurar_busca_interface(True, False,False, False, False,False, "")
+        
+        elif opcao == "Analise inteligente":
+            configurar_busca_interface(True, False,False, False, True,False, "")  # Substitua True por uma string vazia ou a mensagem desejada
             csv_file.analise_inteligente()
 
         elif opcao == "Buscar por NCM":
-            configurar_busca_interface(True, False, True, True, "0000.00.00")
+            configurar_busca_interface(True, True,False, True, False,False, "0000.00.00")
 
         elif opcao == 'NCM Inválido':
-            configurar_busca_interface(True, False, False, False)
+            configurar_busca_interface(True, False,False, False, False,False, "")
 
         elif opcao == 'Tudo que contém':
-            configurar_busca_interface(True, False, True, True)
+            configurar_busca_interface(True, False,False, True, False,False, "")
 
         elif opcao == 'Duplicados':
-            configurar_busca_interface(True, False, False, False)
-
+            configurar_busca_interface(True, True,False, False, False,True, "")
+            
     def executa_opcoes_processamento(self):
         opcao = self.combo_opcoes_processamento.currentText()
         # OPÇÕES DE PROCESSAMENTO
-        if opcao == 'Substituir NCM':
+
+        if opcao == "Opções de Processamento":
+            configurar_interface(False, False, False, False, False, False, False, False, False, False, False, 
+                                    False, False, False, False, False,  "De", "Para", "Para", "Para")
+        elif opcao == 'Substituir NCM':
             print('Substituir NCM')
             configurar_interface(True, True, False, False, True, False, False, True, True, False, False, 
-                                    False, False, False, False, True, False, "De", "Para", "Para", "Para")
+                                    False, False, False, False, True,  "De", "Para", "Para", "Para")
 
         elif opcao == 'Tudo que contém mude para':
             print('Tudo que contém mude para')
             configurar_interface(True, True, False, False, True, False, False, True, True, False, False, 
-                                    True, False, False, False, True, False, "De", "Para", "Para", "Para")
+                                    True, False, False, False, True,  "De", "Para", "Para", "Para")
 
         elif opcao == 'Se Coluna A contém, Coluna B recebe...':
             print('Se Coluna A contém, Coluna B recebe...')
             configurar_interface(True, True, False, False, True, False, False, True, True, False, False, 
-                                    True, False, False, False, True, False, "De", "Para", "Para", "Para")
+                                    True, False, False, False, True,  "De", "Para", "Para", "Para")
 
         elif opcao == 'Filtrar por coluna e copiar todas a linhas que contenham':
             print('Filtrar por coluna e copiar todas as linhas que contenham')
             configurar_interface(True, False, False, False, False, False, False, True, False, False, False, 
-                                    False, False, False, False, True, False, "De", "Para", "Para", "Para")
-
-        elif opcao == 'Extrair dados duplicados da tabela':
-            print('Extrair dados duplicados da tabela')
-            configurar_interface(False, False, False, False, False, False, False, False, False, False, False, 
-                                    False, False, False, False, False, True, "De", "Para", "Para", "Para")
-
+                                    False, False, False, False, True,  "De", "Para", "Para", "Para")
 
         elif opcao == 'Formatar colunas com valores do tipo moeda':
             print('Formatar colunas com valores do tipo moeda')
             configurar_interface(True, True, False, False, True, False, False, True, True, False, False, 
-                                    True, False, False, False, True, False, "De", "Para", "Para", "Para")
+                                    True, False, False, False, True,  "De", "Para", "Para", "Para")
 
         elif opcao == 'Formatar códigos de barras':
             print('Formatar códigos de barras')
             configurar_interface(True, False, False, False, False, False, False, True, False, False, False, 
-                                    False, False, False, False, True, False, "", "", "", "")
+                                    False, False, False, False, True,  "", "", "", "")
 
         elif opcao == 'Formatar número de telefone':
             print('Formatar número de telefone')
             configurar_interface(True, False, False, False, False, False, False, True, False, False, False, 
-                                    False, False, False, False, True, False, "(000) 99999-9999", "", "", "")
+                                    False, False, False, False, True,  "(000) 99999-9999", "", "", "")
 
         elif opcao == 'Formatar CPF':
             print('Formatar CPF')
             configurar_interface(True, False, False, False, False, False, False, True, False, False, False, 
-                                    False, False, False, False, True, False, "000.000.000-00", "", "", "")
+                                    False, False, False, False, True,  "000.000.000-00", "", "", "")
 
         elif opcao == 'Formatar CNPJ':
             print('Formatar CNPJ')
             configurar_interface(True, False, False, False, False, False, False, True, False, False, False, 
-                                    False, False, False, False, True, False, "00.000.000/0000-00", "", "", "")
+                                    False, False, False, False, True,  "00.000.000/0000-00", "", "", "")
 
         elif opcao == 'Buscar valores negativos e mudar para zero':
             print('Buscar valores negativos e mudar para zero')
-            configurar_interface(True, False, False, False, False, False, False, True, False, False, False, 
-                                    False, False, False, False, True, False, "", "", "", "")
+            configurar_interface(True, False, False, False, False, False, False, False, False, False, False, 
+                                    False, False, False, False, True,  "", "", "", "")
 
 
 

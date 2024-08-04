@@ -525,3 +525,4 @@ def View_DBF():
             ui.table_principal.insertRow(row_index)
             for col_index, field_name in enumerate(field_names):
                 ui.table_principal.setItem(row_index, col_index, QTableWidgetItem(str(record[field_name])))
+        ui.bt_salvar_dados_tabela_principal.setVisible(True)

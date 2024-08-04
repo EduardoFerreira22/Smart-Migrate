@@ -22,7 +22,7 @@ def configurar_interface(combo1_visible, combo2_visible, combo3_visible, combo4_
                          bt_setas1_visible, bt_setas2_visible,bt_setas3_visible, txt_opcao1_visible, txt_opcao2_visible, 
                          txt_opcao3_visible, txt_opcao4_visible, bt_add_opcoes2_visible, bt_add_opcoes3_visible, 
                          bt_retirar_opcoes2_visible, bt_retirar_opcoes3_visible, bt_processamento_de_para_visible, 
-                         bt_extrair_duplicados_visible, txt_opcao1_placeholder, txt_opcao2_placeholder, 
+                         txt_opcao1_placeholder, txt_opcao2_placeholder, 
                          txt_opcao3_placeholder, txt_opcao4_placeholder):
     ui = app_instance.get_ui_instance()
     ui.combo1_colunas_processamento.setVisible(combo1_visible)
@@ -41,21 +41,27 @@ def configurar_interface(combo1_visible, combo2_visible, combo3_visible, combo4_
     ui.bt_retirar_opcoes2.setVisible(bt_retirar_opcoes2_visible)
     ui.bt_retirar_opcoes3.setVisible(bt_retirar_opcoes3_visible)
     ui.bt_processamento_de_para.setVisible(bt_processamento_de_para_visible)
-    ui.bt_extrair_duplicados.setVisible(bt_extrair_duplicados_visible)
     ui.txt_opcao1_processamento.setPlaceholderText(txt_opcao1_placeholder)
     ui.txt_opcao2_processamento.setPlaceholderText(txt_opcao2_placeholder)
     ui.txt_opcao3_processamento.setPlaceholderText(txt_opcao3_placeholder)
     ui.txt_opcao4_processamento.setPlaceholderText(txt_opcao4_placeholder)
 
 
-def configurar_busca_interface(frame_visible, txt_output_visible, bt_busca_visible, txt_busca_visible, placeholder=''):
+def configurar_busca_interface(frame_visible, bt_busca_visible, bt_extrair_duplicados_visible, txt_busca_visible, inteligente_visible, combo1, placeholder=''):
     ui = app_instance.get_ui_instance()
     ui.frame_analise_inteligente.setVisible(frame_visible)
-    ui.txt_analise_inteligente_output.setVisible(txt_output_visible)
     ui.bt_buscar_op_busca.setVisible(bt_busca_visible)
+    ui.bt_extrair_duplicados.setVisible(bt_extrair_duplicados_visible)
     ui.txt_opcoes_busca.setVisible(txt_busca_visible)
+    ui.frame_analise_inteligente.setVisible(inteligente_visible)
     ui.txt_opcoes_busca.clear()
-    ui.txt_opcoes_busca.setPlaceholderText(placeholder)
+    ui.combo1_colunas_opcoes_busca.setVisible(combo1)
+
+    # Verifica se o placeholder é uma string
+    if isinstance(placeholder, str):
+        ui.txt_opcoes_busca.setPlaceholderText(placeholder)
+    else:
+        ui.txt_opcoes_busca.setPlaceholderText("")
 
 
 num_opcoes_adicionadas = 0
@@ -81,7 +87,7 @@ def atualizar_interface():
             'bt_retirar_opcoes2': False,
             'bt_retirar_opcoes3': False,
             'bt_processamento_de_para': True,
-            'bt_extrair_duplicados': False,
+            
         }
         
         placeholder = {
@@ -108,7 +114,7 @@ def atualizar_interface():
                 'bt_retirar_opcoes2': True,
                 'bt_retirar_opcoes3': False,
                 'bt_processamento_de_para': True,
-                'bt_extrair_duplicados': False
+       
             })
             placeholder.update({
                 'txt_opcao1': "De",
@@ -134,7 +140,6 @@ def atualizar_interface():
                 'bt_retirar_opcoes2': True,
                 'bt_retirar_opcoes3': True,
                 'bt_processamento_de_para': True,
-                'bt_extrair_duplicados': False
             })
             placeholder.update({
                 'txt_opcao1': "De",
@@ -161,7 +166,7 @@ def atualizar_interface():
                 'bt_retirar_opcoes2': True,
                 'bt_retirar_opcoes3': True,
                 'bt_processamento_de_para': True,
-                'bt_extrair_duplicados': False
+
             })
             placeholder.update({
                 'txt_opcao1': "De",
@@ -187,7 +192,7 @@ def atualizar_interface():
                 'bt_retirar_opcoes2': True,
                 'bt_retirar_opcoes3': True,
                 'bt_processamento_de_para': True,
-                'bt_extrair_duplicados': False
+
             })
             placeholder.update({
                 'txt_opcao1': "De",
@@ -214,7 +219,6 @@ def atualizar_interface():
             visibilidade['bt_retirar_opcoes2'],
             visibilidade['bt_retirar_opcoes3'],
             visibilidade['bt_processamento_de_para'],
-            visibilidade['bt_extrair_duplicados'],
             placeholder['txt_opcao1'],
             placeholder['txt_opcao2'],
             placeholder['txt_opcao3'],

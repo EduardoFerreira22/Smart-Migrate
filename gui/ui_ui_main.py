@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ui_main - CopiabJZFjy.ui'
+## Form generated from reading UI file 'ui_main - CopiaLGXnso.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -176,11 +176,13 @@ class Ui_MainWindow(object):
         self.bt_conectar_data_base.setGeometry(QRect(250, 60, 110, 30))
         self.bt_conectar_data_base.setMinimumSize(QSize(110, 30))
         self.bt_conectar_data_base.setMaximumSize(QSize(110, 30))
+        self.bt_conectar_data_base.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_buscar_sqlite = QPushButton(self.frame)
         self.bt_buscar_sqlite.setObjectName(u"bt_buscar_sqlite")
         self.bt_buscar_sqlite.setGeometry(QRect(250, 60, 110, 30))
         self.bt_buscar_sqlite.setMinimumSize(QSize(110, 30))
         self.bt_buscar_sqlite.setMaximumSize(QSize(110, 30))
+        self.bt_buscar_sqlite.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_buscar_sqlite.raise_()
         self.txt_servidor_data_base.raise_()
         self.txt_data_base_name.raise_()
@@ -255,6 +257,7 @@ class Ui_MainWindow(object):
         self.bt_mostra_dados_tabelas.setObjectName(u"bt_mostra_dados_tabelas")
         self.bt_mostra_dados_tabelas.setMinimumSize(QSize(120, 35))
         self.bt_mostra_dados_tabelas.setMaximumSize(QSize(120, 35))
+        self.bt_mostra_dados_tabelas.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_mostra_dados_tabelas.setStyleSheet(u"QPushButton{\n"
 "	background-color: rgba(241, 242, 246, 0.50);\n"
 "    border-top-left-radius: 7px;\n"
@@ -393,6 +396,7 @@ class Ui_MainWindow(object):
         self.bt_deletar_duplicados.setObjectName(u"bt_deletar_duplicados")
         self.bt_deletar_duplicados.setMinimumSize(QSize(120, 35))
         self.bt_deletar_duplicados.setMaximumSize(QSize(120, 35))
+        self.bt_deletar_duplicados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_deletar_duplicados.setStyleSheet(u"QPushButton{\n"
 "	font: 700 10pt \"Segoe UI\";\n"
 "    border-top-left-radius: 7px;\n"
@@ -423,6 +427,7 @@ class Ui_MainWindow(object):
         self.bt_exportar_duplicados.setObjectName(u"bt_exportar_duplicados")
         self.bt_exportar_duplicados.setMinimumSize(QSize(120, 35))
         self.bt_exportar_duplicados.setMaximumSize(QSize(120, 35))
+        self.bt_exportar_duplicados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_exportar_duplicados.setStyleSheet(u"QPushButton{\n"
 "    border-top-left-radius: 7px;\n"
 "    border-top-right-radius: 7px;\n"
@@ -649,6 +654,7 @@ class Ui_MainWindow(object):
         self.bt_execut_query_system.setGeometry(QRect(320, 10, 50, 30))
         self.bt_execut_query_system.setMinimumSize(QSize(50, 30))
         self.bt_execut_query_system.setMaximumSize(QSize(50, 30))
+        self.bt_execut_query_system.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon2 = QIcon()
         icon2.addFile(u":/icons/img/play.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_execut_query_system.setIcon(icon2)
@@ -714,6 +720,7 @@ class Ui_MainWindow(object):
         self.bt_buscar_file_query.setGeometry(QRect(3, 5, 50, 30))
         self.bt_buscar_file_query.setMinimumSize(QSize(50, 30))
         self.bt_buscar_file_query.setMaximumSize(QSize(50, 30))
+        self.bt_buscar_file_query.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon3 = QIcon()
         icon3.addFile(u":/icons/img/folder.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_buscar_file_query.setIcon(icon3)
@@ -723,6 +730,7 @@ class Ui_MainWindow(object):
         self.bt_executar_query.setGeometry(QRect(60, 5, 50, 30))
         self.bt_executar_query.setMinimumSize(QSize(50, 30))
         self.bt_executar_query.setMaximumSize(QSize(50, 30))
+        self.bt_executar_query.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_executar_query.setIcon(icon2)
 
         self.gridLayout_11.addWidget(self.frame_2, 0, 0, 1, 1)
@@ -777,6 +785,7 @@ class Ui_MainWindow(object):
         self.bt_conections.setGeometry(QRect(10, 2, 70, 35))
         self.bt_conections.setMinimumSize(QSize(70, 35))
         self.bt_conections.setMaximumSize(QSize(70, 35))
+        self.bt_conections.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon4 = QIcon()
         icon4.addFile(u":/icons/img/conexoes2.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_conections.setIcon(icon4)
@@ -786,6 +795,7 @@ class Ui_MainWindow(object):
         self.bt_terminal_sql.setGeometry(QRect(110, 2, 70, 35))
         self.bt_terminal_sql.setMinimumSize(QSize(70, 35))
         self.bt_terminal_sql.setMaximumSize(QSize(70, 35))
+        self.bt_terminal_sql.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon5 = QIcon()
         icon5.addFile(u":/icons/img/querys.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_terminal_sql.setIcon(icon5)
@@ -795,6 +805,7 @@ class Ui_MainWindow(object):
         self.bt_systems.setGeometry(QRect(207, 2, 70, 35))
         self.bt_systems.setMinimumSize(QSize(70, 35))
         self.bt_systems.setMaximumSize(QSize(70, 35))
+        self.bt_systems.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon6 = QIcon()
         icon6.addFile(u":/icons/img/systems.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_systems.setIcon(icon6)
@@ -804,6 +815,7 @@ class Ui_MainWindow(object):
         self.bt_duplicados.setGeometry(QRect(299, 2, 70, 35))
         self.bt_duplicados.setMinimumSize(QSize(70, 35))
         self.bt_duplicados.setMaximumSize(QSize(70, 35))
+        self.bt_duplicados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon7 = QIcon()
         icon7.addFile(u":/icons/img/duplicado2.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_duplicados.setIcon(icon7)
@@ -851,29 +863,185 @@ class Ui_MainWindow(object):
         self.page_opcoes_busca.setObjectName(u"page_opcoes_busca")
         self.frame_analise_inteligente = QFrame(self.page_opcoes_busca)
         self.frame_analise_inteligente.setObjectName(u"frame_analise_inteligente")
-        self.frame_analise_inteligente.setGeometry(QRect(515, 9, 800, 164))
+        self.frame_analise_inteligente.setGeometry(QRect(515, 9, 800, 160))
         sizePolicy.setHeightForWidth(self.frame_analise_inteligente.sizePolicy().hasHeightForWidth())
         self.frame_analise_inteligente.setSizePolicy(sizePolicy)
-        self.frame_analise_inteligente.setMinimumSize(QSize(800, 0))
-        self.frame_analise_inteligente.setMaximumSize(QSize(800, 16777215))
-        self.frame_analise_inteligente.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_analise_inteligente.setMinimumSize(QSize(800, 160))
+        self.frame_analise_inteligente.setMaximumSize(QSize(800, 160))
+        self.frame_analise_inteligente.setFrameShape(QFrame.Shape.NoFrame)
         self.frame_analise_inteligente.setFrameShadow(QFrame.Shadow.Raised)
-        self.gridLayout_17 = QGridLayout(self.frame_analise_inteligente)
-        self.gridLayout_17.setSpacing(0)
+        self.verticalLayout_11 = QVBoxLayout(self.frame_analise_inteligente)
+        self.verticalLayout_11.setSpacing(0)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.frame_4 = QFrame(self.frame_analise_inteligente)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setMinimumSize(QSize(0, 50))
+        self.frame_4.setMaximumSize(QSize(16777215, 50))
+        self.frame_4.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_4.setFrameShadow(QFrame.Shadow.Raised)
+        self.gridLayout_17 = QGridLayout(self.frame_4)
         self.gridLayout_17.setObjectName(u"gridLayout_17")
-        self.gridLayout_17.setContentsMargins(10, 10, 10, 10)
-        self.txt_analise_inteligente_output = QPlainTextEdit(self.frame_analise_inteligente)
-        self.txt_analise_inteligente_output.setObjectName(u"txt_analise_inteligente_output")
-        sizePolicy.setHeightForWidth(self.txt_analise_inteligente_output.sizePolicy().hasHeightForWidth())
-        self.txt_analise_inteligente_output.setSizePolicy(sizePolicy)
-        self.txt_analise_inteligente_output.setMinimumSize(QSize(800, 0))
-        self.txt_analise_inteligente_output.setMaximumSize(QSize(800, 16777215))
-        self.txt_analise_inteligente_output.setFrameShape(QFrame.Shape.NoFrame)
-        self.txt_analise_inteligente_output.setLineWidth(0)
-        self.txt_analise_inteligente_output.setCursorWidth(1)
-        self.txt_analise_inteligente_output.setTextInteractionFlags(Qt.TextInteractionFlag.NoTextInteraction)
+        self.label_titulo_analise_inteligente = QLabel(self.frame_4)
+        self.label_titulo_analise_inteligente.setObjectName(u"label_titulo_analise_inteligente")
+        self.label_titulo_analise_inteligente.setStyleSheet(u"font: 700 14pt \"Segoe UI\";\n"
+"color: rgb(72, 41, 249);\n"
+"qproperty-alignment: 'AlignCenter';")
+        self.label_titulo_analise_inteligente.setIndent(6)
 
-        self.gridLayout_17.addWidget(self.txt_analise_inteligente_output, 0, 0, 1, 1)
+        self.gridLayout_17.addWidget(self.label_titulo_analise_inteligente, 0, 0, 1, 1)
+
+
+        self.verticalLayout_11.addWidget(self.frame_4)
+
+        self.frame_6 = QFrame(self.frame_analise_inteligente)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setMinimumSize(QSize(0, 115))
+        self.frame_6.setMaximumSize(QSize(16777215, 115))
+        self.frame_6.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_6.setFrameShadow(QFrame.Shadow.Raised)
+        self.gridLayout_5 = QGridLayout(self.frame_6)
+        self.gridLayout_5.setSpacing(2)
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.gridLayout_5.setContentsMargins(2, 28, 2, 0)
+        self.frame_qtda_linhas = QFrame(self.frame_6)
+        self.frame_qtda_linhas.setObjectName(u"frame_qtda_linhas")
+        self.frame_qtda_linhas.setMinimumSize(QSize(185, 80))
+        self.frame_qtda_linhas.setMaximumSize(QSize(185, 80))
+        self.frame_qtda_linhas.setStyleSheet(u"#titulo_1{\n"
+"	\n"
+"	\n"
+"	font: 700 10pt \"Segoe UI\";\n"
+"	color: rgb(72, 41, 249);\n"
+"}\n"
+"\n"
+"#quantidade_linhas_tabela{\n"
+"	\n"
+"	font: 700 17pt \"Segoe UI\";\n"
+"	color: rgb(72, 41, 249);\n"
+"qproperty-alignment: 'AlignCenter';\n"
+"}")
+        self.frame_qtda_linhas.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_qtda_linhas.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_10 = QVBoxLayout(self.frame_qtda_linhas)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.titulo_1 = QLabel(self.frame_qtda_linhas)
+        self.titulo_1.setObjectName(u"titulo_1")
+
+        self.verticalLayout_10.addWidget(self.titulo_1)
+
+        self.quantidade_linhas_tabela = QLabel(self.frame_qtda_linhas)
+        self.quantidade_linhas_tabela.setObjectName(u"quantidade_linhas_tabela")
+
+        self.verticalLayout_10.addWidget(self.quantidade_linhas_tabela)
+
+
+        self.gridLayout_5.addWidget(self.frame_qtda_linhas, 0, 0, 1, 1)
+
+        self.frame_qtda_duplicados = QFrame(self.frame_6)
+        self.frame_qtda_duplicados.setObjectName(u"frame_qtda_duplicados")
+        self.frame_qtda_duplicados.setMinimumSize(QSize(185, 80))
+        self.frame_qtda_duplicados.setMaximumSize(QSize(185, 80))
+        self.frame_qtda_duplicados.setStyleSheet(u"#titulo_4{\n"
+"	\n"
+"	\n"
+"	font: 700 10pt \"Segoe UI\";\n"
+"	color: rgb(72, 41, 249);\n"
+"}\n"
+"\n"
+"#quantidade_linhas_duplicadas{\n"
+"	\n"
+"	font: 700 17pt \"Segoe UI\";\n"
+"	color: rgb(72, 41, 249);\n"
+"qproperty-alignment: 'AlignCenter';\n"
+"}")
+        self.frame_qtda_duplicados.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_qtda_duplicados.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_9 = QVBoxLayout(self.frame_qtda_duplicados)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.titulo_4 = QLabel(self.frame_qtda_duplicados)
+        self.titulo_4.setObjectName(u"titulo_4")
+
+        self.verticalLayout_9.addWidget(self.titulo_4)
+
+        self.quantidade_linhas_duplicadas = QLabel(self.frame_qtda_duplicados)
+        self.quantidade_linhas_duplicadas.setObjectName(u"quantidade_linhas_duplicadas")
+
+        self.verticalLayout_9.addWidget(self.quantidade_linhas_duplicadas)
+
+
+        self.gridLayout_5.addWidget(self.frame_qtda_duplicados, 0, 1, 1, 1)
+
+        self.frame_qtda_cod_barras = QFrame(self.frame_6)
+        self.frame_qtda_cod_barras.setObjectName(u"frame_qtda_cod_barras")
+        self.frame_qtda_cod_barras.setMinimumSize(QSize(185, 80))
+        self.frame_qtda_cod_barras.setMaximumSize(QSize(185, 80))
+        self.frame_qtda_cod_barras.setStyleSheet(u"#titulo_2{\n"
+"	\n"
+"	\n"
+"	font: 700 10pt \"Segoe UI\";\n"
+"	color: rgb(72, 41, 249);\n"
+"}\n"
+"\n"
+"#quantidade_cod_barras{\n"
+"	\n"
+"	font: 700 17pt \"Segoe UI\";\n"
+"	color: rgb(72, 41, 249);\n"
+"	qproperty-alignment: 'AlignCenter';\n"
+"}")
+        self.frame_qtda_cod_barras.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_qtda_cod_barras.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_7 = QVBoxLayout(self.frame_qtda_cod_barras)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.titulo_2 = QLabel(self.frame_qtda_cod_barras)
+        self.titulo_2.setObjectName(u"titulo_2")
+
+        self.verticalLayout_7.addWidget(self.titulo_2)
+
+        self.quantidade_cod_barras = QLabel(self.frame_qtda_cod_barras)
+        self.quantidade_cod_barras.setObjectName(u"quantidade_cod_barras")
+
+        self.verticalLayout_7.addWidget(self.quantidade_cod_barras)
+
+
+        self.gridLayout_5.addWidget(self.frame_qtda_cod_barras, 0, 2, 1, 1)
+
+        self.frame_qtda_caracteres_especiais = QFrame(self.frame_6)
+        self.frame_qtda_caracteres_especiais.setObjectName(u"frame_qtda_caracteres_especiais")
+        self.frame_qtda_caracteres_especiais.setMinimumSize(QSize(185, 80))
+        self.frame_qtda_caracteres_especiais.setMaximumSize(QSize(185, 80))
+        self.frame_qtda_caracteres_especiais.setStyleSheet(u"#titulo_3{\n"
+"	\n"
+"	\n"
+"	font: 700 10pt \"Segoe UI\";\n"
+"	color: rgb(72, 41, 249);\n"
+"}\n"
+"\n"
+"#quantidade_caracteres_especiais{\n"
+"	\n"
+"	font: 700 17pt \"Segoe UI\";\n"
+"	color: rgb(72, 41, 249);\n"
+"	qproperty-alignment: 'AlignCenter';\n"
+"}")
+        self.frame_qtda_caracteres_especiais.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_qtda_caracteres_especiais.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_8 = QVBoxLayout(self.frame_qtda_caracteres_especiais)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.titulo_3 = QLabel(self.frame_qtda_caracteres_especiais)
+        self.titulo_3.setObjectName(u"titulo_3")
+
+        self.verticalLayout_8.addWidget(self.titulo_3)
+
+        self.quantidade_caracteres_especiais = QLabel(self.frame_qtda_caracteres_especiais)
+        self.quantidade_caracteres_especiais.setObjectName(u"quantidade_caracteres_especiais")
+
+        self.verticalLayout_8.addWidget(self.quantidade_caracteres_especiais)
+
+
+        self.gridLayout_5.addWidget(self.frame_qtda_caracteres_especiais, 0, 3, 1, 1)
+
+
+        self.verticalLayout_11.addWidget(self.frame_6)
 
         self.frame_op_busca = QFrame(self.page_opcoes_busca)
         self.frame_op_busca.setObjectName(u"frame_op_busca")
@@ -942,7 +1110,7 @@ class Ui_MainWindow(object):
         self.comboBox_opcoes_busca.addItem("")
         self.comboBox_opcoes_busca.addItem("")
         self.comboBox_opcoes_busca.setObjectName(u"comboBox_opcoes_busca")
-        self.comboBox_opcoes_busca.setGeometry(QRect(110, 30, 181, 31))
+        self.comboBox_opcoes_busca.setGeometry(QRect(100, 30, 261, 31))
         self.txt_opcoes_busca = QLineEdit(self.frame_op_busca)
         self.txt_opcoes_busca.setObjectName(u"txt_opcoes_busca")
         self.txt_opcoes_busca.setGeometry(QRect(110, 100, 181, 31))
@@ -950,7 +1118,15 @@ class Ui_MainWindow(object):
         self.txt_opcoes_busca.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.bt_buscar_op_busca = QPushButton(self.frame_op_busca)
         self.bt_buscar_op_busca.setObjectName(u"bt_buscar_op_busca")
-        self.bt_buscar_op_busca.setGeometry(QRect(320, 100, 101, 31))
+        self.bt_buscar_op_busca.setGeometry(QRect(380, 30, 101, 31))
+        self.bt_buscar_op_busca.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.combo1_colunas_opcoes_busca = QComboBox(self.frame_op_busca)
+        self.combo1_colunas_opcoes_busca.setObjectName(u"combo1_colunas_opcoes_busca")
+        self.combo1_colunas_opcoes_busca.setGeometry(QRect(100, 100, 261, 31))
+        self.bt_extrair_duplicados = QPushButton(self.frame_op_busca)
+        self.bt_extrair_duplicados.setObjectName(u"bt_extrair_duplicados")
+        self.bt_extrair_duplicados.setGeometry(QRect(380, 100, 101, 31))
+        self.bt_extrair_duplicados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.stackedWidget_opcoes.addWidget(self.page_opcoes_busca)
         self.page_opcoes_processamento = QWidget()
         self.page_opcoes_processamento.setObjectName(u"page_opcoes_processamento")
@@ -1100,7 +1276,6 @@ class Ui_MainWindow(object):
         self.combo_opcoes_processamento.addItem("")
         self.combo_opcoes_processamento.addItem("")
         self.combo_opcoes_processamento.addItem("")
-        self.combo_opcoes_processamento.addItem("")
         self.combo_opcoes_processamento.setObjectName(u"combo_opcoes_processamento")
         self.combo_opcoes_processamento.setGeometry(QRect(30, 10, 441, 31))
         self.combo_opcoes_processamento.setEditable(False)
@@ -1128,9 +1303,6 @@ class Ui_MainWindow(object):
         icon8.addFile(u":/icons/img/setas1.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_setas1.setIcon(icon8)
         self.bt_setas1.setIconSize(QSize(40, 28))
-        self.bt_extrair_duplicados = QPushButton(self.frame_opcoes_processamento)
-        self.bt_extrair_duplicados.setObjectName(u"bt_extrair_duplicados")
-        self.bt_extrair_duplicados.setGeometry(QRect(490, 10, 81, 31))
         self.txt_opcao3_processamento = QLineEdit(self.frame_opcoes_processamento)
         self.txt_opcao3_processamento.setObjectName(u"txt_opcao3_processamento")
         self.txt_opcao3_processamento.setGeometry(QRect(550, 110, 181, 31))
@@ -1163,12 +1335,14 @@ class Ui_MainWindow(object):
         self.bt_setas3.setIconSize(QSize(40, 28))
         self.bt_processamento_de_para = QPushButton(self.frame_opcoes_processamento)
         self.bt_processamento_de_para.setObjectName(u"bt_processamento_de_para")
-        self.bt_processamento_de_para.setGeometry(QRect(490, 10, 81, 31))
+        self.bt_processamento_de_para.setGeometry(QRect(500, 10, 81, 31))
+        self.bt_processamento_de_para.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_add_opcoes2 = QPushButton(self.frame_opcoes_processamento)
         self.bt_add_opcoes2.setObjectName(u"bt_add_opcoes2")
         self.bt_add_opcoes2.setGeometry(QRect(480, 110, 60, 31))
         self.bt_add_opcoes2.setMinimumSize(QSize(60, 31))
         self.bt_add_opcoes2.setMaximumSize(QSize(60, 31))
+        self.bt_add_opcoes2.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_add_opcoes2.setStyleSheet(u"border:none;")
         icon9 = QIcon()
         icon9.addFile(u":/icons/img/more.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -1179,6 +1353,7 @@ class Ui_MainWindow(object):
         self.bt_add_opcoes3.setGeometry(QRect(740, 110, 60, 31))
         self.bt_add_opcoes3.setMinimumSize(QSize(60, 31))
         self.bt_add_opcoes3.setMaximumSize(QSize(60, 31))
+        self.bt_add_opcoes3.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_add_opcoes3.setStyleSheet(u"border:none;")
         self.bt_add_opcoes3.setIcon(icon9)
         self.bt_add_opcoes3.setIconSize(QSize(40, 25))
@@ -1187,6 +1362,7 @@ class Ui_MainWindow(object):
         self.bt_retirar_opcoes3.setGeometry(QRect(740, 60, 60, 31))
         self.bt_retirar_opcoes3.setMinimumSize(QSize(60, 31))
         self.bt_retirar_opcoes3.setMaximumSize(QSize(60, 31))
+        self.bt_retirar_opcoes3.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_retirar_opcoes3.setStyleSheet(u"border:none;")
         icon10 = QIcon()
         icon10.addFile(u":/icons/img/minus.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -1197,6 +1373,7 @@ class Ui_MainWindow(object):
         self.bt_retirar_opcoes2.setGeometry(QRect(480, 60, 60, 31))
         self.bt_retirar_opcoes2.setMinimumSize(QSize(60, 31))
         self.bt_retirar_opcoes2.setMaximumSize(QSize(60, 31))
+        self.bt_retirar_opcoes2.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_retirar_opcoes2.setStyleSheet(u"border:none;")
         self.bt_retirar_opcoes2.setIcon(icon10)
         self.bt_retirar_opcoes2.setIconSize(QSize(40, 25))
@@ -1206,7 +1383,6 @@ class Ui_MainWindow(object):
         self.combo1_colunas_processamento.raise_()
         self.combo2_colunas_processamento.raise_()
         self.bt_setas1.raise_()
-        self.bt_extrair_duplicados.raise_()
         self.txt_opcao3_processamento.raise_()
         self.combo3_colunas_processamento.raise_()
         self.txt_opcao4_processamento.raise_()
@@ -1263,6 +1439,7 @@ class Ui_MainWindow(object):
         self.bt_salvar_dados_tabela_principal.setObjectName(u"bt_salvar_dados_tabela_principal")
         self.bt_salvar_dados_tabela_principal.setMinimumSize(QSize(120, 35))
         self.bt_salvar_dados_tabela_principal.setMaximumSize(QSize(16777215, 35))
+        self.bt_salvar_dados_tabela_principal.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_salvar_dados_tabela_principal.setStyleSheet(u"QPushButton{\n"
 "    border-top-left-radius: 7px;\n"
 "    border-top-right-radius: 7px;\n"
@@ -1285,7 +1462,7 @@ class Ui_MainWindow(object):
 
         self.table_principal = QTableWidget(self.frame_table_principal)
         self.table_principal.setObjectName(u"table_principal")
-        self.table_principal.setStyleSheet(u"QTableWidget{\n"
+        self.table_principal.setStyleSheet(u"#table_principal{\n"
 "	\n"
 "	\n"
 "	font: 8pt \"Segoe UI\";\n"
@@ -1303,9 +1480,9 @@ class Ui_MainWindow(object):
 "\n"
 "}\n"
 "\n"
-"QTableView:hover{\n"
+"/*#table_principal:hover{\n"
 "	background-color: rgba(195, 205, 255, 0.25);\n"
-"}\n"
+"}*/\n"
 " QHeaderView::section {\n"
 "      background-color: #4b3ff1;\n"
 "		border: 1px solid rgba(217, 217, 217, 0.80);\n"
@@ -1323,8 +1500,8 @@ class Ui_MainWindow(object):
 "        margin: 0px 0px 0px 0px;\n"
 "    }\n"
 "\n"
-"    QScrol"
-                        "lBar::handle:vertical {\n"
+""
+                        "    QScrollBar::handle:vertical {\n"
 "        background-color: rgb(195, 205, 255); /* Cor da \"pegada\" da barra de rolagem */\n"
 "        min-height: 20px;\n"
 "        border-radius: 4px;\n"
@@ -1357,9 +1534,9 @@ class Ui_MainWindow(object):
 "    QScrollBar:horizontal {\n"
 "        border: none;\n"
 "        background: #F0F0F0; /* Cor de fundo da barra de rolagem */\n"
-"        height: 8px;\n"
-""
-                        "        margin: 0px 0px 0px 0px;\n"
+"        height:"
+                        " 8px;\n"
+"        margin: 0px 0px 0px 0px;\n"
 "    }\n"
 "\n"
 "    QScrollBar::handle:horizontal {\n"
@@ -1394,12 +1571,14 @@ class Ui_MainWindow(object):
         self.table_principal.setFrameShape(QFrame.Shape.StyledPanel)
         self.table_principal.setFrameShadow(QFrame.Shadow.Sunken)
         self.table_principal.setLineWidth(1)
-        self.table_principal.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.table_principal.setEditTriggers(QAbstractItemView.EditTrigger.AllEditTriggers)
         self.table_principal.setDragEnabled(True)
+        self.table_principal.setDragDropMode(QAbstractItemView.DragDropMode.InternalMove)
         self.table_principal.setAlternatingRowColors(True)
         self.table_principal.setSelectionMode(QAbstractItemView.SelectionMode.ContiguousSelection)
         self.table_principal.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.table_principal.setSortingEnabled(False)
+        self.table_principal.horizontalHeader().setProperty("showSortIndicator", True)
         self.table_principal.verticalHeader().setVisible(False)
 
         self.gridLayout_8.addWidget(self.table_principal, 2, 0, 1, 3)
@@ -1443,18 +1622,8 @@ class Ui_MainWindow(object):
 "   \n"
 "}\n"
 "\n"
-"QPushButton{\n"
-"border:none;\n"
-"}\n"
 "\n"
-"QPushButton:hover{\n"
-"	background-color: rgb(195, 205, 255);\n"
-"    border-top-left-radius: 10px;\n"
-"    border-top-right-radius: 10px;\n"
-"    border-bottom-left-radius: 10px;\n"
-"    border-bottom-right-radius: 10px;\n"
-"\n"
-"}")
+"")
         self.frame_5.setFrameShape(QFrame.Shape.NoFrame)
         self.frame_5.setFrameShadow(QFrame.Shadow.Plain)
         self.gridLayout_9 = QGridLayout(self.frame_5)
@@ -1465,6 +1634,7 @@ class Ui_MainWindow(object):
         self.frame_11.setObjectName(u"frame_11")
         self.frame_11.setMinimumSize(QSize(300, 0))
         self.frame_11.setMaximumSize(QSize(350, 16777215))
+        self.frame_11.setStyleSheet(u"")
         self.frame_11.setFrameShape(QFrame.Shape.NoFrame)
         self.frame_11.setFrameShadow(QFrame.Shadow.Raised)
         self.gridLayout_14 = QGridLayout(self.frame_11)
@@ -1497,6 +1667,21 @@ class Ui_MainWindow(object):
         self.frame_8.setObjectName(u"frame_8")
         self.frame_8.setMinimumSize(QSize(600, 60))
         self.frame_8.setMaximumSize(QSize(600, 60))
+        self.frame_8.setStyleSheet(u"QPushButton{\n"
+"border:none;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(195, 205, 255);\n"
+"    border-top-left-radius: 10px;\n"
+"    border-top-right-radius: 10px;\n"
+"    border-bottom-left-radius: 10px;\n"
+"    border-bottom-right-radius: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.frame_8.setFrameShape(QFrame.Shape.NoFrame)
         self.frame_8.setFrameShadow(QFrame.Shadow.Raised)
         self.bt_buscar_csv = QPushButton(self.frame_8)
@@ -1504,6 +1689,7 @@ class Ui_MainWindow(object):
         self.bt_buscar_csv.setGeometry(QRect(0, 9, 80, 50))
         self.bt_buscar_csv.setMinimumSize(QSize(80, 50))
         self.bt_buscar_csv.setMaximumSize(QSize(80, 50))
+        self.bt_buscar_csv.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_buscar_csv.setToolTipDuration(0)
         self.bt_buscar_csv.setIcon(icon3)
         self.bt_buscar_csv.setIconSize(QSize(40, 40))
@@ -1512,6 +1698,7 @@ class Ui_MainWindow(object):
         self.bt_conexoes_banco_dados.setGeometry(QRect(100, 9, 80, 50))
         self.bt_conexoes_banco_dados.setMinimumSize(QSize(80, 50))
         self.bt_conexoes_banco_dados.setMaximumSize(QSize(50, 60))
+        self.bt_conexoes_banco_dados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_conexoes_banco_dados.setToolTipDuration(0)
         icon12 = QIcon()
         icon12.addFile(u":/icons/img/data_bases.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -1522,6 +1709,7 @@ class Ui_MainWindow(object):
         self.bt_pesquisar_dados.setGeometry(QRect(200, 9, 80, 50))
         self.bt_pesquisar_dados.setMinimumSize(QSize(80, 50))
         self.bt_pesquisar_dados.setMaximumSize(QSize(80, 50))
+        self.bt_pesquisar_dados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon13 = QIcon()
         icon13.addFile(u":/icons/img/search-data.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.bt_pesquisar_dados.setIcon(icon13)
@@ -1531,6 +1719,7 @@ class Ui_MainWindow(object):
         self.bt_processamento_dados.setGeometry(QRect(300, 9, 80, 50))
         self.bt_processamento_dados.setMinimumSize(QSize(80, 50))
         self.bt_processamento_dados.setMaximumSize(QSize(80, 50))
+        self.bt_processamento_dados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_processamento_dados.setToolTipDuration(0)
         icon14 = QIcon()
         icon14.addFile(u":/icons/img/data-processing.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -1556,7 +1745,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabs_lateral_right.setCurrentIndex(0)
+        self.tabs_lateral_right.setCurrentIndex(1)
         self.stackedWidget_opcoes.setCurrentIndex(0)
 
 
@@ -1626,8 +1815,15 @@ class Ui_MainWindow(object):
         self.bt_duplicados.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:8pt; color:#4b3ff1;\">Dados Duplicados</span></p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
         self.bt_duplicados.setText("")
-        self.txt_analise_inteligente_output.setPlainText("")
-        self.txt_analise_inteligente_output.setPlaceholderText("")
+        self.label_titulo_analise_inteligente.setText("")
+        self.titulo_1.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:700; color:#4829f9;\">Qtda. Linhas</span></p></body></html>", None))
+        self.quantidade_linhas_tabela.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
+        self.titulo_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Linhas Duplicadas</p></body></html>", None))
+        self.quantidade_linhas_duplicadas.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
+        self.titulo_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">C\u00f3d. de barras Duplicados</p></body></html>", None))
+        self.quantidade_cod_barras.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
+        self.titulo_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" color:#4829f9;\">Caracteres Especiais</span></p></body></html>", None))
+        self.quantidade_caracteres_especiais.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><br/></p></body></html>", None))
         self.comboBox_opcoes_busca.setItemText(0, QCoreApplication.translate("MainWindow", u"Op\u00e7\u00f5es de busca", None))
         self.comboBox_opcoes_busca.setItemText(1, QCoreApplication.translate("MainWindow", u"Analise inteligente", None))
         self.comboBox_opcoes_busca.setItemText(2, QCoreApplication.translate("MainWindow", u"Buscar por NCM", None))
@@ -1636,23 +1832,24 @@ class Ui_MainWindow(object):
         self.comboBox_opcoes_busca.setItemText(5, QCoreApplication.translate("MainWindow", u"Duplicados", None))
 
         self.bt_buscar_op_busca.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
+        self.combo1_colunas_opcoes_busca.setCurrentText("")
+        self.combo1_colunas_opcoes_busca.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Selecione a coluna que desejada analizar", None))
+        self.bt_extrair_duplicados.setText(QCoreApplication.translate("MainWindow", u"Extrair", None))
         self.combo_opcoes_processamento.setItemText(0, QCoreApplication.translate("MainWindow", u"Op\u00e7\u00f5es de Processamento", None))
         self.combo_opcoes_processamento.setItemText(1, QCoreApplication.translate("MainWindow", u"Buscar valores negativos e mudar para zero", None))
-        self.combo_opcoes_processamento.setItemText(2, QCoreApplication.translate("MainWindow", u"Extrair dados duplicados da tabela", None))
-        self.combo_opcoes_processamento.setItemText(3, QCoreApplication.translate("MainWindow", u"Filtrar por coluna e copiar todas a linhas que contenham", None))
-        self.combo_opcoes_processamento.setItemText(4, QCoreApplication.translate("MainWindow", u"Formatar colunas com valores do tipo moeda", None))
-        self.combo_opcoes_processamento.setItemText(5, QCoreApplication.translate("MainWindow", u"Formatar c\u00f3digos de barras", None))
-        self.combo_opcoes_processamento.setItemText(6, QCoreApplication.translate("MainWindow", u"Formatar n\u00famero de telefone", None))
-        self.combo_opcoes_processamento.setItemText(7, QCoreApplication.translate("MainWindow", u"Formatar CPF", None))
-        self.combo_opcoes_processamento.setItemText(8, QCoreApplication.translate("MainWindow", u"Formatar CNPJ", None))
-        self.combo_opcoes_processamento.setItemText(9, QCoreApplication.translate("MainWindow", u"Substituir NCM", None))
-        self.combo_opcoes_processamento.setItemText(10, QCoreApplication.translate("MainWindow", u"Se Coluna A cont\u00e9m, Coluna B recebe...", None))
-        self.combo_opcoes_processamento.setItemText(11, QCoreApplication.translate("MainWindow", u"Tudo que cont\u00e9m mude para", None))
+        self.combo_opcoes_processamento.setItemText(2, QCoreApplication.translate("MainWindow", u"Filtrar por coluna e copiar todas a linhas que contenham", None))
+        self.combo_opcoes_processamento.setItemText(3, QCoreApplication.translate("MainWindow", u"Formatar colunas com valores do tipo moeda", None))
+        self.combo_opcoes_processamento.setItemText(4, QCoreApplication.translate("MainWindow", u"Formatar c\u00f3digos de barras", None))
+        self.combo_opcoes_processamento.setItemText(5, QCoreApplication.translate("MainWindow", u"Formatar n\u00famero de telefone", None))
+        self.combo_opcoes_processamento.setItemText(6, QCoreApplication.translate("MainWindow", u"Formatar CPF", None))
+        self.combo_opcoes_processamento.setItemText(7, QCoreApplication.translate("MainWindow", u"Formatar CNPJ", None))
+        self.combo_opcoes_processamento.setItemText(8, QCoreApplication.translate("MainWindow", u"Substituir NCM", None))
+        self.combo_opcoes_processamento.setItemText(9, QCoreApplication.translate("MainWindow", u"Se Coluna A cont\u00e9m, Coluna B recebe...", None))
+        self.combo_opcoes_processamento.setItemText(10, QCoreApplication.translate("MainWindow", u"Tudo que cont\u00e9m mude para", None))
 
         self.combo1_colunas_processamento.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Selecione uma Coluna", None))
         self.combo2_colunas_processamento.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Selecione uma Coluna", None))
         self.bt_setas1.setText("")
-        self.bt_extrair_duplicados.setText(QCoreApplication.translate("MainWindow", u"Extrair", None))
         self.combo3_colunas_processamento.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Selecione uma Coluna", None))
         self.combo4_colunas_processamento.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Selecione uma Coluna", None))
         self.bt_setas2.setText("")

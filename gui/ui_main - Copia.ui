@@ -99,7 +99,7 @@
              </size>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page_conections">
              <layout class="QVBoxLayout" name="verticalLayout">
@@ -415,6 +415,9 @@ QPushButton:hover{
                    <height>30</height>
                   </size>
                  </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
                  <property name="text">
                   <string>Conectar</string>
                  </property>
@@ -439,6 +442,9 @@ QPushButton:hover{
                    <width>110</width>
                    <height>30</height>
                   </size>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
                  </property>
                  <property name="text">
                   <string>Buscar</string>
@@ -579,6 +585,9 @@ QTreeView:hover{
                         <width>120</width>
                         <height>35</height>
                        </size>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
                       </property>
                       <property name="toolTip">
                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Ver dados da tabelas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -846,6 +855,9 @@ background-color: rgba(195, 205, 255, 0.40)
                         <height>35</height>
                        </size>
                       </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
                       <property name="styleSheet">
                        <string notr="true">QPushButton{
 	font: 700 10pt &quot;Segoe UI&quot;;
@@ -895,6 +907,9 @@ QPushButton:hover{
                         <width>120</width>
                         <height>35</height>
                        </size>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">QPushButton{
@@ -1220,6 +1235,9 @@ background-color: rgba(195, 205, 255, 0.40)
                       <height>30</height>
                      </size>
                     </property>
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
                     <property name="toolTip">
                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#00ab0e;&quot;&gt;Executar Script&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
@@ -1337,6 +1355,9 @@ border:none;
                       <height>30</height>
                      </size>
                     </property>
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
                     <property name="toolTip">
                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4829f9;&quot;&gt;Buscar Script&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
@@ -1374,6 +1395,9 @@ border:none;
                       <width>50</width>
                       <height>30</height>
                      </size>
+                    </property>
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
                     </property>
                     <property name="toolTip">
                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#00ab0e;&quot;&gt;Executar Query&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1499,6 +1523,9 @@ QPushButton:hover{
                <height>35</height>
               </size>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Data Base Conect&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -1536,6 +1563,9 @@ QPushButton:hover{
                <width>70</width>
                <height>35</height>
               </size>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
              </property>
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Terminal SQL&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1575,6 +1605,9 @@ QPushButton:hover{
                <height>35</height>
               </size>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Sistemas Catalogados&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -1612,6 +1645,9 @@ QPushButton:hover{
                <width>70</width>
                <height>35</height>
               </size>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
              </property>
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Dados Duplicados&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1704,7 +1740,7 @@ QPushButton:hover{
                 <x>515</x>
                 <y>9</y>
                 <width>800</width>
-                <height>164</height>
+                <height>160</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -1716,75 +1752,325 @@ QPushButton:hover{
               <property name="minimumSize">
                <size>
                 <width>800</width>
-                <height>0</height>
+                <height>160</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>800</width>
-                <height>16777215</height>
+                <height>160</height>
                </size>
               </property>
               <property name="frameShape">
-               <enum>QFrame::Shape::StyledPanel</enum>
+               <enum>QFrame::Shape::NoFrame</enum>
               </property>
               <property name="frameShadow">
                <enum>QFrame::Shadow::Raised</enum>
               </property>
-              <layout class="QGridLayout" name="gridLayout_17">
-               <property name="leftMargin">
-                <number>10</number>
-               </property>
-               <property name="topMargin">
-                <number>10</number>
-               </property>
-               <property name="rightMargin">
-                <number>10</number>
-               </property>
-               <property name="bottomMargin">
-                <number>10</number>
-               </property>
+              <layout class="QVBoxLayout" name="verticalLayout_11">
                <property name="spacing">
                 <number>0</number>
                </property>
-               <item row="0" column="0">
-                <widget class="QPlainTextEdit" name="txt_analise_inteligente_output">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QFrame" name="frame_4">
                  <property name="minimumSize">
                   <size>
-                   <width>800</width>
-                   <height>0</height>
+                   <width>0</width>
+                   <height>50</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>800</width>
-                   <height>16777215</height>
+                   <width>16777215</width>
+                   <height>50</height>
                   </size>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::Shape::NoFrame</enum>
                  </property>
-                 <property name="lineWidth">
-                  <number>0</number>
+                 <property name="frameShadow">
+                  <enum>QFrame::Shadow::Raised</enum>
                  </property>
-                 <property name="plainText">
-                  <string/>
+                 <layout class="QGridLayout" name="gridLayout_17">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_titulo_analise_inteligente">
+                    <property name="styleSheet">
+                     <string notr="true">font: 700 14pt &quot;Segoe UI&quot;;
+color: rgb(72, 41, 249);
+qproperty-alignment: 'AlignCenter';</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="indent">
+                     <number>6</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="frame_6">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>115</height>
+                  </size>
                  </property>
-                 <property name="cursorWidth">
-                  <number>1</number>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>115</height>
+                  </size>
                  </property>
-                 <property name="textInteractionFlags">
-                  <set>Qt::TextInteractionFlag::NoTextInteraction</set>
+                 <property name="frameShape">
+                  <enum>QFrame::Shape::NoFrame</enum>
                  </property>
-                 <property name="placeholderText">
-                  <string/>
+                 <property name="frameShadow">
+                  <enum>QFrame::Shadow::Raised</enum>
                  </property>
+                 <layout class="QGridLayout" name="gridLayout_5">
+                  <property name="leftMargin">
+                   <number>2</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>28</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>2</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>2</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QFrame" name="frame_qtda_linhas">
+                    <property name="minimumSize">
+                     <size>
+                      <width>185</width>
+                      <height>80</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>185</width>
+                      <height>80</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">#titulo_1{
+	
+	
+	font: 700 10pt &quot;Segoe UI&quot;;
+	color: rgb(72, 41, 249);
+}
+
+#quantidade_linhas_tabela{
+	
+	font: 700 17pt &quot;Segoe UI&quot;;
+	color: rgb(72, 41, 249);
+qproperty-alignment: 'AlignCenter';
+}</string>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::Shape::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Shadow::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_10">
+                     <item>
+                      <widget class="QLabel" name="titulo_1">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:700; color:#4829f9;&quot;&gt;Qtda. Linhas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="quantidade_linhas_tabela">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QFrame" name="frame_qtda_duplicados">
+                    <property name="minimumSize">
+                     <size>
+                      <width>185</width>
+                      <height>80</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>185</width>
+                      <height>80</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">#titulo_4{
+	
+	
+	font: 700 10pt &quot;Segoe UI&quot;;
+	color: rgb(72, 41, 249);
+}
+
+#quantidade_linhas_duplicadas{
+	
+	font: 700 17pt &quot;Segoe UI&quot;;
+	color: rgb(72, 41, 249);
+qproperty-alignment: 'AlignCenter';
+}</string>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::Shape::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Shadow::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_9">
+                     <item>
+                      <widget class="QLabel" name="titulo_4">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Linhas Duplicadas&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="quantidade_linhas_duplicadas">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QFrame" name="frame_qtda_cod_barras">
+                    <property name="minimumSize">
+                     <size>
+                      <width>185</width>
+                      <height>80</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>185</width>
+                      <height>80</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">#titulo_2{
+	
+	
+	font: 700 10pt &quot;Segoe UI&quot;;
+	color: rgb(72, 41, 249);
+}
+
+#quantidade_cod_barras{
+	
+	font: 700 17pt &quot;Segoe UI&quot;;
+	color: rgb(72, 41, 249);
+	qproperty-alignment: 'AlignCenter';
+}</string>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::Shape::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Shadow::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_7">
+                     <item>
+                      <widget class="QLabel" name="titulo_2">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Cód. de barras Duplicados&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="quantidade_cod_barras">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="3">
+                   <widget class="QFrame" name="frame_qtda_caracteres_especiais">
+                    <property name="minimumSize">
+                     <size>
+                      <width>185</width>
+                      <height>80</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>185</width>
+                      <height>80</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">#titulo_3{
+	
+	
+	font: 700 10pt &quot;Segoe UI&quot;;
+	color: rgb(72, 41, 249);
+}
+
+#quantidade_caracteres_especiais{
+	
+	font: 700 17pt &quot;Segoe UI&quot;;
+	color: rgb(72, 41, 249);
+	qproperty-alignment: 'AlignCenter';
+}</string>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::Shape::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Shadow::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_8">
+                     <item>
+                      <widget class="QLabel" name="titulo_3">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#4829f9;&quot;&gt;Caracteres Especiais&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="quantidade_caracteres_especiais">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
               </layout>
@@ -1872,9 +2158,9 @@ QPushButton:hover{
               <widget class="QComboBox" name="comboBox_opcoes_busca">
                <property name="geometry">
                 <rect>
-                 <x>110</x>
+                 <x>100</x>
                  <y>30</y>
-                 <width>181</width>
+                 <width>261</width>
                  <height>31</height>
                 </rect>
                </property>
@@ -1928,14 +2214,49 @@ QPushButton:hover{
               <widget class="QPushButton" name="bt_buscar_op_busca">
                <property name="geometry">
                 <rect>
-                 <x>320</x>
+                 <x>380</x>
+                 <y>30</y>
+                 <width>101</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="text">
+                <string>Buscar</string>
+               </property>
+              </widget>
+              <widget class="QComboBox" name="combo1_colunas_opcoes_busca">
+               <property name="geometry">
+                <rect>
+                 <x>100</x>
+                 <y>100</y>
+                 <width>261</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="currentText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Selecione a coluna que desejada analizar</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="bt_extrair_duplicados">
+               <property name="geometry">
+                <rect>
+                 <x>380</x>
                  <y>100</y>
                  <width>101</width>
                  <height>31</height>
                 </rect>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="text">
-                <string>Buscar</string>
+                <string>Extrair</string>
                </property>
               </widget>
              </widget>
@@ -2118,11 +2439,6 @@ QPushButton:hover{
                </item>
                <item>
                 <property name="text">
-                 <string>Extrair dados duplicados da tabela</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
                  <string>Filtrar por coluna e copiar todas a linhas que contenham</string>
                 </property>
                </item>
@@ -2257,19 +2573,6 @@ QPushButton:hover{
                 </size>
                </property>
               </widget>
-              <widget class="QPushButton" name="bt_extrair_duplicados">
-               <property name="geometry">
-                <rect>
-                 <x>490</x>
-                 <y>10</y>
-                 <width>81</width>
-                 <height>31</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string>Extrair</string>
-               </property>
-              </widget>
               <widget class="QLineEdit" name="txt_opcao3_processamento">
                <property name="geometry">
                 <rect>
@@ -2401,11 +2704,14 @@ QPushButton:hover{
               <widget class="QPushButton" name="bt_processamento_de_para">
                <property name="geometry">
                 <rect>
-                 <x>490</x>
+                 <x>500</x>
                  <y>10</y>
                  <width>81</width>
                  <height>31</height>
                 </rect>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="text">
                 <string>Executar</string>
@@ -2431,6 +2737,9 @@ QPushButton:hover{
                  <width>60</width>
                  <height>31</height>
                 </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
                 <string notr="true">border:none;</string>
@@ -2470,6 +2779,9 @@ QPushButton:hover{
                  <height>31</height>
                 </size>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
                 <string notr="true">border:none;</string>
                </property>
@@ -2507,6 +2819,9 @@ QPushButton:hover{
                  <width>60</width>
                  <height>31</height>
                 </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
                 <string notr="true">border:none;</string>
@@ -2546,6 +2861,9 @@ QPushButton:hover{
                  <height>31</height>
                 </size>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
                 <string notr="true">border:none;</string>
                </property>
@@ -2569,7 +2887,6 @@ QPushButton:hover{
               <zorder>combo1_colunas_processamento</zorder>
               <zorder>combo2_colunas_processamento</zorder>
               <zorder>bt_setas1</zorder>
-              <zorder>bt_extrair_duplicados</zorder>
               <zorder>txt_opcao3_processamento</zorder>
               <zorder>combo3_colunas_processamento</zorder>
               <zorder>txt_opcao4_processamento</zorder>
@@ -2672,6 +2989,9 @@ QPushButton:hover{
                  <height>35</height>
                 </size>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
     border-top-left-radius: 7px;
@@ -2707,7 +3027,7 @@ QPushButton:hover{
              <item row="2" column="0" colspan="3">
               <widget class="QTableWidget" name="table_principal">
                <property name="styleSheet">
-                <string notr="true">QTableWidget{
+                <string notr="true">#table_principal{
 	
 	
 	font: 8pt &quot;Segoe UI&quot;;
@@ -2725,9 +3045,9 @@ QPushButton:hover{
 
 }
 
-QTableView:hover{
+/*#table_principal:hover{
 	background-color: rgba(195, 205, 255, 0.25);
-}
+}*/
  QHeaderView::section {
       background-color: #4b3ff1;
 		border: 1px solid rgba(217, 217, 217, 0.80);
@@ -2822,10 +3142,13 @@ QTableView:hover{
                 <number>1</number>
                </property>
                <property name="editTriggers">
-                <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                <set>QAbstractItemView::EditTrigger::AllEditTriggers</set>
                </property>
                <property name="dragEnabled">
                 <bool>true</bool>
+               </property>
+               <property name="dragDropMode">
+                <enum>QAbstractItemView::DragDropMode::InternalMove</enum>
                </property>
                <property name="alternatingRowColors">
                 <bool>true</bool>
@@ -2839,6 +3162,9 @@ QTableView:hover{
                <property name="sortingEnabled">
                 <bool>false</bool>
                </property>
+               <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                <bool>true</bool>
+               </attribute>
                <attribute name="verticalHeaderVisible">
                 <bool>false</bool>
                </attribute>
@@ -2908,18 +3234,8 @@ QTableView:hover{
    
 }
 
-QPushButton{
-border:none;
-}
 
-QPushButton:hover{
-	background-color: rgb(195, 205, 255);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-
-}</string>
+</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::Shape::NoFrame</enum>
@@ -2953,6 +3269,9 @@ QPushButton:hover{
               <width>350</width>
               <height>16777215</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
             </property>
             <property name="frameShape">
              <enum>QFrame::Shape::NoFrame</enum>
@@ -3037,6 +3356,23 @@ QPushButton:hover{
                  <height>60</height>
                 </size>
                </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+border:none;
+}
+
+QPushButton:hover{
+	background-color: rgb(195, 205, 255);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+
+</string>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::Shape::NoFrame</enum>
                </property>
@@ -3063,6 +3399,9 @@ QPushButton:hover{
                   <width>80</width>
                   <height>50</height>
                  </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
                 </property>
                 <property name="toolTip">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Arquivo&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -3105,6 +3444,9 @@ QPushButton:hover{
                   <height>60</height>
                  </size>
                 </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="toolTip">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Data Bases&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
@@ -3146,6 +3488,9 @@ QPushButton:hover{
                   <height>50</height>
                  </size>
                 </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="toolTip">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Filtros de pesquisas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
@@ -3183,6 +3528,9 @@ QPushButton:hover{
                   <width>80</width>
                   <height>50</height>
                  </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
                 </property>
                 <property name="toolTip">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Alterações&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
