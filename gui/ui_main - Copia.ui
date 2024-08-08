@@ -3097,11 +3097,10 @@ border:none;
 }
 
 QPushButton:hover{
-	background-color: rgba(51, 221, 51, 0.25);
-	border-right: 1px solid rgb(109, 109, 109);
-	border-left: 1px solid rgba(217, 217, 217, 0.80);
-	border-top: 1px solid rgba(217, 217, 217, 0.80);
-	border-bottom: 1px solid rgb(109, 109, 109);
+
+	background-color: rgb(195, 205, 255);
+
+
 }</string>
                   </property>
                   <property name="text">
@@ -3137,7 +3136,7 @@ QPushButton:hover{
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
                   <property name="toolTip">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Exportar dados&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Exportar .csv&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton{
@@ -3158,10 +3157,7 @@ border:none;
 
 QPushButton:hover{
 	background-color: rgba(51, 221, 51, 0.25);
-	border-right: 1px solid rgb(109, 109, 109);
-	border-left: 1px solid rgba(217, 217, 217, 0.80);
-	border-top: 1px solid rgba(217, 217, 217, 0.80);
-	border-bottom: 1px solid rgb(109, 109, 109);
+
 }</string>
                   </property>
                   <property name="text">
@@ -3169,7 +3165,61 @@ QPushButton:hover{
                   </property>
                   <property name="icon">
                    <iconset resource="icons.qrc">
-                    <normaloff>:/icons/img/save_data.png</normaloff>:/icons/img/save_data.png</iconset>
+                    <normaloff>:/icons/img/csv (1).png</normaloff>:/icons/img/csv (1).png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="bt_exportar_arquivo_xlsx">
+                  <property name="minimumSize">
+                   <size>
+                    <width>40</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>40</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Exportar .xslsx&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+border:none;
+	
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+/*
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+	font: 700 10pt &quot;Segoe UI&quot;;
+*/
+}
+
+QPushButton:hover{
+	background-color: rgba(51, 221, 51, 0.25);
+
+}</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="icons.qrc">
+                    <normaloff>:/icons/img/xlsx.png</normaloff>:/icons/img/xlsx.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -3227,11 +3277,8 @@ QPushButton:hover{
 }
 
 QPushButton:hover{
-	background-color: rgba(51, 221, 51, 0.25);
-	border-right: 1px solid rgb(109, 109, 109);
-	border-left: 1px solid rgba(217, 217, 217, 0.80);
-	border-top: 1px solid rgba(217, 217, 217, 0.80);
-	border-bottom: 1px solid rgb(109, 109, 109);
+background-color: rgb(195, 205, 255);
+
 }</string>
                   </property>
                   <property name="text">

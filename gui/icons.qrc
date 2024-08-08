@@ -1,26 +1,28 @@
 <RCC>
   <qresource prefix="icons">
-    <file>img/reset.png</file>
-    <file>img/delete_duplicados.png</file>
-    <file>img/desfazer.png</file>
-    <file>img/return.png</file>
-    <file>img/more.png</file>
-    <file>img/play.png</file>
-    <file>img/minus.png</file>
-    <file>img/setas1.png</file>
-    <file>img/delete (1).png</file>
     <file>img/conexoes2.png</file>
-    <file>img/desfazer.png</file>
-    <file>img/duplicado1.png</file>
-    <file>img/duplicado2.png</file>
-    <file>img/querys.png</file>
-    <file>img/systems.png</file>
-    <file>img/delete.png</file>
-    <file>img/save_data.png</file>
+    <file>img/csv (1).png</file>
+    <file>img/csv.png</file>
     <file>img/data_bases.png</file>
     <file>img/data-processing.png</file>
-    <file>img/search-data.png</file>
-    <file>img/logo_smartMigrate.png</file>
+    <file>img/delete.png</file>
+    <file>img/delete_duplicados.png</file>
+    <file>img/desfazer.png</file>
+    <file>img/duplicado2.png</file>
     <file>img/folder.png</file>
+    <file>img/logo_smartMigrate.png</file>
+    <file>img/minus.png</file>
+    <file>img/more.png</file>
+    <file>img/play.png</file>
+    <file>img/querys.png</file>
+    <file>img/reset.png</file>
+    <file>img/save_data.png</file>
+    <file>img/search-data.png</file>
+    <file>img/setas1.png</file>
+    <file>img/setas2.png</file>
+    <file>img/setas3.png</file>
+    <file>img/systems.png</file>
+    <file>img/xlsx (1).png</file>
+    <file>img/xlsx.png</file>
   </qresource>
 </RCC>

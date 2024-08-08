@@ -5,7 +5,8 @@ import csv
 import pandas as pd
 import chardet
 import shutil
-
+import openpyxl
+from openpyxl.utils.dataframe import dataframe_to_rows
 import gui.app_instance as app_instance 
 from PySide6.QtWidgets import QFileDialog
 import csv
@@ -54,6 +55,32 @@ def save_data_to_csv(file_path,table):
                 for row in range(table.rowCount()):
                     row_data = [table.item(row, col).text() if table.item(row, col) else '' for col in range(table.columnCount())]
                     writer.writerow(row_data)
+            ui.txt_output_logs.setPlainText(f"Dados salvos com sucesso em: {file_path}")
+        except Exception as e:
+            error.show_error_popup("Erro ao salvar o arquivo", str(e))
+            print(e)
+
+def save_data_to_xlsx(file_path, table):
+    error = Erros()
+    ui = app_instance.get_ui_instance()
+    if file_path:
+        try:
+            # Cria um novo workbook e seleciona a planilha ativa
+            wb = openpyxl.Workbook()
+            ws = wb.active
+            
+            # Adiciona os headers
+            headers = [table.horizontalHeaderItem(i).text() for i in range(table.columnCount())]
+            ws.append(headers)
+            
+            # Adiciona os dados
+            for row in range(table.rowCount()):
+                row_data = [table.item(row, col).text() if table.item(row, col) else '' for col in range(table.columnCount())]
+                ws.append(row_data)
+            
+            # Salva o arquivo
+            wb.save(file_path)
+            
             ui.txt_output_logs.setPlainText(f"Dados salvos com sucesso em: {file_path}")
         except Exception as e:
             error.show_error_popup("Erro ao salvar o arquivo", str(e))
@@ -128,7 +155,6 @@ def analise_inteligente():
     ui.label_titulo_analise_inteligente.setText("Análise inteligente concluída com sucesso.")
 
 
-
 def valores_negativos(path_csv, coluna):
     encoding = detectar_encoding(path_csv=path_csv)
     ui = app_instance.get_ui_instance()
@@ -163,7 +189,6 @@ def valores_negativos(path_csv, coluna):
     except Exception as e:
         print(f"Erro: {e}")
         ui.txt_output_logs.setPlainText(f"Erro ao processar valores negativos: {e}")
-
 
 
 def find_and_load_duplicates(data, headers):

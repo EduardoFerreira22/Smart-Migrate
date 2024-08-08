@@ -1,5 +1,5 @@
-from PySide6.QtCore import QCoreApplication,QUrl,QTimer,Qt
-from PySide6.QtGui import QIcon,QFont,QColor,QDesktopServices
+from PySide6.QtCore import QCoreApplication,QUrl,QTimer,Qt, QEvent,QObject
+from PySide6.QtGui import QIcon,QFont,QColor,QDesktopServices, QKeyEvent
 from PySide6 import QtCore
 from PySide6.QtWidgets import (QApplication,QMainWindow,QMessageBox,QProgressBar,QDialog, QVBoxLayout, QPushButton,QTableWidgetItem,QFileDialog,QMenu, QWidgetAction,
                                QPlainTextEdit, QPushButton, QVBoxLayout, QWidget, QSystemTrayIcon, QMenu)
@@ -61,6 +61,17 @@ class CSVLoaderThread(QThread):
 
         self.data_loaded.emit(all_data)
 
+#Filtra e detecta o uso das teclas especiais como F1,F2, F3 etc.
+class KeyPressFilter(QObject):
+
+    def eventFilter(self, widget, event):
+        if event.type() == QEvent.KeyPress:
+            text = event.text()
+            if event.modifiers():
+                text = event.keyCombination().key().name.decode(encoding="utf-8")
+            widget.label1.setText(text)
+        return False
+
 
 class WindowPrincipal(QMainWindow, Ui_MainWindow, ProgressBarWindow, CSVLoaderThread):
     def __init__(self):
@@ -76,6 +87,9 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow, ProgressBarWindow, CSVLoaderTh
         self.setup_bkp_restore()
         self.showMaximized()
         self.bkp = BackupAndRestore()
+        #Filtra e detecta o uso das teclas especiais como F1,F2, F3 etc.
+        self.eventFilter = KeyPressFilter(parent=self)
+        self.installEventFilter(self.eventFilter)
         
         #ocultos tabs
         self.widget_right.setVisible(False)
@@ -96,6 +110,7 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow, ProgressBarWindow, CSVLoaderTh
         self.bt_mostra_dados_tabelas.clicked.connect(self.show_table_data)
         self.bt_salvar_dados_tabela_principal.clicked.connect(self.salvar_dados_tabela_principal)
         self.txt_pesquisar_tabela.textChanged.connect(self.filter_and_update_tree_view)
+        self.bt_reprocesar_csv.clicked.connect(self.reload_table)
         
 
 
@@ -159,6 +174,14 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow, ProgressBarWindow, CSVLoaderTh
         self.bt_processamento_de_para.clicked.connect(self.coluna_dados_negativos)
 
 
+    def keyPressEvent(self, event: QKeyEvent):
+        # Verifica se a tecla pressionada é alguma tecla especial comoo F1, F2, F3 etc.
+        if event.key() == Qt.Key.Key_F5:
+            self.reload_table()
+        else:
+            super().keyPressEvent(event)  # Chama o método base para o tratamento padrão
+
+
     def file_dialog_salvar(self):
         options = QFileDialog.Options()
         file_path, _ = QFileDialog.getSaveFileName(self, "Salvar Arquivo CSV", "", "CSV Files (*.csv);;All Files (*)", options=options)
@@ -201,7 +224,7 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow, ProgressBarWindow, CSVLoaderTh
             file_dialog.setNameFilter("Arquivo CSV UTF-8 (*.csv);;CSV separado por vírgula (*.csv)")
 
         if file_dialog.exec():
-            self.file = file_dialog.selectedFiles()[0]  # Obtenha o caminho do arquivo
+            self.file = file_dialog.selectedFiles()[0]
             self.progress_window = ProgressBarWindow(self)
             self.progress_window.show()
 
@@ -210,7 +233,6 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow, ProgressBarWindow, CSVLoaderTh
             self.csv_thread.progress.connect(self.update_progress)
             self.csv_thread.log.connect(self.update_log)
             self.csv_thread.data_loaded.connect(self.load_data_to_table)
-            
 
             return self.file
 
@@ -338,9 +360,16 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow, ProgressBarWindow, CSVLoaderTh
         # Supondo que você já tenha configurado os botões `bt_salvar_dados_tabela_principal` e `bt_extrair_duplicados`
         self.bt_salvar_dados_tabela_principal.clicked.connect(self.salvar_dados_tabela_principal)
         self.bt_exportar_duplicados.clicked.connect(self.salvar_dados_duplicados)
+        self.bt_exportar_arquivo_xlsx.clicked.connect(self.salvar_xslx)
 
     def salvar_dados_tabela_principal(self):
         self.salvar_csv(self.table_principal)
+
+    def salvar_xslx(self):
+        csv_file.save_data_to_xlsx(self.file, self.table_principal)
+
+    def reload_table(self):
+        self.load_csv_to_table(self.file, self.table_principal)
 
     def salvar_dados_duplicados(self):
         self.salvar_csv(self.table_duplicados)

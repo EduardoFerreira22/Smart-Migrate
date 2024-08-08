@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ui_main - CopiaFSVIWj.ui'
+## Form generated from reading UI file 'ui_main - CopiaVJzehO.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -1492,11 +1492,10 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"	background-color: rgba(51, 221, 51, 0.25);\n"
-"	border-right: 1px solid rgb(109, 109, 109);\n"
-"	border-left: 1px solid rgba(217, 217, 217, 0.80);\n"
-"	border-top: 1px solid rgba(217, 217, 217, 0.80);\n"
-"	border-bottom: 1px solid rgb(109, 109, 109);\n"
+"\n"
+"	background-color: rgb(195, 205, 255);\n"
+"\n"
+"\n"
 "}")
         icon11 = QIcon()
         icon11.addFile(u":/icons/img/desfazer.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -1528,15 +1527,45 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton:hover{\n"
 "	background-color: rgba(51, 221, 51, 0.25);\n"
+"\n"
+"}")
+        icon12 = QIcon()
+        icon12.addFile(u":/icons/img/csv (1).png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_salvar_dados_tabela_principal.setIcon(icon12)
+        self.bt_salvar_dados_tabela_principal.setIconSize(QSize(30, 30))
+
+        self.horizontalLayout.addWidget(self.bt_salvar_dados_tabela_principal)
+
+        self.bt_exportar_arquivo_xlsx = QPushButton(self.frame_bts_top_table)
+        self.bt_exportar_arquivo_xlsx.setObjectName(u"bt_exportar_arquivo_xlsx")
+        self.bt_exportar_arquivo_xlsx.setMinimumSize(QSize(40, 35))
+        self.bt_exportar_arquivo_xlsx.setMaximumSize(QSize(40, 35))
+        self.bt_exportar_arquivo_xlsx.setStyleSheet(u"QPushButton{\n"
+"border:none;\n"
+"	\n"
+"    border-top-left-radius: 7px;\n"
+"    border-top-right-radius: 7px;\n"
+"    border-bottom-left-radius: 7px;\n"
+"    border-bottom-right-radius: 7px;\n"
+"/*\n"
 "	border-right: 1px solid rgb(109, 109, 109);\n"
 "	border-left: 1px solid rgba(217, 217, 217, 0.80);\n"
 "	border-top: 1px solid rgba(217, 217, 217, 0.80);\n"
 "	border-bottom: 1px solid rgb(109, 109, 109);\n"
+"	font: 700 10pt \"Segoe UI\";\n"
+"*/\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgba(51, 221, 51, 0.25);\n"
+"\n"
 "}")
-        self.bt_salvar_dados_tabela_principal.setIcon(icon)
-        self.bt_salvar_dados_tabela_principal.setIconSize(QSize(30, 30))
+        icon13 = QIcon()
+        icon13.addFile(u":/icons/img/xlsx.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_exportar_arquivo_xlsx.setIcon(icon13)
+        self.bt_exportar_arquivo_xlsx.setIconSize(QSize(30, 30))
 
-        self.horizontalLayout.addWidget(self.bt_salvar_dados_tabela_principal)
+        self.horizontalLayout.addWidget(self.bt_exportar_arquivo_xlsx)
 
         self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
@@ -1561,15 +1590,12 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"	background-color: rgba(51, 221, 51, 0.25);\n"
-"	border-right: 1px solid rgb(109, 109, 109);\n"
-"	border-left: 1px solid rgba(217, 217, 217, 0.80);\n"
-"	border-top: 1px solid rgba(217, 217, 217, 0.80);\n"
-"	border-bottom: 1px solid rgb(109, 109, 109);\n"
+"background-color: rgb(195, 205, 255);\n"
+"\n"
 "}")
-        icon12 = QIcon()
-        icon12.addFile(u":/icons/img/reset.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_reprocesar_csv.setIcon(icon12)
+        icon14 = QIcon()
+        icon14.addFile(u":/icons/img/reset.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_reprocesar_csv.setIcon(icon14)
         self.bt_reprocesar_csv.setIconSize(QSize(26, 26))
 
         self.horizontalLayout.addWidget(self.bt_reprocesar_csv)
@@ -1762,9 +1788,9 @@ class Ui_MainWindow(object):
         self.pushButton_2.setMinimumSize(QSize(250, 0))
         self.pushButton_2.setMaximumSize(QSize(250, 16777215))
         self.pushButton_2.setStyleSheet(u"border:none;")
-        icon13 = QIcon()
-        icon13.addFile(u":/icons/img/logo_smartMigrate.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_2.setIcon(icon13)
+        icon15 = QIcon()
+        icon15.addFile(u":/icons/img/logo_smartMigrate.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pushButton_2.setIcon(icon15)
         self.pushButton_2.setIconSize(QSize(200, 100))
 
         self.gridLayout_14.addWidget(self.pushButton_2, 0, 2, 1, 1)
@@ -1818,9 +1844,9 @@ class Ui_MainWindow(object):
         self.bt_conexoes_banco_dados.setMaximumSize(QSize(50, 60))
         self.bt_conexoes_banco_dados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_conexoes_banco_dados.setToolTipDuration(0)
-        icon14 = QIcon()
-        icon14.addFile(u":/icons/img/data_bases.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_conexoes_banco_dados.setIcon(icon14)
+        icon16 = QIcon()
+        icon16.addFile(u":/icons/img/data_bases.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_conexoes_banco_dados.setIcon(icon16)
         self.bt_conexoes_banco_dados.setIconSize(QSize(40, 40))
         self.bt_pesquisar_dados = QPushButton(self.frame_8)
         self.bt_pesquisar_dados.setObjectName(u"bt_pesquisar_dados")
@@ -1828,9 +1854,9 @@ class Ui_MainWindow(object):
         self.bt_pesquisar_dados.setMinimumSize(QSize(80, 50))
         self.bt_pesquisar_dados.setMaximumSize(QSize(80, 50))
         self.bt_pesquisar_dados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon15 = QIcon()
-        icon15.addFile(u":/icons/img/search-data.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_pesquisar_dados.setIcon(icon15)
+        icon17 = QIcon()
+        icon17.addFile(u":/icons/img/search-data.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_pesquisar_dados.setIcon(icon17)
         self.bt_pesquisar_dados.setIconSize(QSize(40, 40))
         self.bt_processamento_dados = QPushButton(self.frame_8)
         self.bt_processamento_dados.setObjectName(u"bt_processamento_dados")
@@ -1839,9 +1865,9 @@ class Ui_MainWindow(object):
         self.bt_processamento_dados.setMaximumSize(QSize(80, 50))
         self.bt_processamento_dados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_processamento_dados.setToolTipDuration(0)
-        icon16 = QIcon()
-        icon16.addFile(u":/icons/img/data-processing.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_processamento_dados.setIcon(icon16)
+        icon18 = QIcon()
+        icon18.addFile(u":/icons/img/data-processing.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_processamento_dados.setIcon(icon18)
         self.bt_processamento_dados.setIconSize(QSize(40, 40))
 
         self.horizontalLayout_2.addWidget(self.frame_8, 0, Qt.AlignmentFlag.AlignLeft)
@@ -1988,9 +2014,13 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.bt_desfazer.setText("")
 #if QT_CONFIG(tooltip)
-        self.bt_salvar_dados_tabela_principal.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:8pt; color:#4b3ff1;\">Exportar dados</span></p></body></html>", None))
+        self.bt_salvar_dados_tabela_principal.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:8pt; color:#4b3ff1;\">Exportar .csv</span></p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
         self.bt_salvar_dados_tabela_principal.setText("")
+#if QT_CONFIG(tooltip)
+        self.bt_exportar_arquivo_xlsx.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:8pt; color:#4b3ff1;\">Exportar .xslsx</span></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+        self.bt_exportar_arquivo_xlsx.setText("")
 #if QT_CONFIG(tooltip)
         self.bt_reprocesar_csv.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:8pt; color:#4b3ff1;\">Reprocessar</span></p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
