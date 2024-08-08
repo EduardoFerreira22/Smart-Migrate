@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="icons">
+    <file>img/reset.png</file>
+    <file>img/delete_duplicados.png</file>
+    <file>img/desfazer.png</file>
+    <file>img/return.png</file>
     <file>img/more.png</file>
     <file>img/play.png</file>
     <file>img/minus.png</file>
@@ -10,7 +14,6 @@
     <file>img/duplicado1.png</file>
     <file>img/duplicado2.png</file>
     <file>img/querys.png</file>
-    <file>img/retornar.png</file>
     <file>img/systems.png</file>
     <file>img/delete.png</file>
     <file>img/save_data.png</file>

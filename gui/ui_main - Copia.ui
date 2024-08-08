@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1783</width>
+    <width>1717</width>
     <height>1008</height>
    </rect>
   </property>
@@ -99,7 +99,7 @@
              </size>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page_conections">
              <layout class="QVBoxLayout" name="verticalLayout">
@@ -493,6 +493,9 @@ QPushButton:hover{
                  </property>
                  <item row="4" column="0">
                   <widget class="QTreeView" name="treeView_lista_tabelas">
+                   <property name="focusPolicy">
+                    <enum>Qt::FocusPolicy::StrongFocus</enum>
+                   </property>
                    <property name="accessibleDescription">
                     <string>3</string>
                    </property>
@@ -528,14 +531,35 @@ QTreeView:hover{
 
 }</string>
                    </property>
+                   <property name="inputMethodHints">
+                    <set>Qt::InputMethodHint::ImhNone</set>
+                   </property>
+                   <property name="editTriggers">
+                    <set>QAbstractItemView::EditTrigger::AllEditTriggers</set>
+                   </property>
                    <property name="tabKeyNavigation">
                     <bool>true</bool>
+                   </property>
+                   <property name="alternatingRowColors">
+                    <bool>true</bool>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
                    </property>
                    <property name="animated">
                     <bool>true</bool>
                    </property>
+                   <property name="headerHidden">
+                    <bool>true</bool>
+                   </property>
                    <attribute name="headerVisible">
                     <bool>false</bool>
+                   </attribute>
+                   <attribute name="headerMinimumSectionSize">
+                    <number>100</number>
                    </attribute>
                   </widget>
                  </item>
@@ -781,6 +805,13 @@ background-color: rgba(195, 205, 255, 0.40)
                       </property>
                      </widget>
                     </item>
+                    <item>
+                     <widget class="QLabel" name="label_3">
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Para lidar com os dados duplicados selecione uma das opções.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
                    </layout>
                   </widget>
                  </item>
@@ -814,145 +845,6 @@ background-color: rgba(195, 205, 255, 0.40)
                  <property name="spacing">
                   <number>2</number>
                  </property>
-                 <item row="5" column="0">
-                  <widget class="QFrame" name="frame_10">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>35</height>
-                    </size>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::Shape::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_16">
-                    <property name="leftMargin">
-                     <number>5</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>2</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>5</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>2</number>
-                    </property>
-                    <item row="0" column="1">
-                     <widget class="QPushButton" name="bt_deletar_duplicados">
-                      <property name="minimumSize">
-                       <size>
-                        <width>120</width>
-                        <height>35</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>120</width>
-                        <height>35</height>
-                       </size>
-                      </property>
-                      <property name="cursor">
-                       <cursorShape>PointingHandCursor</cursorShape>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton{
-	font: 700 10pt &quot;Segoe UI&quot;;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-	border-right: 1px solid rgb(109, 109, 109);
-	border-left: 1px solid rgba(217, 217, 217, 0.80);
-	border-top: 1px solid rgba(217, 217, 217, 0.80);
-	border-bottom: 1px solid rgb(109, 109, 109);
-}
-
-QPushButton:hover{
-	background-color: rgba(255, 52, 52, 0.25);
-	border-right: 1px solid rgb(109, 109, 109);
-	border-left: 1px solid rgba(217, 217, 217, 0.80);
-	border-top: 1px solid rgba(217, 217, 217, 0.80);
-	border-bottom: 1px solid rgb(109, 109, 109);
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>Deletar</string>
-                      </property>
-                      <property name="icon">
-                       <iconset resource="icons.qrc">
-                        <normaloff>:/icons/img/delete.png</normaloff>:/icons/img/delete.png</iconset>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>30</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="0" alignment="Qt::AlignmentFlag::AlignLeft">
-                     <widget class="QPushButton" name="bt_exportar_duplicados">
-                      <property name="minimumSize">
-                       <size>
-                        <width>120</width>
-                        <height>35</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>120</width>
-                        <height>35</height>
-                       </size>
-                      </property>
-                      <property name="cursor">
-                       <cursorShape>PointingHandCursor</cursorShape>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton{
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-	border-right: 1px solid rgb(109, 109, 109);
-	border-left: 1px solid rgba(217, 217, 217, 0.80);
-	border-top: 1px solid rgba(217, 217, 217, 0.80);
-	border-bottom: 1px solid rgb(109, 109, 109);
-	font: 700 10pt &quot;Segoe UI&quot;;
-}
-
-QPushButton:hover{
-	background-color: rgba(51, 221, 51, 0.25);
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>Exportar</string>
-                      </property>
-                      <property name="icon">
-                       <iconset resource="icons.qrc">
-                        <normaloff>:/icons/img/save_data.png</normaloff>:/icons/img/save_data.png</iconset>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>30</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="4" column="0">
-                  <widget class="QLabel" name="label_3">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Para lidar com os dados duplicados selecione uma das opções a cima.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="3" column="0">
                   <widget class="QTableWidget" name="table_duplicados">
                    <property name="styleSheet">
@@ -1067,6 +959,144 @@ QTableView:hover{
                    <attribute name="verticalHeaderVisible">
                     <bool>false</bool>
                    </attribute>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QFrame" name="frame_10">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::Shape::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Shadow::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_3">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item alignment="Qt::AlignmentFlag::AlignLeft">
+                     <widget class="QPushButton" name="bt_exportar_duplicados">
+                      <property name="minimumSize">
+                       <size>
+                        <width>40</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>40</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="toolTip">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Exportar duplicados&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+border:none;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+QPushButton:hover{
+	background-color: rgba(51, 221, 51, 0.25);
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="icons.qrc">
+                        <normaloff>:/icons/img/save_data.png</normaloff>:/icons/img/save_data.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>30</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="bt_deletar_duplicados">
+                      <property name="minimumSize">
+                       <size>
+                        <width>40</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>40</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="toolTip">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#4b3ff1;&quot;&gt;Deletar duplicados&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton{
+border:none;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+QPushButton:hover{
+	background-color: rgba(255, 52, 52, 0.25);
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="icons.qrc">
+                        <normaloff>:/icons/img/delete_duplicados.png</normaloff>:/icons/img/delete_duplicados.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>30</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_3">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
@@ -2198,7 +2228,7 @@ QPushButton:hover{
               <widget class="QLineEdit" name="txt_opcoes_busca">
                <property name="geometry">
                 <rect>
-                 <x>110</x>
+                 <x>100</x>
                  <y>100</y>
                  <width>181</width>
                  <height>31</height>
@@ -2975,53 +3005,251 @@ QPushButton:hover{
                </property>
               </widget>
              </item>
-             <item row="5" column="2">
-              <widget class="QPushButton" name="bt_salvar_dados_tabela_principal">
+             <item row="1" column="1" colspan="2" alignment="Qt::AlignmentFlag::AlignBottom">
+              <widget class="QFrame" name="frame_bts_top_table">
                <property name="minimumSize">
                 <size>
-                 <width>120</width>
-                 <height>35</height>
+                 <width>0</width>
+                 <height>50</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
-                 <height>35</height>
+                 <height>50</height>
                 </size>
                </property>
-               <property name="cursor">
-                <cursorShape>PointingHandCursor</cursorShape>
-               </property>
                <property name="styleSheet">
-                <string notr="true">QPushButton{
+                <string notr="true">QFrame{
+
+	
+	background-color: rgb(255, 255, 255);
+	border-right: 1px solid rgba(217, 217, 217, 0.80);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgba(217, 217, 217, 0.80);
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
+    padding: 10px;
+
+}
+
+QPushButton{
+border:none;
+}</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout">
+                <property name="spacing">
+                 <number>10</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>1</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item alignment="Qt::AlignmentFlag::AlignLeft">
+                 <widget class="QPushButton" name="bt_desfazer">
+                  <property name="minimumSize">
+                   <size>
+                    <width>40</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>40</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Desfazer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+border:none;
+	
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+/*
 	border-right: 1px solid rgb(109, 109, 109);
 	border-left: 1px solid rgba(217, 217, 217, 0.80);
 	border-top: 1px solid rgba(217, 217, 217, 0.80);
 	border-bottom: 1px solid rgb(109, 109, 109);
 	font: 700 10pt &quot;Segoe UI&quot;;
+*/
 }
 
 QPushButton:hover{
 	background-color: rgba(51, 221, 51, 0.25);
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
 }</string>
-               </property>
-               <property name="text">
-                <string>Salvar</string>
-               </property>
-               <property name="icon">
-                <iconset resource="icons.qrc">
-                 <normaloff>:/icons/img/save_data.png</normaloff>:/icons/img/save_data.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>30</width>
-                 <height>30</height>
-                </size>
-               </property>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="icons.qrc">
+                    <normaloff>:/icons/img/desfazer.png</normaloff>:/icons/img/desfazer.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>25</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="bt_salvar_dados_tabela_principal">
+                  <property name="minimumSize">
+                   <size>
+                    <width>40</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>40</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Exportar dados&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+border:none;
+	
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+/*
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+	font: 700 10pt &quot;Segoe UI&quot;;
+*/
+}
+
+QPushButton:hover{
+	background-color: rgba(51, 221, 51, 0.25);
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+}</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="icons.qrc">
+                    <normaloff>:/icons/img/save_data.png</normaloff>:/icons/img/save_data.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="bt_reprocesar_csv">
+                  <property name="minimumSize">
+                   <size>
+                    <width>40</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>40</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Reprocessar&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::LayoutDirection::RightToLeft</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+	
+	font: 700 9pt &quot;Segoe UI&quot;;
+	
+	color: rgb(170, 0, 255);
+	border:none;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+
+}
+
+QPushButton:hover{
+	background-color: rgba(51, 221, 51, 0.25);
+	border-right: 1px solid rgb(109, 109, 109);
+	border-left: 1px solid rgba(217, 217, 217, 0.80);
+	border-top: 1px solid rgba(217, 217, 217, 0.80);
+	border-bottom: 1px solid rgb(109, 109, 109);
+}</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="icons.qrc">
+                    <normaloff>:/icons/img/reset.png</normaloff>:/icons/img/reset.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>26</width>
+                    <height>26</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
              <item row="2" column="0" colspan="3">
@@ -3158,6 +3386,12 @@ QPushButton:hover{
                </property>
                <property name="selectionBehavior">
                 <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
                </property>
                <property name="sortingEnabled">
                 <bool>false</bool>

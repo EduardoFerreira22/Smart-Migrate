@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ui_main - CopiaLGXnso.ui'
+## Form generated from reading UI file 'ui_main - CopiaFSVIWj.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1783, 1008)
+        MainWindow.resize(1717, 1008)
         MainWindow.setStyleSheet(u"")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -207,6 +207,7 @@ class Ui_MainWindow(object):
         self.gridLayout_12.setContentsMargins(0, 0, 0, 0)
         self.treeView_lista_tabelas = QTreeView(self.frame_3)
         self.treeView_lista_tabelas.setObjectName(u"treeView_lista_tabelas")
+        self.treeView_lista_tabelas.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
         self.treeView_lista_tabelas.setStyleSheet(u"QTreeView{\n"
 "\n"
 "	font: 11pt \"Segoe UI\";\n"
@@ -237,9 +238,15 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "}")
+        self.treeView_lista_tabelas.setInputMethodHints(Qt.InputMethodHint.ImhNone)
+        self.treeView_lista_tabelas.setEditTriggers(QAbstractItemView.EditTrigger.AllEditTriggers)
         self.treeView_lista_tabelas.setTabKeyNavigation(True)
+        self.treeView_lista_tabelas.setAlternatingRowColors(True)
+        self.treeView_lista_tabelas.setIconSize(QSize(30, 30))
         self.treeView_lista_tabelas.setAnimated(True)
+        self.treeView_lista_tabelas.setHeaderHidden(True)
         self.treeView_lista_tabelas.header().setVisible(False)
+        self.treeView_lista_tabelas.header().setMinimumSectionSize(100)
 
         self.gridLayout_12.addWidget(self.treeView_lista_tabelas, 4, 0, 1, 1)
 
@@ -369,6 +376,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.label_2)
 
+        self.label_3 = QLabel(self.frame_7)
+        self.label_3.setObjectName(u"label_3")
+
+        self.verticalLayout_5.addWidget(self.label_3)
+
 
         self.verticalLayout_4.addWidget(self.frame_7)
 
@@ -384,80 +396,6 @@ class Ui_MainWindow(object):
         self.gridLayout_13.setSpacing(2)
         self.gridLayout_13.setObjectName(u"gridLayout_13")
         self.gridLayout_13.setContentsMargins(0, 0, 0, 0)
-        self.frame_10 = QFrame(self.frame_tabelas_duplicadas)
-        self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setMinimumSize(QSize(0, 35))
-        self.frame_10.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_10.setFrameShadow(QFrame.Shadow.Raised)
-        self.gridLayout_16 = QGridLayout(self.frame_10)
-        self.gridLayout_16.setObjectName(u"gridLayout_16")
-        self.gridLayout_16.setContentsMargins(5, 2, 5, 2)
-        self.bt_deletar_duplicados = QPushButton(self.frame_10)
-        self.bt_deletar_duplicados.setObjectName(u"bt_deletar_duplicados")
-        self.bt_deletar_duplicados.setMinimumSize(QSize(120, 35))
-        self.bt_deletar_duplicados.setMaximumSize(QSize(120, 35))
-        self.bt_deletar_duplicados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.bt_deletar_duplicados.setStyleSheet(u"QPushButton{\n"
-"	font: 700 10pt \"Segoe UI\";\n"
-"    border-top-left-radius: 7px;\n"
-"    border-top-right-radius: 7px;\n"
-"    border-bottom-left-radius: 7px;\n"
-"    border-bottom-right-radius: 7px;\n"
-"	border-right: 1px solid rgb(109, 109, 109);\n"
-"	border-left: 1px solid rgba(217, 217, 217, 0.80);\n"
-"	border-top: 1px solid rgba(217, 217, 217, 0.80);\n"
-"	border-bottom: 1px solid rgb(109, 109, 109);\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"	background-color: rgba(255, 52, 52, 0.25);\n"
-"	border-right: 1px solid rgb(109, 109, 109);\n"
-"	border-left: 1px solid rgba(217, 217, 217, 0.80);\n"
-"	border-top: 1px solid rgba(217, 217, 217, 0.80);\n"
-"	border-bottom: 1px solid rgb(109, 109, 109);\n"
-"}")
-        icon = QIcon()
-        icon.addFile(u":/icons/img/delete.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_deletar_duplicados.setIcon(icon)
-        self.bt_deletar_duplicados.setIconSize(QSize(30, 30))
-
-        self.gridLayout_16.addWidget(self.bt_deletar_duplicados, 0, 1, 1, 1)
-
-        self.bt_exportar_duplicados = QPushButton(self.frame_10)
-        self.bt_exportar_duplicados.setObjectName(u"bt_exportar_duplicados")
-        self.bt_exportar_duplicados.setMinimumSize(QSize(120, 35))
-        self.bt_exportar_duplicados.setMaximumSize(QSize(120, 35))
-        self.bt_exportar_duplicados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.bt_exportar_duplicados.setStyleSheet(u"QPushButton{\n"
-"    border-top-left-radius: 7px;\n"
-"    border-top-right-radius: 7px;\n"
-"    border-bottom-left-radius: 7px;\n"
-"    border-bottom-right-radius: 7px;\n"
-"	border-right: 1px solid rgb(109, 109, 109);\n"
-"	border-left: 1px solid rgba(217, 217, 217, 0.80);\n"
-"	border-top: 1px solid rgba(217, 217, 217, 0.80);\n"
-"	border-bottom: 1px solid rgb(109, 109, 109);\n"
-"	font: 700 10pt \"Segoe UI\";\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"	background-color: rgba(51, 221, 51, 0.25);\n"
-"}")
-        icon1 = QIcon()
-        icon1.addFile(u":/icons/img/save_data.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_exportar_duplicados.setIcon(icon1)
-        self.bt_exportar_duplicados.setIconSize(QSize(30, 30))
-
-        self.gridLayout_16.addWidget(self.bt_exportar_duplicados, 0, 0, 1, 1, Qt.AlignmentFlag.AlignLeft)
-
-
-        self.gridLayout_13.addWidget(self.frame_10, 5, 0, 1, 1)
-
-        self.label_3 = QLabel(self.frame_tabelas_duplicadas)
-        self.label_3.setObjectName(u"label_3")
-
-        self.gridLayout_13.addWidget(self.label_3, 4, 0, 1, 1)
-
         self.table_duplicados = QTableWidget(self.frame_tabelas_duplicadas)
         self.table_duplicados.setObjectName(u"table_duplicados")
         self.table_duplicados.setStyleSheet(u"QTableWidget{\n"
@@ -570,6 +508,75 @@ class Ui_MainWindow(object):
         self.table_duplicados.verticalHeader().setVisible(False)
 
         self.gridLayout_13.addWidget(self.table_duplicados, 3, 0, 1, 1)
+
+        self.frame_10 = QFrame(self.frame_tabelas_duplicadas)
+        self.frame_10.setObjectName(u"frame_10")
+        self.frame_10.setMinimumSize(QSize(0, 35))
+        self.frame_10.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_10.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_10)
+        self.horizontalLayout_3.setSpacing(10)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.bt_exportar_duplicados = QPushButton(self.frame_10)
+        self.bt_exportar_duplicados.setObjectName(u"bt_exportar_duplicados")
+        self.bt_exportar_duplicados.setMinimumSize(QSize(40, 35))
+        self.bt_exportar_duplicados.setMaximumSize(QSize(40, 35))
+        self.bt_exportar_duplicados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.bt_exportar_duplicados.setStyleSheet(u"QPushButton{\n"
+"border:none;\n"
+"    border-top-left-radius: 7px;\n"
+"    border-top-right-radius: 7px;\n"
+"    border-bottom-left-radius: 7px;\n"
+"    border-bottom-right-radius: 7px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgba(51, 221, 51, 0.25);\n"
+"	border-right: 1px solid rgb(109, 109, 109);\n"
+"	border-left: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-top: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-bottom: 1px solid rgb(109, 109, 109);\n"
+"}")
+        icon = QIcon()
+        icon.addFile(u":/icons/img/save_data.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_exportar_duplicados.setIcon(icon)
+        self.bt_exportar_duplicados.setIconSize(QSize(30, 30))
+
+        self.horizontalLayout_3.addWidget(self.bt_exportar_duplicados, 0, Qt.AlignmentFlag.AlignLeft)
+
+        self.bt_deletar_duplicados = QPushButton(self.frame_10)
+        self.bt_deletar_duplicados.setObjectName(u"bt_deletar_duplicados")
+        self.bt_deletar_duplicados.setMinimumSize(QSize(40, 35))
+        self.bt_deletar_duplicados.setMaximumSize(QSize(40, 35))
+        self.bt_deletar_duplicados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.bt_deletar_duplicados.setStyleSheet(u"QPushButton{\n"
+"border:none;\n"
+"    border-top-left-radius: 7px;\n"
+"    border-top-right-radius: 7px;\n"
+"    border-bottom-left-radius: 7px;\n"
+"    border-bottom-right-radius: 7px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgba(255, 52, 52, 0.25);\n"
+"	border-right: 1px solid rgb(109, 109, 109);\n"
+"	border-left: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-top: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-bottom: 1px solid rgb(109, 109, 109);\n"
+"}")
+        icon1 = QIcon()
+        icon1.addFile(u":/icons/img/delete_duplicados.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_deletar_duplicados.setIcon(icon1)
+        self.bt_deletar_duplicados.setIconSize(QSize(30, 30))
+
+        self.horizontalLayout_3.addWidget(self.bt_deletar_duplicados)
+
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_3)
+
+
+        self.gridLayout_13.addWidget(self.frame_10, 0, 0, 1, 1)
 
 
         self.verticalLayout_2.addWidget(self.frame_tabelas_duplicadas)
@@ -1113,7 +1120,7 @@ class Ui_MainWindow(object):
         self.comboBox_opcoes_busca.setGeometry(QRect(100, 30, 261, 31))
         self.txt_opcoes_busca = QLineEdit(self.frame_op_busca)
         self.txt_opcoes_busca.setObjectName(u"txt_opcoes_busca")
-        self.txt_opcoes_busca.setGeometry(QRect(110, 100, 181, 31))
+        self.txt_opcoes_busca.setGeometry(QRect(100, 100, 181, 31))
         self.txt_opcoes_busca.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.txt_opcoes_busca.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.bt_buscar_op_busca = QPushButton(self.frame_op_busca)
@@ -1435,30 +1442,140 @@ class Ui_MainWindow(object):
 
         self.gridLayout_8.addWidget(self.txt_output_logs, 5, 1, 1, 1)
 
-        self.bt_salvar_dados_tabela_principal = QPushButton(self.frame_table_principal)
-        self.bt_salvar_dados_tabela_principal.setObjectName(u"bt_salvar_dados_tabela_principal")
-        self.bt_salvar_dados_tabela_principal.setMinimumSize(QSize(120, 35))
-        self.bt_salvar_dados_tabela_principal.setMaximumSize(QSize(16777215, 35))
-        self.bt_salvar_dados_tabela_principal.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.bt_salvar_dados_tabela_principal.setStyleSheet(u"QPushButton{\n"
+        self.frame_bts_top_table = QFrame(self.frame_table_principal)
+        self.frame_bts_top_table.setObjectName(u"frame_bts_top_table")
+        self.frame_bts_top_table.setMinimumSize(QSize(0, 50))
+        self.frame_bts_top_table.setMaximumSize(QSize(16777215, 50))
+        self.frame_bts_top_table.setStyleSheet(u"QFrame{\n"
+"\n"
+"	\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	border-right: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-left: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-top: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-bottom: 1px solid rgba(217, 217, 217, 0.80);\n"
 "    border-top-left-radius: 7px;\n"
 "    border-top-right-radius: 7px;\n"
 "    border-bottom-left-radius: 7px;\n"
 "    border-bottom-right-radius: 7px;\n"
+"    padding: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"border:none;\n"
+"}")
+        self.frame_bts_top_table.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_bts_top_table.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout = QHBoxLayout(self.frame_bts_top_table)
+        self.horizontalLayout.setSpacing(10)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 1, 0)
+        self.bt_desfazer = QPushButton(self.frame_bts_top_table)
+        self.bt_desfazer.setObjectName(u"bt_desfazer")
+        self.bt_desfazer.setMinimumSize(QSize(40, 35))
+        self.bt_desfazer.setMaximumSize(QSize(40, 35))
+        self.bt_desfazer.setStyleSheet(u"QPushButton{\n"
+"border:none;\n"
+"	\n"
+"    border-top-left-radius: 7px;\n"
+"    border-top-right-radius: 7px;\n"
+"    border-bottom-left-radius: 7px;\n"
+"    border-bottom-right-radius: 7px;\n"
+"/*\n"
 "	border-right: 1px solid rgb(109, 109, 109);\n"
 "	border-left: 1px solid rgba(217, 217, 217, 0.80);\n"
 "	border-top: 1px solid rgba(217, 217, 217, 0.80);\n"
 "	border-bottom: 1px solid rgb(109, 109, 109);\n"
 "	font: 700 10pt \"Segoe UI\";\n"
+"*/\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
 "	background-color: rgba(51, 221, 51, 0.25);\n"
+"	border-right: 1px solid rgb(109, 109, 109);\n"
+"	border-left: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-top: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-bottom: 1px solid rgb(109, 109, 109);\n"
 "}")
-        self.bt_salvar_dados_tabela_principal.setIcon(icon1)
+        icon11 = QIcon()
+        icon11.addFile(u":/icons/img/desfazer.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_desfazer.setIcon(icon11)
+        self.bt_desfazer.setIconSize(QSize(25, 25))
+
+        self.horizontalLayout.addWidget(self.bt_desfazer, 0, Qt.AlignmentFlag.AlignLeft)
+
+        self.bt_salvar_dados_tabela_principal = QPushButton(self.frame_bts_top_table)
+        self.bt_salvar_dados_tabela_principal.setObjectName(u"bt_salvar_dados_tabela_principal")
+        self.bt_salvar_dados_tabela_principal.setMinimumSize(QSize(40, 35))
+        self.bt_salvar_dados_tabela_principal.setMaximumSize(QSize(40, 35))
+        self.bt_salvar_dados_tabela_principal.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.bt_salvar_dados_tabela_principal.setStyleSheet(u"QPushButton{\n"
+"border:none;\n"
+"	\n"
+"    border-top-left-radius: 7px;\n"
+"    border-top-right-radius: 7px;\n"
+"    border-bottom-left-radius: 7px;\n"
+"    border-bottom-right-radius: 7px;\n"
+"/*\n"
+"	border-right: 1px solid rgb(109, 109, 109);\n"
+"	border-left: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-top: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-bottom: 1px solid rgb(109, 109, 109);\n"
+"	font: 700 10pt \"Segoe UI\";\n"
+"*/\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgba(51, 221, 51, 0.25);\n"
+"	border-right: 1px solid rgb(109, 109, 109);\n"
+"	border-left: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-top: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-bottom: 1px solid rgb(109, 109, 109);\n"
+"}")
+        self.bt_salvar_dados_tabela_principal.setIcon(icon)
         self.bt_salvar_dados_tabela_principal.setIconSize(QSize(30, 30))
 
-        self.gridLayout_8.addWidget(self.bt_salvar_dados_tabela_principal, 5, 2, 1, 1)
+        self.horizontalLayout.addWidget(self.bt_salvar_dados_tabela_principal)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_2)
+
+        self.bt_reprocesar_csv = QPushButton(self.frame_bts_top_table)
+        self.bt_reprocesar_csv.setObjectName(u"bt_reprocesar_csv")
+        self.bt_reprocesar_csv.setMinimumSize(QSize(40, 35))
+        self.bt_reprocesar_csv.setMaximumSize(QSize(40, 35))
+        self.bt_reprocesar_csv.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
+        self.bt_reprocesar_csv.setStyleSheet(u"QPushButton{\n"
+"	\n"
+"	font: 700 9pt \"Segoe UI\";\n"
+"	\n"
+"	color: rgb(170, 0, 255);\n"
+"	border:none;\n"
+"    border-top-left-radius: 7px;\n"
+"    border-top-right-radius: 7px;\n"
+"    border-bottom-left-radius: 7px;\n"
+"    border-bottom-right-radius: 7px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgba(51, 221, 51, 0.25);\n"
+"	border-right: 1px solid rgb(109, 109, 109);\n"
+"	border-left: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-top: 1px solid rgba(217, 217, 217, 0.80);\n"
+"	border-bottom: 1px solid rgb(109, 109, 109);\n"
+"}")
+        icon12 = QIcon()
+        icon12.addFile(u":/icons/img/reset.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_reprocesar_csv.setIcon(icon12)
+        self.bt_reprocesar_csv.setIconSize(QSize(26, 26))
+
+        self.horizontalLayout.addWidget(self.bt_reprocesar_csv)
+
+
+        self.gridLayout_8.addWidget(self.frame_bts_top_table, 1, 1, 1, 2, Qt.AlignmentFlag.AlignBottom)
 
         self.table_principal = QTableWidget(self.frame_table_principal)
         self.table_principal.setObjectName(u"table_principal")
@@ -1577,6 +1694,7 @@ class Ui_MainWindow(object):
         self.table_principal.setAlternatingRowColors(True)
         self.table_principal.setSelectionMode(QAbstractItemView.SelectionMode.ContiguousSelection)
         self.table_principal.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self.table_principal.setIconSize(QSize(30, 30))
         self.table_principal.setSortingEnabled(False)
         self.table_principal.horizontalHeader().setProperty("showSortIndicator", True)
         self.table_principal.verticalHeader().setVisible(False)
@@ -1644,9 +1762,9 @@ class Ui_MainWindow(object):
         self.pushButton_2.setMinimumSize(QSize(250, 0))
         self.pushButton_2.setMaximumSize(QSize(250, 16777215))
         self.pushButton_2.setStyleSheet(u"border:none;")
-        icon11 = QIcon()
-        icon11.addFile(u":/icons/img/logo_smartMigrate.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_2.setIcon(icon11)
+        icon13 = QIcon()
+        icon13.addFile(u":/icons/img/logo_smartMigrate.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pushButton_2.setIcon(icon13)
         self.pushButton_2.setIconSize(QSize(200, 100))
 
         self.gridLayout_14.addWidget(self.pushButton_2, 0, 2, 1, 1)
@@ -1700,9 +1818,9 @@ class Ui_MainWindow(object):
         self.bt_conexoes_banco_dados.setMaximumSize(QSize(50, 60))
         self.bt_conexoes_banco_dados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_conexoes_banco_dados.setToolTipDuration(0)
-        icon12 = QIcon()
-        icon12.addFile(u":/icons/img/data_bases.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_conexoes_banco_dados.setIcon(icon12)
+        icon14 = QIcon()
+        icon14.addFile(u":/icons/img/data_bases.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_conexoes_banco_dados.setIcon(icon14)
         self.bt_conexoes_banco_dados.setIconSize(QSize(40, 40))
         self.bt_pesquisar_dados = QPushButton(self.frame_8)
         self.bt_pesquisar_dados.setObjectName(u"bt_pesquisar_dados")
@@ -1710,9 +1828,9 @@ class Ui_MainWindow(object):
         self.bt_pesquisar_dados.setMinimumSize(QSize(80, 50))
         self.bt_pesquisar_dados.setMaximumSize(QSize(80, 50))
         self.bt_pesquisar_dados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon13 = QIcon()
-        icon13.addFile(u":/icons/img/search-data.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_pesquisar_dados.setIcon(icon13)
+        icon15 = QIcon()
+        icon15.addFile(u":/icons/img/search-data.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_pesquisar_dados.setIcon(icon15)
         self.bt_pesquisar_dados.setIconSize(QSize(40, 40))
         self.bt_processamento_dados = QPushButton(self.frame_8)
         self.bt_processamento_dados.setObjectName(u"bt_processamento_dados")
@@ -1721,9 +1839,9 @@ class Ui_MainWindow(object):
         self.bt_processamento_dados.setMaximumSize(QSize(80, 50))
         self.bt_processamento_dados.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.bt_processamento_dados.setToolTipDuration(0)
-        icon14 = QIcon()
-        icon14.addFile(u":/icons/img/data-processing.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.bt_processamento_dados.setIcon(icon14)
+        icon16 = QIcon()
+        icon16.addFile(u":/icons/img/data-processing.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.bt_processamento_dados.setIcon(icon16)
         self.bt_processamento_dados.setIconSize(QSize(40, 40))
 
         self.horizontalLayout_2.addWidget(self.frame_8, 0, Qt.AlignmentFlag.AlignLeft)
@@ -1745,7 +1863,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabs_lateral_right.setCurrentIndex(1)
+        self.tabs_lateral_right.setCurrentIndex(0)
         self.stackedWidget_opcoes.setCurrentIndex(0)
 
 
@@ -1783,9 +1901,15 @@ class Ui_MainWindow(object):
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Clique para mostrar os dados da tabela</p></body></html>", None))
         self.txt_pesquisar_tabela.setPlaceholderText(QCoreApplication.translate("MainWindow", u"  Pesquisar por tabela", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:700;\">DADOS DUPLICADOS</span></p></body></html>", None))
-        self.bt_deletar_duplicados.setText(QCoreApplication.translate("MainWindow", u"Deletar", None))
-        self.bt_exportar_duplicados.setText(QCoreApplication.translate("MainWindow", u"Exportar", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Para lidar com os dados duplicados selecione uma das op\u00e7\u00f5es a cima.</p></body></html>", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\">Para lidar com os dados duplicados selecione uma das op\u00e7\u00f5es.</p></body></html>", None))
+#if QT_CONFIG(tooltip)
+        self.bt_exportar_duplicados.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:8pt; color:#4b3ff1;\">Exportar duplicados</span></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+        self.bt_exportar_duplicados.setText("")
+#if QT_CONFIG(tooltip)
+        self.bt_deletar_duplicados.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#4b3ff1;\">Deletar duplicados</span></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+        self.bt_deletar_duplicados.setText("")
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:8pt; font-weight:700; color:#4b3ff1;\">Lista de Sistemas catalogados.</span></p></body></html>", None))
 #if QT_CONFIG(tooltip)
         self.bt_execut_query_system.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:8pt; color:#00ab0e;\">Executar Script</span></p></body></html>", None))
@@ -1859,7 +1983,18 @@ class Ui_MainWindow(object):
         self.bt_add_opcoes3.setText("")
         self.bt_retirar_opcoes3.setText("")
         self.bt_retirar_opcoes2.setText("")
-        self.bt_salvar_dados_tabela_principal.setText(QCoreApplication.translate("MainWindow", u"Salvar", None))
+#if QT_CONFIG(tooltip)
+        self.bt_desfazer.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:8pt; color:#4b3ff1;\">Desfazer</span></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+        self.bt_desfazer.setText("")
+#if QT_CONFIG(tooltip)
+        self.bt_salvar_dados_tabela_principal.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:8pt; color:#4b3ff1;\">Exportar dados</span></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+        self.bt_salvar_dados_tabela_principal.setText("")
+#if QT_CONFIG(tooltip)
+        self.bt_reprocesar_csv.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:8pt; color:#4b3ff1;\">Reprocessar</span></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+        self.bt_reprocesar_csv.setText("")
         self.pushButton_2.setText("")
 #if QT_CONFIG(tooltip)
         self.bt_buscar_csv.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:8pt; color:#4b3ff1;\">Arquivo</span></p></body></html>", None))

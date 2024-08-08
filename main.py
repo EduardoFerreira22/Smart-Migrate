@@ -5,12 +5,14 @@ from PySide6.QtWidgets import (QApplication,QMainWindow,QMessageBox,QProgressBar
                                QPlainTextEdit, QPushButton, QVBoxLayout, QWidget, QSystemTrayIcon, QMenu)
 
 from gui.ui_ui_main import Ui_MainWindow
+from gui.ui_ui_progressbar import Ui_ProgressBar
 import gui.app_instance as app_instance
 from configs.encoders import detectar_encoding
 
 from conections.db_conect import View_DBF, conectar_ao_sql_server, conectar_ao_MySQL, conectar_ao_PostgreSQL, conectar_Sqlite3, conectar_ao_Firebird, populate_tree_view_with_tables_and_columns, tables_SqlServer, tables_MySQL, tables_PostgreSQL, tables_SQLite3, tables_Firebird, close_connections
-import  files_csv.csv_functions as csv_file
 from configs.dictionares import configurar_interface, configurar_busca_interface, configurar_interface_banco_de_dados, adicionar_opcoes, remover_opcoes
+from files_csv.csv_functions import BackupAndRestore 
+import  files_csv.csv_functions as csv_file
 import socket
 import csv
 import pandas as pd
@@ -19,7 +21,48 @@ def get_host_name():
     hostname = socket.gethostname()
     return hostname
 
-class WindowPrincipal(QMainWindow, Ui_MainWindow):
+from PySide6.QtCore import QThread, Signal
+from PySide6.QtWidgets import QMainWindow, QDialog
+
+class ProgressBarWindow(QDialog, Ui_ProgressBar):
+    def __init__(self, parent=None):
+        super(ProgressBarWindow, self).__init__(parent)
+        self.setupUi(self)
+        
+
+class CSVLoaderThread(QThread):
+    progress = Signal(int)
+    log = Signal(str)
+    data_loaded = Signal(list)
+
+    def __init__(self, file_path):
+        super().__init__()
+        self.file_path = file_path
+
+    def run(self):
+        encoding = detectar_encoding(path_csv=self.file_path)
+        try:
+            with open(self.file_path, newline='', encoding=encoding) as csvfile:
+                reader = csv.reader(csvfile, delimiter=';')
+                all_data = list(reader)
+                self.log.emit("Planilha processada com encoding: UTF-8")
+        except UnicodeDecodeError:
+            with open(self.file_path, newline='', encoding=encoding, errors='replace') as csvfile:
+                reader = csv.reader(csvfile, delimiter=';')
+                all_data = list(reader)
+                self.log.emit("Planilha processada com encoding: Latin1")
+
+        row_count = len(all_data)
+        for i, row in enumerate(all_data):
+            progress_value = int((i + 1) / row_count * 100)
+            self.progress.emit(progress_value)
+            if i % 100 == 0:  # Log progress every 100 rows
+                self.log.emit(f"Carregando linha {i + 1} de {row_count}")
+
+        self.data_loaded.emit(all_data)
+
+
+class WindowPrincipal(QMainWindow, Ui_MainWindow, ProgressBarWindow, CSVLoaderThread):
     def __init__(self):
         super(WindowPrincipal, self).__init__()
         self.setupUi(self)
@@ -28,13 +71,12 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
         self.nome_computador = get_host_name()
         self.setup_ui()
         self.setup_connections()
-        self.setup_execut_opcoes()
+        self.setup_selecao_opcoes_busca()
         self.setup_execut_processamento()
+        self.setup_bkp_restore()
         self.showMaximized()
+        self.bkp = BackupAndRestore()
         
-
-
-
         #ocultos tabs
         self.widget_right.setVisible(False)
         self.tabs_lateral_right.setVisible(False)
@@ -54,6 +96,7 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
         self.bt_mostra_dados_tabelas.clicked.connect(self.show_table_data)
         self.bt_salvar_dados_tabela_principal.clicked.connect(self.salvar_dados_tabela_principal)
         self.txt_pesquisar_tabela.textChanged.connect(self.filter_and_update_tree_view)
+        
 
 
         # Conecte os botões
@@ -88,7 +131,8 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
         self.txt_opcoes_busca.setVisible(False)
         self.bt_buscar_op_busca.setVisible(False)
         self.combo1_colunas_opcoes_busca.setVisible(False)
-        self.bt_buscar_op_busca.clicked.connect(self.buscar_duplicados)
+        self.bt_buscar_op_busca.clicked.connect(self.setup_execut_func_op_buscas)
+        
         
 
         #Opções de Processamento
@@ -128,32 +172,46 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
         msg.setIcon(QMessageBox.Warning)
         msg.exec()
 
-    def buscar_arquivo(self):
 
+    def update_progress(self, value):
+        self.progress_window.progressBar.setValue(value)
+
+    def update_log(self, message):
+        self.progress_window.outPut_logs_progressBar.appendPlainText(message)
+
+    def load_data_to_table(self, all_data):
+        self.progress_window.close()
+        # Preenche a tabela com os dados recebidos da thread
+        self.load_data_table(all_data, self.table_principal)
+
+    def buscar_arquivo(self):
         selected_data = self.combo_data_base_list.currentText()
         self.txt_output_logs.setPlainText("Buscando novo arquivo.")
 
-        # Abre um diálogo de seleção de arquivos
         file_dialog = QFileDialog()
         file_dialog.setFileMode(QFileDialog.ExistingFile)
         
         if selected_data == 'SQLite':
             file_dialog.setNameFilter("Banco de Dados SQLite (*.db *.sqlite *.sqlite3);;Todos os Arquivos (*)")
-
         elif selected_data == 'Firebird':
             file_dialog.setNameFilter("Banco de Dados Firebird (*.fdb);;Todos os Arquivos (*)")
-
         elif selected_data == 'Firebird arquivos .DBF':
             file_dialog.setNameFilter("Banco de Dados Firebird (*.dbf);;Todos os Arquivos (*)")
-
-        else:  # Para CSV
+        else:
             file_dialog.setNameFilter("Arquivo CSV UTF-8 (*.csv);;CSV separado por vírgula (*.csv)")
 
         if file_dialog.exec():
-            # Obtém o caminho do arquivo selecionado
-            self.file = file_dialog.selectedFiles()[0]
+            self.file = file_dialog.selectedFiles()[0]  # Obtenha o caminho do arquivo
+            self.progress_window = ProgressBarWindow(self)
+            self.progress_window.show()
 
-            # Retorna o caminho do arquivo selecionado
+            self.csv_thread = CSVLoaderThread(self.file)  # Passe o caminho do arquivo para o thread
+            self.csv_thread.start()
+            self.csv_thread.progress.connect(self.update_progress)
+            self.csv_thread.log.connect(self.update_log)
+            self.csv_thread.data_loaded.connect(self.load_data_to_table)
+            
+
             return self.file
 
     def buscar_csv(self):
@@ -287,8 +345,8 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
     def salvar_dados_duplicados(self):
         self.salvar_csv(self.table_duplicados)
 
-
     def extrair_duplicados(self):
+            self.bkp.backup_process_csv(self.file)
             """
             Extrai dados da planilha, encontra duplicatas, carrega essas duplicatas na tabela table_duplicados,
             remove os dados duplicados da planilha original e atualiza a tabela principal com os dados restantes.
@@ -353,6 +411,7 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
 
     #executa a função que processa os dados negativos e atualiza a tabela
     def coluna_dados_negativos(self):
+        self.bkp.backup_process_csv(self.file)
         coluna = self.combo1_colunas_processamento.currentText()
 
         # Supondo que a função valores_negativos retorne os dados processados
@@ -611,9 +670,19 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
             if self.table_principal is not None:
                 self.bt_salvar_dados_tabela_principal.clicked.connect(csv_file.save_data_to_csv)
     
-    def setup_execut_opcoes(self):
+    def setup_selecao_opcoes_busca(self):
+
         self.comboBox_opcoes_busca.currentIndexChanged.connect(self.executa_fucoes_Opcoes)
+
+    def setup_execut_func_op_buscas(self):
+        opcoes = self.comboBox_opcoes_busca.currentText()
         
+        if opcoes == 'Tudo que contém':
+            self.busc_tudo_que_contem()
+
+        elif opcoes == 'Duplicados':
+            self.buscar_duplicados()
+
     def setup_execut_processamento(self):
         self.combo_opcoes_processamento.currentIndexChanged.connect(self.executa_opcoes_processamento)
 
@@ -634,7 +703,7 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
             configurar_busca_interface(True, False,False, False, False,False, "")
 
         elif opcao == 'Tudo que contém':
-            configurar_busca_interface(True, False,False, True, False,False, "")
+            configurar_busca_interface(True, True,False, True, False,False, "")
 
         elif opcao == 'Duplicados':
             configurar_busca_interface(True, True,False, False, False,True, "")
@@ -696,8 +765,17 @@ class WindowPrincipal(QMainWindow, Ui_MainWindow):
             configurar_interface(True, False, False, False, False, False, False, False, False, False, False, 
                                     False, False, False, False, True,  "", "", "", "")
 
+    #EXECUTANDO FUNÇÕES OPÇÕES DE BUSCA
+    def busc_tudo_que_contem(self):
+        csv_file.busca_tudo_que_contem(self.file, self.table_principal)
 
+    def restore(self):
+        print("Botão 'Desfazer' clicado.")
+        self.bkp.restore_backup(self.file, self.table_principal)
 
+    def setup_bkp_restore(self):
+        # Certifique-se de que o botão bt_desfazer está sendo conectado após ser instanciado
+        self.bt_desfazer.clicked.connect(self.restore)
 
 if __name__ == "__main__":
     import sys

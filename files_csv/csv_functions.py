@@ -4,6 +4,7 @@ from configs.erros import Erros
 import csv
 import pandas as pd
 import chardet
+import shutil
 
 import gui.app_instance as app_instance 
 from PySide6.QtWidgets import QFileDialog
@@ -12,6 +13,25 @@ from configs.erros import Erros
 from configs.encoders import detectar_encoding
 import re
 from collections import defaultdict
+from PySide6.QtCore import QThread, Signal
+from PySide6.QtWidgets import QMainWindow, QDialog
+
+class GenericLoaderThread(QThread):
+    data_loaded = Signal(list, list, list)  # Sinal para headers, rows e duplicatas
+
+    def __init__(self, func, path_csv, coluna_para_verificar):
+        super().__init__()
+        self.func = func
+        self.path_csv = path_csv
+        self.coluna_para_verificar = coluna_para_verificar
+
+    def run(self):
+        try:
+            headers, rows, duplicatas = self.func(self.path_csv, self.coluna_para_verificar)
+            self.data_loaded.emit(headers, rows, duplicatas)
+        except Exception as e:
+            self.data_loaded.emit([], [], [])
+            print(f"Erro: {e}")
 
 #COMBO OPTIONS
 def combo_Columns(head):
@@ -25,8 +45,6 @@ def combo_Columns(head):
 def save_data_to_csv(file_path,table):
     error = Erros()
     ui = app_instance.get_ui_instance()
-
-
     if file_path:
         try:
             with open(file_path, mode='w', newline='', encoding='utf-8') as file:
@@ -109,27 +127,43 @@ def analise_inteligente():
     # Atualizar o label principal com um resumo
     ui.label_titulo_analise_inteligente.setText("Análise inteligente concluída com sucesso.")
 
+
+
 def valores_negativos(path_csv, coluna):
     encoding = detectar_encoding(path_csv=path_csv)
     ui = app_instance.get_ui_instance()
-    coluna = coluna
+    ui.txt_output_logs.setPlainText(f"Procurando por números negativos, aguarde ...")
 
     try:
-        # Carregar o CSV
-        df = pd.read_csv(path_csv, delimiter=';', encoding=encoding)
+        # Carregar o CSV com o tipo de dados apropriado
+        with open(path_csv, mode='r', encoding=encoding) as file:
+            reader = csv.reader(file, delimiter=';')
+            headers = next(reader)  # Captura os cabeçalhos
+            rows = list(reader)  # Lê o restante das linhas
+
+        # Localize o índice da coluna específica
+        col_index = headers.index(coluna)
 
         # Identificar e alterar os valores negativos para 0
-        df.loc[df[coluna] < 0, coluna] = 0
+        for row in rows:
+            if row[col_index].lstrip('-').isdigit():  # Verifica se o valor é numérico e negativo
+                valor = int(row[col_index])
+                if valor < 0:
+                    row[col_index] = '0'  # Substitui o valor negativo por 0
 
-        # Salvar o CSV atualizado
-        df.to_csv(path_csv, index=False, sep=';', encoding='latin1')
+        # Salvar o CSV atualizado usando csv.writer
+        with open(path_csv, mode='w', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file, delimiter=';')
+            writer.writerow(headers)  # Escreve os cabeçalhos
+            writer.writerows(rows)  # Escreve as linhas atualizadas
+
         print("Valores negativos substituídos por 0 com sucesso.")
         ui.txt_output_logs.setPlainText("Todos os dados negativos foram removidos com sucesso!")
-
 
     except Exception as e:
         print(f"Erro: {e}")
         ui.txt_output_logs.setPlainText(f"Erro ao processar valores negativos: {e}")
+
 
 
 def find_and_load_duplicates(data, headers):
@@ -207,6 +241,7 @@ def load_duplicates_to_table(duplicates, headers):
         ui.txt_output_logs.setPlainText(f"Duplicatas carregadas e ordenadas na tabela de duplicados.")
     else:
         ui.txt_output_logs.setPlainText("Nenhum dado de duplicados para carregar na tabela.")
+
 # Essa função busca por dados duplicados na coluna selecionada pelo usuário e as marca em vermelho ordenando no inicio da tabela
 def buscar_dados_duplicados(path_csv):
     erros = Erros()
@@ -272,3 +307,88 @@ def buscar_dados_duplicados(path_csv):
         ui.txt_output_logs.setPlainText(f"Erro ao buscar dados duplicados: {e}")
         erros.show_error_popup("Erro!", f"Erro ao tentar processar o arquivo: {e}\n\nEsse erro pode acontecer quando não foi possível encontrar\ndados duplicados na coluna selecionada.\n\nSelecione outra coluna e tente novamente, se o erro persistir\npode ser que não haja dados duplicados na sua tabela.")
         return [], []
+
+def busca_tudo_que_contem(file_path, table):
+    ui = app_instance.get_ui_instance()
+    search = ui.txt_opcoes_busca.text().strip()  # Obtém o texto de busca e remove espaços em branco
+
+    try:
+        # Detectar o encoding do arquivo CSV
+        encoding = detectar_encoding(file_path)
+
+        # Ler o arquivo CSV original usando o encoding detectado
+        df = pd.read_csv(file_path, delimiter=';', encoding=encoding)
+
+        # Lista para armazenar os resultados
+        resultados = []
+
+        # Itera sobre as linhas do DataFrame
+        for _, row in df.iterrows():
+            # Verifica se o texto digitado está presente em alguma célula da linha
+            if any(search.lower() in str(cell).lower() for cell in row):
+                resultados.append(row.tolist())  # Adiciona a linha como lista aos resultados
+
+        # Limpa completamente a tabela
+        ui.limpar_tabela_principal()
+
+        if resultados:
+            # Define os cabeçalhos da tabela
+            headers = df.columns.tolist()
+            table.setColumnCount(len(headers))
+            table.setHorizontalHeaderLabels(headers)
+
+            # Adiciona as linhas dos resultados à tabela
+            table.setRowCount(len(resultados))
+            for row_idx, row_data in enumerate(resultados):
+                for col_idx, cell_data in enumerate(row_data):
+                    item = QTableWidgetItem(str(cell_data))
+                    table.setItem(row_idx, col_idx, item)
+        else:
+            print("Nenhum resultado encontrado.")
+            ui.txt_output_logs.setPlainText(f"busca_tudo_que_contem: Nenhum resultado encontrado.")
+
+    except Exception as e:
+        print(f"Erro ao buscar dados: {str(e)}")
+        ui.txt_output_logs.setPlainText(f"Erro ao buscar dados: {str(e)}")
+
+
+class BackupAndRestore():
+    def __init__(self):
+        self.path_csv = []
+        self.backup_history = []
+        self.ui = app_instance.get_ui_instance()
+    
+
+    def backup_process_csv(self, path):
+        self.path_bkp = 'backup.csv'
+        try:
+            # Faça a cópia do arquivo original para o arquivo de backup
+            shutil.copyfile(path, self.path_bkp)
+            print("Backup do arquivo CSV criado com sucesso.")
+            self.ui.txt_output_logs.setPlainText("Backup do arquivo CSV criado com sucesso.")
+            # Adicione o caminho do backup ao histórico
+            self.backup_history.append(self.path_bkp)
+            # Mantenha o histórico limitado a 5 backups
+            if len(self.backup_history) > 5:
+                del self.backup_history[0]
+
+        except Exception as e:
+            self.ui.txt_output_logs.setPlainText(f"Erro ao criar backup do arquivo CSV: {e}")
+            print(f"Erro ao criar backup do arquivo CSV: {e}")
+
+    def restore_backup(self, path, table):
+        if self.backup_history:
+            # Obtenha o último caminho do backup do histórico
+            backup_path = self.backup_history[-1]
+            # Restaura o arquivo CSV a partir do arquivo de backup
+            try:
+                shutil.copyfile(backup_path, path)
+                self.ui.txt_output_logs.appendPlainText("Arquivo CSV restaurado com sucesso.")
+                # Atualizar a tabela após restaurar o backup
+                self.ui.load_csv_to_table(path, table)
+                # Remove o caminho do backup do histórico
+                self.backup_history.pop()
+            except Exception as e:
+                self.ui.txt_output_logs.setPlainText(f"Erro ao restaurar arquivo CSV: {e}")
+        else:
+            self.ui.txt_output_logs.setPlainText("Não há backups para restaurar.")

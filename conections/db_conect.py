@@ -9,10 +9,13 @@ try:
     from PySide6.QtGui import QIcon,QFont,QColor,QStandardItem, QStandardItemModel
     from PySide6 import QtCore
     from PySide6.QtWidgets import (QApplication,QMainWindow,QMessageBox,QTableWidgetItem,QFileDialog)
+    from PySide6 import QtWidgets as qtw, QtGui as qtg, QtCore
+
     import os
     import uuid
     from configs.erros import Erros
     from dbfread import DBF
+    from configs.iconProvider import CustomIconProvider
 except:
     pass
 
@@ -405,18 +408,20 @@ def get_columns_for_table(conn, table_name):
 def populate_tree_view_with_tables_and_columns(tables, conn):
     ui = app_instance.get_ui_instance()
     model = QStandardItemModel()
-    columns = []
+    
+    # Defina os ícones personalizados aqui
+    table_icon = QIcon("gui/img/table.ico")  # Ícone para tabelas
+    column_icon = QIcon("gui/img/table.ico")  # Ícone para colunas
+
     for table in tables:
         table_name = table[0]  # Assumindo que `table` é uma tupla e o nome da tabela está na primeira posição
-        table_item = QStandardItem(table_name)
+        table_item = QStandardItem(table_icon, table_name)
         model.appendRow(table_item)
 
-
-        
         # Adiciona colunas como subitens
         columns = get_columns_for_table(conn, table_name)
         for column in columns:
-            column_item = QStandardItem(column)
+            column_item = QStandardItem(column_icon, column)
             table_item.appendRow(column_item)
 
     ui.treeView_lista_tabelas.setModel(model)
