@@ -1,0 +1,2 @@
+Converter arquivo de icon.qrc em arquivo .py
+pyside6-rcc icon.qrc -o icon_rc.py
