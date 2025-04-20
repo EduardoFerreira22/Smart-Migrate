@@ -1,10 +1,15 @@
 <RCC>
   <qresource prefix="icons">
-    <file>icons/voltar.png</file>
+    <file>icons/account.png</file>
+    <file>icons/save-as.png</file>
+    <file>icons/refresh.png</file>
+    <file>icons/arrow.png</file>
+    <file>icons/data-processing.png</file>
     <file>icons/proxima.png</file>
+    <file>icons/voltar.png</file>
+    <file>icons/transfer.png</file>
     <file>icons/minus (1).png</file>
     <file>icons/more.png</file>
-    <file>icons/transfer.png</file>
     <file>icons/batch-processing.png</file>
     <file>icons/btn_buscar.png</file>
     <file>icons/close.png</file>

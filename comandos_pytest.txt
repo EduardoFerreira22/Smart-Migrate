@@ -1,0 +1,18 @@
+# Comandos pytest para testes do projeto Smart Migrate 2.0
+# Execute no terminal com o ambiente virtual ativado
+# Diretório: C:\Projetos\PROJETOS PYTHON\Smart Migrate 2.0
+
+# 1. Executar todos os testes com cobertura
+pytest --cov=dados testes/ -v
+
+# 2. Executar testes específicos (apenas create_tables.py)
+pytest testes/create_tables.py -v
+
+# 3. Executar um teste específico (ex.: test_create_tables)
+pytest testes/create_tables.py::TestSQLiteConnect::test_create_tables -v
+
+# 4. Gerar relatório de cobertura detalhado (HTML)
+pytest --cov=dados testes/ --cov-report=html
+
+# 5. Executar testes com rastreamento detalhado (para depuração)
+pytest testes/create_tables.py -v --tb=long

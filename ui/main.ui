@@ -29,7 +29,15 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#centralwidget  {
+   <string notr="true">#PrincipalWindow QFrame{
+	background-color: rgb(242, 242, 242);
+
+}
+
+
+#centralwidget  {
+	
+	
 	border: 1px solid rgba(109, 109, 109, 0.30);
 	 border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -37,7 +45,9 @@
     border-bottom-right-radius: 5px;
 }
 
-
+#tabWidgetFiscal_contabil{
+	border:none;
+}
 
 #frm_menu_bar QPushButton{
 	border: none;
@@ -78,11 +88,7 @@
 }
 
 
-
-
-#table_principal{
-	
-	
+#table_principal{	
 	font: 8pt &quot;Segoe UI&quot;;
 	
 	background-color: rgb(255, 255, 255);
@@ -102,11 +108,11 @@
 	background-color: rgba(195, 205, 255, 0.25);
 }*/
  QHeaderView::section {
-      background-color: #4b3ff1;
+      background-color: #c8c8c8;
 		border: 1px solid rgba(217, 217, 217, 0.80);
 	font: 700 11pt &quot;Times New Roman&quot;;
-       color: white;
-
+       
+	color: rgb(0, 0, 0);
 
 }
 
@@ -183,7 +189,67 @@
 
     QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
         background: none;
-    }</string>
+    }
+
+
+#btn_closeFrm_lateral{
+        background-color: #c42b1c;
+        border-radius: 9px;
+        min-width: 20px;
+        min-height: 20px;
+        max-width: 20px;
+        max-height: 20px;
+
+    }
+
+#btn_closeFrm_cliente{
+        background-color: #c42b1c;
+        border-radius: 9px;
+        min-width: 20px;
+        min-height: 20px;
+        max-width: 20px;
+        max-height: 20px;
+}
+
+#btn_closeFrm_contabilidade{
+        background-color: #c42b1c;
+        border-radius: 9px;
+        min-width: 20px;
+        min-height: 20px;
+        max-width: 20px;
+        max-height: 20px;
+}
+
+
+
+#frm_functions_table_principal QPushButton{
+	border: none;
+
+}
+
+#frm_functions_table_principal QPushButton:hover{
+	border: none;
+	background-color: rgba(226, 226, 226, 0.20);
+	border: 1px solid rgba(109, 109, 109, 0.30);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#frm_setas_titulo QPushButton{
+	border: none;
+}
+
+#frm_setas_titulo QPushButton:hover{
+	border: none;
+}
+
+#lb_titulos_tabelas{
+	
+	font: 700 16pt &quot;Arial&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -405,7 +471,7 @@
          <widget class="QPushButton" name="btn_importar_file">
           <property name="geometry">
            <rect>
-            <x>50</x>
+            <x>10</x>
             <y>10</y>
             <width>150</width>
             <height>35</height>
@@ -443,7 +509,7 @@
          <widget class="QPushButton" name="btn_opcoes_pesquisas">
           <property name="geometry">
            <rect>
-            <x>210</x>
+            <x>170</x>
             <y>10</y>
             <width>150</width>
             <height>35</height>
@@ -481,7 +547,7 @@
          <widget class="QPushButton" name="btn_opcoes_processamento">
           <property name="geometry">
            <rect>
-            <x>370</x>
+            <x>330</x>
             <y>10</y>
             <width>180</width>
             <height>35</height>
@@ -519,7 +585,7 @@
          <widget class="QPushButton" name="btn_opcoes_conexoes_db">
           <property name="geometry">
            <rect>
-            <x>570</x>
+            <x>520</x>
             <y>10</y>
             <width>150</width>
             <height>35</height>
@@ -549,8 +615,8 @@
           </property>
           <property name="iconSize">
            <size>
-            <width>35</width>
-            <height>35</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="shortcut">
@@ -560,24 +626,24 @@
            <bool>false</bool>
           </property>
          </widget>
-         <widget class="QPushButton" name="btn_salvar_geral">
+         <widget class="QPushButton" name="btn_opcoes_contabil">
           <property name="geometry">
            <rect>
-            <x>0</x>
+            <x>680</x>
             <y>10</y>
-            <width>45</width>
+            <width>150</width>
             <height>35</height>
            </rect>
           </property>
           <property name="minimumSize">
            <size>
-            <width>45</width>
+            <width>150</width>
             <height>35</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>45</width>
+            <width>150</width>
             <height>35</height>
            </size>
           </property>
@@ -585,16 +651,16 @@
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="text">
-           <string/>
+           <string>Contabilidades</string>
           </property>
           <property name="icon">
            <iconset resource="icon.qrc">
-            <normaloff>:/icons/icons/save-as.png</normaloff>:/icons/icons/save-as.png</iconset>
+            <normaloff>:/icons/icons/account.png</normaloff>:/icons/icons/account.png</iconset>
           </property>
           <property name="iconSize">
            <size>
-            <width>25</width>
-            <height>25</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
           <property name="shortcut">
@@ -602,31 +668,6 @@
           </property>
           <property name="autoDefault">
            <bool>false</bool>
-          </property>
-         </widget>
-         <widget class="Line" name="line">
-          <property name="geometry">
-           <rect>
-            <x>50</x>
-            <y>10</y>
-            <width>3</width>
-            <height>35</height>
-           </rect>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>35</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>35</height>
-           </size>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Orientation::Vertical</enum>
           </property>
          </widget>
         </widget>
@@ -641,11 +682,604 @@
          </property>
          <layout class="QGridLayout" name="gridLayout">
           <property name="bottomMargin">
+           <number>5</number>
+          </property>
+          <property name="spacing">
            <number>2</number>
           </property>
-          <property name="horizontalSpacing">
-           <number>2</number>
-          </property>
+          <item row="0" column="0">
+           <widget class="QFrame" name="frame_opcoes_busca_processamento">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QFrame" name="page_opcoes_busca">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>120</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>120</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>10</y>
+                  <width>341</width>
+                  <height>101</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_3">
+                 <property name="spacing">
+                  <number>2</number>
+                 </property>
+                 <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignLeft">
+                  <widget class="QPushButton" name="btn_executar_pesquisas">
+                   <property name="minimumSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="icon.qrc">
+                     <normaloff>:/icons/icons/btn_buscar.png</normaloff>:/icons/icons/btn_buscar.png</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>18</width>
+                     <height>18</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QComboBox" name="combo_opcoes_busca">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Opções de buscas</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Buscar por NCM</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>NCM Inválido</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Tudo que contém</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Duplicados</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QPushButton" name="btn_extrair_duplicados">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="text">
+                    <string>Extrair</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLineEdit" name="txt_op_busca1">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QComboBox" name="comboBox_opcoes_de_busca2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="page_opcoes_processamento">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>120</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>120</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <widget class="QFrame" name="frm_processamento1">
+                  <property name="minimumSize">
+                   <size>
+                    <width>300</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>300</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::Shape::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Shadow::Raised</enum>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_4">
+                   <item>
+                    <widget class="QComboBox" name="comboBox">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>Opções de processamento</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Buscar e Substituir caracteres especiais</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Buscar valores negativos e mudar para zero</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Filtrar e copiar linhas que contém. Separar para tabela ao lado.</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Formatar códigos de barras</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Formatar CPF e CNPJ</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Substituir NCM</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Se Coluna A contém, Coluna B recebe.</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Tudo que contém mude para</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Transformar em minúsculas A-a</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Transformar em maiúscula a-A</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                   <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <widget class="QPushButton" name="btn_executar_processamento">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
+                     <property name="text">
+                      <string>Executar</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frm_processamento2">
+                  <property name="frameShape">
+                   <enum>QFrame::Shape::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Shadow::Raised</enum>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_2">
+                   <item row="2" column="5">
+                    <widget class="QPushButton" name="bt_retirar_combo1">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="icon.qrc">
+                       <normaloff>:/icons/icons/minus (1).png</normaloff>:/icons/icons/minus (1).png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>25</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="3">
+                    <widget class="QLineEdit" name="txt_coluna_processamento2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>180</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>180</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="2">
+                    <widget class="QPushButton" name="bt_retirar_combo">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="icon.qrc">
+                       <normaloff>:/icons/icons/minus (1).png</normaloff>:/icons/icons/minus (1).png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>25</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QLineEdit" name="txt_coluna_processamento1">
+                     <property name="minimumSize">
+                      <size>
+                       <width>180</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>180</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QComboBox" name="cbx_coluna_processamento1">
+                     <property name="minimumSize">
+                      <size>
+                       <width>180</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>180</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1">
+                    <widget class="QPushButton" name="bt_add_combo">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="icon.qrc">
+                       <normaloff>:/icons/icons/more.png</normaloff>:/icons/icons/more.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>25</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="3">
+                    <widget class="QComboBox" name="cbx_coluna_processamento2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>180</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>180</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="6">
+                    <widget class="QComboBox" name="cbx_coluna_processamento3">
+                     <property name="minimumSize">
+                      <size>
+                       <width>180</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>180</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="6">
+                    <widget class="QLineEdit" name="txt_coluna_processamento3">
+                     <property name="minimumSize">
+                      <size>
+                       <width>180</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>180</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="4">
+                    <widget class="QPushButton" name="bt_add_combo2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="icon.qrc">
+                       <normaloff>:/icons/icons/more.png</normaloff>:/icons/icons/more.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>25</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                  <zorder>txt_coluna_processamento3</zorder>
+                  <zorder>txt_coluna_processamento2</zorder>
+                  <zorder>cbx_coluna_processamento1</zorder>
+                  <zorder>bt_add_combo</zorder>
+                  <zorder>txt_coluna_processamento1</zorder>
+                  <zorder>bt_add_combo2</zorder>
+                  <zorder>cbx_coluna_processamento3</zorder>
+                  <zorder>cbx_coluna_processamento2</zorder>
+                  <zorder>bt_retirar_combo1</zorder>
+                  <zorder>bt_retirar_combo</zorder>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
           <item row="2" column="0">
            <widget class="QFrame" name="frm_setas_titulo">
             <property name="minimumSize">
@@ -696,6 +1330,9 @@
                  <height>30</height>
                 </size>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="text">
                 <string/>
                </property>
@@ -703,12 +1340,18 @@
                 <iconset resource="icon.qrc">
                  <normaloff>:/icons/icons/voltar.png</normaloff>:/icons/icons/voltar.png</iconset>
                </property>
+               <property name="iconSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
               </widget>
              </item>
              <item>
               <widget class="QLabel" name="lb_titulos_tabelas">
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Tabela Principal&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
@@ -726,12 +1369,21 @@
                  <height>30</height>
                 </size>
                </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="text">
                 <string/>
                </property>
                <property name="icon">
                 <iconset resource="icon.qrc">
                  <normaloff>:/icons/icons/proxima.png</normaloff>:/icons/icons/proxima.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
                </property>
               </widget>
              </item>
@@ -805,7 +1457,7 @@
                 <enum>QFrame::Shadow::Raised</enum>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>2</number>
                </property>
                <widget class="QWidget" name="page_principal">
                 <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -814,13 +1466,13 @@
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
-                     <height>40</height>
+                     <height>50</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
-                     <height>40</height>
+                     <height>50</height>
                     </size>
                    </property>
                    <property name="frameShape">
@@ -829,53 +1481,137 @@
                    <property name="frameShadow">
                     <enum>QFrame::Shadow::Raised</enum>
                    </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QFrame" name="frm_combos_heads">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::Shape::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
-                   </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_2">
+                   <layout class="QHBoxLayout" name="horizontalLayout_3">
+                    <property name="spacing">
+                     <number>2</number>
+                    </property>
                     <property name="leftMargin">
-                     <number>5</number>
+                     <number>2</number>
                     </property>
                     <property name="topMargin">
                      <number>2</number>
                     </property>
                     <property name="rightMargin">
-                     <number>5</number>
+                     <number>2</number>
                     </property>
                     <property name="bottomMargin">
                      <number>2</number>
                     </property>
                     <item alignment="Qt::AlignmentFlag::AlignLeft">
-                     <widget class="QComboBox" name="bombo_colunas_1">
+                     <widget class="QPushButton" name="btn_desfazer">
                       <property name="minimumSize">
                        <size>
-                        <width>100</width>
-                        <height>25</height>
+                        <width>40</width>
+                        <height>40</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>100</width>
+                        <width>40</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="icon.qrc">
+                        <normaloff>:/icons/icons/arrow.png</normaloff>:/icons/icons/arrow.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>20</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item alignment="Qt::AlignmentFlag::AlignLeft">
+                     <widget class="Line" name="line_2">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Vertical</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="bt_salvar_dados_tabela_principal">
+                      <property name="minimumSize">
+                       <size>
+                        <width>40</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>40</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="toolTip">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; color:#4b3ff1;&quot;&gt;Exportar .csv&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="icon.qrc">
+                        <normaloff>:/icons/icons/save-as.png</normaloff>:/icons/icons/save-as.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>25</width>
                         <height>25</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_2">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="bt_reprocesar_csv">
+                      <property name="minimumSize">
+                       <size>
+                        <width>40</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>40</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="icon.qrc">
+                        <normaloff>:/icons/icons/refresh.png</normaloff>:/icons/icons/refresh.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>20</width>
+                        <height>20</height>
                        </size>
                       </property>
                      </widget>
@@ -907,580 +1643,2081 @@
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="page_2"/>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QFrame" name="frame_opcoes_busca_processamento">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>120</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>120</height>
-             </size>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Shape::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_6">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QFrame" name="page_opcoes_busca">
-               <property name="frameShape">
-                <enum>QFrame::Shape::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Raised</enum>
-               </property>
-               <widget class="QWidget" name="">
-                <property name="geometry">
-                 <rect>
-                  <x>10</x>
-                  <y>10</y>
-                  <width>341</width>
-                  <height>101</height>
-                 </rect>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_3">
-                 <property name="spacing">
-                  <number>2</number>
-                 </property>
-                 <item row="1" column="0">
-                  <widget class="QLineEdit" name="txt_op_busca1">
+               <widget class="QWidget" name="page_duplicados">
+                <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <item>
+                  <widget class="QFrame" name="frm_functions_table_duplicados">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
-                     <height>30</height>
+                     <height>50</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
-                     <height>30</height>
+                     <height>50</height>
                     </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::Shape::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Shadow::Raised</enum>
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="0">
-                  <widget class="QComboBox" name="combo_opcoes_busca">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                  </widget>
+                 <item>
+                  <widget class="QTableWidget" name="table_duplicados"/>
                  </item>
-                 <item row="1" column="1">
-                  <widget class="QPushButton" name="btn_extrair_duplicados">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>30</height>
-                    </size>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="page_contabil_fiscal">
+                <layout class="QVBoxLayout" name="verticalLayout_10">
+                 <item>
+                  <widget class="QTabWidget" name="tabWidgetFiscal_contabil">
+                   <property name="tabPosition">
+                    <enum>QTabWidget::TabPosition::North</enum>
                    </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>30</height>
-                    </size>
+                   <property name="tabShape">
+                    <enum>QTabWidget::TabShape::Rounded</enum>
                    </property>
-                   <property name="text">
-                    <string>Extrair</string>
+                   <property name="currentIndex">
+                    <number>0</number>
                    </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignLeft">
-                  <widget class="QPushButton" name="btn_executar_pesquisas">
-                   <property name="minimumSize">
-                    <size>
-                     <width>30</width>
-                     <height>30</height>
-                    </size>
+                   <property name="elideMode">
+                    <enum>Qt::TextElideMode::ElideLeft</enum>
                    </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>30</height>
-                    </size>
+                   <property name="documentMode">
+                    <bool>false</bool>
                    </property>
-                   <property name="cursor">
-                    <cursorShape>PointingHandCursor</cursorShape>
+                   <property name="tabsClosable">
+                    <bool>false</bool>
                    </property>
-                   <property name="text">
-                    <string/>
+                   <property name="movable">
+                    <bool>false</bool>
                    </property>
-                   <property name="icon">
-                    <iconset resource="icon.qrc">
-                     <normaloff>:/icons/icons/btn_buscar.png</normaloff>:/icons/icons/btn_buscar.png</iconset>
+                   <property name="tabBarAutoHide">
+                    <bool>false</bool>
                    </property>
-                   <property name="iconSize">
-                    <size>
-                     <width>18</width>
-                     <height>18</height>
-                    </size>
-                   </property>
+                   <widget class="QWidget" name="tab_clientes">
+                    <attribute name="title">
+                     <string>Clientes</string>
+                    </attribute>
+                    <layout class="QHBoxLayout" name="horizontalLayout_2">
+                     <item>
+                      <widget class="QFrame" name="frm_table_cliente">
+                       <property name="frameShape">
+                        <enum>QFrame::Shape::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Shadow::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_11">
+                        <property name="spacing">
+                         <number>0</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="QFrame" name="frm_filtros_cliente">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::Shape::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Shadow::Raised</enum>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_13">
+                           <property name="spacing">
+                            <number>2</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>5</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>2</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>5</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>2</number>
+                           </property>
+                           <item>
+                            <layout class="QHBoxLayout" name="horizontalLayout_7">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <item alignment="Qt::AlignmentFlag::AlignLeft">
+                              <widget class="QLineEdit" name="txt_buscar_cliente">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>300</width>
+                                 <height>30</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>300</width>
+                                 <height>30</height>
+                                </size>
+                               </property>
+                               <property name="frame">
+                                <bool>true</bool>
+                               </property>
+                               <property name="placeholderText">
+                                <string>Buscar: código, nome, cnpj</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item alignment="Qt::AlignmentFlag::AlignLeft">
+                              <widget class="QPushButton" name="btn_busca_avancada_cliente">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>100</width>
+                                 <height>30</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>100</width>
+                                 <height>30</height>
+                                </size>
+                               </property>
+                               <property name="text">
+                                <string>Busca Avançada</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                           <item>
+                            <spacer name="horizontalSpacer_3">
+                             <property name="orientation">
+                              <enum>Qt::Orientation::Horizontal</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>40</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item>
+                            <layout class="QHBoxLayout" name="horizontalLayout_11">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <item>
+                              <widget class="QDateEdit" name="data_filtro_inicio_cliente">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>100</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>100</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                               <property name="frame">
+                                <bool>false</bool>
+                               </property>
+                               <property name="alignment">
+                                <set>Qt::AlignmentFlag::AlignCenter</set>
+                               </property>
+                               <property name="readOnly">
+                                <bool>false</bool>
+                               </property>
+                               <property name="buttonSymbols">
+                                <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+                               </property>
+                               <property name="specialValueText">
+                                <string>Data inicio</string>
+                               </property>
+                               <property name="minimumDateTime">
+                                <datetime>
+                                 <hour>0</hour>
+                                 <minute>0</minute>
+                                 <second>0</second>
+                                 <year>1752</year>
+                                 <month>9</month>
+                                 <day>16</day>
+                                </datetime>
+                               </property>
+                               <property name="calendarPopup">
+                                <bool>true</bool>
+                               </property>
+                               <property name="timeSpec">
+                                <enum>Qt::TimeSpec::LocalTime</enum>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QDateEdit" name="data_filtro_fim_cliente">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>100</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>100</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                               <property name="wrapping">
+                                <bool>false</bool>
+                               </property>
+                               <property name="alignment">
+                                <set>Qt::AlignmentFlag::AlignCenter</set>
+                               </property>
+                               <property name="buttonSymbols">
+                                <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+                               </property>
+                               <property name="specialValueText">
+                                <string>Data fim</string>
+                               </property>
+                               <property name="calendarPopup">
+                                <bool>true</bool>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                           <item>
+                            <layout class="QHBoxLayout" name="horizontalLayout_12">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <item>
+                              <widget class="QComboBox" name="combo_filtro_statusEnvio">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>120</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>120</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                               <property name="placeholderText">
+                                <string>Status envio</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QComboBox" name="combo_filtro_contador">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>120</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>120</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                               <property name="placeholderText">
+                                <string>Contabilidade</string>
+                               </property>
+                               <property name="duplicatesEnabled">
+                                <bool>false</bool>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QTableWidget" name="table_clientes">
+                          <column>
+                           <property name="text">
+                            <string>ID</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Status</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>CNPJ</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Nome</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Razão Social</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>E-mail</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Contabilidade</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Sistema</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Link</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Usuário</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Senha</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Arquivos Fiscais</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Data Ult. Envio</string>
+                           </property>
+                          </column>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="frm_cadastro_cliente">
+                       <property name="minimumSize">
+                        <size>
+                         <width>320</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>320</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::Shape::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Shadow::Raised</enum>
+                       </property>
+                       <widget class="QWidget" name="">
+                        <property name="geometry">
+                         <rect>
+                          <x>10</x>
+                          <y>0</y>
+                          <width>301</width>
+                          <height>451</height>
+                         </rect>
+                        </property>
+                        <layout class="QVBoxLayout" name="verticalLayout_12">
+                         <property name="spacing">
+                          <number>6</number>
+                         </property>
+                         <item>
+                          <widget class="QFrame" name="frm_btn_close_cliente">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="frameShape">
+                            <enum>QFrame::Shape::NoFrame</enum>
+                           </property>
+                           <property name="frameShadow">
+                            <enum>QFrame::Shadow::Raised</enum>
+                           </property>
+                           <layout class="QVBoxLayout" name="verticalLayout_13">
+                            <property name="spacing">
+                             <number>2</number>
+                            </property>
+                            <property name="leftMargin">
+                             <number>2</number>
+                            </property>
+                            <property name="topMargin">
+                             <number>2</number>
+                            </property>
+                            <property name="rightMargin">
+                             <number>2</number>
+                            </property>
+                            <property name="bottomMargin">
+                             <number>2</number>
+                            </property>
+                            <item alignment="Qt::AlignmentFlag::AlignRight">
+                             <widget class="QPushButton" name="btn_closeFrm_cliente">
+                              <property name="minimumSize">
+                               <size>
+                                <width>20</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>20</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="cursor">
+                               <cursorShape>PointingHandCursor</cursorShape>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="icon">
+                               <iconset resource="icon.qrc">
+                                <normaloff>:/icons/icons/close.png</normaloff>:/icons/icons/close.png</iconset>
+                              </property>
+                              <property name="iconSize">
+                               <size>
+                                <width>7</width>
+                                <height>7</height>
+                               </size>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </widget>
+                         </item>
+                         <item>
+                          <layout class="QHBoxLayout" name="horizontalLayout_6">
+                           <item alignment="Qt::AlignmentFlag::AlignRight">
+                            <widget class="QCheckBox" name="btn_situacao_cliente">
+                             <property name="maximumSize">
+                              <size>
+                               <width>60</width>
+                               <height>16777215</height>
+                              </size>
+                             </property>
+                             <property name="cursor">
+                              <cursorShape>PointingHandCursor</cursorShape>
+                             </property>
+                             <property name="text">
+                              <string>Ativo</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item alignment="Qt::AlignmentFlag::AlignRight">
+                            <widget class="QComboBox" name="combo_status_envio_arquivos_cliente">
+                             <property name="minimumSize">
+                              <size>
+                               <width>140</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>140</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <item>
+                              <property name="text">
+                               <string>Status envio</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>Enviado</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>Não Enviado</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>Erro na geração</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>Não fez Venda</string>
+                              </property>
+                             </item>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                         <item>
+                          <layout class="QHBoxLayout" name="horizontalLayout_17">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <item alignment="Qt::AlignmentFlag::AlignLeft">
+                            <widget class="QLineEdit" name="txt_id_cliente">
+                             <property name="minimumSize">
+                              <size>
+                               <width>50</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>50</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                            </widget>
+                           </item>
+                           <item alignment="Qt::AlignmentFlag::AlignRight">
+                            <widget class="QLineEdit" name="txt_cnpj_cliente">
+                             <property name="minimumSize">
+                              <size>
+                               <width>200</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>200</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="placeholderText">
+                              <string>CNPJ</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                         <item>
+                          <widget class="QLineEdit" name="txt_nome_cliente">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Nome</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLineEdit" name="txt_razao_social_cliente">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Razão Social</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLineEdit" name="txt_email_cliente">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="placeholderText">
+                            <string>E-mail</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <layout class="QHBoxLayout" name="horizontalLayout_8">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <widget class="QComboBox" name="combo_contador">
+                             <property name="minimumSize">
+                              <size>
+                               <width>200</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>200</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="placeholderText">
+                              <string>Contador</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item alignment="Qt::AlignmentFlag::AlignLeft">
+                            <widget class="QPushButton" name="btn_novo_contador">
+                             <property name="minimumSize">
+                              <size>
+                               <width>30</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>30</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="cursor">
+                              <cursorShape>PointingHandCursor</cursorShape>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="icon">
+                              <iconset resource="icon.qrc">
+                               <normaloff>:/icons/icons/more.png</normaloff>:/icons/icons/more.png</iconset>
+                             </property>
+                             <property name="iconSize">
+                              <size>
+                               <width>18</width>
+                               <height>18</height>
+                              </size>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                         <item>
+                          <widget class="QComboBox" name="combo_sistema_cliente">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="currentText">
+                            <string/>
+                           </property>
+                           <property name="sizeAdjustPolicy">
+                            <enum>QComboBox::SizeAdjustPolicy::AdjustToContentsOnFirstShow</enum>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Sistema de Gestão</string>
+                           </property>
+                           <item>
+                            <property name="text">
+                             <string>Sistema de Gestão</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>Hiper</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>Vr System</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>Digisat</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>Velo</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>STI3</string>
+                            </property>
+                           </item>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLineEdit" name="txt_link_sistema_cliente">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Link Sistema</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <layout class="QHBoxLayout" name="horizontalLayout_9">
+                           <item>
+                            <widget class="QLineEdit" name="txt_user_cliente_sistema">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="placeholderText">
+                              <string>User</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLineEdit" name="txt_password_cliente_sistema">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="placeholderText">
+                              <string>Password</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                         <item>
+                          <layout class="QHBoxLayout" name="horizontalLayout_10">
+                           <item>
+                            <widget class="QPushButton" name="btn_atualizar_cliente">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>Atualizar</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="btn_salvar_cliente">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>Novo</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                        </layout>
+                       </widget>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="tab_contabilidades">
+                    <attribute name="title">
+                     <string>Contabilidades</string>
+                    </attribute>
+                    <layout class="QHBoxLayout" name="horizontalLayout_35">
+                     <item>
+                      <widget class="QFrame" name="frm_table_contabilidade">
+                       <property name="frameShape">
+                        <enum>QFrame::Shape::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Shadow::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_22">
+                        <property name="spacing">
+                         <number>0</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="QFrame" name="frm_filtros_contabilidade">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::Shape::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Shadow::Raised</enum>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_36">
+                           <property name="spacing">
+                            <number>2</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>5</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>2</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>5</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>2</number>
+                           </property>
+                           <item>
+                            <layout class="QHBoxLayout" name="horizontalLayout_37">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <item alignment="Qt::AlignmentFlag::AlignLeft">
+                              <widget class="QLineEdit" name="txt_buscar_contabilidade">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>300</width>
+                                 <height>30</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>300</width>
+                                 <height>30</height>
+                                </size>
+                               </property>
+                               <property name="frame">
+                                <bool>true</bool>
+                               </property>
+                               <property name="placeholderText">
+                                <string>Buscar: código, nome, cnpj</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                           <item>
+                            <spacer name="horizontalSpacer_6">
+                             <property name="orientation">
+                              <enum>Qt::Orientation::Horizontal</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>40</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item>
+                            <layout class="QHBoxLayout" name="horizontalLayout_38">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                            </layout>
+                           </item>
+                           <item>
+                            <layout class="QHBoxLayout" name="horizontalLayout_39">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QTableWidget" name="table_contabilidade">
+                          <attribute name="horizontalHeaderMinimumSectionSize">
+                           <number>100</number>
+                          </attribute>
+                          <attribute name="horizontalHeaderDefaultSectionSize">
+                           <number>120</number>
+                          </attribute>
+                          <column>
+                           <property name="text">
+                            <string>ID</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Status</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>New Column</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Nome</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Razão Social</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>E-mail</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Telefone</string>
+                           </property>
+                          </column>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="frm_cadastro_contabilidade">
+                       <property name="minimumSize">
+                        <size>
+                         <width>300</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>300</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::Shape::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Shadow::Raised</enum>
+                       </property>
+                       <widget class="QWidget" name="">
+                        <property name="geometry">
+                         <rect>
+                          <x>10</x>
+                          <y>10</y>
+                          <width>281</width>
+                          <height>291</height>
+                         </rect>
+                        </property>
+                        <layout class="QVBoxLayout" name="verticalLayout_16">
+                         <item>
+                          <widget class="QFrame" name="frm_btn_close_contabilidade">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="frameShape">
+                            <enum>QFrame::Shape::NoFrame</enum>
+                           </property>
+                           <property name="frameShadow">
+                            <enum>QFrame::Shadow::Raised</enum>
+                           </property>
+                           <layout class="QVBoxLayout" name="verticalLayout_21">
+                            <property name="spacing">
+                             <number>2</number>
+                            </property>
+                            <property name="leftMargin">
+                             <number>2</number>
+                            </property>
+                            <property name="topMargin">
+                             <number>2</number>
+                            </property>
+                            <property name="rightMargin">
+                             <number>2</number>
+                            </property>
+                            <property name="bottomMargin">
+                             <number>2</number>
+                            </property>
+                            <item alignment="Qt::AlignmentFlag::AlignRight">
+                             <widget class="QPushButton" name="btn_closeFrm_contabilidade">
+                              <property name="minimumSize">
+                               <size>
+                                <width>20</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>20</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="cursor">
+                               <cursorShape>PointingHandCursor</cursorShape>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="icon">
+                               <iconset resource="icon.qrc">
+                                <normaloff>:/icons/icons/close.png</normaloff>:/icons/icons/close.png</iconset>
+                              </property>
+                              <property name="iconSize">
+                               <size>
+                                <width>7</width>
+                                <height>7</height>
+                               </size>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QCheckBox" name="btn_situacao_contabilidade">
+                           <property name="maximumSize">
+                            <size>
+                             <width>60</width>
+                             <height>16777215</height>
+                            </size>
+                           </property>
+                           <property name="cursor">
+                            <cursorShape>PointingHandCursor</cursorShape>
+                           </property>
+                           <property name="text">
+                            <string>Ativo</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <layout class="QHBoxLayout" name="horizontalLayout_16">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <item alignment="Qt::AlignmentFlag::AlignLeft">
+                            <widget class="QLineEdit" name="txt_id_contabilidade">
+                             <property name="minimumSize">
+                              <size>
+                               <width>50</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>50</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLineEdit" name="txt_cnpj_contabilidade">
+                             <property name="minimumSize">
+                              <size>
+                               <width>200</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>200</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="placeholderText">
+                              <string>CNPJ</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                         <item>
+                          <widget class="QLineEdit" name="txt_nome_contabilidade">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Nome</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLineEdit" name="txt_razao_social_contabilidade">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Razão Social</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLineEdit" name="txt_email_contabilidade">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="placeholderText">
+                            <string>E-mail</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLineEdit" name="txt_telefone_contabilidade_2">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Telefone</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <layout class="QHBoxLayout" name="horizontalLayout_34">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <widget class="QPushButton" name="btn_atualizar_contabilidade">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="cursor">
+                              <cursorShape>PointingHandCursor</cursorShape>
+                             </property>
+                             <property name="text">
+                              <string>Atualizar</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="btn_salvar_contabilidade">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="cursor">
+                              <cursorShape>PointingHandCursor</cursorShape>
+                             </property>
+                             <property name="text">
+                              <string>Novo</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                        </layout>
+                       </widget>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="tab_xml">
+                    <attribute name="title">
+                     <string>XML</string>
+                    </attribute>
+                    <layout class="QVBoxLayout" name="verticalLayout_25">
+                     <item>
+                      <widget class="QFrame" name="frm_geral_xml">
+                       <property name="frameShape">
+                        <enum>QFrame::Shape::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Shadow::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_23">
+                        <property name="spacing">
+                         <number>1</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="QFrame" name="frm_top_xml">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>60</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>60</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::Shape::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Shadow::Raised</enum>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_15">
+                           <item>
+                            <widget class="QPushButton" name="btn_path_xml">
+                             <property name="minimumSize">
+                              <size>
+                               <width>40</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>40</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="cursor">
+                              <cursorShape>PointingHandCursor</cursorShape>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="icon">
+                              <iconset resource="icon.qrc">
+                               <normaloff>:/icons/icons/file.png</normaloff>:/icons/icons/file.png</iconset>
+                             </property>
+                             <property name="iconSize">
+                              <size>
+                               <width>20</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLineEdit" name="txt_pesquisa_table_xml">
+                             <property name="minimumSize">
+                              <size>
+                               <width>300</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>300</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                            </widget>
+                           </item>
+                           <item alignment="Qt::AlignmentFlag::AlignRight">
+                            <widget class="QPushButton" name="bt_limpa_tab_xml">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>Limpar</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frm_center_xml">
+                          <property name="frameShape">
+                           <enum>QFrame::Shape::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Shadow::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_26">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <widget class="QTreeView" name="tableWidget_xml_list"/>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frm_botton_xml">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>65</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>65</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::Shape::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Shadow::Raised</enum>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_41">
+                           <property name="spacing">
+                            <number>2</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <widget class="QFrame" name="frame_4">
+                             <property name="minimumSize">
+                              <size>
+                               <width>300</width>
+                               <height>0</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>300</width>
+                               <height>16777215</height>
+                              </size>
+                             </property>
+                             <property name="frameShape">
+                              <enum>QFrame::Shape::StyledPanel</enum>
+                             </property>
+                             <property name="frameShadow">
+                              <enum>QFrame::Shadow::Raised</enum>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QFrame" name="frame_5">
+                             <property name="frameShape">
+                              <enum>QFrame::Shape::StyledPanel</enum>
+                             </property>
+                             <property name="frameShadow">
+                              <enum>QFrame::Shadow::Raised</enum>
+                             </property>
+                             <layout class="QHBoxLayout" name="horizontalLayout_43">
+                              <item>
+                               <spacer name="horizontalSpacer_10">
+                                <property name="orientation">
+                                 <enum>Qt::Orientation::Horizontal</enum>
+                                </property>
+                                <property name="sizeHint" stdset="0">
+                                 <size>
+                                  <width>113</width>
+                                  <height>20</height>
+                                 </size>
+                                </property>
+                               </spacer>
+                              </item>
+                              <item>
+                               <layout class="QHBoxLayout" name="horizontalLayout_42">
+                                <item>
+                                 <layout class="QVBoxLayout" name="verticalLayout_27">
+                                  <property name="spacing">
+                                   <number>0</number>
+                                  </property>
+                                  <item>
+                                   <widget class="QLabel" name="label_9">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>0</height>
+                                     </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>16777215</height>
+                                     </size>
+                                    </property>
+                                    <property name="text">
+                                     <string>ICMS</string>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                  <item>
+                                   <widget class="QLineEdit" name="txt_icms_xml">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>25</height>
+                                     </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>25</height>
+                                     </size>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                 </layout>
+                                </item>
+                                <item>
+                                 <layout class="QVBoxLayout" name="verticalLayout_28">
+                                  <property name="spacing">
+                                   <number>0</number>
+                                  </property>
+                                  <item>
+                                   <widget class="QLabel" name="label_10">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>0</height>
+                                     </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>16777215</height>
+                                     </size>
+                                    </property>
+                                    <property name="text">
+                                     <string>PIS</string>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                  <item>
+                                   <widget class="QLineEdit" name="txt_pis_xml">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>25</height>
+                                     </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>25</height>
+                                     </size>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                 </layout>
+                                </item>
+                                <item>
+                                 <layout class="QVBoxLayout" name="verticalLayout_29">
+                                  <property name="spacing">
+                                   <number>0</number>
+                                  </property>
+                                  <item>
+                                   <widget class="QLabel" name="label_11">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>0</height>
+                                     </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>16777215</height>
+                                     </size>
+                                    </property>
+                                    <property name="text">
+                                     <string>COFINS</string>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                  <item>
+                                   <widget class="QLineEdit" name="txt_confins_xml">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>25</height>
+                                     </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>25</height>
+                                     </size>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                 </layout>
+                                </item>
+                                <item>
+                                 <layout class="QVBoxLayout" name="verticalLayout_30">
+                                  <property name="spacing">
+                                   <number>0</number>
+                                  </property>
+                                  <item>
+                                   <widget class="QLabel" name="label_12">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>0</height>
+                                     </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>16777215</height>
+                                     </size>
+                                    </property>
+                                    <property name="text">
+                                     <string>IPI</string>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                  <item>
+                                   <widget class="QLineEdit" name="txt_ipi_xml">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>25</height>
+                                     </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>25</height>
+                                     </size>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                 </layout>
+                                </item>
+                                <item>
+                                 <layout class="QVBoxLayout" name="verticalLayout_31">
+                                  <property name="spacing">
+                                   <number>0</number>
+                                  </property>
+                                  <item>
+                                   <widget class="QLabel" name="label_13">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>0</height>
+                                     </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>16777215</height>
+                                     </size>
+                                    </property>
+                                    <property name="text">
+                                     <string>Total NF</string>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                  <item>
+                                   <widget class="QLineEdit" name="txt_totalNF_xml">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>25</height>
+                                     </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                     <size>
+                                      <width>110</width>
+                                      <height>25</height>
+                                     </size>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                 </layout>
+                                </item>
+                               </layout>
+                              </item>
+                             </layout>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="tab_importar_exportar">
+                    <attribute name="title">
+                     <string>Importar/Exportar</string>
+                    </attribute>
+                    <layout class="QVBoxLayout" name="verticalLayout_14">
+                     <item>
+                      <widget class="QGroupBox" name="groupBox">
+                       <property name="title">
+                        <string>Importar/Exportar</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                       </property>
+                       <widget class="QPlainTextEdit" name="txt_output_import">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>190</y>
+                          <width>611</width>
+                          <height>91</height>
+                         </rect>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Shadow::Raised</enum>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>170</y>
+                          <width>141</width>
+                          <height>16</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>Saída import de dados:</string>
+                        </property>
+                       </widget>
+                       <widget class="Line" name="line">
+                        <property name="geometry">
+                         <rect>
+                          <x>630</x>
+                          <y>10</y>
+                          <width>20</width>
+                          <height>291</height>
+                         </rect>
+                        </property>
+                        <property name="orientation">
+                         <enum>Qt::Orientation::Vertical</enum>
+                        </property>
+                       </widget>
+                       <widget class="QRadioButton" name="radioBtn_importar_fiscal_contabil">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>60</y>
+                          <width>92</width>
+                          <height>20</height>
+                         </rect>
+                        </property>
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
+                        </property>
+                        <property name="text">
+                         <string>Importar?</string>
+                        </property>
+                       </widget>
+                       <widget class="QRadioButton" name="radioBtn_exportar_fiscal_contabil">
+                        <property name="geometry">
+                         <rect>
+                          <x>110</x>
+                          <y>60</y>
+                          <width>92</width>
+                          <height>20</height>
+                         </rect>
+                        </property>
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
+                        </property>
+                        <property name="text">
+                         <string>Exportar?</string>
+                        </property>
+                       </widget>
+                       <widget class="Line" name="line_3">
+                        <property name="geometry">
+                         <rect>
+                          <x>10</x>
+                          <y>80</y>
+                          <width>621</width>
+                          <height>16</height>
+                         </rect>
+                        </property>
+                        <property name="orientation">
+                         <enum>Qt::Orientation::Horizontal</enum>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_3">
+                        <property name="geometry">
+                         <rect>
+                          <x>650</x>
+                          <y>20</y>
+                          <width>361</width>
+                          <height>261</height>
+                         </rect>
+                        </property>
+                        <property name="text">
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Importar: &lt;/span&gt;É possível importar clientes e contabilidades de forma fácil seguindo o modelo de arquivo para importação.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Exportar: &lt;/span&gt;Permite que o usuário exporte dados como &lt;span style=&quot; font-weight:700;&quot;&gt;clientes, contabilidades &lt;/span&gt;e relatórios como &lt;span style=&quot; font-weight:700;&quot;&gt;Totais de NFE, Totais de NFCE, &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+                        </property>
+                        <property name="wordWrap">
+                         <bool>true</bool>
+                        </property>
+                        <property name="margin">
+                         <number>5</number>
+                        </property>
+                        <property name="indent">
+                         <number>0</number>
+                        </property>
+                       </widget>
+                       <widget class="QWidget" name="layoutWidget">
+                        <property name="geometry">
+                         <rect>
+                          <x>12</x>
+                          <y>92</y>
+                          <width>621</width>
+                          <height>61</height>
+                         </rect>
+                        </property>
+                        <layout class="QVBoxLayout" name="verticalLayout_15">
+                         <property name="spacing">
+                          <number>0</number>
+                         </property>
+                         <item>
+                          <widget class="QLabel" name="label_2">
+                           <property name="text">
+                            <string>Caminho do arquivo:</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <layout class="QHBoxLayout" name="horizontalLayout_14">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <widget class="QLineEdit" name="txt_path_importar_exportar">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="btn_path_import">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>35</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>35</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="cursor">
+                              <cursorShape>PointingHandCursor</cursorShape>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="icon">
+                              <iconset resource="icon.qrc">
+                               <normaloff>:/icons/icons/file.png</normaloff>:/icons/icons/file.png</iconset>
+                             </property>
+                             <property name="iconSize">
+                              <size>
+                               <width>20</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="btn_importar_cliente_contabil">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="cursor">
+                              <cursorShape>PointingHandCursor</cursorShape>
+                             </property>
+                             <property name="text">
+                              <string>Excutar</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                        </layout>
+                       </widget>
+                       <widget class="QComboBox" name="comboTipo_import_export_fiscal_contabil">
+                        <property name="geometry">
+                         <rect>
+                          <x>470</x>
+                          <y>50</y>
+                          <width>161</width>
+                          <height>30</height>
+                         </rect>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
+                        </property>
+                        <item>
+                         <property name="text">
+                          <string>Tipo</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Clientes</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Contabilidades</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Relatório Totais NFE</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Relatório Totais NFCE</string>
+                         </property>
+                        </item>
+                       </widget>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
                   </widget>
                  </item>
                 </layout>
                </widget>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFrame" name="page_opcoes_processamento">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>120</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>120</height>
-                </size>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::Shape::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_5">
-                <item>
-                 <widget class="QFrame" name="frm_processamento1">
-                  <property name="minimumSize">
-                   <size>
-                    <width>200</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>200</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Raised</enum>
-                  </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_4">
-                   <item>
-                    <widget class="QComboBox" name="comboBox">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item alignment="Qt::AlignmentFlag::AlignHCenter">
-                    <widget class="QPushButton" name="btn_executar_processamento">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Executar</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QFrame" name="frm_processamento2">
-                  <property name="frameShape">
-                   <enum>QFrame::Shape::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Shadow::Raised</enum>
-                  </property>
-                  <layout class="QGridLayout" name="gridLayout_2">
-                   <item row="0" column="10">
-                    <widget class="QComboBox" name="cbx_coluna_processamento4">
-                     <property name="minimumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="7">
-                    <widget class="QPushButton" name="bt_add_combo1">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>35</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>35</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset resource="icon.qrc">
-                       <normaloff>:/icons/icons/more.png</normaloff>:/icons/icons/more.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>25</width>
-                       <height>25</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="2">
-                    <widget class="QLineEdit" name="txt_coluna_processamento2">
-                     <property name="minimumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="5">
-                    <widget class="QPushButton" name="bt_seta2">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>35</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>35</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset resource="icon.qrc">
-                       <normaloff>:/icons/icons/transfer.png</normaloff>:/icons/icons/transfer.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>25</width>
-                       <height>25</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="0">
-                    <widget class="QComboBox" name="cbx_coluna_processamento1">
-                     <property name="minimumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="1">
-                    <widget class="QPushButton" name="bt_seta1">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>35</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>35</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset resource="icon.qrc">
-                       <normaloff>:/icons/icons/transfer.png</normaloff>:/icons/icons/transfer.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>25</width>
-                       <height>25</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="0">
-                    <widget class="QLineEdit" name="txt_coluna_processamento1">
-                     <property name="minimumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="10">
-                    <widget class="QLineEdit" name="txt_coluna_processamento4">
-                     <property name="minimumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="6">
-                    <widget class="QLineEdit" name="txt_coluna_processamento3">
-                     <property name="minimumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="3">
-                    <widget class="QPushButton" name="bt_add_combo2">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>35</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>35</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset resource="icon.qrc">
-                       <normaloff>:/icons/icons/more.png</normaloff>:/icons/icons/more.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>25</width>
-                       <height>25</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="6">
-                    <widget class="QComboBox" name="cbx_coluna_processamento3">
-                     <property name="minimumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="2">
-                    <widget class="QComboBox" name="cbx_coluna_processamento2">
-                     <property name="minimumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>180</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="8">
-                    <widget class="QPushButton" name="bt_seta3">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>35</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>35</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset resource="icon.qrc">
-                       <normaloff>:/icons/icons/transfer.png</normaloff>:/icons/icons/transfer.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>25</width>
-                       <height>25</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="4">
-                    <widget class="QPushButton" name="bt_retirar_combo1">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>35</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>35</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset resource="icon.qrc">
-                       <normaloff>:/icons/icons/minus (1).png</normaloff>:/icons/icons/minus (1).png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>25</width>
-                       <height>25</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="9">
-                    <widget class="QPushButton" name="bt_retirar_combo2">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>35</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>35</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset resource="icon.qrc">
-                       <normaloff>:/icons/icons/minus (1).png</normaloff>:/icons/icons/minus (1).png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>25</width>
-                       <height>25</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-               </layout>
               </widget>
              </item>
             </layout>
@@ -1509,9 +3746,97 @@
             <property name="frameShadow">
              <enum>QFrame::Shadow::Raised</enum>
             </property>
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QFrame" name="frame_3">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_8">
+                <property name="leftMargin">
+                 <number>2</number>
+                </property>
+                <property name="topMargin">
+                 <number>2</number>
+                </property>
+                <property name="rightMargin">
+                 <number>2</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>2</number>
+                </property>
+                <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignVCenter">
+                 <widget class="QPushButton" name="btn_closeFrm_lateral">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="icon.qrc">
+                    <normaloff>:/icons/icons/close.png</normaloff>:/icons/icons/close.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>7</width>
+                    <height>7</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame_2">
+               <property name="frameShape">
+                <enum>QFrame::Shape::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Shadow::Raised</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
+         <zorder>frm_setas_titulo</zorder>
+         <zorder>frm_bottom_bar</zorder>
+         <zorder>frm_geral_tables</zorder>
+         <zorder>frm_lateral_functions</zorder>
+         <zorder>frame_opcoes_busca_processamento</zorder>
         </widget>
        </item>
       </layout>
@@ -1520,6 +3845,82 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>btn_minimize</tabstop>
+  <tabstop>btn_maximize</tabstop>
+  <tabstop>btn_close_window</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>btn_opcoes_pesquisas</tabstop>
+  <tabstop>btn_opcoes_processamento</tabstop>
+  <tabstop>btn_opcoes_conexoes_db</tabstop>
+  <tabstop>btn_opcoes_contabil</tabstop>
+  <tabstop>btn_closeFrm_lateral</tabstop>
+  <tabstop>btn_voltar_pagina</tabstop>
+  <tabstop>btn_proxima_pagina</tabstop>
+  <tabstop>btn_executar_pesquisas</tabstop>
+  <tabstop>combo_opcoes_busca</tabstop>
+  <tabstop>btn_extrair_duplicados</tabstop>
+  <tabstop>txt_op_busca1</tabstop>
+  <tabstop>comboBox_opcoes_de_busca2</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>btn_executar_processamento</tabstop>
+  <tabstop>bt_retirar_combo1</tabstop>
+  <tabstop>txt_coluna_processamento2</tabstop>
+  <tabstop>bt_retirar_combo</tabstop>
+  <tabstop>txt_coluna_processamento1</tabstop>
+  <tabstop>cbx_coluna_processamento1</tabstop>
+  <tabstop>bt_add_combo</tabstop>
+  <tabstop>cbx_coluna_processamento2</tabstop>
+  <tabstop>cbx_coluna_processamento3</tabstop>
+  <tabstop>txt_coluna_processamento3</tabstop>
+  <tabstop>bt_add_combo2</tabstop>
+  <tabstop>btn_desfazer</tabstop>
+  <tabstop>bt_salvar_dados_tabela_principal</tabstop>
+  <tabstop>bt_reprocesar_csv</tabstop>
+  <tabstop>table_principal</tabstop>
+  <tabstop>table_duplicados</tabstop>
+  <tabstop>tabWidgetFiscal_contabil</tabstop>
+  <tabstop>btn_importar_file</tabstop>
+  <tabstop>btn_busca_avancada_cliente</tabstop>
+  <tabstop>data_filtro_inicio_cliente</tabstop>
+  <tabstop>data_filtro_fim_cliente</tabstop>
+  <tabstop>combo_filtro_statusEnvio</tabstop>
+  <tabstop>combo_filtro_contador</tabstop>
+  <tabstop>table_clientes</tabstop>
+  <tabstop>btn_closeFrm_cliente</tabstop>
+  <tabstop>btn_situacao_cliente</tabstop>
+  <tabstop>combo_status_envio_arquivos_cliente</tabstop>
+  <tabstop>txt_cnpj_cliente</tabstop>
+  <tabstop>txt_nome_cliente</tabstop>
+  <tabstop>txt_razao_social_cliente</tabstop>
+  <tabstop>txt_email_cliente</tabstop>
+  <tabstop>combo_contador</tabstop>
+  <tabstop>btn_novo_contador</tabstop>
+  <tabstop>combo_sistema_cliente</tabstop>
+  <tabstop>txt_link_sistema_cliente</tabstop>
+  <tabstop>txt_user_cliente_sistema</tabstop>
+  <tabstop>txt_password_cliente_sistema</tabstop>
+  <tabstop>btn_atualizar_cliente</tabstop>
+  <tabstop>btn_salvar_cliente</tabstop>
+  <tabstop>txt_output_import</tabstop>
+  <tabstop>txt_path_importar_exportar</tabstop>
+  <tabstop>btn_path_import</tabstop>
+  <tabstop>btn_importar_cliente_contabil</tabstop>
+  <tabstop>comboTipo_import_export_fiscal_contabil</tabstop>
+  <tabstop>radioBtn_importar_fiscal_contabil</tabstop>
+  <tabstop>radioBtn_exportar_fiscal_contabil</tabstop>
+  <tabstop>txt_buscar_cliente</tabstop>
+  <tabstop>btn_closeFrm_contabilidade</tabstop>
+  <tabstop>btn_situacao_contabilidade</tabstop>
+  <tabstop>txt_nome_contabilidade</tabstop>
+  <tabstop>txt_razao_social_contabilidade</tabstop>
+  <tabstop>txt_email_contabilidade</tabstop>
+  <tabstop>btn_atualizar_contabilidade</tabstop>
+  <tabstop>btn_salvar_contabilidade</tabstop>
+  <tabstop>txt_buscar_contabilidade</tabstop>
+  <tabstop>table_contabilidade</tabstop>
+  <tabstop>txt_telefone_contabilidade_2</tabstop>
+ </tabstops>
  <resources>
   <include location="icon.qrc"/>
  </resources>

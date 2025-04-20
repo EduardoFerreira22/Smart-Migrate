@@ -18,3 +18,16 @@ def search_file():
         return file
     return None  # Retorna None se o usuário cancelar
 
+def path_xml():
+    try:
+        # Usa 'None' em vez de 'self' para a janela de diálogo
+        directory = QFileDialog.getExistingDirectory(None, "Selecione o diretório dos XMLs")
+        if not directory:
+            print("Nenhum diretório selecionado. A busca foi cancelada.")
+            return None
+        directory = directory  # Salva o diretório para uso futuro
+        print(f"Diretório dos XMLs selecionado: {directory}")
+        return directory
+    except Exception as e:
+        print(f"Erro: {e}")
+        

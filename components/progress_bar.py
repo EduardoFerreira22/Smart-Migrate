@@ -36,33 +36,62 @@ class CSVLoaderThread(QThread):
         else:
             self.log.emit("Erro: Não foi possível carregar o arquivo")
 
-# Classe da janela de progresso
+
+class XMLLoaderThread(QThread):
+    progress = Signal(int)
+    log = Signal(str)
+    data_loaded = Signal(list)
+
+    def __init__(self, directory):
+        super().__init__()
+        self.directory = directory
+        self.xml_files = [f for f in os.listdir(directory) if f.endswith('.xml')]
+        self.total_files = len(self.xml_files)
+
+    def run(self):
+        if not self.xml_files:
+            self.log.emit("Nenhum arquivo XML encontrado no diretório.")
+            self.data_loaded.emit([])
+            return
+
+        processed_files = []
+        for i, xml_file in enumerate(self.xml_files):
+            xml_path = os.path.join(self.directory, xml_file)
+            processed_files.append(xml_path)
+            progress_value = int((i + 1) / self.total_files * 100)
+            self.progress.emit(progress_value)
+            self.log.emit(f"Processando arquivo {i + 1} de {self.total_files}: {xml_file}")
+            self.msleep(50)  # Pequena pausa para simular processamento
+        self.log.emit(f"Processamento concluído: {self.total_files} arquivos XML.")
+        self.data_loaded.emit(processed_files)
+
 class ProgressBarWindow(QDialog):
-    def __init__(self, file_path, parent=None):
-        super().__init__(parent)  # Passa o parent (None por padrão) para QDialog
+    def __init__(self, path, parent=None):
+        super().__init__(parent)
         self.ui = Ui_ProgressBar()
-        self.ui.setupUi(self)  # Configura a UI
+        self.ui.setupUi(self)
+        self.setWindowModality(Qt.ApplicationModal)
 
-        # Armazena o file_path como atributo
-        self.file_path = file_path
+        self.path = path
 
-        # Inicia a thread com o caminho do arquivo
-        self.thread = CSVLoaderThread(file_path)
+        if os.path.isdir(path):
+            self.thread = XMLLoaderThread(path)
+        else:
+            self.thread = CSVLoaderThread(path)
+
         self.thread.progress.connect(self.update_progress)
         self.thread.log.connect(self.update_log)
         self.thread.data_loaded.connect(self.data_finished)
         self.thread.start()
 
     def update_progress(self, value):
-        """Atualiza a barra de progresso"""
         self.ui.progressBar.setValue(value)
 
     def update_log(self, message):
-        """Atualiza o rótulo com mensagens de log"""
         self.ui.lb_informacoes_progress.setText(
             f"<html><head/><body><p align=\"center\"><span style=\" font-size:8pt; font-weight:700;\">{message}</span></p></body></html>"
         )
-
+        
     def data_finished(self, data):
         """Executado quando os dados são carregados"""
         print(f"Dados carregados: {len(data)} linhas")
