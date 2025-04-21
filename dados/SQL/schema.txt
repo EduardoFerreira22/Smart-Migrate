@@ -46,12 +46,60 @@ CREATE TABLE IF NOT EXISTS licenses (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
+-- Tabela para clientes (Contabilidade)
+CREATE TABLE IF NOT EXISTS Contabilidade (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    ativo INTEGER DEFAULT 1, 
+    cnpj TEXT,
+    nome TEXT NOT NULL,
+    razaoSocial TEXT,
+    email TEXT,
+    phone TEXT,
+	user_create INTEGER NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+	user_update INTEGER,
+	date_update date,
+	FOREIGN KEY (user_create) REFERENCES users (id),
+	FOREIGN KEY (user_update) REFERENCES users (id)
+);
+
 -- Tabela para clientes (clients)
 CREATE TABLE IF NOT EXISTS clients (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
+	ativo INTEGER DEFAULT 1,
+	status_envio TEXT CHECK (status_envio IN ('Enviado', 'Não Enviado', 'Erro na geração', 'Não fez Venda')) DEFAULT 'Não Enviado',
+    nome TEXT NOT NULL,
+	razaoSocial TEXT,
     cnpj TEXT UNIQUE NOT NULL,
     email TEXT,
-    phone TEXT,
-    created_at TEXT NOT NULL
+	id_contador INTEGER NOT NULL,
+	sistema TEXT CHECK(sistema IN ('Hiper', 'Vr System', 'Digisat', 'Velo', 'STI3')) NOT NULL,
+	link_sistema TEXT,
+	user_sistema TEXT,
+	senha_sistema TEXT,
+	user_create INTEGER NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+	user_update INTEGER,
+	date_update date,
+	FOREIGN KEY (id_contador) REFERENCES Contabilidade(id)
+	FOREIGN KEY (user_create) REFERENCES users (id),
+	FOREIGN KEY (user_update) REFERENCES users (id)
+);
+
+
+-- Tabela para clientes (clients)
+CREATE TABLE IF NOT EXISTS historico_envio_arquivos_fiscais (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+	ativo INTEGER,
+	status_envio TEXT NOT NULL,
+    nome TEXT NOT NULL,
+	razaoSocial TEXT,
+    cnpj TEXT,
+    email TEXT,
+	id_contador INTEGER,
+	sistema TEXT ,
+	link_sistema TEXT,
+	created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+	user_update INTEGER,
+
 );

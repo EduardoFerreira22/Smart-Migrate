@@ -1964,6 +1964,9 @@
                         </item>
                         <item>
                          <widget class="QTableWidget" name="table_clientes">
+                          <attribute name="verticalHeaderVisible">
+                           <bool>false</bool>
+                          </attribute>
                           <column>
                            <property name="text">
                             <string>ID</string>
@@ -2029,6 +2032,11 @@
                             <string>Data Ult. Envio</string>
                            </property>
                           </column>
+                          <column>
+                           <property name="text">
+                            <string>Ações</string>
+                           </property>
+                          </column>
                          </widget>
                         </item>
                        </layout>
@@ -2054,7 +2062,7 @@
                        <property name="frameShadow">
                         <enum>QFrame::Shadow::Raised</enum>
                        </property>
-                       <widget class="QWidget" name="">
+                       <widget class="QWidget" name="layoutWidget">
                         <property name="geometry">
                          <rect>
                           <x>10</x>
@@ -2664,11 +2672,6 @@
                           </column>
                           <column>
                            <property name="text">
-                            <string>New Column</string>
-                           </property>
-                          </column>
-                          <column>
-                           <property name="text">
                             <string>Nome</string>
                            </property>
                           </column>
@@ -2679,12 +2682,22 @@
                           </column>
                           <column>
                            <property name="text">
+                            <string>CNPJ</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
                             <string>E-mail</string>
                            </property>
                           </column>
                           <column>
                            <property name="text">
                             <string>Telefone</string>
+                           </property>
+                          </column>
+                          <column>
+                           <property name="text">
+                            <string>Ações</string>
                            </property>
                           </column>
                          </widget>
@@ -2712,7 +2725,7 @@
                        <property name="frameShadow">
                         <enum>QFrame::Shadow::Raised</enum>
                        </property>
-                       <widget class="QWidget" name="">
+                       <widget class="QWidget" name="layoutWidget">
                         <property name="geometry">
                          <rect>
                           <x>10</x>

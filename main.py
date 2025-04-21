@@ -5,13 +5,14 @@ from PySide6 import QtCore
 from PySide6.QtWidgets import (QApplication,QMainWindow, QScrollArea, QHBoxLayout,QMessageBox,QProgressBar,QDialog, QVBoxLayout, QPushButton,QTableWidgetItem,QFileDialog,QMenu, QWidgetAction,
                                     QPlainTextEdit, QPushButton, QVBoxLayout, QWidget, QSystemTrayIcon, QMenu)
 
+import sqlite3
 from ui.ui_main import Ui_PrincipalWindow
 from components.progress_bar import CSVLoaderThread, ProgressBarWindow
 import ui.app_instance as app_instance
 from components import controladores as i
 from components import objetos as obj
 from functions import functions_csv as f_csv
-from xml_functions.table import XmlTable
+from xml_functions.table import XmlTable, TablesClienteContabil
 from dados.models import SQLiteConnect
 import bcrypt
 import base64
@@ -40,14 +41,32 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
         app_instance.set_ui_instance(self)
         self.show_frames = i.FramesControler()
         self.tb_xml = XmlTable(directory=None)
+        self.tab_c = TablesClienteContabil(parent=self)
         self.sqlite = SQLiteConnect(DB_PATH)
         self.visibilidade_objetos()
         self.lb_titulos_tabelas.setText("Importe um arquivo .csv")
         self.create_initial_tables()
-        self.login(username="admin", password="smart_admin_migrate")
+        # self.login(username="admin", password="smart_admin_migrate")
+        self.setComboBox()
+        self.table_cliente()
 
 
 
+    def setComboBox(self):
+        data = self.sqlite.select_contabilidade()
+        self.combo_contador.clear()
+        for row in data:
+            id_contador, ativo, cnpj, nome, razao_social, email, phone = row
+            self.combo_contador.addItem(nome)
+            self.combo_contador.setItemData(self.combo_contador.count() - 1, id_contador)
+        if self.combo_contador.count() > 0:
+            self.combo_contador.setCurrentIndex(0)
+
+    def get_selected_contador_id(self):
+        current_index = self.combo_contador.currentIndex()
+        if current_index >= 0:
+            return self.combo_contador.itemData(current_index)
+        return None
         
     def visibilidade_objetos(self):
         self.btn_opcoes_pesquisas.setEnabled(False)
@@ -56,6 +75,7 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
 
 
         # Obtendo o tamanho da tela corretamente no PySide6
+    
     def full_size_window(self):
         screen = QGuiApplication.primaryScreen().geometry()
         self.setGeometry(0, 0, screen.width(), screen.height())
@@ -103,6 +123,9 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
         self.btn_proxima_pagina.clicked.connect(i.mudar_proxima_pag)
         self.btn_voltar_pagina.clicked.connect(i.mudar_pag_anterior)
 
+        self.btn_salvar_contabilidade.clicked.connect(self.create_contabilidade)
+        self.btn_salvar_cliente.clicked.connect(self.create_clientes)
+
     def setupWindow_xml(self):
         self.btn_path_xml.clicked.connect(self.buscar_xml)
         self.bt_limpa_tab_xml.clicked.connect(lambda checked=False: self.tb_xml.clear_xml())
@@ -121,7 +144,6 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
             self.tb_xml.directory = xml_path
             self.tb_xml.processing_xmls()
         self.progress_window.close()         
-
 
     # Método buscar_csv ajustado
     def buscar_csv(self):
@@ -182,7 +204,6 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
 
     def create_initial_tables(self):
         tables = read_tables()
-        self.sqlite.connect_db()
         self.sqlite.create_tables(queries=tables)
         self.create_initial_data()
 
@@ -226,6 +247,53 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
                 return bcrypt.checkpw(password.encode('utf-8'), hashed_bytes)
         return False
 
+    def create_contabilidade(self):
+        user = 1
+        data = (
+            self.txt_cnpj_contabilidade.text(),
+            self.txt_nome_contabilidade.text(),
+            self.txt_razao_social_contabilidade.text(),
+            self.txt_email_contabilidade.text(),
+            self.txt_telefone_contabilidade_2.text(),
+            user
+        )
+        self.sqlite.post_contabilidade(data=data)
+
+    def create_clientes(self):
+        id_contador = self.get_selected_contador_id()
+        print(id_contador)
+        if id_contador is None:
+            raise ValueError("Nenhum contador selecionado no QComboBox")
+        
+        user = 1
+        data = (
+            self.txt_nome_cliente.text(),
+            self.txt_razao_social_cliente.text(),
+            self.txt_cnpj_cliente.text(),
+            self.txt_email_cliente.text(),
+            id_contador,
+            self.combo_sistema_cliente.currentText(),
+            self.txt_link_sistema_cliente.text(),
+            self.txt_user_cliente_sistema.text(),
+            self.txt_password_cliente_sistema.text(),
+            user
+        )
+        try:
+            self.sqlite.post_cliente(data)
+            print(f"Cliente cadastrado com sucesso: {data}")
+            # Recarregar a tabela
+            self.table_cliente()
+        except sqlite3.OperationalError as e:
+            print(f"Erro ao cadastrar cliente: {e}")
+            raise
+
+    def table_cliente(self):
+            data = self.sqlite.select_cliente()
+            self.tab_c.table_cliente_contabilidade(
+                table=self.table_clientes,
+                data=data,
+                action=self.tab_c.show_edit_frame  # Passar a função show_edit_frame
+            )
 
 if __name__ == "__main__":
     import sys

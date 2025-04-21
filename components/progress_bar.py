@@ -1,5 +1,4 @@
 import csv
-import chardet
 import os
 import sys
 from PySide6.QtWidgets import QDialog, QMessageBox, QPushButton, QVBoxLayout, QApplication, QWidget

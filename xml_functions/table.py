@@ -1,7 +1,7 @@
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QIcon,QFont,QColor, QStandardItem, QStandardItemModel
+from PySide6.QtCore import Qt, QSize
+from PySide6.QtGui import QIcon,QFont,QColor, QStandardItem, QStandardItemModel, QCursor
 from PySide6 import QtCore
-from PySide6.QtWidgets import (QApplication,QMessageBox,QFileDialog,QMenu,QMenu)
+from PySide6.QtWidgets import (QApplication,QMessageBox,QFileDialog,QMenu,QMenu, QToolButton, QTableWidgetItem)
 import ui.app_instance as app_instance
 from brazilfiscalreport.danfe import Danfe
 from reportlab.lib.pagesizes import landscape, A4
@@ -689,3 +689,82 @@ class XmlTable:
             for row in range(model.rowCount()):
                 row_match = search_in_row(row, pesquisa, parent_index=None)
                 self.ui.tableWidget_xml_list.setRowHidden(row, not row_match, model.index(row, 0))
+
+
+
+class TablesClienteContabil:
+    def __init__(self, parent=None):
+        self.parent = parent  # Referência ao WindowPrincipal
+        self.current_row = -1
+        # Caminho base para o diretório do projeto
+        self.base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        self.icon_path = os.path.join(self.base_path, "ui", "icons", "edit.png")
+        print(self.icon_path)
+
+    def tool_button(self, table, action):
+            for row in range(table.rowCount()):
+                button = QToolButton()
+                # Carregar e verificar o ícone
+                icon = QIcon(self.icon_path)
+                if icon.isNull():
+                    print(f"Erro: Não foi possível carregar o ícone em {self.icon_path}")
+                button.setIcon(icon)
+                button.setMinimumSize(QSize(30, 30))
+                button.setMaximumSize(QSize(30, 30))
+                button.setIconSize(QSize(20, 20))  # Tamanho do ícone
+                button.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+                button.setText("")  # Manter texto, ou use "" para apenas ícone
+                button.setToolTip("Editar cliente")  # Dica ao passar o mouse
+                button.clicked.connect(lambda checked, r=row: action(r))
+                table.setCellWidget(row, table.columnCount() - 1, button)
+
+    def table_cliente_contabilidade(self, table, data, action):
+        if data:
+            table.setRowCount(len(data))
+            action_col = table.columnCount() - 1
+
+            for row_idx, row_data in enumerate(data):
+                for col_idx, col_data in enumerate(row_data):
+                    if col_idx < action_col:
+                        table.setItem(row_idx, col_idx, QTableWidgetItem(str(col_data)))
+            
+            # Chamar tool_button uma vez, após preencher todas as linhas
+            self.tool_button(table=table, action=action)
+
+    def show_edit_frame(self, row):
+            """Exibe o frame de cadastro preenchido com os dados da linha selecionada"""
+            self.current_row = row
+            # Exibir o frame frm_cadastro_cliente
+            self.parent.frm_cadastro_cliente.setVisible(True)
+
+            # Preencher os campos do frame com os dados da linha
+            headers = [self.parent.table_clientes.horizontalHeaderItem(col).text().lower() 
+                    for col in range(self.parent.table_clientes.columnCount() - 1)]
+            for col in range(len(headers)):
+                item = self.parent.table_clientes.item(row, col)
+                value = item.text() if item else ""
+                
+                # Mapear cabeçalhos para campos do frm_cadastro_cliente
+                if headers[col] == "nome":
+                    self.parent.txt_nome_cliente.setText(value)
+                elif headers[col] == "razao social":
+                    self.parent.txt_razao_social_cliente.setText(value)
+                elif headers[col] == "cnpj":
+                    self.parent.txt_cnpj_cliente.setText(value)
+                elif headers[col] == "email":
+                    self.parent.txt_email_cliente.setText(value)
+                elif headers[col] == "id_contador":
+                    # Selecionar o contador correspondente no combo_contador
+                    id_contador = int(value) if value.isdigit() else 0
+                    for i in range(self.parent.combo_contador.count()):
+                        if self.parent.combo_contador.itemData(i) == id_contador:
+                            self.parent.combo_contador.setCurrentIndex(i)
+                            break
+                elif headers[col] == "sistema":
+                    self.parent.combo_sistema_cliente.setCurrentText(value)
+                elif headers[col] == "link_sistema":
+                    self.parent.txt_link_sistema_cliente.setText(value)
+                elif headers[col] == "user_sistema":
+                    self.parent.txt_user_cliente_sistema.setText(value)
+                elif headers[col] == "senha_sistema":
+                    self.parent.txt_password_cliente_sistema.setText(value)
