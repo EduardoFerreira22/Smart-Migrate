@@ -32,10 +32,11 @@ import os
 import csv
 import time
 
-ui = app_instance
+ui = app_instance.get_ui_instance()
 
 
-def save_csv():
+def save_csv(parent:None):
+    ui = app_instance.get_ui_instance()
     # Caixa de diálogo para o usuário escolher o formato do arquivo
     formatos = "CSV Files (*.csv);;Excel Files (*.xlsx);;All Files (*)"
     file_path, selected_filter = QFileDialog.getSaveFileName(
@@ -134,7 +135,8 @@ def save_csv():
         )
 
 
-def save_pdf():
+def save_pdf(parent:None ):
+    ui = app_instance.get_ui_instance()
     current_datetime = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     data = datetime.datetime.now().strftime("%d-%m-%Y")
     print(data)
@@ -154,7 +156,7 @@ def save_pdf():
     try:
         print(f"Salvando PDF em: {file_path}")
 
-        logo_path = "gui/img/logo_smartMigrate.png"
+        logo_path = "ui/icons/logo_smartMigrate.png"
 
         c = canvas.Canvas(file_path, pagesize=landscape(A4))
         width, height = landscape(A4)

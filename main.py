@@ -1,6 +1,6 @@
 import asyncio
 from PySide6.QtCore import QCoreApplication,QUrl,QTimer,Qt, QEvent,QObject
-from PySide6.QtGui import QGuiApplication, QIcon,QFont,QColor,QDesktopServices, QKeyEvent
+from PySide6.QtGui import QGuiApplication, QIcon,QFont,QColor,QDesktopServices, QKeyEvent, QCursor
 from PySide6 import QtCore
 from PySide6.QtWidgets import (QApplication,QMainWindow, QScrollArea, QHBoxLayout,QMessageBox,QProgressBar,QDialog, QVBoxLayout, QPushButton,QTableWidgetItem,QFileDialog,QMenu, QWidgetAction,
                                     QPlainTextEdit, QPushButton, QVBoxLayout, QWidget, QSystemTrayIcon, QMenu)
@@ -14,6 +14,7 @@ from components import objetos as obj
 from functions import functions_csv as f_csv
 from xml_functions.table import XmlTable, TablesClienteContabil
 from dados.models import SQLiteConnect
+from xml_functions.relatorios import save_csv, save_pdf
 import bcrypt
 import base64
 import sys
@@ -133,11 +134,27 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
 
 
     def setupWindow_xml(self):
+       
         self.btn_path_xml.clicked.connect(self.buscar_xml)
         self.bt_limpa_tab_xml.clicked.connect(lambda checked=False: self.tb_xml.clear_xml())
         # self.txt_pesquisa_table_xml.textChanged.connect(self.tb_xml.filter_table_xml)
         self.tableWidget_xml_list.setContextMenuPolicy(Qt.CustomContextMenu)
         self.tableWidget_xml_list.customContextMenuRequested.connect(self.tb_xml.show_context_menu_mde)
+        self.btn_salvar_relatorio_xml.clicked.connect(self._salvar_relatorios_xml)
+
+    def _salvar_relatorios_xml(self):
+        opcoes = self.combo_opcoes_relatorios_xml.currentText()
+        print(opcoes)
+        if opcoes == "Exportar em CSV":
+            save_csv(self)
+        elif opcoes == "Exportar em PDF":
+            save_pdf(self)
+        else:
+            QMessageBox.warning(
+                None,
+                "Atenção!",
+                "É necessário selecionar uma das opções."
+            )
 
     def buscar_xml(self):
         xml_path = obj.path_xml()

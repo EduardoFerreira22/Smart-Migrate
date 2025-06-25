@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainEcpUfA.ui'
+## Form generated from reading UI file 'mainVHIWzn.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.2
 ##
@@ -1415,6 +1415,7 @@ class Ui_PrincipalWindow(object):
         self.btn_salvar_relatorio_xml.setObjectName(u"btn_salvar_relatorio_xml")
         self.btn_salvar_relatorio_xml.setMinimumSize(QSize(0, 30))
         self.btn_salvar_relatorio_xml.setMaximumSize(QSize(16777215, 30))
+        self.btn_salvar_relatorio_xml.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
 
         self.horizontalLayout_15.addWidget(self.btn_salvar_relatorio_xml, 0, Qt.AlignmentFlag.AlignBottom)
 
@@ -1429,6 +1430,7 @@ class Ui_PrincipalWindow(object):
         self.bt_limpa_tab_xml.setObjectName(u"bt_limpa_tab_xml")
         self.bt_limpa_tab_xml.setMinimumSize(QSize(0, 30))
         self.bt_limpa_tab_xml.setMaximumSize(QSize(16777215, 30))
+        self.bt_limpa_tab_xml.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
 
         self.horizontalLayout_15.addWidget(self.bt_limpa_tab_xml, 0, Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignBottom)
 

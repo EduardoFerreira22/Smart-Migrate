@@ -17,7 +17,7 @@ import datetime  # Para obter a data e hora atuais
 import os
 import csv
 import time
-from .relatorios import save_csv, save_pdf
+
 # Configurar o locale para formato brasileiro
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 

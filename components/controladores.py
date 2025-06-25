@@ -22,7 +22,7 @@ class FramesControler:
             ui.combo_filtro_statusEnvio,
             ui.combo_filtro_contador,
             ui.btn_atualizar_cliente,
-
+            
             ]
 
     def showFrames(self, status):
