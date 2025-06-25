@@ -162,10 +162,6 @@ class XmlTable:
                     # Linha principal no modelo
                     row = [emitente_item, cnpj_item, num_nf_item, modelo_nfe_item, icms_item, pis_item, cofins_item, ipi_item, total_nf_item, chave_nfe_item, natureza_op_item]
                     model.appendRow(row)
-                    #linhas pai --------------------------------------------------------------------------------------------------
-                    # linhas filhas -----------------------------------------------------------------------------------------------------------------------------------------------------
-                    # Obter o item principal (nota fiscal) onde os produtos serão adicionados como filhos
-                    parent_item = model.item(model.rowCount() - 1)  # Última linha no modelo (linha principal da nota fiscal)
 
                     # Adiciona os cabeçalhos personalizados para as linhas filhas (produtos)
                     header_produtos = [
@@ -188,13 +184,14 @@ class XmlTable:
                         QStandardItem("T.TRIBUTOS")
                     ]
 
-                    # Estiliza os cabeçalhos das linhas filhas (opcional)
+                    # Estiliza os cabeçalhos das linhas filhas
                     for header_item in header_produtos:
-                        header_item.setBackground(QColor(200, 200, 200))  # Cor de fundo cinza claro
-                        header_item.setFont(QFont("Arial", 10, QFont.Bold))  # Fonte em negrito
-                        header_item.setEditable(False)  # Impede edição do cabeçalho
+                        header_item.setBackground(QColor(200, 200, 200))
+                        header_item.setFont(QFont("Arial", 10, QFont.Bold))
+                        header_item.setEditable(False)
 
                     # Adiciona os cabeçalhos como primeira linha filha
+                    parent_item = model.item(model.rowCount() - 1)  # Última linha no modelo
                     parent_item.appendRow(header_produtos)
 
                     # Obter os produtos e adicionar como linhas filhas
@@ -208,7 +205,7 @@ class XmlTable:
                         cfop_produto = produto.find(f'.//{NAMESPACE}CFOP')
                         unidade = produto.find(f'.//{NAMESPACE}uCom')
                         qtda = produto.find(f'.//{NAMESPACE}qCom')
-                        v_unit = produto.find(f'.//{NAMESPACE}vUnTrib')
+                        v_unit = produto.find(f'.//{NAMESPACE}vUnTrib') or produto.find(f'.//{NAMESPACE}vUnCom')
                         v_total = produto.find(f'.//{NAMESPACE}vProd')
                         v_icms = produto.find(f'.//{NAMESPACE}ICMS/{NAMESPACE}vICMS')
                         cst_ipi = produto.find(f'.//{NAMESPACE}IPI/{NAMESPACE}IPITrib/{NAMESPACE}CST')
@@ -218,36 +215,36 @@ class XmlTable:
                         v_cofins = produto.find(f'.//{NAMESPACE}COFINS/{NAMESPACE}COFINSOutr/{NAMESPACE}vCOFINS')
                         total_trib = produto.find(f'.//{NAMESPACE}imposto/{NAMESPACE}vTotTrib')
 
-
-                        # Inicializa os valores padrão
+                        # Extração com verificação de None e conversão para valores numéricos
                         cod_prod = cod_prod.text if cod_prod is not None else "N/A"
                         descricao_produto = descricao_produto.text if descricao_produto is not None else "N/A"
                         ncm = ncm.text if ncm is not None else "N/A"
                         csosn = csosn.text if csosn is not None else "N/A"
                         cfop_produto = cfop_produto.text if cfop_produto is not None else "N/A"
                         unidade = unidade.text if unidade is not None else "N/A"
-                        qtda = qtda.text if qtda is not None else "0.000"
-                        v_unit = v_unit.text if v_unit is not None else "R$0,00"
-                        v_total = v_total.text if v_total is not None else "R$0,00"
-                        v_icms = v_icms.text if v_icms is not None else "R$0,00"
+                        qtda = float(qtda.text) if qtda is not None and qtda.text else 0.0
+                        v_unit = float(v_unit.text) if v_unit is not None and v_unit.text else 0.0
+                        v_total = float(v_total.text) if v_total is not None and v_total.text else 0.0
+                        v_icms = float(v_icms.text) if v_icms is not None and v_icms.text else 0.0
                         cst_ipi = cst_ipi.text if cst_ipi is not None else "N/A"
-                        v_ipi = v_ipi.text if v_ipi is not None else "R$0,00"
+                        v_ipi = float(v_ipi.text) if v_ipi is not None and v_ipi.text else 0.0
                         cst_pis = cst_pis.text if cst_pis is not None else "N/A"
-                        v_pis = v_pis.text if v_pis is not None else "R$0,00"
-                        v_cofins = v_cofins.text if v_cofins is not None else "R$0,00"
-                        total_trib = total_trib.text if total_trib is not None else "R$0,00"
-                        ncm_formatado = f"{ncm[4:]}.{ncm[4:6]}.{ncm[6:]}"
-                        qtda_formatado = f"{float(qtda):.3f}"
+                        v_pis = float(v_pis.text) if v_pis is not None and v_pis.text else 0.0
+                        v_cofins = float(v_cofins.text) if v_cofins is not None and v_cofins.text else 0.0
+                        total_trib = float(total_trib.text) if total_trib is not None and total_trib.text else 0.0
+                        ncm_formatado = f"{ncm[0:4]}.{ncm[4:6]}.{ncm[6:]}" if ncm != "N/A" and len(ncm) >= 8 else "N/A"
+                        qtda_formatado = f"{qtda:.3f}"
+
                         # Verifica as possíveis tags de ICMS para encontrar CST dinamicamente
-                        cst_icms = "N/A"  # Valor padrão caso nenhum CST seja encontrado
+                        cst_icms = "N/A"
                         icms_node = produto.find(f'.//{NAMESPACE}ICMS')
                         if icms_node is not None:
                             for child in icms_node:
                                 cst_tag = child.find(f'.//{NAMESPACE}CST')
                                 if cst_tag is not None:
                                     cst_icms = cst_tag.text
-                                    print(cst_icms)
-                                    break  # Para no primeiro CST encontrado
+                                    break
+
                         icon_produto = QIcon('ui/images/product_icon.png')
                         # Cria os itens para as linhas filhas
                         codigo_prod = QStandardItem(icon_produto, cod_prod)
@@ -257,66 +254,36 @@ class XmlTable:
                         csosn_item = QStandardItem(csosn)
                         unidade_item = QStandardItem(unidade)
                         qtda_item = QStandardItem(qtda_formatado)
-                        v_unit_item = QStandardItem(v_unit)
-                        v_total_item = QStandardItem(v_total)
-                        cst_item = QStandardItem(cst_icms)
-                        v_icms_item = QStandardItem(v_icms)
-                        cst_ipi_item = QStandardItem(cst_ipi)
-                        v_ipi_item = QStandardItem(v_ipi)
-                        cst_pis_item = QStandardItem(cst_pis)
-                        v_pis_item = QStandardItem(v_pis)
-                        v_cofins_item = QStandardItem(v_cofins)
-                        v_trib_item = QStandardItem(total_trib)
 
-                        # Valores extraídos do XML
-                        values = [
-                            v_unit_item,
-                            v_unit,
-                            v_total,
-                            v_icms,
-                            v_ipi,
-                            v_pis,
-                            v_cofins,
-                            total_trib
-                        ]
-
-                        # Formatar os valores
+                        # Valores brutos para formatação
+                        values = [v_unit, v_total, v_icms, v_ipi, v_pis, v_cofins, total_trib]
+                        print(f"Valores brutos para formatação: {values}")  # Depuração
                         formatted_values = format_all_values(symbol='R$', values=values)
+                        print(f"Valores formatados: {formatted_values}")  # Depuração
 
-                        # Criar os itens da tabela usando os valores formatados                        # Criar os itens da tabela usando os valores formatados
-                        v_unit_item = QStandardItem(formatted_values[0])
-                        v_total_item = QStandardItem(formatted_values[1])
-                        v_icms_item = QStandardItem(formatted_values[2])
-                        v_ipi_item = QStandardItem(formatted_values[3])
-                        v_pis_item = QStandardItem(formatted_values[4])
-                        v_cofins_item = QStandardItem(formatted_values[5])
-                        v_trib_item = QStandardItem(formatted_values[6])
+                        # Criar os itens da tabela usando os valores formatados
+                        v_unit_item = QStandardItem(formatted_values[0] if formatted_values[0] else "R$0,00")
+                        v_total_item = QStandardItem(formatted_values[1] if formatted_values[1] else "R$0,00")
+                        v_icms_item = QStandardItem(formatted_values[2] if formatted_values[2] else "R$0,00")
+                        v_ipi_item = QStandardItem(formatted_values[3] if formatted_values[3] else "R$0,00")
+                        v_pis_item = QStandardItem(formatted_values[4] if formatted_values[4] else "R$0,00")
+                        v_cofins_item = QStandardItem(formatted_values[5] if formatted_values[5] else "R$0,00")
+                        v_trib_item = QStandardItem(formatted_values[6] if formatted_values[6] else "R$0,00")
+
+                        cst_item = QStandardItem(cst_icms)
+                        cst_ipi_item = QStandardItem(cst_ipi)
+                        cst_pis_item = QStandardItem(cst_pis)
 
                         # Criar a linha do produto
                         produto_row = [
-                            codigo_prod,
-                            produto_item,
-                            cfop_item,
-                            ncm_item,
-                            csosn_item,
-                            unidade_item,
-                            qtda_item,
-                            v_unit_item,
-                            v_total_item,
-                            cst_item,
-                            v_icms_item,
-                            cst_ipi_item,
-                            v_ipi_item,
-                            cst_pis_item,
-                            v_pis_item,
-                            v_cofins_item,
-                            v_trib_item
+                            codigo_prod, produto_item, cfop_item, ncm_item, csosn_item,
+                            unidade_item, qtda_item, v_unit_item, v_total_item, cst_item,
+                            v_icms_item, cst_ipi_item, v_ipi_item, cst_pis_item, v_pis_item,
+                            v_cofins_item, v_trib_item
                         ]
 
                         # Adicionar a linha como filha da linha principal
                         parent_item.appendRow(produto_row)
-
-                    # linhas filhas -----------------------------------------------------------------------------------------------------------------------------------------------------
 
                     # Soma dos valores da nota fiscal
                     total_icms += icms
@@ -343,7 +310,7 @@ class XmlTable:
         
         try:
             quebra_sequencias = self.quebra_sequencias(num_nf_list)
-            self.ui.label_qtda_xmls.setPlainText(str(len(num_nf_list)))
+            # self.ui.label_qtda_xmls.setPlainText(str(len(num_nf_list)))
         except Exception as e:
             print(f"Nenhuma quebra de sequência identificada. {e}")
 
