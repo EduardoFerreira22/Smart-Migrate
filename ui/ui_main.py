@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainLprbmg.ui'
+## Form generated from reading UI file 'mainEcpUfA.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.2
 ##
@@ -1468,6 +1468,15 @@ class Ui_PrincipalWindow(object):
         self.frame_4.setMaximumSize(QSize(300, 16777215))
         self.frame_4.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_4.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_18 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_18.setSpacing(0)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.verticalLayout_18.setContentsMargins(0, 0, 0, 0)
+        self.label_qtda_xmls = QPlainTextEdit(self.frame_4)
+        self.label_qtda_xmls.setObjectName(u"label_qtda_xmls")
+
+        self.verticalLayout_18.addWidget(self.label_qtda_xmls)
+
 
         self.horizontalLayout_41.addWidget(self.frame_4)
 
@@ -1981,6 +1990,7 @@ class Ui_PrincipalWindow(object):
         self.btn_salvar_contabilidade.setText(QCoreApplication.translate("PrincipalWindow", u"Novo", None))
         self.tabWidgetFiscal_contabil.setTabText(self.tabWidgetFiscal_contabil.indexOf(self.tab_contabilidades), QCoreApplication.translate("PrincipalWindow", u"Contabilidades", None))
         self.btn_path_xml.setText("")
+        self.txt_pesquisa_table_xml.setPlaceholderText(QCoreApplication.translate("PrincipalWindow", u"N\u00ba NFe, Chave, CNPJ", None))
         self.label_4.setText(QCoreApplication.translate("PrincipalWindow", u"Relat\u00f3rios", None))
         self.combo_opcoes_relatorios_xml.setItemText(0, "")
         self.combo_opcoes_relatorios_xml.setItemText(1, QCoreApplication.translate("PrincipalWindow", u"Exportar em CSV", None))

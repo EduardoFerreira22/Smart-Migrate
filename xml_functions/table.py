@@ -1,8 +1,9 @@
-from PySide6.QtCore import Qt, QSize
+from PySide6.QtCore import Qt, QSize, QTimer
 from PySide6.QtGui import QIcon,QFont,QColor, QStandardItem, QStandardItemModel, QCursor
 from PySide6 import QtCore
 from PySide6.QtWidgets import (QApplication,QMessageBox,QFileDialog,QMenu,QMenu, QToolButton, QTableWidgetItem)
 import ui.app_instance as app_instance
+from components.progress_bar import CSVLoaderThread, ProgressBarWindow
 from brazilfiscalreport.danfe import Danfe
 from reportlab.lib.pagesizes import landscape, A4
 from reportlab.pdfgen import canvas
@@ -15,9 +16,11 @@ from datetime import datetime
 import datetime  # Para obter a data e hora atuais
 import os
 import csv
+import time
 from .relatorios import save_csv, save_pdf
 # Configurar o locale para formato brasileiro
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+
 
 def format_value(symbol, value, cnpj_format=False):
     """
@@ -340,7 +343,7 @@ class XmlTable:
         
         try:
             quebra_sequencias = self.quebra_sequencias(num_nf_list)
-            # self.ui.label_qtda_xmls.setPlainText(str(len(num_nf_list)))
+            self.ui.label_qtda_xmls.setPlainText(str(len(num_nf_list)))
         except Exception as e:
             print(f"Nenhuma quebra de sequência identificada. {e}")
 
@@ -414,6 +417,78 @@ class XmlTable:
             print(e)
             QMessageBox.critical(self.ui.tableWidget_xml_list, "Erro", f"Ocorreu um erro ao gerar o DANFE: {e}")
 
+    def _processar_xml(self, xml_file, input_dir, output_dir):
+        """Processa um único arquivo XML e retorna o resultado."""
+        try:
+            xml_path = os.path.join(input_dir, xml_file)
+            tree = ET.parse(xml_path)
+            chave_nota = tree.find('.//{http://www.portalfiscal.inf.br/nfe}chNFe').text
+            pdf_path = os.path.join(output_dir, f"DANFE_{chave_nota}.pdf")
+            with open(xml_path, 'r', encoding='utf-8') as file:
+                danfe = Danfe(xml=file.read())
+                danfe.output(pdf_path)
+            return True, None
+        except Exception as e:
+            return False, f"Erro ao processar {xml_file}: {str(e)}"
+
+    def gerar_danfe_todos_xmls(self):
+        """Gera DANFE PDFs para todos os XMLs em uma pasta."""
+        # Verifica se o diretório de entrada é válido
+        if not hasattr(self, 'directory') or not os.path.isdir(self.directory):
+            QMessageBox.critical(self.ui.tableWidget_xml_list, "Erro", "Selecione um diretório válido com XMLs.")
+            return
+
+        # Solicita diretório de saída
+        output_dir = QFileDialog.getExistingDirectory(self.ui.tableWidget_xml_list, "Salvar PDFs", self.directory)
+        if not output_dir:
+            QMessageBox.warning(self.ui.tableWidget_xml_list, "Atenção", "Operação cancelada: diretório não selecionado.")
+            return
+
+        # Lista arquivos XML
+        xml_files = [f for f in os.listdir(self.directory) if f.endswith('.xml')]
+        if not xml_files:
+            QMessageBox.warning(self.ui.tableWidget_xml_list, "Atenção", "Nenhum arquivo XML encontrado.")
+            return
+
+        # Exibe pop-up de espera
+        wait_dialog = QMessageBox(self.ui.tableWidget_xml_list)
+        wait_dialog.setWindowTitle("Aguarde")
+        wait_dialog.setText(f"Gerando {len(xml_files)} DANFEs. Por favor, aguarde...")
+        wait_dialog.setStandardButtons(QMessageBox.NoButton)  # Remove botões para bloquear interação
+        wait_dialog.setWindowModality(Qt.ApplicationModal)  # Bloqueia a aplicação
+        wait_dialog.show()
+        print("Exibindo wait_dialog")
+        QApplication.processEvents()  # Garante que o diálogo seja renderizado
+
+        # Processa os XMLs
+        success_count, errors = 0, []
+        for xml_file in xml_files:
+            print(f"Processando {xml_file}")
+            success, error = self._processar_xml(xml_file, self.directory, output_dir)
+            if success:
+                success_count += 1
+            else:
+                errors.append(error)
+            time.sleep(2)  # Pausa de 2 segundos
+            QApplication.processEvents()  # Mantém a interface responsiva
+
+
+        # Exibe diálogo de resultado
+        mensagem = f"Concluído: {success_count} PDFs gerados, {len(errors)} erros."
+        if errors:
+            mensagem += f"\nErros:\n{'; '.join(errors[:3])}" + (f"\n...e mais {len(errors)-3} erros." if len(errors) > 3 else "")
+            QMessageBox.critical(self.ui.tableWidget_xml_list, "Resultados", mensagem)
+        else:
+            QTimer.singleShot(100, lambda: [wait_dialog.close(), QApplication.processEvents()])
+            QApplication.processEvents()
+            if wait_dialog.isVisible():
+                print("AVISO: wait_dialog ainda visível após QTimer, forçando hide")
+                wait_dialog.hide()
+                QApplication.processEvents()
+            QMessageBox.information(self.ui.tableWidget_xml_list, "Sucesso", mensagem)
+
+        print("Diálogo de resultado exibido")
+
     def show_context_menu_mde(self, position):
         context_menu_stylesheet = """
                                     QMenu {
@@ -447,6 +522,7 @@ class XmlTable:
                 # Adiciona ações ao menu
                 menu.addAction("Copiar Chave").triggered.connect(lambda: self.copiar_chave(chave_nota))
                 menu.addAction("Imprimir DANFE").triggered.connect(lambda: self.gerar_danfe(chave_nota))
+                menu.addAction("Imprimir DANFE de todos XML's").triggered.connect(self.gerar_danfe_todos_xmls)
                 
                 # Exibe o menu no local do clique
                 menu.exec(self.ui.tableWidget_xml_list.viewport().mapToGlobal(position))

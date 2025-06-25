@@ -30,6 +30,7 @@ from datetime import datetime
 import datetime  # Para obter a data e hora atuais
 import os
 import csv
+import time
 
 ui = app_instance
 
@@ -258,3 +259,5 @@ def save_pdf():
             f"Ocorreu um erro ao salvar o relatório PDF: {e}",
             QMessageBox.Ok,
         )
+
+

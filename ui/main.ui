@@ -3129,6 +3129,9 @@
                                <height>30</height>
                               </size>
                              </property>
+                             <property name="placeholderText">
+                              <string>Nº NFe, Chave, CNPJ</string>
+                             </property>
                             </widget>
                            </item>
                            <item>
@@ -3334,6 +3337,26 @@
                              <property name="frameShadow">
                               <enum>QFrame::Shadow::Raised</enum>
                              </property>
+                             <layout class="QVBoxLayout" name="verticalLayout_18">
+                              <property name="spacing">
+                               <number>0</number>
+                              </property>
+                              <property name="leftMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="topMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="rightMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="bottomMargin">
+                               <number>0</number>
+                              </property>
+                              <item>
+                               <widget class="QPlainTextEdit" name="label_qtda_xmls"/>
+                              </item>
+                             </layout>
                             </widget>
                            </item>
                            <item>
