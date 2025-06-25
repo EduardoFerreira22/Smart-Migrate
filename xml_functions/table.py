@@ -562,7 +562,7 @@ class TablesClienteContabil:
             for col in range(len(headers)):
                 item = self.parent.table_clientes.item(row, col)
                 value = item.text() if item else ""
-                
+                #test
                 # Mapear cabeçalhos para campos do frm_cadastro_cliente
                 if headers[col] == "id":
                     self.parent.txt_id_cliente.setText(value)
