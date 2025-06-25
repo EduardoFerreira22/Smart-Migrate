@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainFdhVgI.ui'
+## Form generated from reading UI file 'mainLprbmg.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.2
 ##
@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractSpinBox, QApplication
     QRadioButton, QSizePolicy, QSpacerItem, QStackedWidget,
     QTabWidget, QTableWidget, QTableWidgetItem, QTreeView,
     QVBoxLayout, QWidget)
-import icon_rc
+from ui import icon_rc
 
 class Ui_PrincipalWindow(object):
     def setupUi(self, PrincipalWindow):
@@ -1445,6 +1445,7 @@ class Ui_PrincipalWindow(object):
         self.verticalLayout_26.setContentsMargins(0, 0, 0, 0)
         self.tableWidget_xml_list = QTreeView(self.frm_center_xml)
         self.tableWidget_xml_list.setObjectName(u"tableWidget_xml_list")
+        self.tableWidget_xml_list.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
 
         self.verticalLayout_26.addWidget(self.tableWidget_xml_list)
 

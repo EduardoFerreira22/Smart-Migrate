@@ -3269,7 +3269,11 @@
                             <number>0</number>
                            </property>
                            <item>
-                            <widget class="QTreeView" name="tableWidget_xml_list"/>
+                            <widget class="QTreeView" name="tableWidget_xml_list">
+                             <property name="editTriggers">
+                              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                             </property>
+                            </widget>
                            </item>
                           </layout>
                          </widget>

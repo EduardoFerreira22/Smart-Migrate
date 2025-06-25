@@ -49,6 +49,7 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
         # self.login(username="admin", password="smart_admin_migrate")
         self.setComboBox()
         self.table_cliente()
+        self.setupWindow_xml()
 
 
 
@@ -80,7 +81,7 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
         screen = QGuiApplication.primaryScreen().geometry()
         self.setGeometry(0, 0, screen.width(), screen.height())
         self.setup_buttons()
-        self.setupWindow_xml()
+        
 
     #Funções que permitem arrastar a tela //////////////////////////////////////////////////////////////////////////////
     def mousePressEvent(self, event):
@@ -135,6 +136,8 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
         self.btn_path_xml.clicked.connect(self.buscar_xml)
         self.bt_limpa_tab_xml.clicked.connect(lambda checked=False: self.tb_xml.clear_xml())
         # self.txt_pesquisa_table_xml.textChanged.connect(self.tb_xml.filter_table_xml)
+        self.tableWidget_xml_list.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.tableWidget_xml_list.customContextMenuRequested.connect(self.tb_xml.show_context_menu_mde)
 
     def buscar_xml(self):
         xml_path = obj.path_xml()
