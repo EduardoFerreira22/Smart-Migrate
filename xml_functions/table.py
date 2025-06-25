@@ -385,7 +385,7 @@ class XmlTable:
         caminho_xml = self.encontrar_xml(chave_nota)
         
         if not caminho_xml:
-            QMessageBox.critical(self, "Erro", f"XML não encontrado para a chave: {chave_nota}")
+            QMessageBox.critical(self.ui.tableWidget_xml_list, "Erro", f"XML não encontrado para a chave: {chave_nota}")
             return
 
         try:
@@ -406,13 +406,13 @@ class XmlTable:
             # Verifica se um caminho foi selecionado
             if file_path:
                 danfe.output(file_path)  # Salva o DANFE em PDF no local especificado
-                QMessageBox.information(self, "Sucesso!", f"DANFE salvo com sucesso em {file_path}")
+                QMessageBox.information(self.ui.tableWidget_xml_list, "Sucesso!", f"DANFE salvo com sucesso em {file_path}")
             else:
-                QMessageBox.warning(self, "Atenção!", "Nenhum diretório selecionado. Não foi possível salvar o DANFE.")
+                QMessageBox.warning(self.ui.tableWidget_xml_list, "Atenção!", "Nenhum diretório selecionado. Não foi possível salvar o DANFE.")
 
         except Exception as e:
             print(e)
-            QMessageBox.critical(self, "Erro", f"Ocorreu um erro ao gerar o DANFE: {e}")
+            QMessageBox.critical(self.ui.tableWidget_xml_list, "Erro", f"Ocorreu um erro ao gerar o DANFE: {e}")
 
     def show_context_menu_mde(self, position):
         context_menu_stylesheet = """
