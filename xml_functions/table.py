@@ -736,6 +736,8 @@ class TablesClienteContabil:
             self.current_row = row
             # Exibir o frame frm_cadastro_cliente
             self.parent.frm_cadastro_cliente.setVisible(True)
+            self.parent.btn_salvar_cliente.setVisible(False)
+            self.parent.btn_atualizar_cliente.setVisible(True)
 
             # Preencher os campos do frame com os dados da linha
             headers = [self.parent.table_clientes.horizontalHeaderItem(col).text().lower() 
@@ -745,13 +747,17 @@ class TablesClienteContabil:
                 value = item.text() if item else ""
                 
                 # Mapear cabeçalhos para campos do frm_cadastro_cliente
-                if headers[col] == "nome":
+                if headers[col] == "id":
+                    self.parent.txt_id_cliente.setText(value)
+                elif headers[col] == "status":
+                    self.parent.combo_status_envio_arquivos_cliente.setCurrentText(value)
+                elif headers[col] == "nome":
                     self.parent.txt_nome_cliente.setText(value)
-                elif headers[col] == "razao social":
+                elif headers[col] == "razão social":
                     self.parent.txt_razao_social_cliente.setText(value)
                 elif headers[col] == "cnpj":
                     self.parent.txt_cnpj_cliente.setText(value)
-                elif headers[col] == "email":
+                elif headers[col] == "e-mail":
                     self.parent.txt_email_cliente.setText(value)
                 elif headers[col] == "id_contador":
                     # Selecionar o contador correspondente no combo_contador
@@ -762,9 +768,11 @@ class TablesClienteContabil:
                             break
                 elif headers[col] == "sistema":
                     self.parent.combo_sistema_cliente.setCurrentText(value)
-                elif headers[col] == "link_sistema":
+                elif headers[col] == "link":
                     self.parent.txt_link_sistema_cliente.setText(value)
-                elif headers[col] == "user_sistema":
+                elif headers[col] == "usuário":
                     self.parent.txt_user_cliente_sistema.setText(value)
-                elif headers[col] == "senha_sistema":
+                elif headers[col] == "senha":
                     self.parent.txt_password_cliente_sistema.setText(value)
+
+                

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainawuaAt.ui'
+## Form generated from reading UI file 'mainFdhVgI.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.2
 ##
@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractSpinBox, QApplication
     QRadioButton, QSizePolicy, QSpacerItem, QStackedWidget,
     QTabWidget, QTableWidget, QTableWidgetItem, QTreeView,
     QVBoxLayout, QWidget)
-from . import icon_rc
+import icon_rc
 
 class Ui_PrincipalWindow(object):
     def setupUi(self, PrincipalWindow):
@@ -125,7 +125,7 @@ class Ui_PrincipalWindow(object):
 "    QScrollBar:vertical {\n"
 "        border: none;\n"
 "        background: #F0F0F0; /* Cor de fundo da barra de rolagem */\n"
-"        width: 8px;\n"
+"        width: 12px;\n"
 "        margin: 0px 0px 0px 0px;\n"
 "    }\n"
 "\n"
@@ -155,15 +155,15 @@ class Ui_PrincipalWindow(object):
 "        background: none;\n"
 "    }\n"
 "\n"
-"    QScrollBar::add-page:vertical, QScrol"
-                        "lBar::sub-page:vertical {\n"
+"    QScrollBar::add-page:vertical, QScro"
+                        "llBar::sub-page:vertical {\n"
 "        background: none;\n"
 "    }\n"
 "\n"
 "    QScrollBar:horizontal {\n"
 "        border: none;\n"
 "        background: #F0F0F0; /* Cor de fundo da barra de rolagem */\n"
-"        height: 8px;\n"
+"        height: 12px;\n"
 "        margin: 0px 0px 0px 0px;\n"
 "    }\n"
 "\n"
@@ -190,8 +190,8 @@ class Ui_PrincipalWindow(object):
 "    }\n"
 "\n"
 "    QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal {\n"
-"        backgr"
-                        "ound: none;\n"
+"        back"
+                        "ground: none;\n"
 "    }\n"
 "\n"
 "    QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {\n"
@@ -236,8 +236,8 @@ class Ui_PrincipalWindow(object):
 "\n"
 "#frm_functions_table_principal QPushButton:hover{\n"
 "	border: none;\n"
-"	backgr"
-                        "ound-color: rgba(226, 226, 226, 0.20);\n"
+"	back"
+                        "ground-color: rgba(226, 226, 226, 0.20);\n"
 "	border: 1px solid rgba(109, 109, 109, 0.30);\n"
 "    border-top-left-radius: 5px;\n"
 "    border-top-right-radius: 5px;\n"
@@ -898,6 +898,13 @@ class Ui_PrincipalWindow(object):
 
         self.horizontalLayout_12.addWidget(self.combo_filtro_contador)
 
+        self.btn_novo_cliente = QPushButton(self.frm_filtros_cliente)
+        self.btn_novo_cliente.setObjectName(u"btn_novo_cliente")
+        self.btn_novo_cliente.setMinimumSize(QSize(120, 30))
+        self.btn_novo_cliente.setMaximumSize(QSize(120, 30))
+
+        self.horizontalLayout_12.addWidget(self.btn_novo_cliente)
+
 
         self.horizontalLayout_13.addLayout(self.horizontalLayout_12)
 
@@ -905,8 +912,8 @@ class Ui_PrincipalWindow(object):
         self.verticalLayout_11.addWidget(self.frm_filtros_cliente)
 
         self.table_clientes = QTableWidget(self.frm_table_cliente)
-        if (self.table_clientes.columnCount() < 14):
-            self.table_clientes.setColumnCount(14)
+        if (self.table_clientes.columnCount() < 13):
+            self.table_clientes.setColumnCount(13)
         __qtablewidgetitem = QTableWidgetItem()
         self.table_clientes.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
@@ -933,8 +940,6 @@ class Ui_PrincipalWindow(object):
         self.table_clientes.setHorizontalHeaderItem(11, __qtablewidgetitem11)
         __qtablewidgetitem12 = QTableWidgetItem()
         self.table_clientes.setHorizontalHeaderItem(12, __qtablewidgetitem12)
-        __qtablewidgetitem13 = QTableWidgetItem()
-        self.table_clientes.setHorizontalHeaderItem(13, __qtablewidgetitem13)
         self.table_clientes.setObjectName(u"table_clientes")
         self.table_clientes.verticalHeader().setVisible(False)
 
@@ -1176,6 +1181,13 @@ class Ui_PrincipalWindow(object):
 
         self.horizontalLayout_36.addLayout(self.horizontalLayout_38)
 
+        self.btn_nova_contabilidade = QPushButton(self.frm_filtros_contabilidade)
+        self.btn_nova_contabilidade.setObjectName(u"btn_nova_contabilidade")
+        self.btn_nova_contabilidade.setMinimumSize(QSize(130, 30))
+        self.btn_nova_contabilidade.setMaximumSize(QSize(130, 30))
+
+        self.horizontalLayout_36.addWidget(self.btn_nova_contabilidade)
+
         self.horizontalLayout_39 = QHBoxLayout()
         self.horizontalLayout_39.setSpacing(0)
         self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
@@ -1188,25 +1200,26 @@ class Ui_PrincipalWindow(object):
         self.table_contabilidade = QTableWidget(self.frm_table_contabilidade)
         if (self.table_contabilidade.columnCount() < 8):
             self.table_contabilidade.setColumnCount(8)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        self.table_contabilidade.setHorizontalHeaderItem(0, __qtablewidgetitem13)
         __qtablewidgetitem14 = QTableWidgetItem()
-        self.table_contabilidade.setHorizontalHeaderItem(0, __qtablewidgetitem14)
+        self.table_contabilidade.setHorizontalHeaderItem(1, __qtablewidgetitem14)
         __qtablewidgetitem15 = QTableWidgetItem()
-        self.table_contabilidade.setHorizontalHeaderItem(1, __qtablewidgetitem15)
+        self.table_contabilidade.setHorizontalHeaderItem(2, __qtablewidgetitem15)
         __qtablewidgetitem16 = QTableWidgetItem()
-        self.table_contabilidade.setHorizontalHeaderItem(2, __qtablewidgetitem16)
+        self.table_contabilidade.setHorizontalHeaderItem(3, __qtablewidgetitem16)
         __qtablewidgetitem17 = QTableWidgetItem()
-        self.table_contabilidade.setHorizontalHeaderItem(3, __qtablewidgetitem17)
+        self.table_contabilidade.setHorizontalHeaderItem(4, __qtablewidgetitem17)
         __qtablewidgetitem18 = QTableWidgetItem()
-        self.table_contabilidade.setHorizontalHeaderItem(4, __qtablewidgetitem18)
+        self.table_contabilidade.setHorizontalHeaderItem(5, __qtablewidgetitem18)
         __qtablewidgetitem19 = QTableWidgetItem()
-        self.table_contabilidade.setHorizontalHeaderItem(5, __qtablewidgetitem19)
+        self.table_contabilidade.setHorizontalHeaderItem(6, __qtablewidgetitem19)
         __qtablewidgetitem20 = QTableWidgetItem()
-        self.table_contabilidade.setHorizontalHeaderItem(6, __qtablewidgetitem20)
-        __qtablewidgetitem21 = QTableWidgetItem()
-        self.table_contabilidade.setHorizontalHeaderItem(7, __qtablewidgetitem21)
+        self.table_contabilidade.setHorizontalHeaderItem(7, __qtablewidgetitem20)
         self.table_contabilidade.setObjectName(u"table_contabilidade")
         self.table_contabilidade.horizontalHeader().setMinimumSectionSize(100)
         self.table_contabilidade.horizontalHeader().setDefaultSectionSize(120)
+        self.table_contabilidade.verticalHeader().setVisible(False)
 
         self.verticalLayout_22.addWidget(self.table_contabilidade)
 
@@ -1357,21 +1370,67 @@ class Ui_PrincipalWindow(object):
         self.btn_path_xml.setIcon(icon4)
         self.btn_path_xml.setIconSize(QSize(20, 20))
 
-        self.horizontalLayout_15.addWidget(self.btn_path_xml)
+        self.horizontalLayout_15.addWidget(self.btn_path_xml, 0, Qt.AlignmentFlag.AlignBottom)
 
         self.txt_pesquisa_table_xml = QLineEdit(self.frm_top_xml)
         self.txt_pesquisa_table_xml.setObjectName(u"txt_pesquisa_table_xml")
         self.txt_pesquisa_table_xml.setMinimumSize(QSize(300, 30))
         self.txt_pesquisa_table_xml.setMaximumSize(QSize(300, 30))
 
-        self.horizontalLayout_15.addWidget(self.txt_pesquisa_table_xml)
+        self.horizontalLayout_15.addWidget(self.txt_pesquisa_table_xml, 0, Qt.AlignmentFlag.AlignBottom)
+
+        self.line_5 = QFrame(self.frm_top_xml)
+        self.line_5.setObjectName(u"line_5")
+        self.line_5.setFrameShape(QFrame.Shape.VLine)
+        self.line_5.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.horizontalLayout_15.addWidget(self.line_5)
+
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_15.addItem(self.horizontalSpacer_4)
+
+        self.verticalLayout_17 = QVBoxLayout()
+        self.verticalLayout_17.setSpacing(0)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.label_4 = QLabel(self.frm_top_xml)
+        self.label_4.setObjectName(u"label_4")
+
+        self.verticalLayout_17.addWidget(self.label_4, 0, Qt.AlignmentFlag.AlignBottom)
+
+        self.combo_opcoes_relatorios_xml = QComboBox(self.frm_top_xml)
+        self.combo_opcoes_relatorios_xml.addItem("")
+        self.combo_opcoes_relatorios_xml.addItem("")
+        self.combo_opcoes_relatorios_xml.addItem("")
+        self.combo_opcoes_relatorios_xml.setObjectName(u"combo_opcoes_relatorios_xml")
+        self.combo_opcoes_relatorios_xml.setMinimumSize(QSize(150, 25))
+        self.combo_opcoes_relatorios_xml.setMaximumSize(QSize(150, 25))
+
+        self.verticalLayout_17.addWidget(self.combo_opcoes_relatorios_xml)
+
+
+        self.horizontalLayout_15.addLayout(self.verticalLayout_17)
+
+        self.btn_salvar_relatorio_xml = QPushButton(self.frm_top_xml)
+        self.btn_salvar_relatorio_xml.setObjectName(u"btn_salvar_relatorio_xml")
+        self.btn_salvar_relatorio_xml.setMinimumSize(QSize(0, 30))
+        self.btn_salvar_relatorio_xml.setMaximumSize(QSize(16777215, 30))
+
+        self.horizontalLayout_15.addWidget(self.btn_salvar_relatorio_xml, 0, Qt.AlignmentFlag.AlignBottom)
+
+        self.line_4 = QFrame(self.frm_top_xml)
+        self.line_4.setObjectName(u"line_4")
+        self.line_4.setFrameShape(QFrame.Shape.VLine)
+        self.line_4.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.horizontalLayout_15.addWidget(self.line_4)
 
         self.bt_limpa_tab_xml = QPushButton(self.frm_top_xml)
         self.bt_limpa_tab_xml.setObjectName(u"bt_limpa_tab_xml")
         self.bt_limpa_tab_xml.setMinimumSize(QSize(0, 30))
         self.bt_limpa_tab_xml.setMaximumSize(QSize(16777215, 30))
 
-        self.horizontalLayout_15.addWidget(self.bt_limpa_tab_xml, 0, Qt.AlignmentFlag.AlignRight)
+        self.horizontalLayout_15.addWidget(self.bt_limpa_tab_xml, 0, Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignBottom)
 
 
         self.verticalLayout_23.addWidget(self.frm_top_xml)
@@ -1773,7 +1832,7 @@ class Ui_PrincipalWindow(object):
         self.retranslateUi(PrincipalWindow)
 
         self.stackedWidget_tables.setCurrentIndex(2)
-        self.tabWidgetFiscal_contabil.setCurrentIndex(0)
+        self.tabWidgetFiscal_contabil.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(PrincipalWindow)
@@ -1836,6 +1895,7 @@ class Ui_PrincipalWindow(object):
         self.data_filtro_fim_cliente.setSpecialValueText(QCoreApplication.translate("PrincipalWindow", u"Data fim", None))
         self.combo_filtro_statusEnvio.setPlaceholderText(QCoreApplication.translate("PrincipalWindow", u"Status envio", None))
         self.combo_filtro_contador.setPlaceholderText(QCoreApplication.translate("PrincipalWindow", u"Contabilidade", None))
+        self.btn_novo_cliente.setText(QCoreApplication.translate("PrincipalWindow", u"Novo Cliente", None))
         ___qtablewidgetitem = self.table_clientes.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("PrincipalWindow", u"ID", None));
         ___qtablewidgetitem1 = self.table_clientes.horizontalHeaderItem(1)
@@ -1859,11 +1919,9 @@ class Ui_PrincipalWindow(object):
         ___qtablewidgetitem10 = self.table_clientes.horizontalHeaderItem(10)
         ___qtablewidgetitem10.setText(QCoreApplication.translate("PrincipalWindow", u"Senha", None));
         ___qtablewidgetitem11 = self.table_clientes.horizontalHeaderItem(11)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("PrincipalWindow", u"Arquivos Fiscais", None));
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("PrincipalWindow", u"Data Ult. Envio", None));
         ___qtablewidgetitem12 = self.table_clientes.horizontalHeaderItem(12)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("PrincipalWindow", u"Data Ult. Envio", None));
-        ___qtablewidgetitem13 = self.table_clientes.horizontalHeaderItem(13)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("PrincipalWindow", u"A\u00e7\u00f5es", None));
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("PrincipalWindow", u"A\u00e7\u00f5es", None));
         self.btn_closeFrm_cliente.setText("")
         self.btn_situacao_cliente.setText(QCoreApplication.translate("PrincipalWindow", u"Ativo", None))
         self.combo_status_envio_arquivos_cliente.setItemText(0, QCoreApplication.translate("PrincipalWindow", u"Status envio", None))
@@ -1894,22 +1952,23 @@ class Ui_PrincipalWindow(object):
         self.btn_salvar_cliente.setText(QCoreApplication.translate("PrincipalWindow", u"Novo", None))
         self.tabWidgetFiscal_contabil.setTabText(self.tabWidgetFiscal_contabil.indexOf(self.tab_clientes), QCoreApplication.translate("PrincipalWindow", u"Clientes", None))
         self.txt_buscar_contabilidade.setPlaceholderText(QCoreApplication.translate("PrincipalWindow", u"Buscar: c\u00f3digo, nome, cnpj", None))
-        ___qtablewidgetitem14 = self.table_contabilidade.horizontalHeaderItem(0)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("PrincipalWindow", u"ID", None));
-        ___qtablewidgetitem15 = self.table_contabilidade.horizontalHeaderItem(1)
-        ___qtablewidgetitem15.setText(QCoreApplication.translate("PrincipalWindow", u"Status", None));
-        ___qtablewidgetitem16 = self.table_contabilidade.horizontalHeaderItem(2)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("PrincipalWindow", u"Nome", None));
-        ___qtablewidgetitem17 = self.table_contabilidade.horizontalHeaderItem(3)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("PrincipalWindow", u"Raz\u00e3o Social", None));
-        ___qtablewidgetitem18 = self.table_contabilidade.horizontalHeaderItem(4)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("PrincipalWindow", u"CNPJ", None));
-        ___qtablewidgetitem19 = self.table_contabilidade.horizontalHeaderItem(5)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("PrincipalWindow", u"E-mail", None));
-        ___qtablewidgetitem20 = self.table_contabilidade.horizontalHeaderItem(6)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("PrincipalWindow", u"Telefone", None));
-        ___qtablewidgetitem21 = self.table_contabilidade.horizontalHeaderItem(7)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("PrincipalWindow", u"A\u00e7\u00f5es", None));
+        self.btn_nova_contabilidade.setText(QCoreApplication.translate("PrincipalWindow", u"Nova Contabilidade", None))
+        ___qtablewidgetitem13 = self.table_contabilidade.horizontalHeaderItem(0)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("PrincipalWindow", u"ID", None));
+        ___qtablewidgetitem14 = self.table_contabilidade.horizontalHeaderItem(1)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("PrincipalWindow", u"Status", None));
+        ___qtablewidgetitem15 = self.table_contabilidade.horizontalHeaderItem(2)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("PrincipalWindow", u"Nome", None));
+        ___qtablewidgetitem16 = self.table_contabilidade.horizontalHeaderItem(3)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("PrincipalWindow", u"Raz\u00e3o Social", None));
+        ___qtablewidgetitem17 = self.table_contabilidade.horizontalHeaderItem(4)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("PrincipalWindow", u"CNPJ", None));
+        ___qtablewidgetitem18 = self.table_contabilidade.horizontalHeaderItem(5)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("PrincipalWindow", u"E-mail", None));
+        ___qtablewidgetitem19 = self.table_contabilidade.horizontalHeaderItem(6)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("PrincipalWindow", u"Telefone", None));
+        ___qtablewidgetitem20 = self.table_contabilidade.horizontalHeaderItem(7)
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("PrincipalWindow", u"A\u00e7\u00f5es", None));
         self.btn_closeFrm_contabilidade.setText("")
         self.btn_situacao_contabilidade.setText(QCoreApplication.translate("PrincipalWindow", u"Ativo", None))
         self.txt_cnpj_contabilidade.setPlaceholderText(QCoreApplication.translate("PrincipalWindow", u"CNPJ", None))
@@ -1921,6 +1980,12 @@ class Ui_PrincipalWindow(object):
         self.btn_salvar_contabilidade.setText(QCoreApplication.translate("PrincipalWindow", u"Novo", None))
         self.tabWidgetFiscal_contabil.setTabText(self.tabWidgetFiscal_contabil.indexOf(self.tab_contabilidades), QCoreApplication.translate("PrincipalWindow", u"Contabilidades", None))
         self.btn_path_xml.setText("")
+        self.label_4.setText(QCoreApplication.translate("PrincipalWindow", u"Relat\u00f3rios", None))
+        self.combo_opcoes_relatorios_xml.setItemText(0, "")
+        self.combo_opcoes_relatorios_xml.setItemText(1, QCoreApplication.translate("PrincipalWindow", u"Exportar em CSV", None))
+        self.combo_opcoes_relatorios_xml.setItemText(2, QCoreApplication.translate("PrincipalWindow", u"Exportar em PDF", None))
+
+        self.btn_salvar_relatorio_xml.setText(QCoreApplication.translate("PrincipalWindow", u"Salvar", None))
         self.bt_limpa_tab_xml.setText(QCoreApplication.translate("PrincipalWindow", u"Limpar", None))
         self.label_9.setText(QCoreApplication.translate("PrincipalWindow", u"ICMS", None))
         self.label_10.setText(QCoreApplication.translate("PrincipalWindow", u"PIS", None))

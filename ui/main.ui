@@ -120,7 +120,7 @@
     QScrollBar:vertical {
         border: none;
         background: #F0F0F0; /* Cor de fundo da barra de rolagem */
-        width: 8px;
+        width: 12px;
         margin: 0px 0px 0px 0px;
     }
 
@@ -157,7 +157,7 @@
     QScrollBar:horizontal {
         border: none;
         background: #F0F0F0; /* Cor de fundo da barra de rolagem */
-        height: 8px;
+        height: 12px;
         margin: 0px 0px 0px 0px;
     }
 
@@ -1683,7 +1683,7 @@
                     <enum>QTabWidget::TabShape::Rounded</enum>
                    </property>
                    <property name="currentIndex">
-                    <number>0</number>
+                    <number>2</number>
                    </property>
                    <property name="elideMode">
                     <enum>Qt::TextElideMode::ElideLeft</enum>
@@ -1957,6 +1957,25 @@
                                </property>
                               </widget>
                              </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_novo_cliente">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>120</width>
+                                 <height>30</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>120</width>
+                                 <height>30</height>
+                                </size>
+                               </property>
+                               <property name="text">
+                                <string>Novo Cliente</string>
+                               </property>
+                              </widget>
+                             </item>
                             </layout>
                            </item>
                           </layout>
@@ -2020,11 +2039,6 @@
                           <column>
                            <property name="text">
                             <string>Senha</string>
-                           </property>
-                          </column>
-                          <column>
-                           <property name="text">
-                            <string>Arquivos Fiscais</string>
                            </property>
                           </column>
                           <column>
@@ -2643,6 +2657,25 @@
                             </layout>
                            </item>
                            <item>
+                            <widget class="QPushButton" name="btn_nova_contabilidade">
+                             <property name="minimumSize">
+                              <size>
+                               <width>130</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>130</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>Nova Contabilidade</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
                             <layout class="QHBoxLayout" name="horizontalLayout_39">
                              <property name="spacing">
                               <number>0</number>
@@ -2659,6 +2692,9 @@
                           </attribute>
                           <attribute name="horizontalHeaderDefaultSectionSize">
                            <number>120</number>
+                          </attribute>
+                          <attribute name="verticalHeaderVisible">
+                           <bool>false</bool>
                           </attribute>
                           <column>
                            <property name="text">
@@ -3047,7 +3083,7 @@
                            <enum>QFrame::Shadow::Raised</enum>
                           </property>
                           <layout class="QHBoxLayout" name="horizontalLayout_15">
-                           <item>
+                           <item alignment="Qt::AlignmentFlag::AlignBottom">
                             <widget class="QPushButton" name="btn_path_xml">
                              <property name="minimumSize">
                               <size>
@@ -3079,7 +3115,7 @@
                              </property>
                             </widget>
                            </item>
-                           <item>
+                           <item alignment="Qt::AlignmentFlag::AlignBottom">
                             <widget class="QLineEdit" name="txt_pesquisa_table_xml">
                              <property name="minimumSize">
                               <size>
@@ -3095,7 +3131,98 @@
                              </property>
                             </widget>
                            </item>
-                           <item alignment="Qt::AlignmentFlag::AlignRight">
+                           <item>
+                            <widget class="Line" name="line_5">
+                             <property name="orientation">
+                              <enum>Qt::Orientation::Vertical</enum>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <spacer name="horizontalSpacer_4">
+                             <property name="orientation">
+                              <enum>Qt::Orientation::Horizontal</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>40</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item>
+                            <layout class="QVBoxLayout" name="verticalLayout_17">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <item alignment="Qt::AlignmentFlag::AlignBottom">
+                              <widget class="QLabel" name="label_4">
+                               <property name="text">
+                                <string>Relatórios</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QComboBox" name="combo_opcoes_relatorios_xml">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>150</width>
+                                 <height>25</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>150</width>
+                                 <height>25</height>
+                                </size>
+                               </property>
+                               <item>
+                                <property name="text">
+                                 <string/>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>Exportar em CSV</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>Exportar em PDF</string>
+                                </property>
+                               </item>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                           <item alignment="Qt::AlignmentFlag::AlignBottom">
+                            <widget class="QPushButton" name="btn_salvar_relatorio_xml">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>Salvar</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="Line" name="line_4">
+                             <property name="orientation">
+                              <enum>Qt::Orientation::Vertical</enum>
+                             </property>
+                            </widget>
+                           </item>
+                           <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignBottom">
                             <widget class="QPushButton" name="bt_limpa_tab_xml">
                              <property name="minimumSize">
                               <size>

@@ -13,12 +13,15 @@ class FramesControler:
             ui.frame_opcoes_busca_processamento,
             ui.frm_lateral_functions,
             ui.frm_functions_table_principal,
+            ui.frm_cadastro_cliente,
+            ui.frm_cadastro_contabilidade,
             ui.comboBox_opcoes_de_busca2,
             ui.btn_extrair_duplicados,
             ui.data_filtro_inicio_cliente,
             ui.data_filtro_fim_cliente,
             ui.combo_filtro_statusEnvio,
-            ui.combo_filtro_contador
+            ui.combo_filtro_contador,
+            ui.btn_atualizar_cliente,
 
             ]
 
@@ -37,6 +40,10 @@ class FramesControler:
     def closeFrm_lateral_cliente(self):
         ui = app_instance.get_ui_instance()
         ui.frm_cadastro_cliente.setVisible(False)
+    
+    def closeFrm_lateral_contabilidade(self):
+        ui = app_instance.get_ui_instance()
+        ui.frm_cadastro_contabilidade.setVisible(False)
 
     #Navegando entre as páginas
 def atualizar_titulo():
@@ -145,3 +152,14 @@ def combosHeader(data, combo, table: QTableWidget):
     
     # Forçar atualização do scroll area
     ui.scroll_area_combos.update()
+
+def clean_txt_cliente():
+    ui = app_instance.get_ui_instance()
+    ui.txt_nome_cliente.clear()
+    ui.txt_razao_social_cliente.clear()
+    ui.txt_cnpj_cliente.clear()
+    ui.txt_email_cliente.clear()
+    ui.combo_sistema_cliente.clear()
+    ui.txt_link_sistema_cliente.clear()
+    ui.txt_user_cliente_sistema.clear()
+    ui.txt_password_cliente_sistema.clear()

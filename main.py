@@ -119,12 +119,17 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
         self.btn_opcoes_contabil.clicked.connect(i.contabil_fiscal)
 
         self.btn_closeFrm_cliente.clicked.connect(i.FramesControler.closeFrm_lateral_cliente)
+        self.btn_closeFrm_contabilidade.clicked.connect(i.FramesControler.closeFrm_lateral_contabilidade)
 
         self.btn_proxima_pagina.clicked.connect(i.mudar_proxima_pag)
         self.btn_voltar_pagina.clicked.connect(i.mudar_pag_anterior)
 
+        self.btn_novo_cliente.clicked.connect(self.button_novo_cliente)
+        self.btn_nova_contabilidade.clicked.connect(self.button_nova_contabilidade)
         self.btn_salvar_contabilidade.clicked.connect(self.create_contabilidade)
         self.btn_salvar_cliente.clicked.connect(self.create_clientes)
+
+
 
     def setupWindow_xml(self):
         self.btn_path_xml.clicked.connect(self.buscar_xml)
@@ -280,6 +285,7 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
         )
         try:
             self.sqlite.post_cliente(data)
+            i.clean_txt_cliente()
             print(f"Cliente cadastrado com sucesso: {data}")
             # Recarregar a tabela
             self.table_cliente()
@@ -294,6 +300,14 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
                 data=data,
                 action=self.tab_c.show_edit_frame  # Passar a função show_edit_frame
             )
+
+    def button_novo_cliente(self):
+        self.frm_cadastro_cliente.setVisible(True)
+
+    def button_nova_contabilidade(self):
+        self.frm_cadastro_contabilidade.setVisible(True)
+
+
 
 if __name__ == "__main__":
     import sys

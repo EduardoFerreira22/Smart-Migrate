@@ -61,11 +61,12 @@ class SQLiteConnect():
             if cursor:
                 cursor.execute(
                     """
-                    SELECT T1.ID, T1.ATIVO, T1.STATUS_ENVIO, 
-                        T1.NOME, T1.CNPJ, T1.EMAIL, 
+                    SELECT T1.ID, T1.STATUS_ENVIO,
+                        T1.CNPJ, T1.NOME, T1.RAZAOSOCIAL,
+                        T1.EMAIL,
                         T2.NOME, T1.SISTEMA, 
                         T1.LINK_SISTEMA, T1.USER_SISTEMA, 
-                        T1.SENHA_SISTEMA , T1.DATE_UPDATE
+                        T1.SENHA_SISTEMA, T1.DATE_UPDATE
 
                     FROM CLIENTS T1
                     LEFT JOIN CONTABILIDADE T2
