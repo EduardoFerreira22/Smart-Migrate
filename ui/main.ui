@@ -1683,7 +1683,7 @@
                     <enum>QTabWidget::TabShape::Rounded</enum>
                    </property>
                    <property name="currentIndex">
-                    <number>2</number>
+                    <number>0</number>
                    </property>
                    <property name="elideMode">
                     <enum>Qt::TextElideMode::ElideLeft</enum>
@@ -2060,13 +2060,13 @@
                       <widget class="QFrame" name="frm_cadastro_cliente">
                        <property name="minimumSize">
                         <size>
-                         <width>320</width>
+                         <width>400</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>320</width>
+                         <width>400</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -2076,468 +2076,586 @@
                        <property name="frameShadow">
                         <enum>QFrame::Shadow::Raised</enum>
                        </property>
-                       <widget class="QWidget" name="layoutWidget">
-                        <property name="geometry">
-                         <rect>
-                          <x>10</x>
-                          <y>0</y>
-                          <width>301</width>
-                          <height>451</height>
-                         </rect>
+                       <layout class="QVBoxLayout" name="verticalLayout_12">
+                        <property name="spacing">
+                         <number>0</number>
                         </property>
-                        <layout class="QVBoxLayout" name="verticalLayout_12">
-                         <property name="spacing">
-                          <number>6</number>
-                         </property>
-                         <item>
-                          <widget class="QFrame" name="frm_btn_close_cliente">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>30</height>
-                            </size>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="QScrollArea" name="scrollArea_2">
+                          <property name="minimumSize">
+                           <size>
+                            <width>400</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>400</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Shadow::Raised</enum>
+                          </property>
+                          <property name="widgetResizable">
+                           <bool>true</bool>
+                          </property>
+                          <widget class="QWidget" name="scrollAreaWidgetContents_2">
+                           <property name="geometry">
+                            <rect>
+                             <x>0</x>
+                             <y>-192</y>
+                             <width>386</width>
+                             <height>496</height>
+                            </rect>
                            </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::Shape::NoFrame</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Shadow::Raised</enum>
-                           </property>
-                           <layout class="QVBoxLayout" name="verticalLayout_13">
-                            <property name="spacing">
-                             <number>2</number>
-                            </property>
-                            <property name="leftMargin">
-                             <number>2</number>
-                            </property>
-                            <property name="topMargin">
-                             <number>2</number>
-                            </property>
-                            <property name="rightMargin">
-                             <number>2</number>
-                            </property>
-                            <property name="bottomMargin">
-                             <number>2</number>
-                            </property>
-                            <item alignment="Qt::AlignmentFlag::AlignRight">
-                             <widget class="QPushButton" name="btn_closeFrm_cliente">
-                              <property name="minimumSize">
-                               <size>
-                                <width>20</width>
-                                <height>20</height>
-                               </size>
+                           <layout class="QVBoxLayout" name="verticalLayout_32">
+                            <item>
+                             <layout class="QVBoxLayout" name="verticalLayout_33">
+                              <property name="spacing">
+                               <number>6</number>
                               </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>20</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="cursor">
-                               <cursorShape>PointingHandCursor</cursorShape>
-                              </property>
-                              <property name="text">
-                               <string/>
-                              </property>
-                              <property name="icon">
-                               <iconset resource="icon.qrc">
-                                <normaloff>:/icons/icons/close.png</normaloff>:/icons/icons/close.png</iconset>
-                              </property>
-                              <property name="iconSize">
-                               <size>
-                                <width>7</width>
-                                <height>7</height>
-                               </size>
-                              </property>
-                             </widget>
+                              <item>
+                               <widget class="QFrame" name="frm_btn_close_cliente">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>0</width>
+                                  <height>30</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>16777215</width>
+                                  <height>30</height>
+                                 </size>
+                                </property>
+                                <property name="frameShape">
+                                 <enum>QFrame::Shape::NoFrame</enum>
+                                </property>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Shadow::Raised</enum>
+                                </property>
+                                <layout class="QVBoxLayout" name="verticalLayout_34">
+                                 <property name="spacing">
+                                  <number>2</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>2</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>2</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>2</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>2</number>
+                                 </property>
+                                 <item alignment="Qt::AlignmentFlag::AlignRight">
+                                  <widget class="QPushButton" name="btn_closeFrm_cliente">
+                                   <property name="minimumSize">
+                                    <size>
+                                     <width>20</width>
+                                     <height>20</height>
+                                    </size>
+                                   </property>
+                                   <property name="maximumSize">
+                                    <size>
+                                     <width>20</width>
+                                     <height>20</height>
+                                    </size>
+                                   </property>
+                                   <property name="cursor">
+                                    <cursorShape>PointingHandCursor</cursorShape>
+                                   </property>
+                                   <property name="text">
+                                    <string/>
+                                   </property>
+                                   <property name="icon">
+                                    <iconset resource="icon.qrc">
+                                     <normaloff>:/icons/icons/close.png</normaloff>:/icons/icons/close.png</iconset>
+                                   </property>
+                                   <property name="iconSize">
+                                    <size>
+                                     <width>7</width>
+                                     <height>7</height>
+                                    </size>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </widget>
+                              </item>
+                              <item>
+                               <layout class="QHBoxLayout" name="horizontalLayout_23">
+                                <item alignment="Qt::AlignmentFlag::AlignRight">
+                                 <widget class="QCheckBox" name="btn_situacao_cliente">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>60</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="cursor">
+                                   <cursorShape>PointingHandCursor</cursorShape>
+                                  </property>
+                                  <property name="text">
+                                   <string>Ativo</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item alignment="Qt::AlignmentFlag::AlignRight">
+                                 <widget class="QComboBox" name="combo_status_envio_arquivos_cliente_3">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>140</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>140</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <item>
+                                   <property name="text">
+                                    <string>Status envio</string>
+                                   </property>
+                                  </item>
+                                  <item>
+                                   <property name="text">
+                                    <string>Enviado</string>
+                                   </property>
+                                  </item>
+                                  <item>
+                                   <property name="text">
+                                    <string>Não Enviado</string>
+                                   </property>
+                                  </item>
+                                  <item>
+                                   <property name="text">
+                                    <string>Erro na geração</string>
+                                   </property>
+                                  </item>
+                                  <item>
+                                   <property name="text">
+                                    <string>Não fez Venda</string>
+                                   </property>
+                                  </item>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </item>
+                              <item>
+                               <layout class="QHBoxLayout" name="horizontalLayout_24">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <item alignment="Qt::AlignmentFlag::AlignLeft">
+                                 <widget class="QLineEdit" name="txt_id_cliente">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>50</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>50</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item alignment="Qt::AlignmentFlag::AlignRight">
+                                 <widget class="QLineEdit" name="txt_cnpj_cliente">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>200</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>200</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="placeholderText">
+                                   <string>CNPJ</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </item>
+                              <item>
+                               <widget class="QLineEdit" name="txt_nome_cliente">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>0</width>
+                                  <height>30</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>16777215</width>
+                                  <height>30</height>
+                                 </size>
+                                </property>
+                                <property name="placeholderText">
+                                 <string>Nome</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QLineEdit" name="txt_razao_social_cliente">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>0</width>
+                                  <height>30</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>16777215</width>
+                                  <height>30</height>
+                                 </size>
+                                </property>
+                                <property name="placeholderText">
+                                 <string>Razão Social</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QLineEdit" name="txt_email_cliente">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>0</width>
+                                  <height>30</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>16777215</width>
+                                  <height>30</height>
+                                 </size>
+                                </property>
+                                <property name="placeholderText">
+                                 <string>E-mail</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <layout class="QHBoxLayout" name="horizontalLayout_25">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <item>
+                                 <widget class="QComboBox" name="combo_contador">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>200</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>200</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="placeholderText">
+                                   <string>Contador</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item alignment="Qt::AlignmentFlag::AlignLeft">
+                                 <widget class="QPushButton" name="btn_novo_contador">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>30</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>30</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="cursor">
+                                   <cursorShape>PointingHandCursor</cursorShape>
+                                  </property>
+                                  <property name="text">
+                                   <string/>
+                                  </property>
+                                  <property name="icon">
+                                   <iconset resource="icon.qrc">
+                                    <normaloff>:/icons/icons/more.png</normaloff>:/icons/icons/more.png</iconset>
+                                  </property>
+                                  <property name="iconSize">
+                                   <size>
+                                    <width>18</width>
+                                    <height>18</height>
+                                   </size>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </item>
+                              <item>
+                               <widget class="QComboBox" name="combo_sistema_cliente">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>0</width>
+                                  <height>30</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>16777215</width>
+                                  <height>30</height>
+                                 </size>
+                                </property>
+                                <property name="currentText">
+                                 <string/>
+                                </property>
+                                <property name="sizeAdjustPolicy">
+                                 <enum>QComboBox::SizeAdjustPolicy::AdjustToContentsOnFirstShow</enum>
+                                </property>
+                                <property name="placeholderText">
+                                 <string>Sistema de Gestão</string>
+                                </property>
+                                <item>
+                                 <property name="text">
+                                  <string>Sistema de Gestão</string>
+                                 </property>
+                                </item>
+                                <item>
+                                 <property name="text">
+                                  <string>Hiper</string>
+                                 </property>
+                                </item>
+                                <item>
+                                 <property name="text">
+                                  <string>Vr System</string>
+                                 </property>
+                                </item>
+                                <item>
+                                 <property name="text">
+                                  <string>Digisat</string>
+                                 </property>
+                                </item>
+                                <item>
+                                 <property name="text">
+                                  <string>Velo</string>
+                                 </property>
+                                </item>
+                                <item>
+                                 <property name="text">
+                                  <string>STI3</string>
+                                 </property>
+                                </item>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QLineEdit" name="txt_link_sistema_cliente">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>0</width>
+                                  <height>30</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>16777215</width>
+                                  <height>30</height>
+                                 </size>
+                                </property>
+                                <property name="placeholderText">
+                                 <string>Link Sistema</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <layout class="QHBoxLayout" name="horizontalLayout_26">
+                                <item>
+                                 <widget class="QLineEdit" name="txt_user_cliente_sistema">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="placeholderText">
+                                   <string>User</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QLineEdit" name="txt_password_cliente_sistema">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="placeholderText">
+                                   <string>Password</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </item>
+                              <item>
+                               <layout class="QVBoxLayout" name="verticalLayout_13">
+                                <item>
+                                 <layout class="QHBoxLayout" name="horizontalLayout_6">
+                                  <property name="spacing">
+                                   <number>0</number>
+                                  </property>
+                                  <item>
+                                   <widget class="QLineEdit" name="lineEdit">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>0</width>
+                                      <height>30</height>
+                                     </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                     <size>
+                                      <width>16777215</width>
+                                      <height>30</height>
+                                     </size>
+                                    </property>
+                                    <property name="placeholderText">
+                                     <string>Caminho do certificado digital</string>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                  <item>
+                                   <widget class="QPushButton" name="btn_buscar_certificado_dig">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>0</width>
+                                      <height>30</height>
+                                     </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                     <size>
+                                      <width>16777215</width>
+                                      <height>30</height>
+                                     </size>
+                                    </property>
+                                    <property name="cursor">
+                                     <cursorShape>PointingHandCursor</cursorShape>
+                                    </property>
+                                    <property name="text">
+                                     <string/>
+                                    </property>
+                                    <property name="icon">
+                                     <iconset resource="icon.qrc">
+                                      <normaloff>:/icons/icons/file.png</normaloff>:/icons/icons/file.png</iconset>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                 </layout>
+                                </item>
+                                <item>
+                                 <widget class="QLineEdit" name="lineEdit_2">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="placeholderText">
+                                   <string>Senha certificado</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </item>
+                              <item>
+                               <layout class="QHBoxLayout" name="horizontalLayout_27">
+                                <item>
+                                 <widget class="QPushButton" name="btn_atualizar_cliente">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="text">
+                                   <string>Atualizar</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QPushButton" name="btn_salvar_cliente">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>30</height>
+                                   </size>
+                                  </property>
+                                  <property name="text">
+                                   <string>Novo</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </item>
+                             </layout>
                             </item>
                            </layout>
                           </widget>
-                         </item>
-                         <item>
-                          <layout class="QHBoxLayout" name="horizontalLayout_6">
-                           <item alignment="Qt::AlignmentFlag::AlignRight">
-                            <widget class="QCheckBox" name="btn_situacao_cliente">
-                             <property name="maximumSize">
-                              <size>
-                               <width>60</width>
-                               <height>16777215</height>
-                              </size>
-                             </property>
-                             <property name="cursor">
-                              <cursorShape>PointingHandCursor</cursorShape>
-                             </property>
-                             <property name="text">
-                              <string>Ativo</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item alignment="Qt::AlignmentFlag::AlignRight">
-                            <widget class="QComboBox" name="combo_status_envio_arquivos_cliente">
-                             <property name="minimumSize">
-                              <size>
-                               <width>140</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="maximumSize">
-                              <size>
-                               <width>140</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <item>
-                              <property name="text">
-                               <string>Status envio</string>
-                              </property>
-                             </item>
-                             <item>
-                              <property name="text">
-                               <string>Enviado</string>
-                              </property>
-                             </item>
-                             <item>
-                              <property name="text">
-                               <string>Não Enviado</string>
-                              </property>
-                             </item>
-                             <item>
-                              <property name="text">
-                               <string>Erro na geração</string>
-                              </property>
-                             </item>
-                             <item>
-                              <property name="text">
-                               <string>Não fez Venda</string>
-                              </property>
-                             </item>
-                            </widget>
-                           </item>
-                          </layout>
-                         </item>
-                         <item>
-                          <layout class="QHBoxLayout" name="horizontalLayout_17">
-                           <property name="spacing">
-                            <number>0</number>
-                           </property>
-                           <item alignment="Qt::AlignmentFlag::AlignLeft">
-                            <widget class="QLineEdit" name="txt_id_cliente">
-                             <property name="minimumSize">
-                              <size>
-                               <width>50</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="maximumSize">
-                              <size>
-                               <width>50</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                            </widget>
-                           </item>
-                           <item alignment="Qt::AlignmentFlag::AlignRight">
-                            <widget class="QLineEdit" name="txt_cnpj_cliente">
-                             <property name="minimumSize">
-                              <size>
-                               <width>200</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="maximumSize">
-                              <size>
-                               <width>200</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="placeholderText">
-                              <string>CNPJ</string>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
-                         </item>
-                         <item>
-                          <widget class="QLineEdit" name="txt_nome_cliente">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="placeholderText">
-                            <string>Nome</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QLineEdit" name="txt_razao_social_cliente">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="placeholderText">
-                            <string>Razão Social</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QLineEdit" name="txt_email_cliente">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="placeholderText">
-                            <string>E-mail</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <layout class="QHBoxLayout" name="horizontalLayout_8">
-                           <property name="spacing">
-                            <number>0</number>
-                           </property>
-                           <item>
-                            <widget class="QComboBox" name="combo_contador">
-                             <property name="minimumSize">
-                              <size>
-                               <width>200</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="maximumSize">
-                              <size>
-                               <width>200</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="placeholderText">
-                              <string>Contador</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item alignment="Qt::AlignmentFlag::AlignLeft">
-                            <widget class="QPushButton" name="btn_novo_contador">
-                             <property name="minimumSize">
-                              <size>
-                               <width>30</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="maximumSize">
-                              <size>
-                               <width>30</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="cursor">
-                              <cursorShape>PointingHandCursor</cursorShape>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="icon">
-                              <iconset resource="icon.qrc">
-                               <normaloff>:/icons/icons/more.png</normaloff>:/icons/icons/more.png</iconset>
-                             </property>
-                             <property name="iconSize">
-                              <size>
-                               <width>18</width>
-                               <height>18</height>
-                              </size>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
-                         </item>
-                         <item>
-                          <widget class="QComboBox" name="combo_sistema_cliente">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="currentText">
-                            <string/>
-                           </property>
-                           <property name="sizeAdjustPolicy">
-                            <enum>QComboBox::SizeAdjustPolicy::AdjustToContentsOnFirstShow</enum>
-                           </property>
-                           <property name="placeholderText">
-                            <string>Sistema de Gestão</string>
-                           </property>
-                           <item>
-                            <property name="text">
-                             <string>Sistema de Gestão</string>
-                            </property>
-                           </item>
-                           <item>
-                            <property name="text">
-                             <string>Hiper</string>
-                            </property>
-                           </item>
-                           <item>
-                            <property name="text">
-                             <string>Vr System</string>
-                            </property>
-                           </item>
-                           <item>
-                            <property name="text">
-                             <string>Digisat</string>
-                            </property>
-                           </item>
-                           <item>
-                            <property name="text">
-                             <string>Velo</string>
-                            </property>
-                           </item>
-                           <item>
-                            <property name="text">
-                             <string>STI3</string>
-                            </property>
-                           </item>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QLineEdit" name="txt_link_sistema_cliente">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="placeholderText">
-                            <string>Link Sistema</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <layout class="QHBoxLayout" name="horizontalLayout_9">
-                           <item>
-                            <widget class="QLineEdit" name="txt_user_cliente_sistema">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="maximumSize">
-                              <size>
-                               <width>16777215</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="placeholderText">
-                              <string>User</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QLineEdit" name="txt_password_cliente_sistema">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="maximumSize">
-                              <size>
-                               <width>16777215</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="placeholderText">
-                              <string>Password</string>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
-                         </item>
-                         <item>
-                          <layout class="QHBoxLayout" name="horizontalLayout_10">
-                           <item>
-                            <widget class="QPushButton" name="btn_atualizar_cliente">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="maximumSize">
-                              <size>
-                               <width>16777215</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="text">
-                              <string>Atualizar</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QPushButton" name="btn_salvar_cliente">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="maximumSize">
-                              <size>
-                               <width>16777215</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="text">
-                              <string>Novo</string>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
-                         </item>
-                        </layout>
-                       </widget>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -3035,9 +3153,21 @@
                    </widget>
                    <widget class="QWidget" name="tab_xml">
                     <attribute name="title">
-                     <string>XML</string>
+                     <string>Cont. XML</string>
                     </attribute>
                     <layout class="QVBoxLayout" name="verticalLayout_25">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
                      <item>
                       <widget class="QFrame" name="frm_geral_xml">
                        <property name="frameShape">
@@ -3612,6 +3742,162 @@
                      </item>
                     </layout>
                    </widget>
+                   <widget class="QWidget" name="tab_notas_sefaz">
+                    <attribute name="title">
+                     <string>Notas SEFAZ</string>
+                    </attribute>
+                    <layout class="QVBoxLayout" name="verticalLayout_19">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QFrame" name="frame_6">
+                       <property name="frameShape">
+                        <enum>QFrame::Shape::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Shadow::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_20">
+                        <property name="spacing">
+                         <number>2</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="QFrame" name="frame_7">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>60</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>60</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::Shape::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Shadow::Raised</enum>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_8">
+                           <item>
+                            <layout class="QVBoxLayout" name="verticalLayout_35">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <item alignment="Qt::AlignmentFlag::AlignBottom">
+                              <widget class="QLabel" name="label_5">
+                               <property name="text">
+                                <string>Pesquisa</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QLineEdit" name="lineEdit_3">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>300</width>
+                                 <height>25</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>300</width>
+                                 <height>25</height>
+                                </size>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                           <item alignment="Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignBottom">
+                            <widget class="QPushButton" name="pushButton_2">
+                             <property name="minimumSize">
+                              <size>
+                               <width>150</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>150</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>Buscar SEFAZ</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_8">
+                          <property name="frameShape">
+                           <enum>QFrame::Shape::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Shadow::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_24">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <widget class="QTableWidget" name="tableWidget">
+                             <property name="editTriggers">
+                              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
                    <widget class="QWidget" name="tab_importar_exportar">
                     <attribute name="title">
                      <string>Importar/Exportar</string>
@@ -4060,21 +4346,6 @@
   <tabstop>combo_filtro_statusEnvio</tabstop>
   <tabstop>combo_filtro_contador</tabstop>
   <tabstop>table_clientes</tabstop>
-  <tabstop>btn_closeFrm_cliente</tabstop>
-  <tabstop>btn_situacao_cliente</tabstop>
-  <tabstop>combo_status_envio_arquivos_cliente</tabstop>
-  <tabstop>txt_cnpj_cliente</tabstop>
-  <tabstop>txt_nome_cliente</tabstop>
-  <tabstop>txt_razao_social_cliente</tabstop>
-  <tabstop>txt_email_cliente</tabstop>
-  <tabstop>combo_contador</tabstop>
-  <tabstop>btn_novo_contador</tabstop>
-  <tabstop>combo_sistema_cliente</tabstop>
-  <tabstop>txt_link_sistema_cliente</tabstop>
-  <tabstop>txt_user_cliente_sistema</tabstop>
-  <tabstop>txt_password_cliente_sistema</tabstop>
-  <tabstop>btn_atualizar_cliente</tabstop>
-  <tabstop>btn_salvar_cliente</tabstop>
   <tabstop>txt_output_import</tabstop>
   <tabstop>txt_path_importar_exportar</tabstop>
   <tabstop>btn_path_import</tabstop>

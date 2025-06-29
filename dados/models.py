@@ -1,146 +1,71 @@
-import sqlite3
+from sqlalchemy import Column, Integer, String, Text, DateTime, Date, Float, Boolean, Enum, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
+from datetime import datetime
+
+Base = declarative_base()
+
+class Contabilidade(Base):
+    __tablename__ = 'contabilidade'
+    id = Column(Integer, primary_key=True)
+    status = Column(Boolean, default=True)
+    cpf_cnpj = Column(String(15))
+    nome = Column(String(150), nullable=False)
+    razao_social = Column(String(150))
+    email = Column(String(100))
+    telefone = Column(String(10))
+
+    clientes = relationship("Cliente", back_populates="contabilidade")
+
+    def __repr__(self):
+        return f"<Contabilidade(nome={self.nome}, contato={self.contato})>"
+
+class Cliente(Base):
+    __tablename__ = 'clientes'
+    id = Column(Integer, primary_key=True)
+    status = Column(Boolean, default=True)
+    status_envio = Column(String(50), default='Não Enviado')
+    cnpj = Column(String(15))
+    nome = Column(String(150), nullable=False)
+    razao_social = Column(String(150))
+    email = Column(String(100))
+    contabilidade_id = Column(Integer, ForeignKey('contabilidade.id'), nullable=True)
+    sistema_erp = Column(String(50))
+    link_sistema = Column(String(300))
+    user_sistema = Column(String(50))
+    senha_sistema = Column(String(50))
+    cert_path = Column(String(300))
+    senha_cert= Column(String(100))
+
+    contabilidade = relationship("Contabilidade", back_populates="clientes")
+
+    def __repr__(self):
+        return f"<Cliente(nome={self.nome}, contabilidade_id={self.contabilidade_id})>"
+    
+
+class MDE_XML(Base):
+    id = Column(Integer, primary_key=True)
+    numero_nf = Column(Integer)
+    valor_nf = Column(Float(10,2))
+    destinatario = Column(String(150))
+    cnpj_destinatario = Column(String(15))
+    data_emissao = Column(Date)
+    chave_nf = Column(String(50))
+    ultimo_nfu = Column(Integer)
+    xml_completo = Column(Boolean)
+    conteudo_xml = Column(Text)
+    justificativa_op_Nrealizada = Column(String)
+    ciencia_operacao = Column(Boolean)
+    confirmar_operacao = Column(Boolean)
+    desconhecer_operacao = Column(Boolean)
+    operacao_nao_realizada = Column(Boolean)
+    download_xml = Column(Boolean)
+    data_registro = Column(DateTime, default=datetime.now)
+
+    def __repr__(self):
+        return f"<MDE_XML(destinatario={self.destinatario}, cnpj_destinatario={self.cnpj_destinatario})>"
 
 
-class SQLiteConnect():
-    def __init__(self, path):
-            self.path = path
-            self.conn = None
-            self.cursor = None
-            self.connect_db()  # Criar conexão na inicialização
 
-    def connect_db(self):
-        if self.conn is None or self.cursor is None:
-            try:
-                self.conn = sqlite3.connect(self.path, timeout=10)  # Timeout de 10 segundos
-                self.cursor = self.conn.cursor()
-                print("Conexão com o banco estabelecida")
-            except sqlite3.Error as e:
-                print(f"Erro ao conectar ao banco: {e}")
-                raise
-        return self.cursor
 
-    def commit(self):
-        if self.conn:
-            self.conn.commit()
-        
-    def close(self):
-        """Fecha a conexão explicitamente"""
-        if self.conn:
-            self.conn.close()
-            self.conn = None
-            self.cursor = None
-        
-    def create_tables(self, queries):
-        cursor = self.connect_db()
-        try:
-            if cursor:
-                # Lista de tabelas esperadas
-                expected_tables = ['roles', 'users', 'permissions', 'role_permissions', 'licenses', 'clients']
-                # Verificar tabelas existentes
-                cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
-                existing_tables = [row[0] for row in cursor.fetchall()]
-                # Verificar se todas as tabelas esperadas já existem
-                tables_exist = all(table in existing_tables for table in expected_tables)
-                
-                if tables_exist:
-                    print("Tabelas já criadas!")
-                else:
-                    cursor.executescript(queries)
-                    self.commit()
-                    print("Tabelas criadas com sucesso!")
-            else:
-                print("Erro: Não foi possível obter o cursor para criar tabelas")
-        except sqlite3.Error as e:
-            print(f"Erro ao criar tabelas: {e}")
-        finally:
-            self.close()
 
-    def select_cliente(self):
-        cursor = self.connect_db()
-        try:
-            if cursor:
-                cursor.execute(
-                    """
-                    SELECT T1.ID, T1.STATUS_ENVIO,
-                        T1.CNPJ, T1.NOME, T1.RAZAOSOCIAL,
-                        T1.EMAIL,
-                        T2.NOME, T1.SISTEMA, 
-                        T1.LINK_SISTEMA, T1.USER_SISTEMA, 
-                        T1.SENHA_SISTEMA, T1.DATE_UPDATE
-
-                    FROM CLIENTS T1
-                    LEFT JOIN CONTABILIDADE T2
-                    ON T2.ID = T1.ID
-                    ORDER BY T1.DATE_UPDATE ASC
-                """
-                )
-                data = cursor.fetchall()
-                return data
-            
-        except Exception as e:
-            print(e)
-
-    def select_contabilidade(self):
-        cursor = self.connect_db()
-        try:
-            if cursor:
-                cursor.execute(
-                    """
-                    SELECT ID, ATIVO, CNPJ, NOME, RAZAOSOCIAL, EMAIL, PHONE
-                    FROM CONTABILIDADE
-                """
-                )
-                data = cursor.fetchall()
-                return data
-        except Exception as e:
-            print(e)
-
-    def get_contabilidade(self, contador):
-        cursor = self.connect_db()
-        try:
-            if cursor:
-                # Usar parâmetro para evitar injeção de SQL
-                cursor.execute("SELECT ID FROM CONTABILIDADE WHERE NOME = ?", (contador,))
-                result = cursor.fetchone()  # fetchone retorna uma tupla ou None
-                return result
-        except Exception as e:
-            print(e)
-
-    def post_cliente(self, data):
-        cursor = self.connect_db()
-        try:
-            if cursor:
-                cursor.execute(
-                    "INSERT INTO CLIENTS (nome, razaoSocial, cnpj, email, id_contador, sistema, link_sistema, user_sistema, senha_sistema, user_create)" \
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (*data,)
-                )
-                self.commit()
-                print("Cliente criado com sucesso")
-            else:
-                print("Cursor não está definido.\nErro ao criar Cliente")
-        except sqlite3.OperationalError as e:
-                    self.conn.rollback()
-                    raise e
-
-    def post_contabilidade(self, data):
-        cursor = self.connect_db()
-        try:
-            if cursor:
-                cursor.execute(
-                    "INSERT INTO CONTABILIDADE (cnpj, nome, razaoSocial, email, phone, user_create)" \
-                    "VALUES (?, ?, ?, ?, ?, ?)", (*data,)
-                )
-                self.commit()
-                print("Contabilidade criado com sucesso")
-            else:
-                print("Cursor não está definido.\nErro ao criar contabilidade")
-        except sqlite3.OperationalError as e:
-                    self.conn.rollback()
-                    print(f"Erro post_contabilidade: {e}")
-                    raise e
-
-    def put_cliente(self):
-        pass
-
-    def put_contabilidade(self):
-        pass

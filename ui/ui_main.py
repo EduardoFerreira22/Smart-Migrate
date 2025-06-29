@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainVHIWzn.ui'
+## Form generated from reading UI file 'mainNGbMch.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.2
 ##
@@ -19,9 +19,9 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractSpinBox, QApplication
     QComboBox, QDateEdit, QFrame, QGridLayout,
     QGroupBox, QHBoxLayout, QHeaderView, QLabel,
     QLineEdit, QMainWindow, QPlainTextEdit, QPushButton,
-    QRadioButton, QSizePolicy, QSpacerItem, QStackedWidget,
-    QTabWidget, QTableWidget, QTableWidgetItem, QTreeView,
-    QVBoxLayout, QWidget)
+    QRadioButton, QScrollArea, QSizePolicy, QSpacerItem,
+    QStackedWidget, QTabWidget, QTableWidget, QTableWidgetItem,
+    QTreeView, QVBoxLayout, QWidget)
 from ui import icon_rc
 
 class Ui_PrincipalWindow(object):
@@ -950,27 +950,38 @@ class Ui_PrincipalWindow(object):
 
         self.frm_cadastro_cliente = QFrame(self.tab_clientes)
         self.frm_cadastro_cliente.setObjectName(u"frm_cadastro_cliente")
-        self.frm_cadastro_cliente.setMinimumSize(QSize(320, 0))
-        self.frm_cadastro_cliente.setMaximumSize(QSize(320, 16777215))
+        self.frm_cadastro_cliente.setMinimumSize(QSize(400, 0))
+        self.frm_cadastro_cliente.setMaximumSize(QSize(400, 16777215))
         self.frm_cadastro_cliente.setFrameShape(QFrame.Shape.StyledPanel)
         self.frm_cadastro_cliente.setFrameShadow(QFrame.Shadow.Raised)
-        self.layoutWidget1 = QWidget(self.frm_cadastro_cliente)
-        self.layoutWidget1.setObjectName(u"layoutWidget1")
-        self.layoutWidget1.setGeometry(QRect(10, 0, 301, 451))
-        self.verticalLayout_12 = QVBoxLayout(self.layoutWidget1)
-        self.verticalLayout_12.setSpacing(6)
+        self.verticalLayout_12 = QVBoxLayout(self.frm_cadastro_cliente)
+        self.verticalLayout_12.setSpacing(0)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.frm_btn_close_cliente = QFrame(self.layoutWidget1)
+        self.scrollArea_2 = QScrollArea(self.frm_cadastro_cliente)
+        self.scrollArea_2.setObjectName(u"scrollArea_2")
+        self.scrollArea_2.setMinimumSize(QSize(400, 0))
+        self.scrollArea_2.setMaximumSize(QSize(400, 16777215))
+        self.scrollArea_2.setFrameShadow(QFrame.Shadow.Raised)
+        self.scrollArea_2.setWidgetResizable(True)
+        self.scrollAreaWidgetContents_2 = QWidget()
+        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, -192, 386, 496))
+        self.verticalLayout_32 = QVBoxLayout(self.scrollAreaWidgetContents_2)
+        self.verticalLayout_32.setObjectName(u"verticalLayout_32")
+        self.verticalLayout_33 = QVBoxLayout()
+        self.verticalLayout_33.setSpacing(6)
+        self.verticalLayout_33.setObjectName(u"verticalLayout_33")
+        self.frm_btn_close_cliente = QFrame(self.scrollAreaWidgetContents_2)
         self.frm_btn_close_cliente.setObjectName(u"frm_btn_close_cliente")
         self.frm_btn_close_cliente.setMinimumSize(QSize(0, 30))
         self.frm_btn_close_cliente.setMaximumSize(QSize(16777215, 30))
         self.frm_btn_close_cliente.setFrameShape(QFrame.Shape.NoFrame)
         self.frm_btn_close_cliente.setFrameShadow(QFrame.Shadow.Raised)
-        self.verticalLayout_13 = QVBoxLayout(self.frm_btn_close_cliente)
-        self.verticalLayout_13.setSpacing(2)
-        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
-        self.verticalLayout_13.setContentsMargins(2, 2, 2, 2)
+        self.verticalLayout_34 = QVBoxLayout(self.frm_btn_close_cliente)
+        self.verticalLayout_34.setSpacing(2)
+        self.verticalLayout_34.setObjectName(u"verticalLayout_34")
+        self.verticalLayout_34.setContentsMargins(2, 2, 2, 2)
         self.btn_closeFrm_cliente = QPushButton(self.frm_btn_close_cliente)
         self.btn_closeFrm_cliente.setObjectName(u"btn_closeFrm_cliente")
         self.btn_closeFrm_cliente.setMinimumSize(QSize(20, 20))
@@ -979,87 +990,87 @@ class Ui_PrincipalWindow(object):
         self.btn_closeFrm_cliente.setIcon(icon3)
         self.btn_closeFrm_cliente.setIconSize(QSize(7, 7))
 
-        self.verticalLayout_13.addWidget(self.btn_closeFrm_cliente, 0, Qt.AlignmentFlag.AlignRight)
+        self.verticalLayout_34.addWidget(self.btn_closeFrm_cliente, 0, Qt.AlignmentFlag.AlignRight)
 
 
-        self.verticalLayout_12.addWidget(self.frm_btn_close_cliente)
+        self.verticalLayout_33.addWidget(self.frm_btn_close_cliente)
 
-        self.horizontalLayout_6 = QHBoxLayout()
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.btn_situacao_cliente = QCheckBox(self.layoutWidget1)
+        self.horizontalLayout_23 = QHBoxLayout()
+        self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
+        self.btn_situacao_cliente = QCheckBox(self.scrollAreaWidgetContents_2)
         self.btn_situacao_cliente.setObjectName(u"btn_situacao_cliente")
         self.btn_situacao_cliente.setMaximumSize(QSize(60, 16777215))
         self.btn_situacao_cliente.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
 
-        self.horizontalLayout_6.addWidget(self.btn_situacao_cliente, 0, Qt.AlignmentFlag.AlignRight)
+        self.horizontalLayout_23.addWidget(self.btn_situacao_cliente, 0, Qt.AlignmentFlag.AlignRight)
 
-        self.combo_status_envio_arquivos_cliente = QComboBox(self.layoutWidget1)
-        self.combo_status_envio_arquivos_cliente.addItem("")
-        self.combo_status_envio_arquivos_cliente.addItem("")
-        self.combo_status_envio_arquivos_cliente.addItem("")
-        self.combo_status_envio_arquivos_cliente.addItem("")
-        self.combo_status_envio_arquivos_cliente.addItem("")
-        self.combo_status_envio_arquivos_cliente.setObjectName(u"combo_status_envio_arquivos_cliente")
-        self.combo_status_envio_arquivos_cliente.setMinimumSize(QSize(140, 30))
-        self.combo_status_envio_arquivos_cliente.setMaximumSize(QSize(140, 30))
+        self.combo_status_envio_arquivos_cliente_3 = QComboBox(self.scrollAreaWidgetContents_2)
+        self.combo_status_envio_arquivos_cliente_3.addItem("")
+        self.combo_status_envio_arquivos_cliente_3.addItem("")
+        self.combo_status_envio_arquivos_cliente_3.addItem("")
+        self.combo_status_envio_arquivos_cliente_3.addItem("")
+        self.combo_status_envio_arquivos_cliente_3.addItem("")
+        self.combo_status_envio_arquivos_cliente_3.setObjectName(u"combo_status_envio_arquivos_cliente_3")
+        self.combo_status_envio_arquivos_cliente_3.setMinimumSize(QSize(140, 30))
+        self.combo_status_envio_arquivos_cliente_3.setMaximumSize(QSize(140, 30))
 
-        self.horizontalLayout_6.addWidget(self.combo_status_envio_arquivos_cliente, 0, Qt.AlignmentFlag.AlignRight)
+        self.horizontalLayout_23.addWidget(self.combo_status_envio_arquivos_cliente_3, 0, Qt.AlignmentFlag.AlignRight)
 
 
-        self.verticalLayout_12.addLayout(self.horizontalLayout_6)
+        self.verticalLayout_33.addLayout(self.horizontalLayout_23)
 
-        self.horizontalLayout_17 = QHBoxLayout()
-        self.horizontalLayout_17.setSpacing(0)
-        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
-        self.txt_id_cliente = QLineEdit(self.layoutWidget1)
+        self.horizontalLayout_24 = QHBoxLayout()
+        self.horizontalLayout_24.setSpacing(0)
+        self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
+        self.txt_id_cliente = QLineEdit(self.scrollAreaWidgetContents_2)
         self.txt_id_cliente.setObjectName(u"txt_id_cliente")
         self.txt_id_cliente.setMinimumSize(QSize(50, 30))
         self.txt_id_cliente.setMaximumSize(QSize(50, 30))
 
-        self.horizontalLayout_17.addWidget(self.txt_id_cliente, 0, Qt.AlignmentFlag.AlignLeft)
+        self.horizontalLayout_24.addWidget(self.txt_id_cliente, 0, Qt.AlignmentFlag.AlignLeft)
 
-        self.txt_cnpj_cliente = QLineEdit(self.layoutWidget1)
+        self.txt_cnpj_cliente = QLineEdit(self.scrollAreaWidgetContents_2)
         self.txt_cnpj_cliente.setObjectName(u"txt_cnpj_cliente")
         self.txt_cnpj_cliente.setMinimumSize(QSize(200, 30))
         self.txt_cnpj_cliente.setMaximumSize(QSize(200, 30))
 
-        self.horizontalLayout_17.addWidget(self.txt_cnpj_cliente, 0, Qt.AlignmentFlag.AlignRight)
+        self.horizontalLayout_24.addWidget(self.txt_cnpj_cliente, 0, Qt.AlignmentFlag.AlignRight)
 
 
-        self.verticalLayout_12.addLayout(self.horizontalLayout_17)
+        self.verticalLayout_33.addLayout(self.horizontalLayout_24)
 
-        self.txt_nome_cliente = QLineEdit(self.layoutWidget1)
+        self.txt_nome_cliente = QLineEdit(self.scrollAreaWidgetContents_2)
         self.txt_nome_cliente.setObjectName(u"txt_nome_cliente")
         self.txt_nome_cliente.setMinimumSize(QSize(0, 30))
         self.txt_nome_cliente.setMaximumSize(QSize(16777215, 30))
 
-        self.verticalLayout_12.addWidget(self.txt_nome_cliente)
+        self.verticalLayout_33.addWidget(self.txt_nome_cliente)
 
-        self.txt_razao_social_cliente = QLineEdit(self.layoutWidget1)
+        self.txt_razao_social_cliente = QLineEdit(self.scrollAreaWidgetContents_2)
         self.txt_razao_social_cliente.setObjectName(u"txt_razao_social_cliente")
         self.txt_razao_social_cliente.setMinimumSize(QSize(0, 30))
         self.txt_razao_social_cliente.setMaximumSize(QSize(16777215, 30))
 
-        self.verticalLayout_12.addWidget(self.txt_razao_social_cliente)
+        self.verticalLayout_33.addWidget(self.txt_razao_social_cliente)
 
-        self.txt_email_cliente = QLineEdit(self.layoutWidget1)
+        self.txt_email_cliente = QLineEdit(self.scrollAreaWidgetContents_2)
         self.txt_email_cliente.setObjectName(u"txt_email_cliente")
         self.txt_email_cliente.setMinimumSize(QSize(0, 30))
         self.txt_email_cliente.setMaximumSize(QSize(16777215, 30))
 
-        self.verticalLayout_12.addWidget(self.txt_email_cliente)
+        self.verticalLayout_33.addWidget(self.txt_email_cliente)
 
-        self.horizontalLayout_8 = QHBoxLayout()
-        self.horizontalLayout_8.setSpacing(0)
-        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.combo_contador = QComboBox(self.layoutWidget1)
+        self.horizontalLayout_25 = QHBoxLayout()
+        self.horizontalLayout_25.setSpacing(0)
+        self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
+        self.combo_contador = QComboBox(self.scrollAreaWidgetContents_2)
         self.combo_contador.setObjectName(u"combo_contador")
         self.combo_contador.setMinimumSize(QSize(200, 30))
         self.combo_contador.setMaximumSize(QSize(200, 30))
 
-        self.horizontalLayout_8.addWidget(self.combo_contador)
+        self.horizontalLayout_25.addWidget(self.combo_contador)
 
-        self.btn_novo_contador = QPushButton(self.layoutWidget1)
+        self.btn_novo_contador = QPushButton(self.scrollAreaWidgetContents_2)
         self.btn_novo_contador.setObjectName(u"btn_novo_contador")
         self.btn_novo_contador.setMinimumSize(QSize(30, 30))
         self.btn_novo_contador.setMaximumSize(QSize(30, 30))
@@ -1067,12 +1078,12 @@ class Ui_PrincipalWindow(object):
         self.btn_novo_contador.setIcon(icon11)
         self.btn_novo_contador.setIconSize(QSize(18, 18))
 
-        self.horizontalLayout_8.addWidget(self.btn_novo_contador, 0, Qt.AlignmentFlag.AlignLeft)
+        self.horizontalLayout_25.addWidget(self.btn_novo_contador, 0, Qt.AlignmentFlag.AlignLeft)
 
 
-        self.verticalLayout_12.addLayout(self.horizontalLayout_8)
+        self.verticalLayout_33.addLayout(self.horizontalLayout_25)
 
-        self.combo_sistema_cliente = QComboBox(self.layoutWidget1)
+        self.combo_sistema_cliente = QComboBox(self.scrollAreaWidgetContents_2)
         self.combo_sistema_cliente.addItem("")
         self.combo_sistema_cliente.addItem("")
         self.combo_sistema_cliente.addItem("")
@@ -1084,52 +1095,93 @@ class Ui_PrincipalWindow(object):
         self.combo_sistema_cliente.setMaximumSize(QSize(16777215, 30))
         self.combo_sistema_cliente.setSizeAdjustPolicy(QComboBox.SizeAdjustPolicy.AdjustToContentsOnFirstShow)
 
-        self.verticalLayout_12.addWidget(self.combo_sistema_cliente)
+        self.verticalLayout_33.addWidget(self.combo_sistema_cliente)
 
-        self.txt_link_sistema_cliente = QLineEdit(self.layoutWidget1)
+        self.txt_link_sistema_cliente = QLineEdit(self.scrollAreaWidgetContents_2)
         self.txt_link_sistema_cliente.setObjectName(u"txt_link_sistema_cliente")
         self.txt_link_sistema_cliente.setMinimumSize(QSize(0, 30))
         self.txt_link_sistema_cliente.setMaximumSize(QSize(16777215, 30))
 
-        self.verticalLayout_12.addWidget(self.txt_link_sistema_cliente)
+        self.verticalLayout_33.addWidget(self.txt_link_sistema_cliente)
 
-        self.horizontalLayout_9 = QHBoxLayout()
-        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.txt_user_cliente_sistema = QLineEdit(self.layoutWidget1)
+        self.horizontalLayout_26 = QHBoxLayout()
+        self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
+        self.txt_user_cliente_sistema = QLineEdit(self.scrollAreaWidgetContents_2)
         self.txt_user_cliente_sistema.setObjectName(u"txt_user_cliente_sistema")
         self.txt_user_cliente_sistema.setMinimumSize(QSize(0, 30))
         self.txt_user_cliente_sistema.setMaximumSize(QSize(16777215, 30))
 
-        self.horizontalLayout_9.addWidget(self.txt_user_cliente_sistema)
+        self.horizontalLayout_26.addWidget(self.txt_user_cliente_sistema)
 
-        self.txt_password_cliente_sistema = QLineEdit(self.layoutWidget1)
+        self.txt_password_cliente_sistema = QLineEdit(self.scrollAreaWidgetContents_2)
         self.txt_password_cliente_sistema.setObjectName(u"txt_password_cliente_sistema")
         self.txt_password_cliente_sistema.setMinimumSize(QSize(0, 30))
         self.txt_password_cliente_sistema.setMaximumSize(QSize(16777215, 30))
 
-        self.horizontalLayout_9.addWidget(self.txt_password_cliente_sistema)
+        self.horizontalLayout_26.addWidget(self.txt_password_cliente_sistema)
 
 
-        self.verticalLayout_12.addLayout(self.horizontalLayout_9)
+        self.verticalLayout_33.addLayout(self.horizontalLayout_26)
 
-        self.horizontalLayout_10 = QHBoxLayout()
-        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.btn_atualizar_cliente = QPushButton(self.layoutWidget1)
+        self.verticalLayout_13 = QVBoxLayout()
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.horizontalLayout_6 = QHBoxLayout()
+        self.horizontalLayout_6.setSpacing(0)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.lineEdit = QLineEdit(self.scrollAreaWidgetContents_2)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setMinimumSize(QSize(0, 30))
+        self.lineEdit.setMaximumSize(QSize(16777215, 30))
+
+        self.horizontalLayout_6.addWidget(self.lineEdit)
+
+        self.btn_buscar_certificado_dig = QPushButton(self.scrollAreaWidgetContents_2)
+        self.btn_buscar_certificado_dig.setObjectName(u"btn_buscar_certificado_dig")
+        self.btn_buscar_certificado_dig.setMinimumSize(QSize(0, 30))
+        self.btn_buscar_certificado_dig.setMaximumSize(QSize(16777215, 30))
+        self.btn_buscar_certificado_dig.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_buscar_certificado_dig.setIcon(icon4)
+
+        self.horizontalLayout_6.addWidget(self.btn_buscar_certificado_dig)
+
+
+        self.verticalLayout_13.addLayout(self.horizontalLayout_6)
+
+        self.lineEdit_2 = QLineEdit(self.scrollAreaWidgetContents_2)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.lineEdit_2.setMinimumSize(QSize(0, 30))
+        self.lineEdit_2.setMaximumSize(QSize(16777215, 30))
+
+        self.verticalLayout_13.addWidget(self.lineEdit_2)
+
+
+        self.verticalLayout_33.addLayout(self.verticalLayout_13)
+
+        self.horizontalLayout_27 = QHBoxLayout()
+        self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
+        self.btn_atualizar_cliente = QPushButton(self.scrollAreaWidgetContents_2)
         self.btn_atualizar_cliente.setObjectName(u"btn_atualizar_cliente")
         self.btn_atualizar_cliente.setMinimumSize(QSize(0, 30))
         self.btn_atualizar_cliente.setMaximumSize(QSize(16777215, 30))
 
-        self.horizontalLayout_10.addWidget(self.btn_atualizar_cliente)
+        self.horizontalLayout_27.addWidget(self.btn_atualizar_cliente)
 
-        self.btn_salvar_cliente = QPushButton(self.layoutWidget1)
+        self.btn_salvar_cliente = QPushButton(self.scrollAreaWidgetContents_2)
         self.btn_salvar_cliente.setObjectName(u"btn_salvar_cliente")
         self.btn_salvar_cliente.setMinimumSize(QSize(0, 30))
         self.btn_salvar_cliente.setMaximumSize(QSize(16777215, 30))
 
-        self.horizontalLayout_10.addWidget(self.btn_salvar_cliente)
+        self.horizontalLayout_27.addWidget(self.btn_salvar_cliente)
 
 
-        self.verticalLayout_12.addLayout(self.horizontalLayout_10)
+        self.verticalLayout_33.addLayout(self.horizontalLayout_27)
+
+
+        self.verticalLayout_32.addLayout(self.verticalLayout_33)
+
+        self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
+
+        self.verticalLayout_12.addWidget(self.scrollArea_2)
 
 
         self.horizontalLayout_2.addWidget(self.frm_cadastro_cliente)
@@ -1232,13 +1284,13 @@ class Ui_PrincipalWindow(object):
         self.frm_cadastro_contabilidade.setMaximumSize(QSize(300, 16777215))
         self.frm_cadastro_contabilidade.setFrameShape(QFrame.Shape.StyledPanel)
         self.frm_cadastro_contabilidade.setFrameShadow(QFrame.Shadow.Raised)
-        self.layoutWidget2 = QWidget(self.frm_cadastro_contabilidade)
-        self.layoutWidget2.setObjectName(u"layoutWidget2")
-        self.layoutWidget2.setGeometry(QRect(10, 10, 281, 291))
-        self.verticalLayout_16 = QVBoxLayout(self.layoutWidget2)
+        self.layoutWidget1 = QWidget(self.frm_cadastro_contabilidade)
+        self.layoutWidget1.setObjectName(u"layoutWidget1")
+        self.layoutWidget1.setGeometry(QRect(10, 10, 281, 291))
+        self.verticalLayout_16 = QVBoxLayout(self.layoutWidget1)
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
         self.verticalLayout_16.setContentsMargins(0, 0, 0, 0)
-        self.frm_btn_close_contabilidade = QFrame(self.layoutWidget2)
+        self.frm_btn_close_contabilidade = QFrame(self.layoutWidget1)
         self.frm_btn_close_contabilidade.setObjectName(u"frm_btn_close_contabilidade")
         self.frm_btn_close_contabilidade.setMinimumSize(QSize(0, 30))
         self.frm_btn_close_contabilidade.setMaximumSize(QSize(16777215, 30))
@@ -1261,7 +1313,7 @@ class Ui_PrincipalWindow(object):
 
         self.verticalLayout_16.addWidget(self.frm_btn_close_contabilidade)
 
-        self.btn_situacao_contabilidade = QCheckBox(self.layoutWidget2)
+        self.btn_situacao_contabilidade = QCheckBox(self.layoutWidget1)
         self.btn_situacao_contabilidade.setObjectName(u"btn_situacao_contabilidade")
         self.btn_situacao_contabilidade.setMaximumSize(QSize(60, 16777215))
         self.btn_situacao_contabilidade.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
@@ -1271,14 +1323,14 @@ class Ui_PrincipalWindow(object):
         self.horizontalLayout_16 = QHBoxLayout()
         self.horizontalLayout_16.setSpacing(0)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.txt_id_contabilidade = QLineEdit(self.layoutWidget2)
+        self.txt_id_contabilidade = QLineEdit(self.layoutWidget1)
         self.txt_id_contabilidade.setObjectName(u"txt_id_contabilidade")
         self.txt_id_contabilidade.setMinimumSize(QSize(50, 30))
         self.txt_id_contabilidade.setMaximumSize(QSize(50, 30))
 
         self.horizontalLayout_16.addWidget(self.txt_id_contabilidade, 0, Qt.AlignmentFlag.AlignLeft)
 
-        self.txt_cnpj_contabilidade = QLineEdit(self.layoutWidget2)
+        self.txt_cnpj_contabilidade = QLineEdit(self.layoutWidget1)
         self.txt_cnpj_contabilidade.setObjectName(u"txt_cnpj_contabilidade")
         self.txt_cnpj_contabilidade.setMinimumSize(QSize(200, 30))
         self.txt_cnpj_contabilidade.setMaximumSize(QSize(200, 30))
@@ -1288,28 +1340,28 @@ class Ui_PrincipalWindow(object):
 
         self.verticalLayout_16.addLayout(self.horizontalLayout_16)
 
-        self.txt_nome_contabilidade = QLineEdit(self.layoutWidget2)
+        self.txt_nome_contabilidade = QLineEdit(self.layoutWidget1)
         self.txt_nome_contabilidade.setObjectName(u"txt_nome_contabilidade")
         self.txt_nome_contabilidade.setMinimumSize(QSize(0, 30))
         self.txt_nome_contabilidade.setMaximumSize(QSize(16777215, 30))
 
         self.verticalLayout_16.addWidget(self.txt_nome_contabilidade)
 
-        self.txt_razao_social_contabilidade = QLineEdit(self.layoutWidget2)
+        self.txt_razao_social_contabilidade = QLineEdit(self.layoutWidget1)
         self.txt_razao_social_contabilidade.setObjectName(u"txt_razao_social_contabilidade")
         self.txt_razao_social_contabilidade.setMinimumSize(QSize(0, 30))
         self.txt_razao_social_contabilidade.setMaximumSize(QSize(16777215, 30))
 
         self.verticalLayout_16.addWidget(self.txt_razao_social_contabilidade)
 
-        self.txt_email_contabilidade = QLineEdit(self.layoutWidget2)
+        self.txt_email_contabilidade = QLineEdit(self.layoutWidget1)
         self.txt_email_contabilidade.setObjectName(u"txt_email_contabilidade")
         self.txt_email_contabilidade.setMinimumSize(QSize(0, 30))
         self.txt_email_contabilidade.setMaximumSize(QSize(16777215, 30))
 
         self.verticalLayout_16.addWidget(self.txt_email_contabilidade)
 
-        self.txt_telefone_contabilidade_2 = QLineEdit(self.layoutWidget2)
+        self.txt_telefone_contabilidade_2 = QLineEdit(self.layoutWidget1)
         self.txt_telefone_contabilidade_2.setObjectName(u"txt_telefone_contabilidade_2")
         self.txt_telefone_contabilidade_2.setMinimumSize(QSize(0, 30))
         self.txt_telefone_contabilidade_2.setMaximumSize(QSize(16777215, 30))
@@ -1319,7 +1371,7 @@ class Ui_PrincipalWindow(object):
         self.horizontalLayout_34 = QHBoxLayout()
         self.horizontalLayout_34.setSpacing(0)
         self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
-        self.btn_atualizar_contabilidade = QPushButton(self.layoutWidget2)
+        self.btn_atualizar_contabilidade = QPushButton(self.layoutWidget1)
         self.btn_atualizar_contabilidade.setObjectName(u"btn_atualizar_contabilidade")
         self.btn_atualizar_contabilidade.setMinimumSize(QSize(0, 30))
         self.btn_atualizar_contabilidade.setMaximumSize(QSize(16777215, 30))
@@ -1327,7 +1379,7 @@ class Ui_PrincipalWindow(object):
 
         self.horizontalLayout_34.addWidget(self.btn_atualizar_contabilidade)
 
-        self.btn_salvar_contabilidade = QPushButton(self.layoutWidget2)
+        self.btn_salvar_contabilidade = QPushButton(self.layoutWidget1)
         self.btn_salvar_contabilidade.setObjectName(u"btn_salvar_contabilidade")
         self.btn_salvar_contabilidade.setMinimumSize(QSize(0, 30))
         self.btn_salvar_contabilidade.setMaximumSize(QSize(16777215, 30))
@@ -1346,6 +1398,7 @@ class Ui_PrincipalWindow(object):
         self.tab_xml.setObjectName(u"tab_xml")
         self.verticalLayout_25 = QVBoxLayout(self.tab_xml)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
+        self.verticalLayout_25.setContentsMargins(0, 0, 0, 0)
         self.frm_geral_xml = QFrame(self.tab_xml)
         self.frm_geral_xml.setObjectName(u"frm_geral_xml")
         self.frm_geral_xml.setFrameShape(QFrame.Shape.StyledPanel)
@@ -1607,6 +1660,77 @@ class Ui_PrincipalWindow(object):
         self.verticalLayout_25.addWidget(self.frm_geral_xml)
 
         self.tabWidgetFiscal_contabil.addTab(self.tab_xml, "")
+        self.tab_notas_sefaz = QWidget()
+        self.tab_notas_sefaz.setObjectName(u"tab_notas_sefaz")
+        self.verticalLayout_19 = QVBoxLayout(self.tab_notas_sefaz)
+        self.verticalLayout_19.setSpacing(0)
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.verticalLayout_19.setContentsMargins(0, 0, 0, 0)
+        self.frame_6 = QFrame(self.tab_notas_sefaz)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_20 = QVBoxLayout(self.frame_6)
+        self.verticalLayout_20.setSpacing(2)
+        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
+        self.verticalLayout_20.setContentsMargins(0, 0, 0, 0)
+        self.frame_7 = QFrame(self.frame_6)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setMinimumSize(QSize(0, 60))
+        self.frame_7.setMaximumSize(QSize(16777215, 60))
+        self.frame_7.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_7.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_8 = QHBoxLayout(self.frame_7)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.verticalLayout_35 = QVBoxLayout()
+        self.verticalLayout_35.setSpacing(0)
+        self.verticalLayout_35.setObjectName(u"verticalLayout_35")
+        self.label_5 = QLabel(self.frame_7)
+        self.label_5.setObjectName(u"label_5")
+
+        self.verticalLayout_35.addWidget(self.label_5, 0, Qt.AlignmentFlag.AlignBottom)
+
+        self.lineEdit_3 = QLineEdit(self.frame_7)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        self.lineEdit_3.setMinimumSize(QSize(300, 25))
+        self.lineEdit_3.setMaximumSize(QSize(300, 25))
+
+        self.verticalLayout_35.addWidget(self.lineEdit_3)
+
+
+        self.horizontalLayout_8.addLayout(self.verticalLayout_35)
+
+        self.pushButton_2 = QPushButton(self.frame_7)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setMinimumSize(QSize(150, 30))
+        self.pushButton_2.setMaximumSize(QSize(150, 30))
+
+        self.horizontalLayout_8.addWidget(self.pushButton_2, 0, Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignBottom)
+
+
+        self.verticalLayout_20.addWidget(self.frame_7)
+
+        self.frame_8 = QFrame(self.frame_6)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_8.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_24 = QVBoxLayout(self.frame_8)
+        self.verticalLayout_24.setSpacing(0)
+        self.verticalLayout_24.setObjectName(u"verticalLayout_24")
+        self.verticalLayout_24.setContentsMargins(0, 0, 0, 0)
+        self.tableWidget = QTableWidget(self.frame_8)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+
+        self.verticalLayout_24.addWidget(self.tableWidget)
+
+
+        self.verticalLayout_20.addWidget(self.frame_8)
+
+
+        self.verticalLayout_19.addWidget(self.frame_6)
+
+        self.tabWidgetFiscal_contabil.addTab(self.tab_notas_sefaz, "")
         self.tab_importar_exportar = QWidget()
         self.tab_importar_exportar.setObjectName(u"tab_importar_exportar")
         self.verticalLayout_14 = QVBoxLayout(self.tab_importar_exportar)
@@ -1646,14 +1770,14 @@ class Ui_PrincipalWindow(object):
         self.label_3.setWordWrap(True)
         self.label_3.setMargin(5)
         self.label_3.setIndent(0)
-        self.layoutWidget3 = QWidget(self.groupBox)
-        self.layoutWidget3.setObjectName(u"layoutWidget3")
-        self.layoutWidget3.setGeometry(QRect(12, 92, 621, 61))
-        self.verticalLayout_15 = QVBoxLayout(self.layoutWidget3)
+        self.layoutWidget2 = QWidget(self.groupBox)
+        self.layoutWidget2.setObjectName(u"layoutWidget2")
+        self.layoutWidget2.setGeometry(QRect(12, 92, 621, 61))
+        self.verticalLayout_15 = QVBoxLayout(self.layoutWidget2)
         self.verticalLayout_15.setSpacing(0)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
-        self.label_2 = QLabel(self.layoutWidget3)
+        self.label_2 = QLabel(self.layoutWidget2)
         self.label_2.setObjectName(u"label_2")
 
         self.verticalLayout_15.addWidget(self.label_2)
@@ -1661,14 +1785,14 @@ class Ui_PrincipalWindow(object):
         self.horizontalLayout_14 = QHBoxLayout()
         self.horizontalLayout_14.setSpacing(0)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
-        self.txt_path_importar_exportar = QLineEdit(self.layoutWidget3)
+        self.txt_path_importar_exportar = QLineEdit(self.layoutWidget2)
         self.txt_path_importar_exportar.setObjectName(u"txt_path_importar_exportar")
         self.txt_path_importar_exportar.setMinimumSize(QSize(0, 30))
         self.txt_path_importar_exportar.setMaximumSize(QSize(16777215, 30))
 
         self.horizontalLayout_14.addWidget(self.txt_path_importar_exportar)
 
-        self.btn_path_import = QPushButton(self.layoutWidget3)
+        self.btn_path_import = QPushButton(self.layoutWidget2)
         self.btn_path_import.setObjectName(u"btn_path_import")
         self.btn_path_import.setMinimumSize(QSize(0, 35))
         self.btn_path_import.setMaximumSize(QSize(35, 30))
@@ -1678,7 +1802,7 @@ class Ui_PrincipalWindow(object):
 
         self.horizontalLayout_14.addWidget(self.btn_path_import)
 
-        self.btn_importar_cliente_contabil = QPushButton(self.layoutWidget3)
+        self.btn_importar_cliente_contabil = QPushButton(self.layoutWidget2)
         self.btn_importar_cliente_contabil.setObjectName(u"btn_importar_cliente_contabil")
         self.btn_importar_cliente_contabil.setMinimumSize(QSize(0, 30))
         self.btn_importar_cliente_contabil.setMaximumSize(QSize(16777215, 30))
@@ -1807,22 +1931,7 @@ class Ui_PrincipalWindow(object):
         QWidget.setTabOrder(self.data_filtro_fim_cliente, self.combo_filtro_statusEnvio)
         QWidget.setTabOrder(self.combo_filtro_statusEnvio, self.combo_filtro_contador)
         QWidget.setTabOrder(self.combo_filtro_contador, self.table_clientes)
-        QWidget.setTabOrder(self.table_clientes, self.btn_closeFrm_cliente)
-        QWidget.setTabOrder(self.btn_closeFrm_cliente, self.btn_situacao_cliente)
-        QWidget.setTabOrder(self.btn_situacao_cliente, self.combo_status_envio_arquivos_cliente)
-        QWidget.setTabOrder(self.combo_status_envio_arquivos_cliente, self.txt_cnpj_cliente)
-        QWidget.setTabOrder(self.txt_cnpj_cliente, self.txt_nome_cliente)
-        QWidget.setTabOrder(self.txt_nome_cliente, self.txt_razao_social_cliente)
-        QWidget.setTabOrder(self.txt_razao_social_cliente, self.txt_email_cliente)
-        QWidget.setTabOrder(self.txt_email_cliente, self.combo_contador)
-        QWidget.setTabOrder(self.combo_contador, self.btn_novo_contador)
-        QWidget.setTabOrder(self.btn_novo_contador, self.combo_sistema_cliente)
-        QWidget.setTabOrder(self.combo_sistema_cliente, self.txt_link_sistema_cliente)
-        QWidget.setTabOrder(self.txt_link_sistema_cliente, self.txt_user_cliente_sistema)
-        QWidget.setTabOrder(self.txt_user_cliente_sistema, self.txt_password_cliente_sistema)
-        QWidget.setTabOrder(self.txt_password_cliente_sistema, self.btn_atualizar_cliente)
-        QWidget.setTabOrder(self.btn_atualizar_cliente, self.btn_salvar_cliente)
-        QWidget.setTabOrder(self.btn_salvar_cliente, self.txt_output_import)
+        QWidget.setTabOrder(self.table_clientes, self.txt_output_import)
         QWidget.setTabOrder(self.txt_output_import, self.txt_path_importar_exportar)
         QWidget.setTabOrder(self.txt_path_importar_exportar, self.btn_path_import)
         QWidget.setTabOrder(self.btn_path_import, self.btn_importar_cliente_contabil)
@@ -1844,7 +1953,7 @@ class Ui_PrincipalWindow(object):
         self.retranslateUi(PrincipalWindow)
 
         self.stackedWidget_tables.setCurrentIndex(2)
-        self.tabWidgetFiscal_contabil.setCurrentIndex(2)
+        self.tabWidgetFiscal_contabil.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(PrincipalWindow)
@@ -1936,11 +2045,11 @@ class Ui_PrincipalWindow(object):
         ___qtablewidgetitem12.setText(QCoreApplication.translate("PrincipalWindow", u"A\u00e7\u00f5es", None));
         self.btn_closeFrm_cliente.setText("")
         self.btn_situacao_cliente.setText(QCoreApplication.translate("PrincipalWindow", u"Ativo", None))
-        self.combo_status_envio_arquivos_cliente.setItemText(0, QCoreApplication.translate("PrincipalWindow", u"Status envio", None))
-        self.combo_status_envio_arquivos_cliente.setItemText(1, QCoreApplication.translate("PrincipalWindow", u"Enviado", None))
-        self.combo_status_envio_arquivos_cliente.setItemText(2, QCoreApplication.translate("PrincipalWindow", u"N\u00e3o Enviado", None))
-        self.combo_status_envio_arquivos_cliente.setItemText(3, QCoreApplication.translate("PrincipalWindow", u"Erro na gera\u00e7\u00e3o", None))
-        self.combo_status_envio_arquivos_cliente.setItemText(4, QCoreApplication.translate("PrincipalWindow", u"N\u00e3o fez Venda", None))
+        self.combo_status_envio_arquivos_cliente_3.setItemText(0, QCoreApplication.translate("PrincipalWindow", u"Status envio", None))
+        self.combo_status_envio_arquivos_cliente_3.setItemText(1, QCoreApplication.translate("PrincipalWindow", u"Enviado", None))
+        self.combo_status_envio_arquivos_cliente_3.setItemText(2, QCoreApplication.translate("PrincipalWindow", u"N\u00e3o Enviado", None))
+        self.combo_status_envio_arquivos_cliente_3.setItemText(3, QCoreApplication.translate("PrincipalWindow", u"Erro na gera\u00e7\u00e3o", None))
+        self.combo_status_envio_arquivos_cliente_3.setItemText(4, QCoreApplication.translate("PrincipalWindow", u"N\u00e3o fez Venda", None))
 
         self.txt_cnpj_cliente.setPlaceholderText(QCoreApplication.translate("PrincipalWindow", u"CNPJ", None))
         self.txt_nome_cliente.setPlaceholderText(QCoreApplication.translate("PrincipalWindow", u"Nome", None))
@@ -1960,6 +2069,9 @@ class Ui_PrincipalWindow(object):
         self.txt_link_sistema_cliente.setPlaceholderText(QCoreApplication.translate("PrincipalWindow", u"Link Sistema", None))
         self.txt_user_cliente_sistema.setPlaceholderText(QCoreApplication.translate("PrincipalWindow", u"User", None))
         self.txt_password_cliente_sistema.setPlaceholderText(QCoreApplication.translate("PrincipalWindow", u"Password", None))
+        self.lineEdit.setPlaceholderText(QCoreApplication.translate("PrincipalWindow", u"Caminho do certificado digital", None))
+        self.btn_buscar_certificado_dig.setText("")
+        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("PrincipalWindow", u"Senha certificado", None))
         self.btn_atualizar_cliente.setText(QCoreApplication.translate("PrincipalWindow", u"Atualizar", None))
         self.btn_salvar_cliente.setText(QCoreApplication.translate("PrincipalWindow", u"Novo", None))
         self.tabWidgetFiscal_contabil.setTabText(self.tabWidgetFiscal_contabil.indexOf(self.tab_clientes), QCoreApplication.translate("PrincipalWindow", u"Clientes", None))
@@ -2005,7 +2117,10 @@ class Ui_PrincipalWindow(object):
         self.label_11.setText(QCoreApplication.translate("PrincipalWindow", u"COFINS", None))
         self.label_12.setText(QCoreApplication.translate("PrincipalWindow", u"IPI", None))
         self.label_13.setText(QCoreApplication.translate("PrincipalWindow", u"Total NF", None))
-        self.tabWidgetFiscal_contabil.setTabText(self.tabWidgetFiscal_contabil.indexOf(self.tab_xml), QCoreApplication.translate("PrincipalWindow", u"XML", None))
+        self.tabWidgetFiscal_contabil.setTabText(self.tabWidgetFiscal_contabil.indexOf(self.tab_xml), QCoreApplication.translate("PrincipalWindow", u"Cont. XML", None))
+        self.label_5.setText(QCoreApplication.translate("PrincipalWindow", u"Pesquisa", None))
+        self.pushButton_2.setText(QCoreApplication.translate("PrincipalWindow", u"Buscar SEFAZ", None))
+        self.tabWidgetFiscal_contabil.setTabText(self.tabWidgetFiscal_contabil.indexOf(self.tab_notas_sefaz), QCoreApplication.translate("PrincipalWindow", u"Notas SEFAZ", None))
         self.groupBox.setTitle(QCoreApplication.translate("PrincipalWindow", u"Importar/Exportar", None))
         self.label.setText(QCoreApplication.translate("PrincipalWindow", u"Sa\u00edda import de dados:", None))
         self.radioBtn_importar_fiscal_contabil.setText(QCoreApplication.translate("PrincipalWindow", u"Importar?", None))

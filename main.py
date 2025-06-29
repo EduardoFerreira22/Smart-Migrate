@@ -13,7 +13,6 @@ from components import controladores as i
 from components import objetos as obj
 from functions import functions_csv as f_csv
 from xml_functions.table import XmlTable, TablesClienteContabil
-from dados.models import SQLiteConnect
 from xml_functions.relatorios import save_csv, save_pdf
 import bcrypt
 import base64
@@ -25,11 +24,11 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SCHEMA_PATH = os.path.join(BASE_DIR, "dados", "SQL", "schema.txt")
 DB_PATH = os.path.join(BASE_DIR, "dados", "current", "shar", "current", "sqlite_db.db")
 # Função para ler o arquivo schema.txt
-def read_tables():
-    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
-    schema_path = os.path.join(base_path, "dados", "SQL", "schema.txt")
-    with open(schema_path, "r", encoding='utf-8') as file:
-        return file.read().strip()
+# def read_tables():
+#     base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+#     schema_path = os.path.join(base_path, "dados", "SQL", "schema.txt")
+#     with open(schema_path, "r", encoding='utf-8') as file:
+#         return file.read().strip()
         
 
 class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
@@ -43,17 +42,16 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
         self.show_frames = i.FramesControler()
         self.tb_xml = XmlTable(directory=None)
         self.tab_c = TablesClienteContabil(parent=self)
-        self.sqlite = SQLiteConnect(DB_PATH)
         self.visibilidade_objetos()
         self.lb_titulos_tabelas.setText("Importe um arquivo .csv")
-        self.create_initial_tables()
         # self.login(username="admin", password="smart_admin_migrate")
-        self.setComboBox()
-        self.table_cliente()
+        # self.setComboBox()
+        # self.table_cliente()
         self.setupWindow_xml()
 
 
 
+    """    
     def setComboBox(self):
         data = self.sqlite.select_contabilidade()
         self.combo_contador.clear()
@@ -62,7 +60,7 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
             self.combo_contador.addItem(nome)
             self.combo_contador.setItemData(self.combo_contador.count() - 1, id_contador)
         if self.combo_contador.count() > 0:
-            self.combo_contador.setCurrentIndex(0)
+            self.combo_contador.setCurrentIndex(0)"""
 
     def get_selected_contador_id(self):
         current_index = self.combo_contador.currentIndex()
@@ -227,10 +225,6 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
         """Fecha a janela."""
         self.close()
 
-    def create_initial_tables(self):
-        tables = read_tables()
-        self.sqlite.create_tables(queries=tables)
-        self.create_initial_data()
 
     def create_initial_data(self):
         try:
@@ -313,13 +307,14 @@ class WindowPrincipal(QMainWindow, Ui_PrincipalWindow):
             print(f"Erro ao cadastrar cliente: {e}")
             raise
 
+    """
     def table_cliente(self):
             data = self.sqlite.select_cliente()
             self.tab_c.table_cliente_contabilidade(
                 table=self.table_clientes,
                 data=data,
                 action=self.tab_c.show_edit_frame  # Passar a função show_edit_frame
-            )
+            )"""
 
     def button_novo_cliente(self):
         self.frm_cadastro_cliente.setVisible(True)

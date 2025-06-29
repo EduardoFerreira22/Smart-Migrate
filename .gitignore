@@ -1,0 +1,9 @@
+/venv
+.csv
+anotações.txt
+comandos_pytest.txt
+Smart_Migrate_Model.mwb
+Smart_Migrate_Model.mwb.bak
+.db
+/testes
+__pycache__
