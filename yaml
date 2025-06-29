@@ -1,0 +1,35 @@
+
+---
+
+## ✅ Benefícios para a Empresa
+
+- 📉 Redução significativa do tempo em processos manuais.
+- 🔒 Maior segurança e integridade dos dados tratados.
+- 📊 Interface acessível para usuários técnicos e não técnicos.
+- 🔄 Reaproveitamento de scripts, filtros e formatações personalizadas.
+- 📁 Histórico de clientes e documentos centralizado para análise e suporte.
+
+---
+
+## ⚙️ Requisitos
+
+- Python 3.11 ou superior
+- Dependências (pode ser usado `pip install -r requirements.txt`)
+- Acesso a internet para funções SEFAZ
+
+---
+
+## 📃 Licença
+
+Uso interno e licenciado. A redistribuição ou utilização comercial externa requer autorização formal da empresa responsável pelo desenvolvimento.
+
+---
+
+## 👨‍💼 Contato
+
+**Eduardo Ferreira**  
+Especialista em Sistemas de Gestão e Migração de Dados  
+📧 eduardoferreira_of@outlook.com  
+
+---
+
